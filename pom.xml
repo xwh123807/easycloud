@@ -22,6 +22,7 @@
 	<version>1.0-SNAPSHOT</version>
 	<modules>
 	<module>org.easycloud.platform.metadata</module>
+	<module>org.easycloud.platform.visualpage</module>
 	</modules>
 	<distributionManagement>
 		<repository>
