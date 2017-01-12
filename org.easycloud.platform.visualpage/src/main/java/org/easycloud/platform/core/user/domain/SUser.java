@@ -1,4 +1,4 @@
-package org.myfly.platform.core.user.domain;
+package org.easycloud.platform.core.user.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,26 +10,26 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.easycloud.platform.core.domain.EmailEncodingType;
+import org.easycloud.platform.core.domain.FieldDataType;
+import org.easycloud.platform.core.domain.LanguageLocaleType;
+import org.easycloud.platform.core.domain.SBaseEntity;
+import org.easycloud.platform.core.domain.SchemaConstants;
+import org.easycloud.platform.core.metadata.annotation.Div1View;
+import org.easycloud.platform.core.metadata.annotation.Div2View;
+import org.easycloud.platform.core.metadata.annotation.FieldSetView;
+import org.easycloud.platform.core.metadata.annotation.FieldView;
+import org.easycloud.platform.core.metadata.annotation.FilterView;
+import org.easycloud.platform.core.metadata.annotation.FormView;
+import org.easycloud.platform.core.metadata.annotation.ListView;
+import org.easycloud.platform.core.metadata.annotation.MetaDataView;
+import org.easycloud.platform.core.metadata.annotation.OutlineView;
+import org.easycloud.platform.core.metadata.annotation.SectionView;
+import org.easycloud.platform.core.metadata.annotation.TableView;
+import org.easycloud.platform.core.metadata.define.SQLOperator;
+import org.easycloud.platform.core.metadata.define.SectionType;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.myfly.platform.core.domain.EmailEncodingType;
-import org.myfly.platform.core.domain.FieldDataType;
-import org.myfly.platform.core.domain.LanguageLocaleType;
-import org.myfly.platform.core.domain.SBaseEntity;
-import org.myfly.platform.core.domain.SchemaConstants;
-import org.myfly.platform.core.metadata.annotation.Div1View;
-import org.myfly.platform.core.metadata.annotation.Div2View;
-import org.myfly.platform.core.metadata.annotation.FieldSetView;
-import org.myfly.platform.core.metadata.annotation.FieldView;
-import org.myfly.platform.core.metadata.annotation.FilterView;
-import org.myfly.platform.core.metadata.annotation.FormView;
-import org.myfly.platform.core.metadata.annotation.ListView;
-import org.myfly.platform.core.metadata.annotation.MetaDataView;
-import org.myfly.platform.core.metadata.annotation.OutlineView;
-import org.myfly.platform.core.metadata.annotation.SectionView;
-import org.myfly.platform.core.metadata.annotation.TableView;
-import org.myfly.platform.core.metadata.define.SQLOperator;
-import org.myfly.platform.core.metadata.define.SectionType;
 
 /**
  * 用户

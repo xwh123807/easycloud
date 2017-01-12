@@ -1,21 +1,19 @@
-package org.myfly.platform.core.starter;
+package org.easycloud.platform.core.starter;
 
 import java.io.File;
 import java.util.List;
 import java.util.function.Consumer;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.myfly.platform.core.domain.AppStartLevel;
-import org.myfly.platform.core.flydata.config.FlyDataProperties;
-import org.myfly.platform.core.metadata.internal.FileMetaDataRegister;
-import org.myfly.platform.core.spring.ExtendConvertersRegister;
-import org.myfly.platform.core.user.service.IMenuService;
-import org.myfly.platform.core.utils.AppUtil;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.visualpage.config.FlyVPProperties;
+import org.easycloud.platform.core.domain.AppStartLevel;
+import org.easycloud.platform.core.flydata.config.FlyDataProperties;
+import org.easycloud.platform.core.metadata.internal.FileMetaDataRegister;
+import org.easycloud.platform.core.spring.ExtendConvertersRegister;
+import org.easycloud.platform.core.utils.AppUtil;
+import org.easycloud.platform.core.utils.AssertUtil;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;

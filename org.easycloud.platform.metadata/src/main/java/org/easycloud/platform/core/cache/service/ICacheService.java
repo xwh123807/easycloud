@@ -1,4 +1,4 @@
-package org.myfly.platform.core.cache.service;
+package org.easycloud.platform.core.cache.service;
 
 import java.util.List;
 

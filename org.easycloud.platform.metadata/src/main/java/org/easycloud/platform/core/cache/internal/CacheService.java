@@ -1,19 +1,17 @@
-package org.myfly.platform.core.cache.internal;
+package org.easycloud.platform.core.cache.internal;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.myfly.platform.core.cache.service.CacheInfo;
-import org.myfly.platform.core.cache.service.CacheObjectInfo;
-import org.myfly.platform.core.cache.service.ICacheService;
-import org.myfly.platform.core.utils.AssertUtil;
+import org.easycloud.platform.core.cache.service.CacheInfo;
+import org.easycloud.platform.core.cache.service.CacheObjectInfo;
+import org.easycloud.platform.core.cache.service.ICacheService;
+import org.easycloud.platform.core.utils.AssertUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
-import org.springframework.cache.ehcache.EhCacheCache;
 import org.springframework.stereotype.Service;
 
 /**

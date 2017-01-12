@@ -4,16 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.easycloud.platform.core.domain.SKeyEntity;
+import org.easycloud.platform.core.domain.SchemaConstants;
+import org.easycloud.platform.core.metadata.annotation.FieldView;
+import org.easycloud.platform.core.metadata.annotation.ListView;
+import org.easycloud.platform.core.metadata.annotation.MetaDataView;
+import org.easycloud.platform.core.metadata.annotation.TableView;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.myfly.platform.core.domain.SKeyEntity;
-import org.myfly.platform.core.domain.SchemaConstants;
-import org.myfly.platform.core.metadata.annotation.FieldView;
-import org.myfly.platform.core.metadata.annotation.ListView;
-import org.myfly.platform.core.metadata.annotation.MetaDataView;
-import org.myfly.platform.core.metadata.annotation.TableView;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
+import org.jboss.logging.Field;
 
 /**
  * @author xiangwanhong ID名称表，需要进行id/名称查找的都继承本表。<br>

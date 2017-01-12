@@ -10,12 +10,12 @@ import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
 import org.apache.commons.lang3.StringUtils;
-import org.myfly.platform.core.domain.SKeyEntity;
-import org.myfly.platform.core.flydata.service.IJpaAccessService;
-import org.myfly.platform.core.metadata.internal.EntityMetaData;
-import org.myfly.platform.core.metadata.service.IEntityMetaDataService;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.utils.UUIDUtil;
+import org.easycloud.platform.core.domain.SKeyEntity;
+import org.easycloud.platform.core.flydata.service.IJpaAccessService;
+import org.easycloud.platform.core.metadata.internal.EntityMetaData;
+import org.easycloud.platform.core.metadata.service.IEntityMetaDataService;
+import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.core.utils.UUIDUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,11 +1,9 @@
-package org.myfly.platform.core.context;
+package org.easycloud.platform.core.context;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import org.myfly.platform.core.domain.AlertInfo;
-import org.myfly.platform.core.user.domain.SUser;
-import org.myfly.platform.core.user.domain.Tenant;
+import org.easycloud.platform.core.domain.AlertInfo;
 
 /**
  * 用户会话信息，成功登录后登记

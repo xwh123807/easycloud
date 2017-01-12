@@ -1,7 +1,7 @@
-package org.myfly.platform.core.cache.service;
+package org.easycloud.platform.core.cache.service;
 
-import org.myfly.platform.core.metadata.annotation.ObjectListView;
-import org.myfly.platform.core.metadata.annotation.PropertyView;
+import org.easycloud.platform.core.metadata.annotation.ObjectListView;
+import org.easycloud.platform.core.metadata.annotation.PropertyView;
 
 @ObjectListView(title = "缓存", linkField = "cacheName", linkUrl = "/admin/cache/$!{objitem.cacheName}", fields = {
 		@PropertyView(name = "cacheName", title = "名称"), @PropertyView(name = "size", title = "个数") })

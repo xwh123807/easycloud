@@ -1,9 +1,16 @@
-package org.myfly.platform.core.flydata.internal.hibernate;
+package org.easycloud.platform.core.flydata.internal.hibernate;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.easycloud.platform.core.context.UserContext;
+import org.easycloud.platform.core.context.UserSession;
+import org.easycloud.platform.core.domain.SBaseEntity;
+import org.easycloud.platform.core.flydata.queue.EntityOperator;
+import org.easycloud.platform.core.flydata.queue.GlobalNameQueueProcessor;
+import org.easycloud.platform.core.flydata.queue.IndexQueueProcessor;
+import org.easycloud.platform.core.utils.DateUtil;
 import org.hibernate.event.spi.PostDeleteEvent;
 import org.hibernate.event.spi.PostDeleteEventListener;
 import org.hibernate.event.spi.PostInsertEvent;
@@ -15,16 +22,6 @@ import org.hibernate.event.spi.PreInsertEventListener;
 import org.hibernate.event.spi.PreUpdateEvent;
 import org.hibernate.event.spi.PreUpdateEventListener;
 import org.hibernate.persister.entity.EntityPersister;
-import org.myfly.platform.core.context.UserContext;
-import org.myfly.platform.core.context.UserSession;
-import org.myfly.platform.core.domain.SBaseEntity;
-import org.myfly.platform.core.flydata.queue.EntityOperator;
-import org.myfly.platform.core.flydata.queue.GlobalNameQueueProcessor;
-import org.myfly.platform.core.flydata.queue.IndexQueueProcessor;
-import org.myfly.platform.core.user.domain.SGlobalName;
-import org.myfly.platform.core.user.domain.SUser;
-import org.myfly.platform.core.user.domain.Tenant;
-import org.myfly.platform.core.utils.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -2,10 +2,10 @@ package org.easycloud.platform.core.flydata.internal;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.myfly.platform.core.flydata.service.EntityQueryMap;
-import org.myfly.platform.core.flydata.service.IFlyDataAccessService;
-import org.myfly.platform.core.utils.AppUtil;
-import org.myfly.platform.core.utils.AssertUtil;
+import org.easycloud.platform.core.flydata.service.EntityQueryMap;
+import org.easycloud.platform.core.flydata.service.IFlyDataAccessService;
+import org.easycloud.platform.core.utils.AppUtil;
+import org.easycloud.platform.core.utils.AssertUtil;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

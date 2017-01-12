@@ -2,6 +2,13 @@ package org.easycloud.platform.core.user.domain;
 
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Index;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 import org.easycloud.platform.core.domain.SBaseEntity;
 import org.easycloud.platform.core.domain.SchemaConstants;
 import org.easycloud.platform.core.metadata.annotation.FieldSetView;
@@ -15,6 +22,8 @@ import org.easycloud.platform.core.metadata.annotation.SubTableView;
 import org.easycloud.platform.core.metadata.annotation.TableView;
 import org.easycloud.platform.core.metadata.define.ListStyle;
 import org.easycloud.platform.core.metadata.define.SectionType;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * 枚举类型

@@ -3,7 +3,7 @@ package org.easycloud.platform.core.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-import org.myfly.platform.core.user.domain.SUser;
+import org.easycloud.platform.core.user.domain.SUser;
 
 /**
  * 审计Entity

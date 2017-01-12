@@ -2,8 +2,8 @@ package org.easycloud.platform.core.metadata.service;
 
 import java.util.List;
 
-import org.myfly.platform.core.metadata.internal.EntityMetaData;
-import org.myfly.platform.core.metadata.internal.JsonEntityMetaData;
+import org.easycloud.platform.core.metadata.internal.EntityMetaData;
+import org.easycloud.platform.core.metadata.internal.JsonEntityMetaData;
 
 /**
  * 实体元模型服务

@@ -3,8 +3,8 @@ package org.easycloud.platform.core.flydata.internal;
 import java.util.HashMap;
 
 import org.apache.commons.lang3.StringUtils;
-import org.myfly.platform.core.flydata.service.IJpaAccessService;
-import org.myfly.platform.core.utils.AssertUtil;
+import org.easycloud.platform.core.flydata.service.IJpaAccessService;
+import org.easycloud.platform.core.utils.AssertUtil;
 
 /**
  * 名称转换为ID缓存

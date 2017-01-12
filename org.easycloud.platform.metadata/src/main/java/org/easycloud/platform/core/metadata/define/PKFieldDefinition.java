@@ -10,10 +10,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
-import org.myfly.platform.core.metadata.internal.EntityMetaData;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.utils.ClassUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.easycloud.platform.core.metadata.internal.EntityMetaData;
+import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.core.utils.ClassUtil;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

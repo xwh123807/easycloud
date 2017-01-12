@@ -6,13 +6,13 @@ import java.util.Map;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.myfly.platform.core.domain.FieldDataType;
-import org.myfly.platform.core.domain.SKeyEntity;
-import org.myfly.platform.core.metadata.define.FieldDefinition;
-import org.myfly.platform.core.metadata.define.PKFieldDefinition;
-import org.myfly.platform.core.metadata.internal.EntityMetaData;
-import org.myfly.platform.core.utils.AppUtil;
-import org.myfly.platform.core.utils.ClassUtil;
+import org.easycloud.platform.core.domain.FieldDataType;
+import org.easycloud.platform.core.domain.SKeyEntity;
+import org.easycloud.platform.core.metadata.define.FieldDefinition;
+import org.easycloud.platform.core.metadata.define.PKFieldDefinition;
+import org.easycloud.platform.core.metadata.internal.EntityMetaData;
+import org.easycloud.platform.core.utils.AppUtil;
+import org.easycloud.platform.core.utils.ClassUtil;
 
 public class EntityUtil {
 	/**

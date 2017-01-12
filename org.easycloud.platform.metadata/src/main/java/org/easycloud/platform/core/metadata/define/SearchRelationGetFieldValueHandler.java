@@ -1,13 +1,12 @@
 package org.easycloud.platform.core.metadata.define;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
-import org.myfly.platform.core.metadata.internal.EntityMetaData;
-import org.myfly.platform.core.utils.AppUtil;
-import org.myfly.platform.core.utils.ClassUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.easycloud.platform.core.metadata.internal.EntityMetaData;
+import org.easycloud.platform.core.utils.AppUtil;
+import org.easycloud.platform.core.utils.ClassUtil;
 
 /**
  * 关联字段取值，包括SearchRelation和AutoRelation

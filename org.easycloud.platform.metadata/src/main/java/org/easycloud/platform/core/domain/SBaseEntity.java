@@ -10,9 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
-import org.myfly.platform.core.metadata.annotation.FieldView;
-import org.myfly.platform.core.user.domain.SUser;
-import org.myfly.platform.core.user.domain.Tenant;
+import org.easycloud.platform.core.metadata.annotation.FieldView;
 
 /**
  * 基础实体类，实体类都需继承本类。

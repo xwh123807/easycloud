@@ -1,4 +1,4 @@
-package org.myfly.platform.core.context;
+package org.easycloud.platform.core.context;
 
 public class SystemContext {
 	/**

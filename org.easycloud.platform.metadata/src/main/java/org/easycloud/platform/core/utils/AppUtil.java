@@ -1,12 +1,16 @@
 package org.easycloud.platform.core.utils;
 
+import javax.persistence.EntityManagerFactory;
+
 import org.easycloud.platform.core.flydata.service.IFlyDataAccessService;
 import org.easycloud.platform.core.metadata.internal.EntityMetaData;
 import org.easycloud.platform.core.metadata.service.IEntityMetaDataService;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.support.GenericConversionService;
+import org.springframework.data.jpa.mapping.JpaMetamodelMappingContext;
 import org.springframework.util.Assert;
 
 /**

@@ -1,4 +1,4 @@
-package org.myfly.platform.core.admin;
+package org.easycloud.platform.core.admin;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
@@ -10,22 +10,19 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.myfly.platform.core.cache.internal.RedisServerInfo;
-import org.myfly.platform.core.cache.service.CacheInfo;
-import org.myfly.platform.core.cache.service.CacheObjectInfo;
-import org.myfly.platform.core.cache.service.ICacheService;
-import org.myfly.platform.core.domain.TemplateBuilderInfo;
-import org.myfly.platform.core.message.service.IMessageQueueService;
-import org.myfly.platform.core.metadata.annotation.ObjectListView;
-import org.myfly.platform.core.metadata.annotation.PropertyView;
-import org.myfly.platform.core.metadata.internal.EntityViewInfo;
-import org.myfly.platform.core.metadata.internal.JsonEntityMetaData;
-import org.myfly.platform.core.metadata.service.IEntityMetaDataService;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.utils.ClassUtil;
-import org.myfly.platform.core.visualpage.domain.PageInfo;
-import org.myfly.platform.core.visualpage.domain.VisualPageType;
-import org.myfly.platform.core.visualpage.service.VisualPageConstants;
+import org.easycloud.platform.core.cache.internal.RedisServerInfo;
+import org.easycloud.platform.core.cache.service.CacheInfo;
+import org.easycloud.platform.core.cache.service.CacheObjectInfo;
+import org.easycloud.platform.core.cache.service.ICacheService;
+import org.easycloud.platform.core.domain.TemplateBuilderInfo;
+import org.easycloud.platform.core.message.service.IMessageQueueService;
+import org.easycloud.platform.core.metadata.annotation.ObjectListView;
+import org.easycloud.platform.core.metadata.annotation.PropertyView;
+import org.easycloud.platform.core.metadata.internal.EntityViewInfo;
+import org.easycloud.platform.core.metadata.internal.JsonEntityMetaData;
+import org.easycloud.platform.core.metadata.service.IEntityMetaDataService;
+import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.core.utils.ClassUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint;

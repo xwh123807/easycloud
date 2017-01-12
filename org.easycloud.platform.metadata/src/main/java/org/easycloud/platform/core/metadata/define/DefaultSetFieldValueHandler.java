@@ -2,9 +2,9 @@ package org.easycloud.platform.core.metadata.define;
 
 import java.util.Map;
 
-import org.myfly.platform.core.domain.FieldDataType;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.utils.ClassUtil;
+import org.easycloud.platform.core.domain.FieldDataType;
+import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.core.utils.ClassUtil;
 import org.springframework.util.Base64Utils;
 
 public class DefaultSetFieldValueHandler implements SetFieldValueHandler {

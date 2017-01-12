@@ -1,6 +1,6 @@
-package org.myfly.platform.core.spring;
+package org.easycloud.platform.core.spring;
 
-import org.myfly.platform.core.domain.BaseEnum;
+import org.easycloud.platform.core.domain.BaseEnum;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 

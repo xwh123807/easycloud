@@ -1,12 +1,9 @@
-package org.myfly.platform.core.context;
+package org.easycloud.platform.core.context;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.myfly.platform.core.user.domain.SUser;
-import org.myfly.platform.core.user.domain.Tenant;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.visualpage.service.VisualPageConstants;
+import org.easycloud.platform.core.utils.AssertUtil;
 
 /**
  * 用户上下文

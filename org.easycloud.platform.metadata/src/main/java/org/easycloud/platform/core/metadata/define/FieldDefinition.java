@@ -10,6 +10,7 @@ import org.easycloud.platform.core.metadata.internal.EntityMetaData;
 import org.easycloud.platform.core.utils.AppUtil;
 import org.easycloud.platform.core.utils.AssertUtil;
 import org.easycloud.platform.core.utils.UUIDUtil;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.util.Assert;
 
 public class FieldDefinition extends BaseDenifition {

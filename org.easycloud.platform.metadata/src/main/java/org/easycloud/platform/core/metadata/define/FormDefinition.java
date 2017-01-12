@@ -5,22 +5,22 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.myfly.platform.core.domain.FieldDataType;
-import org.myfly.platform.core.metadata.annotation.Div1View;
-import org.myfly.platform.core.metadata.annotation.Div2View;
-import org.myfly.platform.core.metadata.annotation.Div3View;
-import org.myfly.platform.core.metadata.annotation.FieldSetView;
-import org.myfly.platform.core.metadata.annotation.FormView;
-import org.myfly.platform.core.metadata.annotation.SectionView;
-import org.myfly.platform.core.metadata.annotation.SubTableView;
-import org.myfly.platform.core.metadata.internal.EntityMetaData;
-import org.myfly.platform.core.metadata.internal.EntityMetaDataConstants;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.visualpage.ui.EntityAction;
+import org.easycloud.platform.core.domain.FieldDataType;
+import org.easycloud.platform.core.metadata.annotation.Div1View;
+import org.easycloud.platform.core.metadata.annotation.Div2View;
+import org.easycloud.platform.core.metadata.annotation.Div3View;
+import org.easycloud.platform.core.metadata.annotation.FieldSetView;
+import org.easycloud.platform.core.metadata.annotation.FormView;
+import org.easycloud.platform.core.metadata.annotation.SectionView;
+import org.easycloud.platform.core.metadata.annotation.SubTableView;
+import org.easycloud.platform.core.metadata.internal.EntityMetaData;
+import org.easycloud.platform.core.metadata.internal.EntityMetaDataConstants;
+import org.easycloud.platform.core.utils.AssertUtil;
+import org.hibernate.action.internal.EntityAction;
 import org.springframework.util.Assert;
 
 /**

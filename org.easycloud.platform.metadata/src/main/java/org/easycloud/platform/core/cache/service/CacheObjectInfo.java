@@ -1,9 +1,9 @@
-package org.myfly.platform.core.cache.service;
+package org.easycloud.platform.core.cache.service;
 
 import java.util.Date;
 
-import org.myfly.platform.core.metadata.annotation.ObjectListView;
-import org.myfly.platform.core.metadata.annotation.PropertyView;
+import org.easycloud.platform.core.metadata.annotation.ObjectListView;
+import org.easycloud.platform.core.metadata.annotation.PropertyView;
 
 @ObjectListView(title = "缓存", linkField = "value", linkUrl = "/vp/template/$!{objitem.value}", fields = {
 		@PropertyView(name = "key", title = "KEY"), @PropertyView(name = "value", title = "缓存对象"),

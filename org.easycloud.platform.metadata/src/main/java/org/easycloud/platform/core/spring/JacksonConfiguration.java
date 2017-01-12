@@ -1,4 +1,4 @@
-package org.myfly.platform.core.spring;
+package org.easycloud.platform.core.spring;
 
 import java.util.List;
 
@@ -9,7 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 
 @Configuration
 public class JacksonConfiguration extends WebMvcConfigurerAdapter {

@@ -1,9 +1,9 @@
-package org.myfly.platform.core.spring;
+package org.easycloud.platform.core.spring;
 
 import java.util.Date;
 
-import org.apache.commons.lang.StringUtils;
-import org.myfly.platform.core.utils.DateUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.easycloud.platform.core.utils.DateUtil;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 

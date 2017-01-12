@@ -10,14 +10,14 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.apache.commons.collections.MapUtils;
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.myfly.platform.core.metadata.define.FieldDefinition;
-import org.myfly.platform.core.metadata.define.FilterDefinition;
-import org.myfly.platform.core.metadata.define.SQLOperator;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.utils.ClassUtil;
+import org.easycloud.platform.core.metadata.define.FieldDefinition;
+import org.easycloud.platform.core.metadata.define.FilterDefinition;
+import org.easycloud.platform.core.metadata.define.SQLOperator;
+import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.core.utils.ClassUtil;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.domain.Specifications;
 

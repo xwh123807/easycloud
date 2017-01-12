@@ -1,4 +1,4 @@
-package org.myfly.platform.core.flydata.internal.hibernate;
+package org.easycloud.platform.core.flydata.internal.hibernate;
 
 import javax.persistence.EntityManagerFactory;
 

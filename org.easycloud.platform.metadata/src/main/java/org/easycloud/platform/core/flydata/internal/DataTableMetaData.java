@@ -3,9 +3,9 @@ package org.easycloud.platform.core.flydata.internal;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.myfly.platform.core.domain.FieldDataType;
-import org.myfly.platform.core.metadata.define.FieldDefinition;
-import org.myfly.platform.core.metadata.define.ListDefinition;
+import org.easycloud.platform.core.domain.FieldDataType;
+import org.easycloud.platform.core.metadata.define.FieldDefinition;
+import org.easycloud.platform.core.metadata.define.ListDefinition;
 
 public class DataTableMetaData {
 	private String entityName;

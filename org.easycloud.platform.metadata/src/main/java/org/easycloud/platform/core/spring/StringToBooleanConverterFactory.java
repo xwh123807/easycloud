@@ -1,6 +1,6 @@
-package org.myfly.platform.core.spring;
+package org.easycloud.platform.core.spring;
 
-import org.myfly.platform.core.utils.StringUtil;
+import org.easycloud.platform.core.utils.StringUtil;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 

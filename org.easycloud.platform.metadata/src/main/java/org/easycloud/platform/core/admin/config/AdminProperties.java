@@ -1,4 +1,4 @@
-package org.myfly.platform.core.admin.config;
+package org.easycloud.platform.core.admin.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

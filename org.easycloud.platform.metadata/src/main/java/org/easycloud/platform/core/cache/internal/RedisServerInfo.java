@@ -1,9 +1,8 @@
-package org.myfly.platform.core.cache.internal;
+package org.easycloud.platform.core.cache.internal;
 
 import java.util.Properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,7 +1,7 @@
 package org.easycloud.platform.core.flydata.internal;
 
-import org.myfly.platform.core.flydata.service.IEntityCacheService;
-import org.myfly.platform.core.utils.AppUtil;
+import org.easycloud.platform.core.flydata.service.IEntityCacheService;
+import org.easycloud.platform.core.utils.AppUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 

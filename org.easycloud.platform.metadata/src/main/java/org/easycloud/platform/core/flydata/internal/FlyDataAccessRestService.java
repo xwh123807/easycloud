@@ -4,12 +4,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.collections.MapUtils;
-import org.myfly.platform.core.flydata.service.EntityMap;
-import org.myfly.platform.core.flydata.service.EntityQueryMap;
-import org.myfly.platform.core.flydata.service.FlyEntityMap;
-import org.myfly.platform.core.flydata.service.IFlyDataAccessService;
-import org.myfly.platform.core.utils.AppUtil;
+import org.apache.commons.collections4.MapUtils;
+import org.easycloud.platform.core.flydata.service.EntityMap;
+import org.easycloud.platform.core.flydata.service.EntityQueryMap;
+import org.easycloud.platform.core.flydata.service.FlyEntityMap;
+import org.easycloud.platform.core.flydata.service.IFlyDataAccessService;
+import org.easycloud.platform.core.utils.AppUtil;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

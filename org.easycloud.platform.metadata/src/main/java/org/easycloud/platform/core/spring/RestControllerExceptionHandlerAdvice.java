@@ -1,4 +1,4 @@
-package org.myfly.platform.core.spring;
+package org.easycloud.platform.core.spring;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

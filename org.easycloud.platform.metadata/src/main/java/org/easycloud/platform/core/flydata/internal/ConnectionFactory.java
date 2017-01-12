@@ -7,8 +7,7 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
-import org.apache.commons.dbcp2.BasicDataSourceFactory;
-import org.myfly.platform.core.flydata.service.DataSourceInfo;
+import org.easycloud.platform.core.flydata.service.DataSourceInfo;
 
 public class ConnectionFactory {
 	/**

@@ -3,7 +3,7 @@ package org.easycloud.platform.core.flydata.internal;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
-import org.myfly.platform.core.flydata.service.Search;
+import org.easycloud.platform.core.flydata.service.Search;
 
 /**
  * 

@@ -1,11 +1,9 @@
-package org.myfly.platform.core.flydata.queue;
+package org.easycloud.platform.core.flydata.queue;
 
-import org.myfly.platform.core.message.service.IMessageQueueService;
-import org.myfly.platform.core.message.service.MessageQueueConstants;
-import org.myfly.platform.core.search.service.ISearchService;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.rabbit.annotation.RabbitHandler;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import java.util.Queue;
+
+import org.easycloud.platform.core.message.service.IMessageQueueService;
+import org.easycloud.platform.core.message.service.MessageQueueConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

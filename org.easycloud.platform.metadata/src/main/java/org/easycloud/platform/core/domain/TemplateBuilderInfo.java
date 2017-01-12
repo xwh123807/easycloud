@@ -1,8 +1,7 @@
 package org.easycloud.platform.core.domain;
 
-import org.myfly.platform.core.metadata.annotation.ObjectListView;
-import org.myfly.platform.core.metadata.annotation.PropertyView;
-import org.myfly.platform.core.visualpage.domain.VisualPageType;
+import org.easycloud.platform.core.metadata.annotation.ObjectListView;
+import org.easycloud.platform.core.metadata.annotation.PropertyView;
 /**
  * 
  * 模板构造器信息
