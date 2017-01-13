@@ -13,7 +13,6 @@ import javax.transaction.Transactional;
 
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;
-import org.easycloud.platform.core.domain.IKeyEntity;
 import org.easycloud.platform.core.flydata.service.EntityMap;
 import org.easycloud.platform.core.flydata.service.EntityQueryMap;
 import org.easycloud.platform.core.flydata.service.FlyEntityMap;
@@ -26,6 +25,7 @@ import org.easycloud.platform.core.metadata.define.SubTableDefinition;
 import org.easycloud.platform.core.metadata.internal.EntityMetaData;
 import org.easycloud.platform.core.utils.AssertUtil;
 import org.easycloud.platform.metadata.annotation.FieldDataType;
+import org.easycloud.platform.metadata.annotation.IKeyEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;

@@ -2,8 +2,6 @@ package org.easycloud.platform.common.utils;
 
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.StringUtils;
 
 public class StringUtil {
@@ -46,20 +44,20 @@ public class StringUtil {
 	 * @param request
 	 * @return
 	 */
-	public static String getRequestDebugInfo(HttpServletRequest request){
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("url:\t" + request.getRequestURL().toString()).append("\n");
-		buffer.append("query:\t" + request.getQueryString()).append("\n");
-		Map<String, String[]> params = request.getParameterMap();
-		for (Map.Entry<String, String[]> param : params.entrySet()){
-			buffer.append(param.getKey()).append(":\t");
-			for (String value : param.getValue()){
-				buffer.append(value).append(" , ");
-			}
-			buffer.append("\n");
-		}
-		return buffer.toString();
-	}
+//	public static String getRequestDebugInfo(HttpServletRequest request){
+//		StringBuffer buffer = new StringBuffer();
+//		buffer.append("url:\t" + request.getRequestURL().toString()).append("\n");
+//		buffer.append("query:\t" + request.getQueryString()).append("\n");
+//		Map<String, String[]> params = request.getParameterMap();
+//		for (Map.Entry<String, String[]> param : params.entrySet()){
+//			buffer.append(param.getKey()).append(":\t");
+//			for (String value : param.getValue()){
+//				buffer.append(value).append(" , ");
+//			}
+//			buffer.append("\n");
+//		}
+//		return buffer.toString();
+//	}
 
 	/**
 	 * 将名称转换为Hibernate DB的名称 stdTestTable转换为std-test-table

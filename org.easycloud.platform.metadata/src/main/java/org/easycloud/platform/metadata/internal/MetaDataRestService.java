@@ -4,8 +4,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.easycloud.platform.metadata.internal.JsonEntityMetaData.JsonFieldDefinition;
-import org.easycloud.platform.metadata.internal.JsonEntityMetaData.JsonFormDefinition;
-import org.easycloud.platform.metadata.internal.JsonEntityMetaData.JsonListDefinition;
 import org.easycloud.platform.metadata.service.IEntityMetaDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -71,49 +69,5 @@ public class MetaDataRestService {
 	@ResponseBody
 	public JsonFieldDefinition getJsonEntityMetaDataForField(@PathVariable("table") String table, @PathVariable("name") String name){
 		return getJsonEntityMetaData(table).getFieldMap().get(name);
-	}
-	
-	/**
-	 * 获取实体列表视图定义
-	 * @param table
-	 * @return
-	 */
-	@RequestMapping("{table}/listviews")
-	@ResponseBody
-	public Map<String, JsonListDefinition> getJsonEntityMetaDataForListViews(@PathVariable("table") String table){
-		return getJsonEntityMetaData(table).getListDefinitions();
-	}
-	
-	/**
-	 * 获取指定名称实体列表视图定义
-	 * @param table
-	 * @return
-	 */
-	@RequestMapping("{table}/listviews/{name}")
-	@ResponseBody
-	public JsonListDefinition getJsonEntityMetaDataForListViews(@PathVariable("table") String table, @PathVariable("name") String name){
-		return getJsonEntityMetaData(table).getListDefinitions().get(name);
-	}
-	
-	/**
-	 * 获取实体表单视图定义
-	 * @param table
-	 * @return
-	 */
-	@RequestMapping("{table}/formviews")
-	@ResponseBody
-	public Map<String, JsonFormDefinition> getJsonEntityMetaDataForFormViews(@PathVariable("table") String table){
-		return getJsonEntityMetaData(table).getFormDefinitions();
-	}
-	
-	/**
-	 * 获取指定实体表单视图定义
-	 * @param table
-	 * @return
-	 */
-	@RequestMapping("{table}/formviews/{name}")
-	@ResponseBody
-	public JsonFormDefinition getJsonEntityMetaDataForFormView(@PathVariable("table") String table, @PathVariable("name") String name){
-		return getJsonEntityMetaData(table).getFormDefinitions().get(name);
 	}
 }

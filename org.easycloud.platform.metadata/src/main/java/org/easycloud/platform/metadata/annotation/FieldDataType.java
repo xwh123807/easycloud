@@ -6,6 +6,8 @@ import java.sql.Types;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+
 /**
  * 字段数据类型
  * 

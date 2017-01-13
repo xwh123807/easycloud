@@ -5,10 +5,9 @@ import java.util.Map;
 
 import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.StringUtils;
-import org.easycloud.platform.core.domain.FieldDataType;
-import org.easycloud.platform.core.utils.AppUtil;
-import org.easycloud.platform.core.utils.AssertUtil;
-import org.easycloud.platform.core.utils.UUIDUtil;
+import org.easycloud.platform.common.utils.AssertUtil;
+import org.easycloud.platform.common.utils.UUIDUtil;
+import org.easycloud.platform.metadata.annotation.FieldDataType;
 import org.easycloud.platform.metadata.internal.EntityMetaData;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.util.Assert;

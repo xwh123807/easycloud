@@ -2,7 +2,7 @@ package org.easycloud.platform.metadata.define;
 
 import java.util.Map;
 
-import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.common.utils.AssertUtil;
 
 public class DefaultGetFieldValueHandler implements GetFieldValueHandler {
 	private FieldDefinition field;

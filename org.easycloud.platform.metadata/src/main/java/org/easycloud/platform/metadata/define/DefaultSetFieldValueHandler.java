@@ -2,10 +2,11 @@ package org.easycloud.platform.metadata.define;
 
 import java.util.Map;
 
-import org.easycloud.platform.core.domain.FieldDataType;
-import org.easycloud.platform.core.utils.AssertUtil;
-import org.easycloud.platform.core.utils.ClassUtil;
+import org.easycloud.platform.common.utils.AssertUtil;
+import org.easycloud.platform.metadata.annotation.FieldDataType;
 import org.springframework.util.Base64Utils;
+
+import com.fasterxml.jackson.databind.util.ClassUtil;
 
 public class DefaultSetFieldValueHandler implements SetFieldValueHandler {
 	private FieldDefinition field;

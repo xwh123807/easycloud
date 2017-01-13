@@ -1,6 +1,6 @@
 package org.easycloud.platform.core.spring;
 
-import org.easycloud.platform.core.domain.IKeyEntity;
+import org.easycloud.platform.metadata.annotation.IKeyEntity;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 

@@ -6,8 +6,6 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import org.easycloud.platform.metadata.define.CommonSubTableType;
-
 /**
  * 表视图注解，描述实体基本信息，用于在显示时使用
  * @author xiangwanhong

@@ -1,12 +1,13 @@
 package org.easycloud.platform.common.utils;
 
-import org.hibernate.id.UUIDHexGenerator;
+import java.util.UUID;
 
 public class UUIDUtil {
-	private static UUIDHexGenerator uuidGenerator = new UUIDHexGenerator();
+	//private static UUIDHexGenerator uuidGenerator = new UUIDHexGenerator();
 	
 	public static String newUUID(){
-		return (String) uuidGenerator.generate(null, null);
+		return UUID.randomUUID().toString();
+		//return (String) uuidGenerator.generate(null, null);
 	}
 	
 	public static String newHtmlID(){

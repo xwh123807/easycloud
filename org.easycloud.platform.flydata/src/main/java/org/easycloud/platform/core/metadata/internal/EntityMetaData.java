@@ -12,7 +12,6 @@ import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.easycloud.platform.core.domain.IKeyEntity;
 import org.easycloud.platform.core.metadata.annotation.FormView;
 import org.easycloud.platform.core.metadata.annotation.ListView;
 import org.easycloud.platform.core.metadata.annotation.MetaDataView;
@@ -26,6 +25,7 @@ import org.easycloud.platform.core.metadata.define.TableDefinition;
 import org.easycloud.platform.core.utils.AppUtil;
 import org.easycloud.platform.core.utils.AssertUtil;
 import org.easycloud.platform.metadata.annotation.FieldDataType;
+import org.easycloud.platform.metadata.annotation.IKeyEntity;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.easycloud.platform.core.utils.AssertUtil;
-import org.easycloud.platform.core.utils.ClassUtil;
+import org.easycloud.platform.common.utils.AssertUtil;
+import org.easycloud.platform.common.utils.ClassUtil;
 import org.easycloud.platform.metadata.internal.EntityMetaData;
 import org.springframework.util.Assert;
 

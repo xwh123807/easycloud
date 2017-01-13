@@ -21,8 +21,8 @@ import java.util.jar.JarFile;
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.easycloud.platform.core.domain.IKeyEntity;
 import org.easycloud.platform.metadata.annotation.BaseEnum;
+import org.easycloud.platform.metadata.annotation.IKeyEntity;
 
 public class ClassUtil {
 	private static final Log log = LogFactory.getLog(ClassUtil.class);

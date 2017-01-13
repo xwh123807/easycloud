@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.common.utils.AssertUtil;
 import org.easycloud.platform.metadata.service.IMetaDataRegister;
 import org.springframework.stereotype.Component;
 

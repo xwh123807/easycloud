@@ -1,5 +1,6 @@
 package org.easycloud.platform.metadata.define;
 
+import org.easycloud.platform.metadata.annotation.CommonSubTableType;
 import org.springframework.util.Assert;
 
 /**

@@ -5,7 +5,6 @@ import java.text.MessageFormat;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.Assert;
-import org.springframework.util.ObjectUtils;
 
 public class AssertUtil {
 	/**
@@ -23,10 +22,6 @@ public class AssertUtil {
 			Assert.notNull(value, message);
 		} else if (value instanceof String) {
 			Assert.hasLength((String) value, message);
-		}else{
-			if (ObjectUtils.isEmpty(value)){
-				throw new IllegalArgumentException(message);
-			}
 		}
 	}
 	

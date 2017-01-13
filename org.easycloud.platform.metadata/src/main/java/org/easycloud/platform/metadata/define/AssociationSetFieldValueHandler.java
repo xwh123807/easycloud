@@ -2,8 +2,7 @@ package org.easycloud.platform.metadata.define;
 
 import java.util.Map;
 
-import org.easycloud.platform.core.utils.AppUtil;
-import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.common.utils.AssertUtil;
 import org.easycloud.platform.metadata.internal.EntityMetaData;
 
 public class AssociationSetFieldValueHandler implements SetFieldValueHandler {

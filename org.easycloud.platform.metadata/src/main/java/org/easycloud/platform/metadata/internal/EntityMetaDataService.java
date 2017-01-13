@@ -19,19 +19,17 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.easycloud.platform.core.domain.FieldDataType;
-import org.easycloud.platform.core.domain.FieldDataType.FieldAttr;
-import org.easycloud.platform.core.utils.AssertUtil;
-import org.easycloud.platform.core.utils.ClassUtil;
-import org.easycloud.platform.core.utils.StringUtil;
+import org.easycloud.platform.common.utils.AssertUtil;
+import org.easycloud.platform.common.utils.ClassUtil;
+import org.easycloud.platform.common.utils.StringUtil;
+import org.easycloud.platform.metadata.annotation.CommonSubTableType;
+import org.easycloud.platform.metadata.annotation.FieldDataType;
+import org.easycloud.platform.metadata.annotation.FieldDataType.FieldAttr;
 import org.easycloud.platform.metadata.annotation.FieldView;
 import org.easycloud.platform.metadata.annotation.FlyEnum;
 import org.easycloud.platform.metadata.annotation.FlySearchRelation;
-import org.easycloud.platform.metadata.annotation.MetaDataView;
 import org.easycloud.platform.metadata.annotation.TableView;
 import org.easycloud.platform.metadata.define.AssociationSetFieldValueHandler;
-import org.easycloud.platform.metadata.define.CommonSubTableFieldDenifition;
-import org.easycloud.platform.metadata.define.CommonSubTableType;
 import org.easycloud.platform.metadata.define.ComplexGetPKFieldValueHandler;
 import org.easycloud.platform.metadata.define.ComplexSetPKFieldValueHandler;
 import org.easycloud.platform.metadata.define.DefaultGetFieldValueHandler;
@@ -179,8 +177,6 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 			updateMetaDataTableDefinitions(metaData);
 			updateMetaDataFieldDefinitions(metaData);
 			updateMetaDataPKFieldDefinitions(metaData);
-			metaData.buildListDefinition();
-			metaData.buildFormDefinitions();
 		}
 		cachedEntityMetaDatas.put(entityNameOrClassName, metaData);
 		return metaData;
@@ -256,11 +252,9 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 	 * @param metaData
 	 */
 	private void updateMetaDataTableDefinitions(final EntityMetaData metaData) {
-		MetaDataView metaDataView = metaData.getEntityClass().getAnnotation(MetaDataView.class);
+		TableView tableView = metaData.getEntityClass().getAnnotation(TableView.class);
 		TableDefinition tableDefinition = new TableDefinition();
-		if (metaDataView != null && metaDataView.tableView() != null) {
-			// 有定义表定义
-			TableView tableView = metaDataView.tableView();
+		if (tableView != null) {
 			tableDefinition.setTitle(tableView.title());
 			tableDefinition.setDescription(tableView.description());
 			tableDefinition.setLabelField(tableView.labelField());
@@ -286,7 +280,6 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 			tableDefinition.setTitle(metaData.getEntityName());
 		}
 		if (StringUtils.isBlank(tableDefinition.getLabelField())) {
-			tableDefinition.setLabelField(EntityMetaDataConstants.DEFAULT_LABEL_FIELD_NAME);
 		}
 		if (StringUtils.isBlank(tableDefinition.getIndexName())) {
 			tableDefinition.setIndexName(metaData.getEntityName().toLowerCase());
@@ -411,7 +404,6 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 					field.setRequired(!searchRelation.optional());
 					field.setDataType(FieldDataType.FLYSEARCHRELATION);
 					// 设置显示字段
-					field.setLabelField(EntityMetaDataConstants.DEFAULT_LABEL_FIELD_NAME);
 					field.setGetter(property.getGetter());
 					field.setSetter(property.getSetter());
 					field.setGetValueHandler(new FlySearchRelationGetFieldValueHandler(field));
@@ -422,15 +414,15 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 			}
 
 			private void registerEnumType(String entityName, String attrName, String title) {
-//				EnumType entity = new EnumType();
-//				entity.setEntityName(entityName);
-//				entity.setAttrName(attrName);
-//				entity.setName(title);
-//				try {
-//					AppUtil.getJpaFlyDataAccessService().saveEntity(entity);
-//				} catch (Exception e) {
-//					// 数据重复异常
-//				}
+				// EnumType entity = new EnumType();
+				// entity.setEntityName(entityName);
+				// entity.setAttrName(attrName);
+				// entity.setName(title);
+				// try {
+				// AppUtil.getJpaFlyDataAccessService().saveEntity(entity);
+				// } catch (Exception e) {
+				// // 数据重复异常
+				// }
 			}
 		});
 		model.doWithAssociations(new SimpleAssociationHandler() {
@@ -516,12 +508,10 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 						}
 					}
 					// 设置显示字段
-					MetaDataView metaDataView = field.getType().getAnnotation(MetaDataView.class);
-					if (metaDataView != null && metaDataView.tableView() != null
-							&& StringUtils.isNotBlank(metaDataView.tableView().labelField())) {
-						field.setLabelField(metaDataView.tableView().labelField());
+					TableView tableView = field.getType().getAnnotation(TableView.class);
+					if (tableView != null && StringUtils.isNotBlank(tableView.labelField())) {
+						field.setLabelField(tableView.labelField());
 					} else {
-						field.setLabelField(EntityMetaDataConstants.DEFAULT_LABEL_FIELD_NAME);
 					}
 					// 设置字段取值函数
 					field.setGetValueHandler(new SearchRelationGetFieldValueHandler(field));
@@ -551,16 +541,13 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 		// 增加通用子表字段，包括附件和备注
 		for (CommonSubTableType subTableType : metaData.getTableDefinition().getCommonSubTables()) {
 			try {
-				ClassUtils.forName(subTableType.getTableClass(), getClass().getClassLoader());
-				CommonSubTableFieldDenifition commonSubTableFieldDenifition = new CommonSubTableFieldDenifition(
-						subTableType, metaData.getEntityName(), metaData.getEntityClass().getName());
-				fieldsMap.put(commonSubTableFieldDenifition.getName(), commonSubTableFieldDenifition);
-			} catch (ClassNotFoundException e) {
+//				ClassUtils.forName(subTableType.getTableClass(), getClass().getClassLoader());
+//				CommonSubTableFieldDenifition commonSubTableFieldDenifition = new CommonSubTableFieldDenifition(
+//						subTableType, metaData.getEntityName(), metaData.getEntityClass().getName());
+//				fieldsMap.put(commonSubTableFieldDenifition.getName(), commonSubTableFieldDenifition);
+			} catch (Exception e) {
 				log.warn("找不到子表实现类[" + subTableType.getTableClass() + "]，将忽略");
-			} catch (LinkageError e) {
-				e.printStackTrace();
-			}
-		}
+			} 		}
 
 		metaData.setFieldMap(fieldsMap);
 	}

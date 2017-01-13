@@ -7,22 +7,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
+import javax.swing.text.html.FormView;
+import javax.swing.text.html.ListView;
+
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.easycloud.platform.core.domain.FieldDataType;
-import org.easycloud.platform.core.domain.IKeyEntity;
-import org.easycloud.platform.core.utils.AppUtil;
-import org.easycloud.platform.core.utils.AssertUtil;
-import org.easycloud.platform.metadata.annotation.FormView;
-import org.easycloud.platform.metadata.annotation.ListView;
-import org.easycloud.platform.metadata.annotation.MetaDataView;
+import org.easycloud.platform.common.utils.AssertUtil;
+import org.easycloud.platform.metadata.annotation.FieldDataType;
+import org.easycloud.platform.metadata.annotation.IKeyEntity;
 import org.easycloud.platform.metadata.define.FKFieldDefinition;
 import org.easycloud.platform.metadata.define.FieldDefinition;
-import org.easycloud.platform.metadata.define.FormDefinition;
-import org.easycloud.platform.metadata.define.ListDefinition;
 import org.easycloud.platform.metadata.define.PKFieldDefinition;
 import org.easycloud.platform.metadata.define.SearchRelationGetFieldValueHandler;
 import org.easycloud.platform.metadata.define.TableDefinition;
@@ -67,14 +64,6 @@ public class EntityMetaData implements Serializable {
 	 */
 	private TableDefinition tableDefinition;
 	/**
-	 * 列表视图定义
-	 */
-	private Map<String, ListDefinition> listDefinitions;
-	/**
-	 * 表单实体定义
-	 */
-	private Map<String, FormDefinition> formDefinitions;
-	/**
 	 * 主键定义
 	 */
 	private PKFieldDefinition pkFieldDefinition;
@@ -96,8 +85,6 @@ public class EntityMetaData implements Serializable {
 	}
 
 	private void init() {
-		listDefinitions = new LinkedHashMap<>();
-		formDefinitions = new LinkedHashMap<>();
 		fkFieldDefinitions = new LinkedHashMap<>();
 	}
 
@@ -129,24 +116,6 @@ public class EntityMetaData implements Serializable {
 
 	public FieldDefinition getField(String name) {
 		return getFieldMap().get(name);
-	}
-
-	@JsonIgnore
-	public Map<String, ListDefinition> getListDefinitions() {
-		return listDefinitions;
-	}
-
-	public void setListDefinitions(Map<String, ListDefinition> listDefinitions) {
-		this.listDefinitions = listDefinitions;
-	}
-
-	@JsonIgnore
-	public Map<String, FormDefinition> getFormDefinitions() {
-		return formDefinitions;
-	}
-
-	public void setFormDefinitions(Map<String, FormDefinition> formDefinitions) {
-		this.formDefinitions = formDefinitions;
 	}
 
 	public String getEntityName() {
@@ -305,82 +274,6 @@ public class EntityMetaData implements Serializable {
 	}
 
 	/**
-	 * 获取列表视图定义，如果不存在该视图则返回默认列表视图，如果还是没有则返回默认全部列表视图
-	 * 
-	 * @param name
-	 * @return
-	 */
-	public ListDefinition getListDefinition(final String viewName) {
-		ListDefinition listDefinition = getListDefinitions().get(viewName);
-		if (listDefinition == null) {
-			listDefinition = getListDefinitions().get(EntityMetaDataConstants.DEFAULT_NAME);
-		}
-		if (listDefinition == null) {
-			listDefinition = getListDefinitions().get(EntityMetaDataConstants.DEFAULT_ALL_NAME);
-		}
-		if (!listDefinition.getName().equals(viewName)) {
-			if (log.isWarnEnabled()) {
-				log.warn("实体[" + getEntityName() + "]不存在名称为[" + viewName + "]的ListDefinition定义，将返回名称为["
-						+ listDefinition.getName() + "]的。");
-			}
-		}
-		return listDefinition;
-	}
-
-	/**
-	 * 获取表单视图定义，如果不存在该视图则返回默认表单视图，如果还是没有则返回默认全部表单视图
-	 * 
-	 * @param name
-	 * @return
-	 */
-	public FormDefinition getFormDefinition(final String viewName) {
-		FormDefinition formDefinition = getFormDefinitions().get(viewName);
-		if (formDefinition == null) {
-			formDefinition = getFormDefinitions().get(EntityMetaDataConstants.DEFAULT_NAME);
-		}
-		if (formDefinition == null) {
-			formDefinition = getFormDefinitions().get(EntityMetaDataConstants.DEFAULT_ALL_NAME);
-		}
-		if (!formDefinition.getName().equals(viewName)) {
-			if (log.isWarnEnabled()) {
-				log.warn("实体[" + getEntityName() + "]不存在名称为[" + viewName + "]的FormDefinition定义，将返回名称为["
-						+ formDefinition.getName() + "]的。");
-			}
-		}
-		return formDefinition;
-	}
-
-	/**
-	 * 增加列表视图定义
-	 * 
-	 * @param listDefinition
-	 */
-	public void addListDenifition(final ListDefinition listDefinition) {
-		AssertUtil.parameterEmpty(listDefinition, "listDefinition");
-		AssertUtil.parameterEmpty(listDefinition.getName(), "listDefinition.getName()");
-		if (getListDefinitions().containsKey(listDefinition.getName())) {
-			AssertUtil.parameterInvalide("listDefinition",
-					"名称为[" + listDefinition.getName() + "]ListDefinition已经存在，请检查实体[" + getEntityName() + "]元模型定义.");
-		}
-		getListDefinitions().put(listDefinition.getName(), listDefinition);
-	}
-
-	/**
-	 * 增加表单视图定义
-	 * 
-	 * @param formDefinition
-	 */
-	public void addFormDefinition(FormDefinition formDefinition) {
-		AssertUtil.parameterEmpty(formDefinition, "formDefinition");
-		AssertUtil.parameterEmpty(formDefinition.getName(), "formDefinition.getName()");
-		if (getFormDefinitions().containsKey(formDefinition.getName())) {
-			AssertUtil.parameterInvalide("formDefinition",
-					"名称为[" + formDefinition.getName() + "]FormDefinition已经存在，请检查实体[" + getEntityName() + "]元模型定义.");
-		}
-		getFormDefinitions().put(formDefinition.getName(), formDefinition);
-	}
-
-	/**
 	 * 获取实体子表实体定义
 	 * 
 	 * @param subTableAttr
@@ -474,52 +367,6 @@ public class EntityMetaData implements Serializable {
 		return fieldDefinitions;
 	}
 
-	/**
-	 * 构建列表查询定义
-	 */
-	public void buildListDefinition() {
-		if (getEntityClass() != null) {
-			// 实体类
-			MetaDataView metaDataView = getEntityClass().getAnnotation(MetaDataView.class);
-			ListView[] listViews = (metaDataView != null) ? metaDataView.listViews() : null;
-			if (ArrayUtils.isNotEmpty(listViews)) {
-				// 有定义列表视图
-				for (ListView listView : listViews) {
-					ListDefinition listDefinition = ListDefinition.buildListDefinition(this, listView);
-					addListDenifition(listDefinition);
-				}
-			}
-		}
-		// 自动添加包含全部字段的ListDefinition
-		if (!getListDefinitions().containsKey(EntityMetaDataConstants.DEFAULT_ALL_NAME)) {
-			ListDefinition listDefinition = ListDefinition.buildDefaultListDefinition(this,
-					EntityMetaDataConstants.DEFAULT_ALL_NAME);
-			addListDenifition(listDefinition);
-		}
-	}
-
-	/**
-	 * 构建表单定义
-	 */
-	public void buildFormDefinitions() {
-		if (getEntityClass() != null) {
-			MetaDataView metaDataView = getEntityClass().getAnnotation(MetaDataView.class);
-			FormView[] formViews = (metaDataView != null) ? metaDataView.formViews() : null;
-			if (ArrayUtils.isNotEmpty(formViews)) {
-				for (FormView formView : formViews) {
-					FormDefinition formDefinition = FormDefinition.buildFormDefinition(this, formView);
-					addFormDefinition(formDefinition);
-				}
-			}
-		}
-		// 自动增加All定义
-		if (!getFormDefinitions().containsKey(EntityMetaDataConstants.DEFAULT_ALL_NAME)) {
-			FormDefinition formDefinition = FormDefinition.buildDefaultFormViewDefinition(this,
-					EntityMetaDataConstants.DEFAULT_ALL_NAME);
-			addFormDefinition(formDefinition);
-		}
-	}
-
 	public String getDataSourceId() {
 		return dataSourceId;
 	}
@@ -536,8 +383,6 @@ public class EntityMetaData implements Serializable {
 		Assert.notNull(getTableDefinition(), "getTableDefinition不能为空");
 		Assert.notNull(getPKFieldDefinition(), "getPKFieldDefinition不能为空");
 		Assert.notEmpty(getFieldMap(), "getFieldMap不能为空");
-		Assert.notEmpty(getListDefinitions(), "getListDefinitions不能为空");
-		Assert.notEmpty(getFormDefinitions(), "getFormDefinitions不能为空");
 		getTableDefinition().validate();
 		getPKFieldDefinition().validate();
 		getFieldMap().forEach(new BiConsumer<String, FieldDefinition>() {
@@ -553,22 +398,6 @@ public class EntityMetaData implements Serializable {
 			@Override
 			public void accept(String t, FKFieldDefinition fkField) {
 				fkField.validate();
-			}
-		});
-		
-		getListDefinitions().forEach(new BiConsumer<String, ListDefinition>() {
-
-			@Override
-			public void accept(String name, ListDefinition list) {
-				list.validate();
-			}
-		});
-		
-		getFormDefinitions().forEach(new BiConsumer<String, FormDefinition>() {
-
-			@Override
-			public void accept(String name, FormDefinition form) {
-				form.validate();
 			}
 		});
 	}
