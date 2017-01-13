@@ -5,6 +5,5 @@
     <artifactId>org.easycloud.parent</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <groupId>org.easycloud.platform.metadata</groupId>
-  <artifactId>org.easycloud.platform.metadata</artifactId>
+  <artifactId>org.easycloud.platform.visualpage</artifactId>
 </project>

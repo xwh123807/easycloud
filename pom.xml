@@ -21,8 +21,10 @@
 	<groupId>org.easycloud</groupId>
 	<version>1.0-SNAPSHOT</version>
 	<modules>
-	<module>org.easycloud.platform.metadata</module>
-	<module>org.easycloud.platform.visualpage</module>
+		<module>org.easycloud.platform.flydata</module>
+		<module>org.easycloud.platform.visualpage</module>
+		<module>org.easycloud.platform.metadata</module>
+		<module>org.easycloud.platform.common</module>
 	</modules>
 	<distributionManagement>
 		<repository>
@@ -55,4 +57,17 @@
 		<connection>scm:git:http://dockerhub.ygsoft.com:8888/xwh/devops</connection>
 		<developerConnection>scm:git:http://dockerhub.ygsoft.com:8888/xwh/devops</developerConnection>
 	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.1</version>
+		</dependency>
+	</dependencies>
 </project>
