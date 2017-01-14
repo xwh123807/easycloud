@@ -2,8 +2,6 @@ package org.easycloud.platform.metadata.service;
 
 import java.net.URL;
 
-import org.easycloud.platform.metadata.internal.EntityMetaData;
-
 /**
  * 
  * @author xiangwanhong

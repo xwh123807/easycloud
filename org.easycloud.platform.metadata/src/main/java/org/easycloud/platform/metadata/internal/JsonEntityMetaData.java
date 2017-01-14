@@ -6,17 +6,30 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.easycloud.platform.common.utils.JSONUtil;
-import org.easycloud.platform.metadata.annotation.FieldDataType;
-import org.easycloud.platform.metadata.define.DefaultGetFieldValueHandler;
-import org.easycloud.platform.metadata.define.FKFieldDefinition;
-import org.easycloud.platform.metadata.define.FieldDefinition;
-import org.easycloud.platform.metadata.define.PKFieldDefinition;
-import org.easycloud.platform.metadata.define.PKFieldDefinition.KeyType;
-import org.easycloud.platform.metadata.define.SearchRelationGetFieldValueHandler;
-import org.easycloud.platform.metadata.define.TableDefinition;
+import org.easycloud.platform.metadata.annotation.entity.FieldDataType;
+import org.easycloud.platform.metadata.annotation.view.EntityAction;
+import org.easycloud.platform.metadata.define.entity.DefaultGetFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.FKFieldDefinition;
+import org.easycloud.platform.metadata.define.entity.FieldDefinition;
+import org.easycloud.platform.metadata.define.entity.PKFieldDefinition;
+import org.easycloud.platform.metadata.define.entity.PKFieldDefinition.KeyType;
+import org.easycloud.platform.metadata.define.entity.SearchRelationGetFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.TableDefinition;
+import org.easycloud.platform.metadata.define.view.DivDefinition;
+import org.easycloud.platform.metadata.define.view.FieldSetDefinition;
+import org.easycloud.platform.metadata.define.view.FilterDefinition;
+import org.easycloud.platform.metadata.define.view.FormDefinition;
+import org.easycloud.platform.metadata.define.view.ListDefinition;
+import org.easycloud.platform.metadata.define.view.OrderDefinition;
+import org.easycloud.platform.metadata.define.view.SQLOperator;
+import org.easycloud.platform.metadata.define.view.SectionDefinition;
+import org.easycloud.platform.metadata.define.view.SectionType;
+import org.easycloud.platform.metadata.define.view.SubTableDefinition;
+import org.easycloud.platform.metadata.service.EntityMetaData;
+import org.easycloud.platform.metadata.utils.JSONUtil;
 
 public final class JsonEntityMetaData {
 	/**
@@ -44,6 +57,14 @@ public final class JsonEntityMetaData {
 	 */
 	private Map<String, JsonFieldDefinition> fieldMap;
 	/**
+	 * 列表视图定义
+	 */
+	private Map<String, JsonListDefinition> listDefinitions;
+	/**
+	 * 表单实体定义
+	 */
+	private Map<String, JsonFormDefinition> formDefinitions;
+	/**
 	 * 外键定义
 	 */
 	private Map<String, FKFieldDefinition> fkFieldsMap;
@@ -65,6 +86,16 @@ public final class JsonEntityMetaData {
 			fieldMap.put(jsonField.getName(), jsonField);
 		}
 		fkFieldsMap = metaData.getFkFieldDefinitions();
+		listDefinitions = new LinkedHashMap<>();
+		for (ListDefinition listDefinition : metaData.getListDefinitions().values()) {
+			JsonListDefinition jsonList = new JsonListDefinition(listDefinition);
+			listDefinitions.put(jsonList.getName(), jsonList);
+		}
+		formDefinitions = new LinkedHashMap<>();
+		for (FormDefinition formDefinition : metaData.getFormDefinitions().values()) {
+			JsonFormDefinition jsonForm = new JsonFormDefinition(formDefinition);
+			formDefinitions.put(jsonForm.getName(), jsonForm);
+		}
 	}
 
 	public EntityMetaData convertToEntityMetaData() {
@@ -86,6 +117,27 @@ public final class JsonEntityMetaData {
 		}
 		// fk
 		metaData.setFkFieldDefinitions(getFkFieldsMap());
+		// listDefinitions
+		Map<String, ListDefinition> listDefinitions = new LinkedHashMap<>();
+		if (MapUtils.isNotEmpty(getListDefinitions())) {
+			for (JsonListDefinition jsonListDefinition : getListDefinitions().values()) {
+				ListDefinition listDefinition = new ListDefinition(metaData);
+				jsonListDefinition.convert(metaData, listDefinition);
+				listDefinitions.put(listDefinition.getName(), listDefinition);
+			}
+		}
+		metaData.setListDefinitions(listDefinitions);
+		metaData.buildListDefinition();
+		// formDefinitions
+		Map<String, FormDefinition> formDefinitions = new LinkedHashMap<>();
+		if (MapUtils.isNotEmpty(getFormDefinitions())) {
+			for (JsonFormDefinition jsonFormDefinition : getFormDefinitions().values()) {
+				FormDefinition formDefinition = jsonFormDefinition.convert(metaData);
+				formDefinitions.put(formDefinition.getName(), formDefinition);
+			}
+		}
+		metaData.setFormDefinitions(formDefinitions);
+		metaData.buildFormDefinitions();
 		return metaData;
 	}
 
@@ -133,6 +185,22 @@ public final class JsonEntityMetaData {
 
 	public void setPkFieldDefinition(JsonPKFieldDefinition pkFieldDefinition) {
 		this.pkFieldDefinition = pkFieldDefinition;
+	}
+
+	public Map<String, JsonListDefinition> getListDefinitions() {
+		return listDefinitions;
+	}
+
+	public void setListDefinitions(Map<String, JsonListDefinition> listDefinitions) {
+		this.listDefinitions = listDefinitions;
+	}
+
+	public Map<String, JsonFormDefinition> getFormDefinitions() {
+		return formDefinitions;
+	}
+
+	public void setFormDefinitions(Map<String, JsonFormDefinition> formDefinitions) {
+		this.formDefinitions = formDefinitions;
 	}
 
 	public Map<String, JsonFieldDefinition> getFieldMap() {
@@ -500,6 +568,519 @@ public final class JsonEntityMetaData {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+	}
+
+	public static class JsonListDefinition {
+		private String name;
+		/**
+		 * 标题，显示在Box header上
+		 */
+		private String title;
+		/**
+		 * 表格表头，一般用于复杂表头
+		 */
+		private String header;
+		/**
+		 * 数据源主实体名称
+		 */
+		private String entityName;
+		/**
+		 * 子表属性，子表场景才需要赋值
+		 */
+		private String subTableAttr;
+		/**
+		 * 表格取数是否异步Ajax处理，如果是，则由客户端再次发送请求获取数据，用于大数据量的分页；如果为否，页面直接输出全部数据
+		 */
+		private boolean serverSideMode;
+		/**
+		 * 
+		 */
+		private boolean enableActions;
+		/**
+		 * 实体列表操作集
+		 */
+		private EntityAction[] listActions;
+		/**
+		 * 实体项操作集
+		 */
+		private EntityAction[] itemActions;
+		/**
+		 * @return
+		 */
+		private String labelField;
+		/**
+		 * 排序定义
+		 */
+		private OrderDefinition[] orders;
+		/**
+		 * 字段列表定义
+		 */
+		private String[] fields;
+		/**
+		 * 过滤条件定义
+		 */
+		private JsonFilterDefinition[] filters;
+
+		public JsonListDefinition() {
+		}
+
+		public void convert(EntityMetaData metaData, ListDefinition listDefinition) {
+			listDefinition.setName(getName());
+			listDefinition.setTitle(getTitle());
+			listDefinition.setEnableActions(isEnableActions());
+			listDefinition.setHeader(getHeader());
+			listDefinition.setLabelField(getLabelField());
+			listDefinition.setItemActions(getItemActions());
+			listDefinition.setListActions(getListActions());
+
+			listDefinition.setOrders(getOrders());
+			listDefinition.setServerSideMode(isServerSideMode());
+			listDefinition.setSubTableAttr(getSubTableAttr());
+
+			// fields
+			listDefinition.setFields(buildFieldDefinitionsFromNames(metaData, getFields()));
+
+			List<FilterDefinition> filterDefinitions = new ArrayList<>();
+			if (ArrayUtils.isNotEmpty(getFilters())) {
+				for (JsonFilterDefinition jsonFilter : getFilters()) {
+					FilterDefinition filter = jsonFilter.convert(listDefinition);
+					filterDefinitions.add(filter);
+				}
+			}
+			listDefinition.setFilters(filterDefinitions.toArray(new FilterDefinition[] {}));
+		}
+
+		public JsonListDefinition(ListDefinition listDefinition) {
+			setEnableActions(listDefinition.isEnableActions());
+			setHeader(listDefinition.getHeader());
+			setItemActions(listDefinition.getItemActions());
+			setLabelField(listDefinition.getLabelField());
+			setListActions(listDefinition.getListActions());
+			setName(listDefinition.getName());
+			setOrders(listDefinition.getOrders());
+			setServerSideMode(listDefinition.isServerSideMode());
+			setSubTableAttr(listDefinition.getSubTableAttr());
+			setEntityName(listDefinition.getEntityName());
+			setTitle(listDefinition.getTitle());
+			setFields(getNamesFromFeildDefinitions(listDefinition.getFields()));
+			if (ArrayUtils.isNotEmpty(listDefinition.getFilters())) {
+				List<JsonFilterDefinition> jsonFilters = new ArrayList<>();
+				for (FilterDefinition filter : listDefinition.getFilters()) {
+					JsonFilterDefinition jsonFilter = new JsonFilterDefinition(filter);
+					jsonFilters.add(jsonFilter);
+				}
+				setFilters(jsonFilters.toArray(new JsonFilterDefinition[] {}));
+			}
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getTitle() {
+			return title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getHeader() {
+			return header;
+		}
+
+		public void setHeader(String header) {
+			this.header = header;
+		}
+
+		public String getSubTableAttr() {
+			return subTableAttr;
+		}
+
+		public void setSubTableAttr(String subTableAttr) {
+			this.subTableAttr = subTableAttr;
+		}
+
+		public boolean isServerSideMode() {
+			return serverSideMode;
+		}
+
+		public void setServerSideMode(boolean serverSideMode) {
+			this.serverSideMode = serverSideMode;
+		}
+
+		public boolean isEnableActions() {
+			return enableActions;
+		}
+
+		public void setEnableActions(boolean enableActions) {
+			this.enableActions = enableActions;
+		}
+
+		public String getLabelField() {
+			return labelField;
+		}
+
+		public void setLabelField(String labelField) {
+			this.labelField = labelField;
+		}
+
+		public OrderDefinition[] getOrders() {
+			return orders;
+		}
+
+		public void setOrders(OrderDefinition[] orders) {
+			this.orders = orders;
+		}
+
+		public String[] getFields() {
+			return fields;
+		}
+
+		public void setFields(String[] fields) {
+			this.fields = fields;
+		}
+
+		public JsonFilterDefinition[] getFilters() {
+			return filters;
+		}
+
+		public void setFilters(JsonFilterDefinition[] filters) {
+			this.filters = filters;
+		}
+
+		public EntityAction[] getListActions() {
+			return listActions;
+		}
+
+		public void setListActions(EntityAction[] listActions) {
+			this.listActions = listActions;
+		}
+
+		public EntityAction[] getItemActions() {
+			return itemActions;
+		}
+
+		public void setItemActions(EntityAction[] itemActions) {
+			this.itemActions = itemActions;
+		}
+
+		public String getEntityName() {
+			return entityName;
+		}
+
+		public void setEntityName(String entityName) {
+			this.entityName = entityName;
+		}
+
+	}
+
+	public static class JsonFilterDefinition {
+		private String name;
+		private String field;
+		private Object value;
+		private SQLOperator operator;
+		private boolean show = true;
+
+		private String fieldName;
+		private Object[] multiValues;
+
+		public JsonFilterDefinition() {
+		}
+
+		public FilterDefinition convert(ListDefinition listDefinition) {
+			FilterDefinition filter = new FilterDefinition(getFieldName(), getOperator());
+			filter.setField(((EntityMetaData) listDefinition.getParent()).getField(getName()));
+			filter.setMultiValues(getMultiValues());
+			filter.setName(getName());
+			filter.setShow(isShow());
+			filter.setValue(getValue());
+			return filter;
+		}
+
+		public JsonFilterDefinition(FilterDefinition filter) {
+			if (filter.getField() != null) {
+				setField(filter.getField().getName());
+				setFieldName(filter.getFieldName());
+				setMultiValues(filter.getMultiValues());
+				setName(filter.getName());
+				setOperator(filter.getOperator());
+				setShow(filter.isShow());
+				setValue(filter.getValue());
+			}
+		}
+
+		public String getField() {
+			return field;
+		}
+
+		public void setField(String field) {
+			this.field = field;
+		}
+
+		public Object getValue() {
+			return value;
+		}
+
+		public void setValue(Object value) {
+			this.value = value;
+		}
+
+		public SQLOperator getOperator() {
+			return operator;
+		}
+
+		public void setOperator(SQLOperator operator) {
+			this.operator = operator;
+		}
+
+		public boolean isShow() {
+			return show;
+		}
+
+		public void setShow(boolean show) {
+			this.show = show;
+		}
+
+		public String getFieldName() {
+			return fieldName;
+		}
+
+		public void setFieldName(String fieldName) {
+			this.fieldName = fieldName;
+		}
+
+		public Object[] getMultiValues() {
+			return multiValues;
+		}
+
+		public void setMultiValues(Object[] multiValues) {
+			this.multiValues = multiValues;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+	}
+
+	public static class JsonFormDefinition {
+		private String name;
+		private DivDefinition[] divs;
+		private JsonSectionDefinition[] sections;
+
+		public JsonFormDefinition() {
+		}
+
+		public FormDefinition convert(EntityMetaData metaData) {
+			FormDefinition formDefinition = new FormDefinition(metaData, getName());
+			List<SectionDefinition> sectionDefinitions = new ArrayList<>();
+			for (JsonSectionDefinition jsonSectionDefinition : getSections()) {
+				sectionDefinitions.add(jsonSectionDefinition.convert(formDefinition));
+			}
+			formDefinition.setSections(sectionDefinitions.toArray(new SectionDefinition[] {}));
+			return formDefinition;
+		}
+
+		public JsonFormDefinition(FormDefinition formDefinition) {
+			setName(formDefinition.getName());
+			setDivs(formDefinition.getDivs());
+			List<JsonSectionDefinition> jsonSections = new ArrayList<>();
+			for (SectionDefinition section : formDefinition.getSections()) {
+				JsonSectionDefinition jsonSection = new JsonSectionDefinition(section);
+				jsonSections.add(jsonSection);
+			}
+			setSections(jsonSections.toArray(new JsonSectionDefinition[] {}));
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public JsonSectionDefinition[] getSections() {
+			return sections;
+		}
+
+		public void setSections(JsonSectionDefinition[] sections) {
+			this.sections = sections;
+		}
+
+		public DivDefinition[] getDivs() {
+			return divs;
+		}
+
+		public void setDivs(DivDefinition[] divs) {
+			this.divs = divs;
+		}
+
+	}
+
+	public static class JsonSectionDefinition {
+		private String name;
+		private String title;
+		private SectionType type;
+		private JsonFieldSetDefinition[] fieldSets;
+		private JsonSubTableDefinition[] subTables;
+
+		public JsonSectionDefinition() {
+		}
+
+		public SectionDefinition convert(FormDefinition formDefinition) {
+			SectionDefinition sectionDefinition = new SectionDefinition(formDefinition, getTitle());
+			sectionDefinition.setName(getName());
+			sectionDefinition.setType(getType());
+			// fieldSets
+			if (ArrayUtils.isNotEmpty(getFieldSets())) {
+				List<FieldSetDefinition> fieldSetDefinitions = new ArrayList<>();
+				for (JsonFieldSetDefinition jsonFieldDefinition : getFieldSets()) {
+					fieldSetDefinitions.add(jsonFieldDefinition.convert((EntityMetaData) formDefinition.getParent()));
+				}
+				sectionDefinition.setFieldSets(fieldSetDefinitions.toArray(new FieldSetDefinition[] {}));
+			}
+			// subTables
+			if (ArrayUtils.isNotEmpty(getSubTables())) {
+				List<SubTableDefinition> subTableDefinitions = new ArrayList<>();
+				for (JsonSubTableDefinition jsonSubTableDefinition : getSubTables()) {
+					SubTableDefinition subTableDefinition = new SubTableDefinition(
+							(EntityMetaData) formDefinition.getParent(), null);
+					jsonSubTableDefinition.convert((EntityMetaData) formDefinition.getParent(), subTableDefinition);
+					subTableDefinitions.add(subTableDefinition);
+				}
+				sectionDefinition.setSubTables(subTableDefinitions.toArray(new SubTableDefinition[] {}));
+			}
+			return sectionDefinition;
+		}
+
+		public JsonSectionDefinition(SectionDefinition section) {
+			setName(section.getName());
+			setTitle(section.getTitle());
+			setType(section.getType());
+			if (ArrayUtils.isNotEmpty(section.getFieldSets())) {
+				List<JsonFieldSetDefinition> jsonFieldSetList = new ArrayList<>();
+				for (FieldSetDefinition fieldSetDefinition : section.getFieldSets()) {
+					JsonFieldSetDefinition jsonFieldSetDefinition = new JsonFieldSetDefinition(fieldSetDefinition);
+					jsonFieldSetList.add(jsonFieldSetDefinition);
+				}
+				setFieldSets(jsonFieldSetList.toArray(new JsonFieldSetDefinition[] {}));
+			}
+			if (ArrayUtils.isNotEmpty(section.getSubTables())) {
+				List<JsonSubTableDefinition> jsonSubTables = new ArrayList<>();
+				for (SubTableDefinition subTableDefinition : section.getSubTables()) {
+					JsonSubTableDefinition jsonSubTable = new JsonSubTableDefinition(subTableDefinition);
+					jsonSubTables.add(jsonSubTable);
+				}
+				setSubTables(jsonSubTables.toArray(new JsonSubTableDefinition[] {}));
+			}
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getTitle() {
+			return title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public JsonFieldSetDefinition[] getFieldSets() {
+			return fieldSets;
+		}
+
+		public void setFieldSets(JsonFieldSetDefinition[] fieldSets) {
+			this.fieldSets = fieldSets;
+		}
+
+		public JsonSubTableDefinition[] getSubTables() {
+			return subTables;
+		}
+
+		public void setSubTables(JsonSubTableDefinition[] subTables) {
+			this.subTables = subTables;
+		}
+
+		public SectionType getType() {
+			return type;
+		}
+
+		public void setType(SectionType type) {
+			this.type = type;
+		}
+
+	}
+
+	public static class JsonFieldSetDefinition {
+		private String title;
+		private String[] fields;
+
+		public JsonFieldSetDefinition() {
+		}
+
+		public FieldSetDefinition convert(EntityMetaData metaData) {
+			FieldSetDefinition fieldSetDefinition = new FieldSetDefinition(getTitle());
+			fieldSetDefinition.setFields(buildFieldDefinitionsFromNames(metaData, getFields()));
+			return fieldSetDefinition;
+		}
+
+		public JsonFieldSetDefinition(FieldSetDefinition fieldSetDefinition) {
+			setTitle(fieldSetDefinition.getTitle());
+			setFields(getNamesFromFeildDefinitions(fieldSetDefinition.getFields()));
+		}
+
+		public String getTitle() {
+			return title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String[] getFields() {
+			return fields;
+		}
+
+		public void setFields(String[] fields) {
+			this.fields = fields;
+		}
+
+	}
+
+	public static class JsonSubTableDefinition extends JsonListDefinition {
+		private String refName;
+
+		public JsonSubTableDefinition() {
+		}
+
+		public JsonSubTableDefinition(SubTableDefinition subTableDefinition) {
+			super(subTableDefinition);
+			setRefName(subTableDefinition.getRefName());
+		}
+
+		public String getRefName() {
+			return refName;
+		}
+
+		public void setRefName(String refName) {
+			this.refName = refName;
 		}
 	}
 

@@ -2,7 +2,6 @@ package org.easycloud.platform.metadata.service;
 
 import java.util.List;
 
-import org.easycloud.platform.metadata.internal.EntityMetaData;
 import org.easycloud.platform.metadata.internal.JsonEntityMetaData;
 
 /**

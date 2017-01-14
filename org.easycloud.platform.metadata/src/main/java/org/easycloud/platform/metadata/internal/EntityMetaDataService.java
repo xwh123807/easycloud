@@ -19,34 +19,35 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.easycloud.platform.common.utils.AssertUtil;
-import org.easycloud.platform.common.utils.ClassUtil;
-import org.easycloud.platform.common.utils.StringUtil;
-import org.easycloud.platform.metadata.annotation.CommonSubTableType;
-import org.easycloud.platform.metadata.annotation.FieldDataType;
-import org.easycloud.platform.metadata.annotation.FieldDataType.FieldAttr;
-import org.easycloud.platform.metadata.annotation.FieldView;
-import org.easycloud.platform.metadata.annotation.FlyEnum;
-import org.easycloud.platform.metadata.annotation.FlySearchRelation;
-import org.easycloud.platform.metadata.annotation.TableView;
-import org.easycloud.platform.metadata.define.AssociationSetFieldValueHandler;
-import org.easycloud.platform.metadata.define.ComplexGetPKFieldValueHandler;
-import org.easycloud.platform.metadata.define.ComplexSetPKFieldValueHandler;
-import org.easycloud.platform.metadata.define.DefaultGetFieldValueHandler;
-import org.easycloud.platform.metadata.define.DefaultSetFieldValueHandler;
-import org.easycloud.platform.metadata.define.FKFieldDefinition;
-import org.easycloud.platform.metadata.define.FieldDefinition;
-import org.easycloud.platform.metadata.define.FlySearchRelationGetFieldValueHandler;
-import org.easycloud.platform.metadata.define.PKFieldDefinition;
-import org.easycloud.platform.metadata.define.SearchRelationGetFieldValueHandler;
-import org.easycloud.platform.metadata.define.TableDefinition;
+import org.easycloud.platform.metadata.annotation.entity.FieldDataType;
+import org.easycloud.platform.metadata.annotation.entity.FieldDataType.FieldAttr;
+import org.easycloud.platform.metadata.annotation.entity.FieldView;
+import org.easycloud.platform.metadata.annotation.entity.FlyEnum;
+import org.easycloud.platform.metadata.annotation.entity.FlySearchRelation;
+import org.easycloud.platform.metadata.annotation.entity.TableView;
+import org.easycloud.platform.metadata.annotation.view.MetaDataView;
+import org.easycloud.platform.metadata.define.entity.AssociationSetFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.ComplexGetPKFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.ComplexSetPKFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.DefaultGetFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.DefaultSetFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.FKFieldDefinition;
+import org.easycloud.platform.metadata.define.entity.FieldDefinition;
+import org.easycloud.platform.metadata.define.entity.FlySearchRelationGetFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.PKFieldDefinition;
+import org.easycloud.platform.metadata.define.entity.SearchRelationGetFieldValueHandler;
+import org.easycloud.platform.metadata.define.entity.TableDefinition;
+import org.easycloud.platform.metadata.define.view.CommonSubTableFieldDenifition;
+import org.easycloud.platform.metadata.define.view.CommonSubTableType;
+import org.easycloud.platform.metadata.service.EntityMetaData;
 import org.easycloud.platform.metadata.service.IEntityMetaDataService;
 import org.easycloud.platform.metadata.service.IMetaDataRegister;
+import org.easycloud.platform.metadata.utils.AssertUtil;
+import org.easycloud.platform.metadata.utils.ClassUtil;
+import org.easycloud.platform.metadata.utils.StringUtil;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.data.jpa.mapping.JpaMetamodelMappingContext;
 import org.springframework.data.jpa.mapping.JpaPersistentEntity;
@@ -64,19 +65,13 @@ import org.springframework.util.ClassUtils;
  * @author xiangwanhong
  *
  */
-@Service
-@CacheConfig(cacheNames = "entity-metadata-service")
 public class EntityMetaDataService implements IEntityMetaDataService {
 	private static Log log = LogFactory.getLog(EntityMetaDataService.class);
-	@Autowired
 	private JpaMetamodelMappingContext mappingContext;
-	@Autowired
-	@Qualifier("defaultConversionService")
 	private ConversionService conversionService;
 	/**
 	 * 存储扩展注册的元模型
 	 */
-	@Autowired
 	public List<IMetaDataRegister> metaDataRegisters;
 
 	/**
@@ -93,7 +88,6 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	@Cacheable(key = "'getEntityClass-' + #entityNameOrClassName")
 	public <T> T getEntityClass(final String entityNameOrClassName) {
 		AssertUtil.parameterEmpty(entityNameOrClassName, "entityNameOrClassName");
 		Class<?> entityClass = null;
@@ -177,6 +171,8 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 			updateMetaDataTableDefinitions(metaData);
 			updateMetaDataFieldDefinitions(metaData);
 			updateMetaDataPKFieldDefinitions(metaData);
+			metaData.buildListDefinition();
+			metaData.buildFormDefinitions();
 		}
 		cachedEntityMetaDatas.put(entityNameOrClassName, metaData);
 		return metaData;
@@ -252,9 +248,11 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 	 * @param metaData
 	 */
 	private void updateMetaDataTableDefinitions(final EntityMetaData metaData) {
-		TableView tableView = metaData.getEntityClass().getAnnotation(TableView.class);
+		MetaDataView metaDataView = metaData.getEntityClass().getAnnotation(MetaDataView.class);
 		TableDefinition tableDefinition = new TableDefinition();
-		if (tableView != null) {
+		if (metaDataView != null && metaDataView.tableView() != null) {
+			// 有定义表定义
+			TableView tableView = metaDataView.tableView();
 			tableDefinition.setTitle(tableView.title());
 			tableDefinition.setDescription(tableView.description());
 			tableDefinition.setLabelField(tableView.labelField());
@@ -280,6 +278,7 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 			tableDefinition.setTitle(metaData.getEntityName());
 		}
 		if (StringUtils.isBlank(tableDefinition.getLabelField())) {
+			tableDefinition.setLabelField(EntityMetaDataConstants.DEFAULT_LABEL_FIELD_NAME);
 		}
 		if (StringUtils.isBlank(tableDefinition.getIndexName())) {
 			tableDefinition.setIndexName(metaData.getEntityName().toLowerCase());
@@ -404,6 +403,7 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 					field.setRequired(!searchRelation.optional());
 					field.setDataType(FieldDataType.FLYSEARCHRELATION);
 					// 设置显示字段
+					field.setLabelField(EntityMetaDataConstants.DEFAULT_LABEL_FIELD_NAME);
 					field.setGetter(property.getGetter());
 					field.setSetter(property.getSetter());
 					field.setGetValueHandler(new FlySearchRelationGetFieldValueHandler(field));
@@ -414,15 +414,15 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 			}
 
 			private void registerEnumType(String entityName, String attrName, String title) {
-				// EnumType entity = new EnumType();
-				// entity.setEntityName(entityName);
-				// entity.setAttrName(attrName);
-				// entity.setName(title);
-				// try {
-				// AppUtil.getJpaFlyDataAccessService().saveEntity(entity);
-				// } catch (Exception e) {
-				// // 数据重复异常
-				// }
+//				EnumType entity = new EnumType();
+//				entity.setEntityName(entityName);
+//				entity.setAttrName(attrName);
+//				entity.setName(title);
+//				try {
+//					AppUtil.getJpaFlyDataAccessService().saveEntity(entity);
+//				} catch (Exception e) {
+//					// 数据重复异常
+//				}
 			}
 		});
 		model.doWithAssociations(new SimpleAssociationHandler() {
@@ -508,10 +508,12 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 						}
 					}
 					// 设置显示字段
-					TableView tableView = field.getType().getAnnotation(TableView.class);
-					if (tableView != null && StringUtils.isNotBlank(tableView.labelField())) {
-						field.setLabelField(tableView.labelField());
+					MetaDataView metaDataView = field.getType().getAnnotation(MetaDataView.class);
+					if (metaDataView != null && metaDataView.tableView() != null
+							&& StringUtils.isNotBlank(metaDataView.tableView().labelField())) {
+						field.setLabelField(metaDataView.tableView().labelField());
 					} else {
+						field.setLabelField(EntityMetaDataConstants.DEFAULT_LABEL_FIELD_NAME);
 					}
 					// 设置字段取值函数
 					field.setGetValueHandler(new SearchRelationGetFieldValueHandler(field));
@@ -541,13 +543,16 @@ public class EntityMetaDataService implements IEntityMetaDataService {
 		// 增加通用子表字段，包括附件和备注
 		for (CommonSubTableType subTableType : metaData.getTableDefinition().getCommonSubTables()) {
 			try {
-//				ClassUtils.forName(subTableType.getTableClass(), getClass().getClassLoader());
-//				CommonSubTableFieldDenifition commonSubTableFieldDenifition = new CommonSubTableFieldDenifition(
-//						subTableType, metaData.getEntityName(), metaData.getEntityClass().getName());
-//				fieldsMap.put(commonSubTableFieldDenifition.getName(), commonSubTableFieldDenifition);
-			} catch (Exception e) {
+				ClassUtils.forName(subTableType.getTableClass(), getClass().getClassLoader());
+				CommonSubTableFieldDenifition commonSubTableFieldDenifition = new CommonSubTableFieldDenifition(
+						subTableType, metaData.getEntityName(), metaData.getEntityClass().getName());
+				fieldsMap.put(commonSubTableFieldDenifition.getName(), commonSubTableFieldDenifition);
+			} catch (ClassNotFoundException e) {
 				log.warn("找不到子表实现类[" + subTableType.getTableClass() + "]，将忽略");
-			} 		}
+			} catch (LinkageError e) {
+				e.printStackTrace();
+			}
+		}
 
 		metaData.setFieldMap(fieldsMap);
 	}

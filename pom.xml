@@ -24,7 +24,7 @@
 		<module>org.easycloud.platform.flydata</module>
 		<module>org.easycloud.platform.visualpage</module>
 		<module>org.easycloud.platform.metadata</module>
-		<module>org.easycloud.platform.common</module>
+
 	</modules>
 	<distributionManagement>
 		<repository>
@@ -38,7 +38,8 @@
 			<url>http://dockerhub.ygsoft.com:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-	<build>
+
+	<!-- <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -52,7 +53,8 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
+	</build> -->
+
 	<scm>
 		<connection>scm:git:http://dockerhub.ygsoft.com:8888/xwh/devops</connection>
 		<developerConnection>scm:git:http://dockerhub.ygsoft.com:8888/xwh/devops</developerConnection>
@@ -60,23 +62,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-collections4</artifactId>
-			<version>4.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
 		</dependency>
 	</dependencies>
 </project>
