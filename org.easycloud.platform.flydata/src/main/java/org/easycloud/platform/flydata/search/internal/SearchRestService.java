@@ -1,12 +1,9 @@
-package org.myfly.platform.core.search.internal;
+package org.easycloud.platform.flydata.search.internal;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.websocket.server.PathParam;
-
-import org.myfly.platform.core.search.service.ISearchService;
+import org.easycloud.platform.flydata.search.service.ISearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.PathVariable;

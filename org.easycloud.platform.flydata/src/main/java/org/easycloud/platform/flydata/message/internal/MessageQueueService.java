@@ -1,7 +1,8 @@
-package org.easycloud.platform.core.message.internal;
+package org.easycloud.platform.flydata.message.internal;
 
-import org.easycloud.platform.core.message.service.IMessageQueueService;
-import org.easycloud.platform.core.utils.AssertUtil;
+import org.easycloud.platform.flydata.message.service.IMessageQueueService;
+import org.easycloud.platform.metadata.utils.AssertUtil;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

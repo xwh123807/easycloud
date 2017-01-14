@@ -11,6 +11,7 @@ import org.easycloud.platform.metadata.annotation.entity.IKeyEntity;
 import org.easycloud.platform.metadata.define.entity.FieldDefinition;
 import org.easycloud.platform.metadata.define.entity.PKFieldDefinition;
 import org.easycloud.platform.metadata.service.EntityMetaData;
+import org.easycloud.platform.metadata.service.ServiceUtil;
 import org.easycloud.platform.metadata.utils.ClassUtil;
 
 public class EntityUtil {
@@ -24,7 +25,7 @@ public class EntityUtil {
 	 */
 	public static <T> void updateEntityForRequest(T entity, EntityMetaData metaData, Map<String, String[]> values) {
 		if (metaData == null) {
-			metaData = AppUtil.getEntityMataDataService().getEntityMetaData(entity.getClass().getName());
+			metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(entity.getClass().getName());
 		}
 		for (FieldDefinition field : metaData.getAllFields()) {
 			String[] items = values.get(field.getName());
@@ -44,7 +45,7 @@ public class EntityUtil {
 	 */
 	public static <T> void updateEntity(T entity, EntityMetaData metaData, Map<String, Object> values) {
 		if (metaData == null) {
-			metaData = AppUtil.getEntityMataDataService().getEntityMetaData(entity.getClass().getName());
+			metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(entity.getClass().getName());
 		}
 		for (FieldDefinition field : metaData.getAllFields()) {
 			Object value = values.get(field.getName());
@@ -65,7 +66,7 @@ public class EntityUtil {
 	public static <T> T buildNewEntityForRequest(String tableName, EntityMetaData metaData,
 			Map<String, String[]> values) {
 		if (metaData == null) {
-			metaData = AppUtil.getEntityMataDataService().getEntityMetaData(tableName);
+			metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(tableName);
 		}
 		T entity = metaData.newEntityInstance();
 		updateEntityForRequest(entity, metaData, values);
@@ -82,7 +83,7 @@ public class EntityUtil {
 	 */
 	public static <T> T buildNewEntity(String tableName, EntityMetaData metaData, Map<String, Object> values) {
 		if (metaData == null) {
-			metaData = AppUtil.getEntityMataDataService().getEntityMetaData(tableName);
+			metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(tableName);
 		}
 		T entity = metaData.newEntityInstance();
 		updateEntity(entity, metaData, values);
@@ -122,7 +123,7 @@ public class EntityUtil {
 		Map<String, Object> values = new LinkedHashMap<>();
 		if (entity != null) {
 			Class<T> entityClass = (Class<T>) entity.getClass();
-			EntityMetaData metaData = AppUtil.getEntityMataDataService().getEntityMetaData(entityClass.getName());
+			EntityMetaData metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(entityClass.getName());
 			for (FieldDefinition field : metaData.getAllFields()) {
 				Object value = null;
 				try {
@@ -149,7 +150,7 @@ public class EntityUtil {
 		Map<String, Object> values = new LinkedHashMap<>();
 		if (entity != null) {
 			Class<T> entityClass = (Class<T>) entity.getClass();
-			EntityMetaData metaData = AppUtil.getEntityMataDataService().getEntityMetaData(entityClass.getName());
+			EntityMetaData metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(entityClass.getName());
 			for (FieldDefinition field : metaData.getAllFields()) {
 				Object value = null;
 				try {
@@ -257,7 +258,7 @@ public class EntityUtil {
 		if (entity == null) {
 			return "";
 		} else {
-			EntityMetaData metaData = AppUtil.getEntityMataDataService().getEntityMetaData(entity.getClass().getName());
+			EntityMetaData metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(entity.getClass().getName());
 			PKFieldDefinition pkField = metaData.getPKFieldDefinition();
 			return pkField.getPKValue(entity);
 		}
@@ -273,7 +274,7 @@ public class EntityUtil {
 		if (entity == null) {
 			return "";
 		} else {
-			EntityMetaData metaData = AppUtil.getEntityMataDataService().getEntityMetaData(entity.getClass().getName());
+			EntityMetaData metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(entity.getClass().getName());
 			FieldDefinition labelField = metaData.getLabelField();
 			Object value = labelField.getGetValueHandler().getFieldValue(entity);
 			return ClassUtil.convertValueToString(value);

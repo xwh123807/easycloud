@@ -1,23 +1,24 @@
-package org.myfly.platform.core.search.internal;
+package org.easycloud.platform.flydata.search.internal;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import org.apache.commons.lang.ClassUtils;
+import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.easycloud.platform.flydata.search.service.ISearchService;
+import org.easycloud.platform.flydata.service.DataServiceUtil;
+import org.easycloud.platform.flydata.service.FlyEntityMap;
+import org.easycloud.platform.flydata.service.IFlyDataAccessService;
+import org.easycloud.platform.metadata.annotation.entity.SKeyEntity;
+import org.easycloud.platform.metadata.internal.EntityMetaDataConstants;
+import org.easycloud.platform.metadata.service.EntityMetaData;
+import org.easycloud.platform.metadata.service.IEntityMetaDataService;
+import org.easycloud.platform.metadata.service.ServiceUtil;
+import org.easycloud.platform.metadata.utils.JSONUtil;
 import org.elasticsearch.action.search.SearchResponse;
-import org.myfly.platform.core.domain.SKeyEntity;
-import org.myfly.platform.core.flydata.service.FlyEntityMap;
-import org.myfly.platform.core.flydata.service.IFlyDataAccessService;
-import org.myfly.platform.core.metadata.internal.EntityMetaData;
-import org.myfly.platform.core.metadata.internal.EntityMetaDataConstants;
-import org.myfly.platform.core.metadata.service.IEntityMetaDataService;
-import org.myfly.platform.core.search.service.ISearchService;
-import org.myfly.platform.core.utils.AppUtil;
-import org.myfly.platform.core.utils.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
@@ -145,7 +146,7 @@ public class SearchService implements ISearchService {
 	public void indexEntity(String entityName, String uid) {
 		Assert.hasLength(entityName);
 		Assert.hasLength(uid);
-		FlyEntityMap entity = AppUtil.getFlyDataAccessService(entityName).findOne(entityName, uid,
+		FlyEntityMap entity = DataServiceUtil.getFlyDataAccessService(entityName).findOne(entityName, uid,
 				EntityMetaDataConstants.DEFAULT_ALL_NAME, true);
 		if (entity == null){
 			return;
@@ -206,8 +207,8 @@ public class SearchService implements ISearchService {
 		}
 		// 先删除索引
 		deleteEntityIndex(entityName);
-		IFlyDataAccessService dataService = AppUtil.getFlyDataAccessService(entityName);
-		EntityMetaData metaData = AppUtil.getEntityMetadata(entityName);
+		IFlyDataAccessService dataService = DataServiceUtil.getFlyDataAccessService(entityName);
+		EntityMetaData metaData = ServiceUtil.getEntityMetaDataService().getEntityMetaData(entityName);
 		List<FlyEntityMap> lists = dataService.findAll(entityName, EntityMetaDataConstants.DEFAULT_ALL_NAME, null,
 				true);
 		if (log.isInfoEnabled()) {

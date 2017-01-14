@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.collections4.MapUtils;
+import org.easycloud.platform.flydata.service.DataServiceUtil;
 import org.easycloud.platform.flydata.service.EntityMap;
 import org.easycloud.platform.flydata.service.EntityQueryMap;
 import org.easycloud.platform.flydata.service.FlyEntityMap;
@@ -59,7 +60,7 @@ public class FlyDataAccessRestService {
 	}
 
 	private IFlyDataAccessService getFlyDataAccessService(final String entityName) {
-		return AppUtil.getFlyDataAccessService(entityName);
+		return DataServiceUtil.getFlyDataAccessService(entityName);
 	}
 
 	@RequestMapping(value = "findOneBase/{entityName}", method = RequestMethod.GET)

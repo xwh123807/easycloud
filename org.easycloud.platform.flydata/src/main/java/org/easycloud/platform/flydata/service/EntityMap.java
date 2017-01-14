@@ -7,6 +7,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.easycloud.platform.metadata.define.entity.FieldDefinition;
 import org.easycloud.platform.metadata.service.EntityMetaData;
+import org.easycloud.platform.metadata.service.ServiceUtil;
 import org.springframework.util.Assert;
 
 /**
@@ -64,7 +65,7 @@ public class EntityMap extends LinkedHashMap<String, String> {
 
 	private EntityMetaData getEntityMetaData(String entityName) {
 		Assert.hasLength(entityName);
-		return AppUtil.getEntityMataDataService().getEntityMetaData(entityName);
+		return ServiceUtil.getEntityMetaDataService().getEntityMetaData(entityName);
 	}
 
 	/**

@@ -1,4 +1,4 @@
-package org.myfly.platform.core.search.service;
+package org.easycloud.platform.flydata.search.service;
 
 import java.util.List;
 

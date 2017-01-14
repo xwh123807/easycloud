@@ -1,5 +1,6 @@
 package org.easycloud.platform.flydata.internal;
 
+import org.easycloud.platform.flydata.service.DataServiceUtil;
 import org.easycloud.platform.flydata.service.IEntityCacheService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -11,7 +12,7 @@ public class EntityCacheService implements IEntityCacheService {
 	public <T> T getEntity(String entityName, String uid) {
 		Assert.hasLength(entityName);
 		Assert.hasLength(uid);
-		return AppUtil.getFlyDataAccessService(entityName).findOne(entityName, uid);
+		return DataServiceUtil.getFlyDataAccessService(entityName).findOne(entityName, uid);
 	}
 
 }

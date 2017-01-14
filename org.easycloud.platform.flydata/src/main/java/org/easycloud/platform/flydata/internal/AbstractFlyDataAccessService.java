@@ -19,13 +19,18 @@ import org.apache.commons.logging.LogFactory;
 import org.easycloud.platform.core.domain.DataImportInfo;
 import org.easycloud.platform.core.domain.DataImportState;
 import org.easycloud.platform.core.domain.ImportInfo;
+import org.easycloud.platform.flydata.message.service.IMessageQueueService;
+import org.easycloud.platform.flydata.message.service.MessageQueueConstants;
+import org.easycloud.platform.flydata.search.service.IFullTextSearchService;
 import org.easycloud.platform.flydata.service.EntityMap;
 import org.easycloud.platform.flydata.service.EntityQueryMap;
 import org.easycloud.platform.flydata.service.FlyEntityMap;
 import org.easycloud.platform.flydata.service.IFlyDataAccessService;
 import org.easycloud.platform.flydata.service.IJpaAccessService;
 import org.easycloud.platform.flydata.service.Search;
+import org.easycloud.platform.metadata.annotation.entity.BaseEnum;
 import org.easycloud.platform.metadata.annotation.entity.FieldDataType;
+import org.easycloud.platform.metadata.annotation.view.EntityAction;
 import org.easycloud.platform.metadata.define.entity.FieldDefinition;
 import org.easycloud.platform.metadata.define.entity.PKFieldDefinition;
 import org.easycloud.platform.metadata.define.entity.SetFieldValueHandler;
@@ -38,7 +43,6 @@ import org.easycloud.platform.metadata.utils.ClassUtil;
 import org.easycloud.platform.metadata.utils.DateUtil;
 import org.easycloud.platform.metadata.utils.ExcelUtils;
 import org.easycloud.platform.metadata.utils.csv.CsvReader;
-import org.hibernate.action.internal.EntityAction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.convert.ConversionService;
@@ -242,7 +246,7 @@ public abstract class AbstractFlyDataAccessService implements IFlyDataAccessServ
 												field.getName(), (String) value);
 									} else if (FieldDataType.SYSENUM.equals(field.getDataType())) {
 										// 系统枚举类型，将label转换成name
-										value = ClassUtil.getEnumByTitle(field.getType(), (String) value);
+										value = BaseEnum.getEnumByTitle(field.getType(), (String) value);
 									}
 									value = getConversionService().convert(value, field.getType());
 									field.getSetValueHandler().setFieldValue(entity, value);

@@ -1,7 +1,6 @@
 package org.easycloud.platform.flydata.spring;
 
 import org.easycloud.platform.metadata.annotation.entity.BaseEnum;
-import org.easycloud.platform.metadata.utils.ClassUtil;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 
@@ -28,7 +27,7 @@ public class StringToBaseEnumConverterFactory implements ConverterFactory<String
 			try {
 				return (T) Enum.valueOf(targetType, source);
 			} catch (Exception e) {
-				return (T) ClassUtil.getEnumByTitle(targetType, source);
+				return (T) BaseEnum.getEnumByTitle(targetType, source);
 			}
 		}
 

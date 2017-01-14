@@ -1,6 +1,6 @@
 package org.easycloud.platform.core.domain;
 
-import org.easycloud.platform.metadata.annotation.BaseEnum;
+import org.easycloud.platform.metadata.annotation.entity.BaseEnum;
 
 /**
  * 页面视图类型

@@ -1,11 +1,11 @@
-package org.myfly.platform.core.search.internal;
+package org.easycloud.platform.flydata.search.internal;
 
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.myfly.platform.core.search.service.IFullTextSearchService;
-import org.myfly.platform.core.utils.AssertUtil;
+import org.easycloud.platform.flydata.search.service.IFullTextSearchService;
+import org.easycloud.platform.metadata.utils.AssertUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.PathVariable;

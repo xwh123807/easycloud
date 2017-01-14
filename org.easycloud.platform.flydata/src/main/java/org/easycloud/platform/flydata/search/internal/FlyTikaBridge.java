@@ -1,4 +1,4 @@
-package org.myfly.platform.core.search.internal;
+package org.easycloud.platform.flydata.search.internal;
 
 public class FlyTikaBridge {
 //implements StringBridge {

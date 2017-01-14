@@ -4,13 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.easycloud.platform.core.context.UserContext;
-import org.easycloud.platform.core.context.UserSession;
-import org.easycloud.platform.core.domain.SBaseEntity;
-import org.easycloud.platform.core.utils.DateUtil;
-import org.easycloud.platform.flydata.queue.EntityOperator;
-import org.easycloud.platform.flydata.queue.GlobalNameQueueProcessor;
-import org.easycloud.platform.flydata.queue.IndexQueueProcessor;
 import org.hibernate.event.spi.PostDeleteEvent;
 import org.hibernate.event.spi.PostDeleteEventListener;
 import org.hibernate.event.spi.PostInsertEvent;
@@ -22,7 +15,6 @@ import org.hibernate.event.spi.PreInsertEventListener;
 import org.hibernate.event.spi.PreUpdateEvent;
 import org.hibernate.event.spi.PreUpdateEventListener;
 import org.hibernate.persister.entity.EntityPersister;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -36,11 +28,11 @@ import org.springframework.stereotype.Component;
 public class FlyEntityListener implements PostInsertEventListener, PostUpdateEventListener, PostDeleteEventListener,
 		PreInsertEventListener, PreUpdateEventListener {
 
-	@Autowired
-	private GlobalNameQueueProcessor globalNameQueueProcessor;
-	
-	@Autowired
-	private IndexQueueProcessor indexQueueProcessor;
+//	@Autowired
+//	private GlobalNameQueueProcessor globalNameQueueProcessor;
+//	
+//	@Autowired
+//	private IndexQueueProcessor indexQueueProcessor;
 	/**
 	 * 
 	 */
@@ -51,13 +43,13 @@ public class FlyEntityListener implements PostInsertEventListener, PostUpdateEve
 	 */
 	@Override
 	public void onPostDelete(PostDeleteEvent event) {
-		if (event.getEntity() instanceof SBaseEntity) {
-			SBaseEntity entity = (SBaseEntity) event.getEntity();
-			SGlobalName nameEntity = new SGlobalName();
-			entity.setUid((String) event.getId());
-			globalNameQueueProcessor.sendGlobalNameData(EntityOperator.DELETE, nameEntity);
-			indexQueueProcessor.sendIndexData(EntityOperator.DELETE, entity.getClass().getName(), (String) event.getId());
-		}
+//		if (event.getEntity() instanceof SBaseEntity) {
+//			SBaseEntity entity = (SBaseEntity) event.getEntity();
+//			SGlobalName nameEntity = new SGlobalName();
+//			entity.setUid((String) event.getId());
+//			globalNameQueueProcessor.sendGlobalNameData(EntityOperator.DELETE, nameEntity);
+//			indexQueueProcessor.sendIndexData(EntityOperator.DELETE, entity.getClass().getName(), (String) event.getId());
+//		}
 	}
 
 	/**
@@ -65,15 +57,15 @@ public class FlyEntityListener implements PostInsertEventListener, PostUpdateEve
 	 */
 	@Override
 	public void onPostUpdate(PostUpdateEvent event) {
-		if (event.getEntity() instanceof SBaseEntity) {
-			SBaseEntity entity = (SBaseEntity) event.getEntity();
-			SGlobalName nameEntity = new SGlobalName();
-			nameEntity.setUid(entity.getUid());
-			nameEntity.setName(entity.getName());
-			nameEntity.setInternalTable(entity.getClass().getSimpleName());
-			globalNameQueueProcessor.sendGlobalNameData(EntityOperator.UPDATE, nameEntity);
-			indexQueueProcessor.sendIndexData(EntityOperator.UPDATE, entity.getClass().getName(), (String) event.getId());
-		}
+//		if (event.getEntity() instanceof SBaseEntity) {
+//			SBaseEntity entity = (SBaseEntity) event.getEntity();
+//			SGlobalName nameEntity = new SGlobalName();
+//			nameEntity.setUid(entity.getUid());
+//			nameEntity.setName(entity.getName());
+//			nameEntity.setInternalTable(entity.getClass().getSimpleName());
+//			globalNameQueueProcessor.sendGlobalNameData(EntityOperator.UPDATE, nameEntity);
+//			indexQueueProcessor.sendIndexData(EntityOperator.UPDATE, entity.getClass().getName(), (String) event.getId());
+//		}
 	}
 
 	/**
@@ -81,15 +73,15 @@ public class FlyEntityListener implements PostInsertEventListener, PostUpdateEve
 	 */
 	@Override
 	public void onPostInsert(PostInsertEvent event) {
-		if (event.getEntity() instanceof SBaseEntity) {
-			SBaseEntity entity = (SBaseEntity) event.getEntity();
-			SGlobalName nameEntity = new SGlobalName();
-			nameEntity.setUid(entity.getUid());
-			nameEntity.setName(entity.getName());
-			nameEntity.setInternalTable(entity.getClass().getSimpleName());
-			globalNameQueueProcessor.sendGlobalNameData(EntityOperator.INSERT, nameEntity);
-			indexQueueProcessor.sendIndexData(EntityOperator.INSERT, entity.getClass().getName(), (String) event.getId());
-		}
+//		if (event.getEntity() instanceof SBaseEntity) {
+//			SBaseEntity entity = (SBaseEntity) event.getEntity();
+//			SGlobalName nameEntity = new SGlobalName();
+//			nameEntity.setUid(entity.getUid());
+//			nameEntity.setName(entity.getName());
+//			nameEntity.setInternalTable(entity.getClass().getSimpleName());
+//			globalNameQueueProcessor.sendGlobalNameData(EntityOperator.INSERT, nameEntity);
+//			indexQueueProcessor.sendIndexData(EntityOperator.INSERT, entity.getClass().getName(), (String) event.getId());
+//		}
 	}
 
 	@Override
@@ -142,24 +134,24 @@ public class FlyEntityListener implements PostInsertEventListener, PostUpdateEve
 	 */
 	@Override
 	public boolean onPreInsert(PreInsertEvent event) {
-		if (event.getEntity() instanceof SBaseEntity && !(event.getEntity() instanceof Tenant)
-				&& !(event.getEntity() instanceof SUser)) {
-			if (ProperyIndexCache.containsEntity(event.getEntityName(), event.getPersister())) {
-				SBaseEntity entity = (SBaseEntity) event.getEntity();
-				entity.setCreated(DateUtil.nowSqlTimestamp());
-				UserSession userSession = UserContext.getUserSession();
-				entity.setCreatedBy(userSession.getUser());
-				entity.setTenant(userSession.getTenant());
-				
-				Map<String, Integer> propertyIndexMap = ProperyIndexCache.getPropertyIndexMap(event.getEntityName());
-				event.getState()[propertyIndexMap.get(ProperyIndexCache.CREATED)] = entity.getCreated();
-				event.getState()[propertyIndexMap.get(ProperyIndexCache.CREATEDBY)] = entity.getCreatedBy();
-				event.getState()[propertyIndexMap.get(ProperyIndexCache.TENANT)] = entity.getTenant();
-				
-				event.getState()[propertyIndexMap.get(ProperyIndexCache.UPDATED)] = DateUtil.nowSqlTimestamp();
-				event.getState()[propertyIndexMap.get(ProperyIndexCache.UPDATEDBY)] = userSession.getUser();
-			}
-		}
+//		if (event.getEntity() instanceof SBaseEntity && !(event.getEntity() instanceof Tenant)
+//				&& !(event.getEntity() instanceof SUser)) {
+//			if (ProperyIndexCache.containsEntity(event.getEntityName(), event.getPersister())) {
+//				SBaseEntity entity = (SBaseEntity) event.getEntity();
+//				entity.setCreated(DateUtil.nowSqlTimestamp());
+//				UserSession userSession = UserContext.getUserSession();
+//				entity.setCreatedBy(userSession.getUser());
+//				entity.setTenant(userSession.getTenant());
+//				
+//				Map<String, Integer> propertyIndexMap = ProperyIndexCache.getPropertyIndexMap(event.getEntityName());
+//				event.getState()[propertyIndexMap.get(ProperyIndexCache.CREATED)] = entity.getCreated();
+//				event.getState()[propertyIndexMap.get(ProperyIndexCache.CREATEDBY)] = entity.getCreatedBy();
+//				event.getState()[propertyIndexMap.get(ProperyIndexCache.TENANT)] = entity.getTenant();
+//				
+//				event.getState()[propertyIndexMap.get(ProperyIndexCache.UPDATED)] = DateUtil.nowSqlTimestamp();
+//				event.getState()[propertyIndexMap.get(ProperyIndexCache.UPDATEDBY)] = userSession.getUser();
+//			}
+//		}
 		return false;
 	}
 
@@ -168,19 +160,19 @@ public class FlyEntityListener implements PostInsertEventListener, PostUpdateEve
 	 */
 	@Override
 	public boolean onPreUpdate(PreUpdateEvent event) {
-		if (event.getEntity() instanceof SBaseEntity && !(event.getEntity() instanceof Tenant)
-				&& !(event.getEntity() instanceof SUser)) {
-			if (ProperyIndexCache.containsEntity(event.getEntityName(), event.getPersister())) {
-				SBaseEntity entity = (SBaseEntity) event.getEntity();
-				entity.setUpdated(DateUtil.nowSqlTimestamp());
-				UserSession userSession = UserContext.getUserSession();
-				entity.setUpdatedBy(userSession.getUser());
-				
-				Map<String, Integer> propertyIndexMap = ProperyIndexCache.getPropertyIndexMap(event.getEntityName());
-				event.getState()[propertyIndexMap.get(ProperyIndexCache.UPDATED)] = entity.getUpdated();
-				event.getState()[propertyIndexMap.get(ProperyIndexCache.UPDATEDBY)] = entity.getUpdatedBy();
-			}
-		}
+//		if (event.getEntity() instanceof SBaseEntity && !(event.getEntity() instanceof Tenant)
+//				&& !(event.getEntity() instanceof SUser)) {
+//			if (ProperyIndexCache.containsEntity(event.getEntityName(), event.getPersister())) {
+//				SBaseEntity entity = (SBaseEntity) event.getEntity();
+//				entity.setUpdated(DateUtil.nowSqlTimestamp());
+//				UserSession userSession = UserContext.getUserSession();
+//				entity.setUpdatedBy(userSession.getUser());
+//				
+//				Map<String, Integer> propertyIndexMap = ProperyIndexCache.getPropertyIndexMap(event.getEntityName());
+//				event.getState()[propertyIndexMap.get(ProperyIndexCache.UPDATED)] = entity.getUpdated();
+//				event.getState()[propertyIndexMap.get(ProperyIndexCache.UPDATEDBY)] = entity.getUpdatedBy();
+//			}
+//		}
 		return false;
 	}
 

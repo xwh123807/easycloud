@@ -1,4 +1,4 @@
-package org.myfly.platform.core.search.internal;
+package org.easycloud.platform.flydata.search.internal;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.transaction.Transactional;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.myfly.platform.core.metadata.service.IEntityMetaDataService;
-import org.myfly.platform.core.search.service.IFullTextSearchService;
+import org.easycloud.platform.flydata.search.service.IFullTextSearchService;
+import org.easycloud.platform.metadata.service.IEntityMetaDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,4 @@
-package org.easycloud.platform.core.domain;
-
-import org.easycloud.platform.metadata.annotation.BaseEnum;
+package org.easycloud.platform.metadata.annotation.entity;
 
 /**
  * 邮件字符集编码

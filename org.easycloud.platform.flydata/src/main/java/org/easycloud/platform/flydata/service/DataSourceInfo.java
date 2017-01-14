@@ -1,6 +1,6 @@
 package org.easycloud.platform.flydata.service;
 
-import org.easycloud.platform.core.domain.DBType;
+import org.easycloud.platform.metadata.annotation.entity.DBType;
 
 /**
  * 数据源配置信息

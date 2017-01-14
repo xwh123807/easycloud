@@ -1,10 +1,10 @@
-package org.myfly.platform.core.search.service;
+package org.easycloud.platform.flydata.search.service;
 
 import java.util.List;
 import java.util.Map;
 
+import org.easycloud.platform.metadata.annotation.entity.SKeyEntity;
 import org.elasticsearch.action.search.SearchResponse;
-import org.myfly.platform.core.domain.SKeyEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.elasticsearch.core.query.DeleteQuery;
 import org.springframework.data.elasticsearch.core.query.IndexQuery;

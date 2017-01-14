@@ -1,4 +1,4 @@
-package org.easycloud.platform.core.message.service;
+package org.easycloud.platform.flydata.message.service;
 
 public class MessageQueueConstants {
 	/**

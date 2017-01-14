@@ -2,6 +2,7 @@ package org.easycloud.platform.flydata.internal;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.easycloud.platform.flydata.service.DataServiceUtil;
 import org.easycloud.platform.flydata.service.EntityQueryMap;
 import org.easycloud.platform.flydata.service.IFlyDataAccessService;
 import org.easycloud.platform.metadata.utils.AssertUtil;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/query")
 public class DataQueryRestService {
 	private IFlyDataAccessService getFlyDataAccessService(String entityName) {
-		return AppUtil.getFlyDataAccessService(entityName);
+		return DataServiceUtil.getFlyDataAccessService(entityName);
 	}
 
 	/**
