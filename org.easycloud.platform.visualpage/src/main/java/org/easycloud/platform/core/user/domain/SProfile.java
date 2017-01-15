@@ -6,13 +6,13 @@ import javax.persistence.Table;
 
 import org.easycloud.platform.core.domain.SBaseEntity;
 import org.easycloud.platform.core.domain.SchemaConstants;
-import org.easycloud.platform.core.metadata.annotation.FieldSetView;
-import org.easycloud.platform.core.metadata.annotation.FieldView;
-import org.easycloud.platform.core.metadata.annotation.FormView;
-import org.easycloud.platform.core.metadata.annotation.ListView;
-import org.easycloud.platform.core.metadata.annotation.MetaDataView;
-import org.easycloud.platform.core.metadata.annotation.SectionView;
-import org.easycloud.platform.core.metadata.annotation.TableView;
+import org.easycloud.platform.metadata.annotation.entity.FieldView;
+import org.easycloud.platform.metadata.annotation.entity.TableView;
+import org.easycloud.platform.metadata.annotation.view.FieldSetView;
+import org.easycloud.platform.metadata.annotation.view.FormView;
+import org.easycloud.platform.metadata.annotation.view.ListView;
+import org.easycloud.platform.metadata.annotation.view.MetaDataView;
+import org.easycloud.platform.metadata.annotation.view.SectionView;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 

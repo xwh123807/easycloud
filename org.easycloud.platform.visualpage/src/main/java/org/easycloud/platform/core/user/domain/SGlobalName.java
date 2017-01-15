@@ -6,13 +6,12 @@ import javax.persistence.Table;
 
 import org.easycloud.platform.core.domain.SKeyEntity;
 import org.easycloud.platform.core.domain.SchemaConstants;
-import org.easycloud.platform.core.metadata.annotation.FieldView;
-import org.easycloud.platform.core.metadata.annotation.ListView;
-import org.easycloud.platform.core.metadata.annotation.MetaDataView;
-import org.easycloud.platform.core.metadata.annotation.TableView;
+import org.easycloud.platform.metadata.annotation.entity.FieldView;
+import org.easycloud.platform.metadata.annotation.entity.TableView;
+import org.easycloud.platform.metadata.annotation.view.ListView;
+import org.easycloud.platform.metadata.annotation.view.MetaDataView;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.jboss.logging.Field;
 
 /**
  * @author xiangwanhong ID名称表，需要进行id/名称查找的都继承本表。<br>
@@ -26,7 +25,6 @@ import org.jboss.logging.Field;
 @TableView(title = "全局名称", description = "全局ID名称表，由平台自动维护数据", commonSubTables = {}) , listViews = {
 		@ListView(name = "default", fields = { "name", "internalTable" }, itemActions = {}, listActions = {}) })
 @Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-@Document(indexName="sglobalname")
 public class SGlobalName extends SKeyEntity {
 
 	/**
@@ -37,13 +35,11 @@ public class SGlobalName extends SKeyEntity {
 //	@Field(index = Index.YES, store = Store.YES)
 	@Column(length = 50, nullable = true)
 	@FieldView(title = "表名")
-	@Field
 	private String internalTable;
 
 //	@Field(index = Index.YES, store = Store.YES)
 	@FieldView(title = "名称")
 	@Column(length = 255, nullable = false)
-	@Field
 	private String name;
 
 	public String getName() {

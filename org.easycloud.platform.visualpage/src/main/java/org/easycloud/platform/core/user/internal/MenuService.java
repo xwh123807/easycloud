@@ -1,4 +1,4 @@
-package org.myfly.platform.core.user.internal;
+package org.easycloud.platform.core.user.internal;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -6,18 +6,17 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.myfly.platform.core.context.UserContext;
-import org.myfly.platform.core.domain.SBaseEntity;
-import org.myfly.platform.core.flydata.service.IJpaAccessService;
-import org.myfly.platform.core.user.domain.Menu;
-import org.myfly.platform.core.user.service.IMenuService;
-import org.myfly.platform.core.utils.AssertUtil;
-import org.myfly.platform.core.utils.DateUtil;
-import org.myfly.platform.core.utils.JSONUtil;
-import org.myfly.platform.core.utils.UUIDUtil;
+import org.easycloud.platform.core.context.UserContext;
+import org.easycloud.platform.core.domain.SBaseEntity;
+import org.easycloud.platform.core.user.domain.Menu;
+import org.easycloud.platform.core.user.service.IMenuService;
+import org.easycloud.platform.metadata.utils.AssertUtil;
+import org.easycloud.platform.metadata.utils.DateUtil;
+import org.easycloud.platform.metadata.utils.JSONUtil;
+import org.easycloud.platform.metadata.utils.UUIDUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;

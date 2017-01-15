@@ -8,29 +8,23 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.easycloud.platform.core.cache.internal.RedisServerInfo;
 import org.easycloud.platform.core.cache.service.CacheInfo;
 import org.easycloud.platform.core.cache.service.CacheObjectInfo;
 import org.easycloud.platform.core.cache.service.ICacheService;
 import org.easycloud.platform.core.domain.TemplateBuilderInfo;
-import org.easycloud.platform.core.message.service.IMessageQueueService;
-import org.easycloud.platform.core.metadata.annotation.ObjectListView;
-import org.easycloud.platform.core.metadata.annotation.PropertyView;
-import org.easycloud.platform.core.metadata.internal.EntityViewInfo;
-import org.easycloud.platform.core.metadata.internal.JsonEntityMetaData;
-import org.easycloud.platform.core.metadata.service.IEntityMetaDataService;
-import org.easycloud.platform.core.utils.AssertUtil;
-import org.easycloud.platform.core.utils.ClassUtil;
+import org.easycloud.platform.metadata.annotation.view.ObjectListView;
+import org.easycloud.platform.metadata.annotation.view.PropertyView;
+import org.easycloud.platform.metadata.internal.EntityViewInfo;
+import org.easycloud.platform.metadata.internal.JsonEntityMetaData;
+import org.easycloud.platform.metadata.service.IEntityMetaDataService;
+import org.easycloud.platform.metadata.utils.AssertUtil;
+import org.easycloud.platform.metadata.utils.ClassUtil;
+import org.easycloud.platform.visualpage.domain.PageInfo;
+import org.easycloud.platform.visualpage.domain.VisualPageType;
+import org.easycloud.platform.visualpage.service.VisualPageConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.boot.actuate.endpoint.AutoConfigurationReportEndpoint;
-import org.springframework.boot.actuate.endpoint.ConfigurationPropertiesReportEndpoint;
-import org.springframework.boot.actuate.endpoint.EnvironmentEndpoint;
-import org.springframework.boot.actuate.endpoint.MetricsEndpoint;
-import org.springframework.boot.actuate.endpoint.RequestMappingEndpoint;
-import org.springframework.boot.actuate.trace.TraceRepository;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -39,7 +33,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 查看系统配置信息

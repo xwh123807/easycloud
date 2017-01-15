@@ -1,9 +1,9 @@
-package org.myfly.platform.core.user.service;
+package org.easycloud.platform.core.user.service;
 
 import java.net.URL;
 import java.util.List;
 
-import org.myfly.platform.core.user.domain.Menu;
+import org.easycloud.platform.core.user.domain.Menu;
 
 public interface IMenuService {
 	/**

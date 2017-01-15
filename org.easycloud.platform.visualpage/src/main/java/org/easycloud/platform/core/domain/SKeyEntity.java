@@ -6,7 +6,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
-import org.easycloud.platform.core.metadata.annotation.FieldView;
+import org.easycloud.platform.metadata.annotation.entity.FieldView;
 
 /**
  * 只包含主键的实体基类

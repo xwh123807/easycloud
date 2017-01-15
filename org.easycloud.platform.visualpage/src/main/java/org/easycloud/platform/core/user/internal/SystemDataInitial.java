@@ -1,16 +1,15 @@
-package org.myfly.platform.core.user.internal;
+package org.easycloud.platform.core.user.internal;
 
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.myfly.platform.core.context.SystemContext;
-import org.myfly.platform.core.domain.SBaseEntity;
-import org.myfly.platform.core.user.domain.SUser;
-import org.myfly.platform.core.user.domain.SoftApp;
-import org.myfly.platform.core.user.domain.Tenant;
-import org.myfly.platform.core.utils.AppUtil;
-import org.myfly.platform.core.utils.DateUtil;
+import org.easycloud.platform.core.context.SystemContext;
+import org.easycloud.platform.core.domain.SBaseEntity;
+import org.easycloud.platform.core.user.domain.SUser;
+import org.easycloud.platform.core.user.domain.SoftApp;
+import org.easycloud.platform.core.user.domain.Tenant;
+import org.easycloud.platform.metadata.utils.DateUtil;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
