@@ -25,6 +25,7 @@
 		<module>org.easycloud.platform.visualpage</module>
 		<module>org.easycloud.platform.metadata</module>
 
+		<module>org.easycloud.portal</module>
 	</modules>
 	<distributionManagement>
 		<repository>
