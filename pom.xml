@@ -16,6 +16,13 @@
 	<properties>
 		<main.basedir>${basedir}/..</main.basedir>
 		<java.version>1.8</java.version>
+		<springfox-version>2.5.0</springfox-version>
+		<swagger-core-version>1.5.12</swagger-core-version>
+		<okhttp-version>2.7.5</okhttp-version>
+		<gson-version>2.6.2</gson-version>
+		<jodatime-version>2.9.3</jodatime-version>
+		<junit-version>4.12</junit-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<artifactId>org.easycloud.parent</artifactId>
 	<groupId>org.easycloud</groupId>
@@ -26,6 +33,12 @@
 		<module>org.easycloud.platform.metadata</module>
 
 		<module>org.easycloud.portal</module>
+
+		<module>org.easycloud.metadata.model</module>
+		<module>org.easycloud.metadata.impl</module>
+		<module>org.easycloud.metadata.client</module>
+
+		<module>org.easycloud.swagger.common</module>
 	</modules>
 	<distributionManagement>
 		<repository>
@@ -40,21 +53,10 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-	<!-- <build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build> -->
+	<!-- <build> <plugins> <plugin> <groupId>org.springframework.boot</groupId> 
+		<artifactId>spring-boot-maven-plugin</artifactId> <executions> <execution> 
+		<goals> <goal>repackage</goal> </goals> </execution> </executions> </plugin> 
+		</plugins> </build> -->
 
 	<scm>
 		<connection>scm:git:http://dockerhub.ygsoft.com:8888/xwh/devops</connection>
