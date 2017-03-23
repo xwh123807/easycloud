@@ -15,7 +15,7 @@ package org.easycloud.metadata.client;
 
 import java.util.List;
 
-import org.easycloud.metadata.model.User;
+import org.easycloud.metadata.domain.model.User;
 import org.easycloud.swagger.common.client.ApiException;
 import org.junit.Ignore;
 import org.junit.Test;

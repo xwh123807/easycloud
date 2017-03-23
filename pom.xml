@@ -34,8 +34,8 @@
 
 		<module>org.easycloud.portal</module>
 
-		<module>org.easycloud.metadata.model</module>
-		<module>org.easycloud.metadata.impl</module>
+		<module>org.easycloud.metadata.domain</module>
+		<module>org.easycloud.metadata.server</module>
 		<module>org.easycloud.metadata.client</module>
 
 		<module>org.easycloud.swagger.common</module>

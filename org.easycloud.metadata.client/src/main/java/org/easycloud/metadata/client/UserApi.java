@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.easycloud.metadata.model.User;
+import org.easycloud.metadata.domain.model.User;
 import org.easycloud.swagger.common.client.ApiCallback;
 import org.easycloud.swagger.common.client.ApiClient;
 import org.easycloud.swagger.common.client.ApiException;

@@ -13,7 +13,7 @@
 
 package org.easycloud.metadata.client;
 
-import org.easycloud.metadata.model.Order;
+import org.easycloud.metadata.domain.model.Order;
 import org.easycloud.swagger.common.client.ApiException;
 import org.junit.Ignore;
 import org.junit.Test;
