@@ -1,6 +1,6 @@
 package org.easycloud.metadata.server.impl;
 
-import org.easycloud.metadata.domain.model.Table;
+import org.easycloud.metadata.domain.model.Entity;
 import org.easycloud.metadata.server.MetaDataServer;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,8 +26,8 @@ public class MetaDataApiControllerTest {
 	
 	@Test
 	public void curd(){
-		ResponseEntity<Table> response = restTemplate.getForEntity("http://localhost:9080/metadata/metadata/default/user", Table.class);
-		Table table = response.getBody();
+		ResponseEntity<Entity> response = restTemplate.getForEntity("http://localhost:9080/metadata/metadata/default/user", Entity.class);
+		Entity table = response.getBody();
 		Assert.assertNull(table);
 		Assert.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
 	}
