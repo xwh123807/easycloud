@@ -32,13 +32,16 @@
 		<module>org.easycloud.platform.visualpage</module>
 		<module>org.easycloud.platform.metadata</module>
 
-		<module>org.easycloud.portal</module>
+		
 
-		<module>org.easycloud.metadata.domain</module>
+		<module>org.easycloud.metadata.service</module>
 		<module>org.easycloud.metadata.server</module>
-		<module>org.easycloud.metadata.client</module>
 
-		<module>org.easycloud.swagger.common</module>
+		<module>org.easycloud.metadata.generator</module>
+		<module>org.easycloud.flydata.server</module>
+		<module>org.easycloud.flydata.service</module>
+		<module>org.easycloud.apps</module>
+		<module>org.easycloud.common</module>
 	</modules>
 	<distributionManagement>
 		<repository>

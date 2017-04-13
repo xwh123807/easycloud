@@ -1,9 +1,11 @@
 package org.easycloud.metadata.server.repository;
 
-import org.easycloud.metadata.domain.model.Entity;
-import org.easycloud.metadata.domain.model.EntityKey;
-import org.easycloud.metadata.domain.model.Field;
+import java.util.List;
+
 import org.easycloud.metadata.server.MetaDataServer;
+import org.easycloud.metadata.service.model.Entity;
+import org.easycloud.metadata.service.model.EntityKey;
+import org.easycloud.metadata.service.model.Field;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,9 +30,8 @@ public class EntityRepositoryTest {
 	@Test
 	public void test() throws Exception{
 		EntityKey key = new EntityKey("default", "user");
-		Entity table = new Entity();
+		Entity table = new Entity(key);
 		table.setSchema("default");
-		//table.setKey(key);
 		Field field = new Field();
 		field.setName("f1");
 		table.getFields().put(field.getName(), field);
@@ -40,5 +41,11 @@ public class EntityRepositoryTest {
 		Assert.assertNotNull(table);
 		field = table.getFields().get("f1");
 		Assert.assertNotNull(field);
+		
+		List<Entity> items = tableRepository.findBySchema("default");
+		Assert.assertEquals(1, items.size());
+		
+		items = tableRepository.findByCategory("default");
+		Assert.assertEquals(1, items.size());
 	}
 }

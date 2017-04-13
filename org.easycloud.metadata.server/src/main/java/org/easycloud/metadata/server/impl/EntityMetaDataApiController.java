@@ -1,18 +1,20 @@
 package org.easycloud.metadata.server.impl;
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
-import org.easycloud.metadata.domain.api.EntityMetaDataApi;
-import org.easycloud.metadata.domain.model.Entity;
-import org.easycloud.metadata.domain.model.EntityKey;
+import org.easycloud.common.entity.EntityExistsException;
+import org.easycloud.common.entity.EntityNotExistsException;
 import org.easycloud.metadata.server.repository.EntityRepository;
+import org.easycloud.metadata.service.api.EntityMetaDataApi;
+import org.easycloud.metadata.service.model.Entity;
+import org.easycloud.metadata.service.model.EntityKey;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class EntityMetaDataApiController implements EntityMetaDataApi {
 	@Autowired
 	private EntityRepository entityRepository;
@@ -22,69 +24,54 @@ public class EntityMetaDataApiController implements EntityMetaDataApi {
 	}
 
 	@Override
-	public ResponseEntity<Entity> getMetaData(@PathVariable("category") String category,
+	public List<Entity> findAll() {
+		List<Entity> items = entityRepository.findAll();
+		return items;
+	}
+
+	@Override
+	public List<Entity> findByCategory(@PathVariable("category") String category) {
+		return entityRepository.findByCategory(category);
+	}
+
+	@Override
+	public Entity getMetaData(@PathVariable("category") String category,
 			@PathVariable("entityName") String entityName) {
-		if (checkParam(category, entityName)) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-		;
 		Entity entity = entityRepository.findOne(new EntityKey(category, entityName));
-		if (entity != null) {
-			return new ResponseEntity<Entity>(entity, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
+		return entity;
 	}
 
 	@Override
-	public ResponseEntity<Void> newMetaData(@RequestBody Entity entity) {
+	public void newMetaData(@RequestBody Entity entity) {
 		if (entityRepository.exists(entity.getKey())) {
-			return new ResponseEntity<>(HttpStatus.FOUND);
+			throw new EntityExistsException(entity);
 		}
-		try {
-			entityRepository.save(entity);
-			return new ResponseEntity<>(HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<Void>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+		entityRepository.save(entity);
 	}
 
 	@Override
-	public ResponseEntity<Void> updateMetaData(@PathVariable("category") String category,
-			@PathVariable("entityName") String entityName, @RequestBody Entity entity) {
+	public void updateMetaData(@PathVariable("category") String category, @PathVariable("entityName") String entityName,
+			@RequestBody Entity entity) {
 		if (checkParam(category, entityName)) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
-		;
 		EntityKey key = new EntityKey(category, entityName);
-		if (!entityRepository.exists(key)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
 		entity.setKey(key);
-		try {
-			entityRepository.save(entity);
-			return new ResponseEntity<>(HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<Void>(HttpStatus.INTERNAL_SERVER_ERROR);
+		if (!entityRepository.exists(key)) {
+			throw new EntityNotExistsException(entity);
 		}
+		entityRepository.save(entity);
 	}
 
 	@Override
-	public ResponseEntity<Void> deleteMetaData(@PathVariable("category") String category,
+	public void deleteMetaData(@PathVariable("category") String category,
 			@PathVariable("entityName") String entityName) {
 		if (checkParam(category, entityName)) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 		EntityKey key = new EntityKey(category, entityName);
 		if (!entityRepository.exists(key)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			throw new EntityNotExistsException(key);
 		}
-		try {
-			entityRepository.delete(key);
-			return new ResponseEntity<>(HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<Void>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+		entityRepository.delete(key);
 	}
 
 }

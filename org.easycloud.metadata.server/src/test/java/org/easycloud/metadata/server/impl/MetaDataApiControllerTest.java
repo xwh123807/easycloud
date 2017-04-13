@@ -1,7 +1,7 @@
 package org.easycloud.metadata.server.impl;
 
-import org.easycloud.metadata.domain.model.Entity;
 import org.easycloud.metadata.server.MetaDataServer;
+import org.easycloud.metadata.service.model.Entity;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

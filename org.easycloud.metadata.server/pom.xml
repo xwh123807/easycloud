@@ -46,12 +46,12 @@
 
 		<dependency>
 			<groupId>org.easycloud</groupId>
-			<artifactId>org.easycloud.swagger.common</artifactId>
+			<artifactId>org.easycloud.common</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.easycloud</groupId>
-			<artifactId>org.easycloud.metadata.domain</artifactId>
+			<artifactId>org.easycloud.metadata.service</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
