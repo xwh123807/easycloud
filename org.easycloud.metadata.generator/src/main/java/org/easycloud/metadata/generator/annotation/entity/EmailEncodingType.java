@@ -1,5 +1,7 @@
 package org.easycloud.metadata.generator.annotation.entity;
 
+import org.easycloud.metadata.service.model.BaseEnum;
+
 /**
  * 邮件字符集编码
  * 

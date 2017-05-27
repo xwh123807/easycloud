@@ -1,4 +1,4 @@
-package org.easycloud.metadata.generator.annotation.entity;
+package org.easycloud.metadata.service.model;
 
 import java.util.List;
 

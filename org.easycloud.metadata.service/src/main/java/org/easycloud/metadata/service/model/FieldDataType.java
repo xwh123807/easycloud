@@ -1,5 +1,6 @@
-package org.easycloud.metadata.generator.annotation.entity;
+package org.easycloud.metadata.service.model;
 
+import java.lang.annotation.Annotation;
 import java.math.BigDecimal;
 import java.sql.Types;
 import java.util.Date;
@@ -192,9 +193,63 @@ public enum FieldDataType implements BaseEnum {
 	 */
 	public static FieldAttr fromJavaType(Class<?> type, Column column) {
 		FieldAttr attr = new FieldAttr();
-		if (column == null){
-			
-		}
+		if (column == null)
+			column = new Column() {
+				@Override
+				public Class<? extends Annotation> annotationType() {
+					return null;
+				}
+
+				@Override
+				public boolean updatable() {
+					return false;
+				}
+
+				@Override
+				public boolean unique() {
+					return false;
+				}
+
+				@Override
+				public String table() {
+					return null;
+				}
+
+				@Override
+				public int scale() {
+					return 0;
+				}
+
+				@Override
+				public int precision() {
+					return 0;
+				}
+
+				@Override
+				public boolean nullable() {
+					return false;
+				}
+
+				@Override
+				public String name() {
+					return null;
+				}
+
+				@Override
+				public int length() {
+					return 0;
+				}
+
+				@Override
+				public boolean insertable() {
+					return false;
+				}
+
+				@Override
+				public String columnDefinition() {
+					return null;
+				}
+			};
 		switch (type.getName()) {
 		case "boolean":
 		case "java.lang.Boolean":

@@ -1,4 +1,4 @@
-package org.easycloud.metadata.generator.annotation.entity;
+package org.easycloud.metadata.generator.define.view;
 
 /**
  * 通用子表类型定义

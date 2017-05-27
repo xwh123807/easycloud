@@ -1,4 +1,4 @@
-package org.easycloud.common.util;
+package org.easycloud.common.utils;
 
 import java.net.URL;
 

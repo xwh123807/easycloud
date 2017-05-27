@@ -18,6 +18,9 @@ public class DataSource extends BaseEntity{
 	private String user;
 	private String password;
 	private String system;
+	private String url;
+	private String driverClass;
+	private String dialect;
 
 	public String getName() {
 		return name;
@@ -89,5 +92,29 @@ public class DataSource extends BaseEntity{
 
 	public void setSystem(String system) {
 		this.system = system;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getDriverClass() {
+		return driverClass;
+	}
+
+	public void setDriverClass(String driverClass) {
+		this.driverClass = driverClass;
+	}
+
+	public String getDialect() {
+		return dialect;
+	}
+
+	public void setDialect(String dialect) {
+		this.dialect = dialect;
 	}
 }

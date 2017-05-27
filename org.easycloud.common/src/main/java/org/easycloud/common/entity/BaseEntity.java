@@ -2,7 +2,7 @@ package org.easycloud.common.entity;
 
 import java.io.Serializable;
 
-import org.easycloud.common.util.JSONUtil;
+import org.easycloud.common.utils.JSONUtil;
 
 public class BaseEntity implements Serializable{
 

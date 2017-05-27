@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_WH3ogDkhEeeyhbRXUBdp-A" name="UmlExtention" metaclassReference="_lKCnMDkhEeeyhbRXUBdp-A">
+  <elementImport xmi:id="_lKCnMDkhEeeyhbRXUBdp-A">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_ofYyYDkhEeeyhbRXUBdp-A" name="Entity">
+    <ownedAttribute xmi:id="_qTlT4DkhEeeyhbRXUBdp-A" name="base_Class" association="_qTl68DkhEeeyhbRXUBdp-A">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_qTl68DkhEeeyhbRXUBdp-A" memberEnd="_qTl68TkhEeeyhbRXUBdp-A _qTlT4DkhEeeyhbRXUBdp-A">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_qTl68TkhEeeyhbRXUBdp-A" name="extension_Entity" type="_ofYyYDkhEeeyhbRXUBdp-A" association="_qTl68DkhEeeyhbRXUBdp-A"/>
+  </packagedElement>
+</uml:Profile>

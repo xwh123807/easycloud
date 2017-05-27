@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_fMtXUDVWEee0i4nuIlga6A" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_L_yaADVXEee8p63MaKeM9w" name="Post">
+    <ownedComment xmi:id="_RotKUDVXEee8p63MaKeM9w" annotatedElement="_L_yaADVXEee8p63MaKeM9w">
+      <body>职位</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VOzuUDVXEee8p63MaKeM9w" name="PostCategory">
+    <ownedComment xmi:id="_WcqBgDVXEee8p63MaKeM9w" annotatedElement="_VOzuUDVXEee8p63MaKeM9w">
+      <body>职位序列</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bbsHUDVXEee8p63MaKeM9w" name="PostCategorySkill"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_dIkf4DVXEee8p63MaKeM9w" name="Skill"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_k9X48DVXEee8p63MaKeM9w" name="Special"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_vKwS8DVXEee8p63MaKeM9w" name="SkillScoreDefine"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_9r_5YDVYEee8p63MaKeM9w" name="" memberEnd="_9r_5YTVYEee8p63MaKeM9w _9r_5ZDVYEee8p63MaKeM9w" navigableOwnedEnd="_9r_5ZDVYEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_9r_5YTVYEee8p63MaKeM9w" name="skillScoreDefines" type="_vKwS8DVXEee8p63MaKeM9w" association="_9r_5YDVYEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9r_5YjVYEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9r_5YzVYEee8p63MaKeM9w" value="*"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_aty0oDVZEee8p63MaKeM9w" value=""/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_9r_5ZDVYEee8p63MaKeM9w" name="skills" type="_dIkf4DVXEee8p63MaKeM9w" association="_9r_5YDVYEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9r_5ZTVYEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9r_5ZjVYEee8p63MaKeM9w" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_z8DM0DVZEee8p63MaKeM9w" name="Rank"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5DQ-QDVZEee8p63MaKeM9w" memberEnd="_5DQ-QTVZEee8p63MaKeM9w _5DQ-RDVZEee8p63MaKeM9w" navigableOwnedEnd="_5DQ-QTVZEee8p63MaKeM9w _5DQ-RDVZEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_5DQ-QTVZEee8p63MaKeM9w" name="postCategorys" type="_VOzuUDVXEee8p63MaKeM9w" association="_5DQ-QDVZEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5DQ-QjVZEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5DQ-QzVZEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_5DQ-RDVZEee8p63MaKeM9w" name="posts" type="_L_yaADVXEee8p63MaKeM9w" association="_5DQ-QDVZEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5DQ-RTVZEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5DQ-RjVZEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_9-N1UDVZEee8p63MaKeM9w" memberEnd="_9-N1UTVZEee8p63MaKeM9w _9-N1VDVZEee8p63MaKeM9w" navigableOwnedEnd="_9-N1UTVZEee8p63MaKeM9w _9-N1VDVZEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_9-N1UTVZEee8p63MaKeM9w" name="posts" type="_L_yaADVXEee8p63MaKeM9w" association="_9-N1UDVZEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9-N1UjVZEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9-N1UzVZEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_9-N1VDVZEee8p63MaKeM9w" name="ranks" type="_z8DM0DVZEee8p63MaKeM9w" association="_9-N1UDVZEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9-N1VTVZEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9-N1VjVZEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KwFlUDVaEee8p63MaKeM9w" name="BasicCondition"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_TleRoDVaEee8p63MaKeM9w" memberEnd="_TleRoTVaEee8p63MaKeM9w _TleRpDVaEee8p63MaKeM9w" navigableOwnedEnd="_TleRoTVaEee8p63MaKeM9w _TleRpDVaEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_TleRoTVaEee8p63MaKeM9w" name="basicConditions" type="_KwFlUDVaEee8p63MaKeM9w" association="_TleRoDVaEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TleRojVaEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TleRozVaEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_TleRpDVaEee8p63MaKeM9w" name="posts" type="_L_yaADVXEee8p63MaKeM9w" association="_TleRoDVaEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TleRpTVaEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TleRpjVaEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_UU1SADVaEee8p63MaKeM9w" memberEnd="_UU1SATVaEee8p63MaKeM9w _UU1SBDVaEee8p63MaKeM9w" navigableOwnedEnd="_UU1SATVaEee8p63MaKeM9w _UU1SBDVaEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_UU1SATVaEee8p63MaKeM9w" name="basicConditions" type="_KwFlUDVaEee8p63MaKeM9w" association="_UU1SADVaEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UU1SAjVaEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UU1SAzVaEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_UU1SBDVaEee8p63MaKeM9w" name="specials" type="_k9X48DVXEee8p63MaKeM9w" association="_UU1SADVaEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UU1SBTVaEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UU1SBjVaEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_uD9ioDVaEee8p63MaKeM9w" memberEnd="_uD9ioTVaEee8p63MaKeM9w _uD9ipDVaEee8p63MaKeM9w" navigableOwnedEnd="_uD9ioTVaEee8p63MaKeM9w _uD9ipDVaEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_uD9ioTVaEee8p63MaKeM9w" name="postCategorySkills" type="_bbsHUDVXEee8p63MaKeM9w" association="_uD9ioDVaEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uD9iojVaEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uD9iozVaEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_uD9ipDVaEee8p63MaKeM9w" name="skills" type="_dIkf4DVXEee8p63MaKeM9w" association="_uD9ioDVaEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uD9ipTVaEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uD9ipjVaEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_wC1qIDVaEee8p63MaKeM9w" memberEnd="_wC1qITVaEee8p63MaKeM9w _wC1qJDVaEee8p63MaKeM9w" navigableOwnedEnd="_wC1qITVaEee8p63MaKeM9w _wC1qJDVaEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_wC1qITVaEee8p63MaKeM9w" name="postCategorySkills" type="_bbsHUDVXEee8p63MaKeM9w" association="_wC1qIDVaEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wC1qIjVaEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wC1qIzVaEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_wC1qJDVaEee8p63MaKeM9w" name="postCategorys" type="_VOzuUDVXEee8p63MaKeM9w" association="_wC1qIDVaEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wC1qJTVaEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wC1qJjVaEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_EFnb8DVbEee8p63MaKeM9w" name="PostSkillDesc">
+    <ownedAttribute xmi:id="_RucCEDVbEee8p63MaKeM9w" name="description"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Jy6V8DVbEee8p63MaKeM9w" memberEnd="_Jy6V8TVbEee8p63MaKeM9w _Jy6V9DVbEee8p63MaKeM9w" navigableOwnedEnd="_Jy6V8TVbEee8p63MaKeM9w _Jy6V9DVbEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_Jy6V8TVbEee8p63MaKeM9w" name="postSkillDescs" type="_EFnb8DVbEee8p63MaKeM9w" association="_Jy6V8DVbEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jy6V8jVbEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jy6V8zVbEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Jy6V9DVbEee8p63MaKeM9w" name="posts" type="_L_yaADVXEee8p63MaKeM9w" association="_Jy6V8DVbEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jy6V9TVbEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jy6V9jVbEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_KuM5gDVbEee8p63MaKeM9w" memberEnd="_KuM5gTVbEee8p63MaKeM9w _KuM5hDVbEee8p63MaKeM9w" navigableOwnedEnd="_KuM5gTVbEee8p63MaKeM9w _KuM5hDVbEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_KuM5gTVbEee8p63MaKeM9w" name="postSkillDescs" type="_EFnb8DVbEee8p63MaKeM9w" association="_KuM5gDVbEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KuM5gjVbEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KuM5gzVbEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_KuM5hDVbEee8p63MaKeM9w" name="skills" type="_dIkf4DVXEee8p63MaKeM9w" association="_KuM5gDVbEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KuM5hTVbEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KuM5hjVbEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_B32HYDVcEee8p63MaKeM9w" memberEnd="_B32HYTVcEee8p63MaKeM9w _B32HZDVcEee8p63MaKeM9w" navigableOwnedEnd="_B32HYTVcEee8p63MaKeM9w _B32HZDVcEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_B32HYTVcEee8p63MaKeM9w" name="skillScoreDefines" type="_vKwS8DVXEee8p63MaKeM9w" association="_B32HYDVcEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B32HYjVcEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B32HYzVcEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_B32HZDVcEee8p63MaKeM9w" name="postCategorys" type="_VOzuUDVXEee8p63MaKeM9w" association="_B32HYDVcEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B32HZTVcEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B32HZjVcEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KwmQwDVcEee8p63MaKeM9w" name="PostScore">
+    <ownedAttribute xmi:id="_V-noYDVcEee8p63MaKeM9w" name="score"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_S9gn0DVcEee8p63MaKeM9w" memberEnd="_S9gn0TVcEee8p63MaKeM9w _S9gn1DVcEee8p63MaKeM9w" navigableOwnedEnd="_S9gn0TVcEee8p63MaKeM9w _S9gn1DVcEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_S9gn0TVcEee8p63MaKeM9w" name="postScores" type="_KwmQwDVcEee8p63MaKeM9w" association="_S9gn0DVcEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S9gn0jVcEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S9gn0zVcEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_S9gn1DVcEee8p63MaKeM9w" name="posts" type="_L_yaADVXEee8p63MaKeM9w" association="_S9gn0DVcEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S9gn1TVcEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S9gn1jVcEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_UC2fQDVcEee8p63MaKeM9w" memberEnd="_UC2fQTVcEee8p63MaKeM9w _UC2fRDVcEee8p63MaKeM9w" navigableOwnedEnd="_UC2fQTVcEee8p63MaKeM9w _UC2fRDVcEee8p63MaKeM9w">
+    <ownedEnd xmi:id="_UC2fQTVcEee8p63MaKeM9w" name="postScores" type="_KwmQwDVcEee8p63MaKeM9w" association="_UC2fQDVcEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UC2fQjVcEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UC2fQzVcEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_UC2fRDVcEee8p63MaKeM9w" name="skills" type="_dIkf4DVXEee8p63MaKeM9w" association="_UC2fQDVcEee8p63MaKeM9w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UC2fRTVcEee8p63MaKeM9w"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UC2fRjVcEee8p63MaKeM9w" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

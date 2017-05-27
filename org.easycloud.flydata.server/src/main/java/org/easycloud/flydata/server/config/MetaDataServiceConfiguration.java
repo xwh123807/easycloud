@@ -1,4 +1,4 @@
-package org.easycloud.flydata.server.repository;
+package org.easycloud.flydata.server.config;
 
 import org.easycloud.metadata.service.client.DataSourceApiClient;
 import org.easycloud.metadata.service.client.EntityMetaDataApiClient;

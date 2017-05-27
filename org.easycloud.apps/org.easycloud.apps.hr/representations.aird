@@ -1,0 +1,1644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_fLVeUDVWEee0i4nuIlga6A" selectedViews="_fQC_MDVWEee0i4nuIlga6A _fQSPwDVWEee0i4nuIlga6A _fQY9cDVWEee0i4nuIlga6A _fQg5QDVWEee0i4nuIlga6A _fQoOADVWEee0i4nuIlga6A" version="11.1.0.201608251200">
+    <semanticResources>hr.uml</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_fQC_MDVWEee0i4nuIlga6A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Reused']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_fQSPwDVWEee0i4nuIlga6A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_fQY9cDVWEee0i4nuIlga6A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_IlZWwDVXEee8p63MaKeM9w" name="domain" representation="_IlgrgDVXEee8p63MaKeM9w">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']"/>
+        <target xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_fQg5QDVWEee0i4nuIlga6A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_r7UwQDVcEee8p63MaKeM9w" name="NewModel Documentation Table" representation="_r7UwQTVcEee8p63MaKeM9w">
+        <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']"/>
+        <target xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_0koIYDVcEee8p63MaKeM9w" name="NewModel Use Case Cross Table" representation="_0koIYTVcEee8p63MaKeM9w">
+        <description xmi:type="description_2:CrossTableDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']"/>
+        <target xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_fQoOADVWEee0i4nuIlga6A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Extend']"/>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_IlgrgDVXEee8p63MaKeM9w" name="domain">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_IlgrgTVXEee8p63MaKeM9w" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_IlhSkDVXEee8p63MaKeM9w">
+        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="__u-dwDVYEee8p63MaKeM9w">
+          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="__u-dwTVYEee8p63MaKeM9w" showIcon="false" labelExpression="aql:self.computeAssociationBeginLabel()">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </beginLabelStyleDescription>
+          <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="__u-dwjVYEee8p63MaKeM9w" showIcon="false" labelExpression="service:computeUmlLabel">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </centerLabelStyleDescription>
+          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="__u-dwzVYEee8p63MaKeM9w" showIcon="false" labelExpression="aql:self.computeAssociationEndLabel()">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </endLabelStyleDescription>
+        </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          <beginLabelStyleDescription xmi:type="style:BeginLabelStyleDescription" xmi:id="_5Db9YTVZEee8p63MaKeM9w" showIcon="false" labelExpression="aql:self.computeAssociationBeginLabel()">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </beginLabelStyleDescription>
+          <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_5Db9YjVZEee8p63MaKeM9w" showIcon="false" labelExpression="service:computeUmlLabel">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </centerLabelStyleDescription>
+          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_5Db9YzVZEee8p63MaKeM9w" showIcon="false" labelExpression="aql:self.computeAssociationEndLabel()">
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </endLabelStyleDescription>
+        </computedStyleDescriptions>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_ImJksDVXEee8p63MaKeM9w" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_ImJksTVXEee8p63MaKeM9w" type="Sirius" element="_IlgrgDVXEee8p63MaKeM9w" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_MAdvcDVXEee8p63MaKeM9w" type="2003" element="_L_7j8DVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_MAe9kDVXEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_MAhZ0DVXEee8p63MaKeM9w" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_MAhZ0TVXEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_MAhZ0jVXEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_MAdvcTVXEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MAdvcjVXEee8p63MaKeM9w" x="64" y="40" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_VPCX0DVXEee8p63MaKeM9w" type="2003" element="_VO0VYDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_VPC-4DVXEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_VPC-4TVXEee8p63MaKeM9w" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_VPC-4jVXEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_VPC-4zVXEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_VPCX0TVXEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VPCX0jVXEee8p63MaKeM9w" x="372" y="180" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_bb1RQDVXEee8p63MaKeM9w" type="2003" element="_bbtVcDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_bb14UDVXEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_bb14UTVXEee8p63MaKeM9w" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_bb14UjVXEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_bb14UzVXEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_bb1RQTVXEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bb1RQjVXEee8p63MaKeM9w" x="64" y="228" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_dIx7QDVXEee8p63MaKeM9w" type="2003" element="_dIluADVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_dIyiUDVXEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_dIyiUTVXEee8p63MaKeM9w" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_dIyiUjVXEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_dIyiUzVXEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_dIx7QTVXEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dIx7QjVXEee8p63MaKeM9w" x="136" y="472" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k9yvsDVXEee8p63MaKeM9w" type="2003" element="_k9YgADVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_k9zWwDVXEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k9zWwTVXEee8p63MaKeM9w" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k9zWwjVXEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k9zWwzVXEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k9yvsTVXEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k9yvsjVXEee8p63MaKeM9w" x="608" y="48" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_vK-VYDVXEee8p63MaKeM9w" type="2003" element="_vKw6ADVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_vK-8cDVXEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_vK-8cTVXEee8p63MaKeM9w" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_vK-8cjVXEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_vK-8czVXEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_vK-VYTVXEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vK-VYjVXEee8p63MaKeM9w" x="372" y="360" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_z8QoMDVZEee8p63MaKeM9w" type="2003" element="_z8Dz4DVZEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_z8RPQDVZEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_z8RPQTVZEee8p63MaKeM9w" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_z8RPQjVZEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_z8RPQzVZEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_z8QoMTVZEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z8QoMjVZEee8p63MaKeM9w" x="416" y="40" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_KwTAsDVaEee8p63MaKeM9w" type="2003" element="_KwGMYDVaEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_KwTnwDVaEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_KwTnwTVaEee8p63MaKeM9w" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_KwTnwjVaEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_KwTnwzVaEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_KwTAsTVaEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KwTAsjVaEee8p63MaKeM9w" x="612" y="228" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_EGPHADVbEee8p63MaKeM9w" type="2003" element="_EFoDADVbEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_EGQVIDVbEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_EGQVITVbEee8p63MaKeM9w" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_UGCyoDVbEee8p63MaKeM9w" type="3010" element="_UF2lYDVbEee8p63MaKeM9w">
+              <styles xmi:type="notation:FontStyle" xmi:id="_UGCyoTVbEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_UGCyojVbEee8p63MaKeM9w"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_EGQVIjVbEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_EGQVIzVbEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_EGPHATVbEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EGPHAjVbEee8p63MaKeM9w" x="-128" y="208" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Kw5LsDVcEee8p63MaKeM9w" type="2003" element="_Kwm30DVcEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_Kw5ywDVcEee8p63MaKeM9w" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_Kw5ywTVcEee8p63MaKeM9w" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_WtFQ4DVcEee8p63MaKeM9w" type="3010" element="_Ws8G8DVcEee8p63MaKeM9w">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WtFQ4TVcEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WtFQ4jVcEee8p63MaKeM9w"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_Kw5ywjVcEee8p63MaKeM9w"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_Kw5ywzVcEee8p63MaKeM9w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Kw5LsTVcEee8p63MaKeM9w" fontName=".SF NS Text" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kw5LsjVcEee8p63MaKeM9w" x="-104" y="396" width="120" height="100"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_ImJksjVXEee8p63MaKeM9w"/>
+        <edges xmi:type="notation:Edge" xmi:id="_9sLfkDVYEee8p63MaKeM9w" type="4001" element="_9sIcQDVYEee8p63MaKeM9w" source="_vK-VYDVXEee8p63MaKeM9w" target="_dIx7QDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_9sMGoDVYEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9sMGoTVYEee8p63MaKeM9w" x="6" y="-5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9sMGojVYEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9sMGozVYEee8p63MaKeM9w" x="-7" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9sMGpDVYEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9sMGpTVYEee8p63MaKeM9w" x="-5" y="9"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_9sLfkTVYEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_9sLfkjVYEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9sLfkzVYEee8p63MaKeM9w" points="[0, 4, 118, -104]$[-118, 108, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9sMGpjVYEee8p63MaKeM9w" id="(0.0,0.5408163265306123)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9sMGpzVYEee8p63MaKeM9w" id="(1.0,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_5DeZoDVZEee8p63MaKeM9w" type="4001" element="_5DbWUDVZEee8p63MaKeM9w" source="_VPCX0DVXEee8p63MaKeM9w" target="_MAdvcDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_5DfAsDVZEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5DfAsTVZEee8p63MaKeM9w" x="3" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5DfAsjVZEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5DfAszVZEee8p63MaKeM9w" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5DfAtDVZEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5DfAtTVZEee8p63MaKeM9w" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_5DeZoTVZEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_5DeZojVZEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5DeZozVZEee8p63MaKeM9w" points="[0, 0, 264, 91]$[-264, -91, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5DfAtjVZEee8p63MaKeM9w" id="(0.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5DfAtzVZEee8p63MaKeM9w" id="(0.3728813559322034,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_9-apoDVZEee8p63MaKeM9w" type="4001" element="_9-YNYDVZEee8p63MaKeM9w" source="_MAdvcDVXEee8p63MaKeM9w" target="_z8QoMDVZEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_9-bQsDVZEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9-bQsTVZEee8p63MaKeM9w" x="37" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9-bQsjVZEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9-bQszVZEee8p63MaKeM9w" x="92" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9-bQtDVZEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9-bQtTVZEee8p63MaKeM9w" x="-19" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_9-apoTVZEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_9-apojVZEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9-apozVZEee8p63MaKeM9w" points="[0, 0, -234, 0]$[234, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9-bQtjVZEee8p63MaKeM9w" id="(1.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9-bQtzVZEee8p63MaKeM9w" id="(0.0,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_TlvXYDVaEee8p63MaKeM9w" type="4001" element="_TlrtADVaEee8p63MaKeM9w" source="_KwTAsDVaEee8p63MaKeM9w" target="_MAdvcDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_TlvXZDVaEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TlvXZTVaEee8p63MaKeM9w" x="-30" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_TlvXZjVaEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TlvXZzVaEee8p63MaKeM9w" x="-23" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_TlvXaDVaEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TlvXaTVaEee8p63MaKeM9w" x="-15" y="-9"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_TlvXYTVaEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_TlvXYjVaEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TlvXYzVaEee8p63MaKeM9w" points="[0, 0, 430, 165]$[-104, -81, 326, 84]$[-430, -165, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Tlv-cDVaEee8p63MaKeM9w" id="(0.0,0.37755102040816324)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Tlv-cTVaEee8p63MaKeM9w" id="(1.0,0.6122448979591837)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_UVFJoDVaEee8p63MaKeM9w" type="4001" element="_UVCGUDVaEee8p63MaKeM9w" source="_KwTAsDVaEee8p63MaKeM9w" target="_k9yvsDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_UVFJpDVaEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UVFJpTVaEee8p63MaKeM9w" x="4" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_UVFJpjVaEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UVFJpzVaEee8p63MaKeM9w" x="-2" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_UVFwsDVaEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UVFwsTVaEee8p63MaKeM9w" x="-2" y="8"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_UVFJoTVaEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_UVFJojVaEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UVFJozVaEee8p63MaKeM9w" points="[0, 0, 4, 82]$[-4, -82, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UVFwsjVaEee8p63MaKeM9w" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UVFwszVaEee8p63MaKeM9w" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_uEREoDVaEee8p63MaKeM9w" type="4001" element="_uEMzMDVaEee8p63MaKeM9w" source="_bb1RQDVXEee8p63MaKeM9w" target="_dIx7QDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_uERrszVaEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uERrtDVaEee8p63MaKeM9w" x="-18" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_uERrtTVaEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uERrtjVaEee8p63MaKeM9w" x="2" y="6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_uERrtzVaEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uERruDVaEee8p63MaKeM9w" x="5" y="6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_uERrsDVaEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_uERrsTVaEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uERrsjVaEee8p63MaKeM9w" points="[0, 0, -83, -146]$[83, 146, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uESSwDVaEee8p63MaKeM9w" id="(0.3135593220338983,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uESSwTVaEee8p63MaKeM9w" id="(0.4067796610169492,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_wDFhwDVaEee8p63MaKeM9w" type="4001" element="_wDDFgDVaEee8p63MaKeM9w" source="_bb1RQDVXEee8p63MaKeM9w" target="_VPCX0DVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_wDGI0DVaEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wDGI0TVaEee8p63MaKeM9w" x="4" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_wDGI0jVaEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wDGI0zVaEee8p63MaKeM9w" x="-6" y="8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_wDGI1DVaEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wDGI1TVaEee8p63MaKeM9w" x="-5" y="6"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_wDFhwTVaEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_wDFhwjVaEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wDFhwzVaEee8p63MaKeM9w" points="[0, 0, -190, 35]$[190, -35, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wDGI1jVaEee8p63MaKeM9w" id="(1.0,0.5714285714285714)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wDGI1zVaEee8p63MaKeM9w" id="(0.0,0.7040816326530612)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_JzN38DVbEee8p63MaKeM9w" type="4001" element="_JzK0oDVbEee8p63MaKeM9w" source="_EGPHADVbEee8p63MaKeM9w" target="_MAdvcDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_JzN39DVbEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JzN39TVbEee8p63MaKeM9w" x="-4" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_JzOfADVbEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JzOfATVbEee8p63MaKeM9w" x="3" y="-6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_JzOfAjVbEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JzOfAzVbEee8p63MaKeM9w" x="3" y="-4"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_JzN38TVbEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_JzN38jVbEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JzN38zVbEee8p63MaKeM9w" points="[0, 0, -172, 70]$[172, -70, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JzOfBDVbEee8p63MaKeM9w" id="(0.23728813559322035,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JzOfBTVbEee8p63MaKeM9w" id="(0.06779661016949153,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_KugbgDVbEee8p63MaKeM9w" type="4001" element="_Kud_QDVbEee8p63MaKeM9w" source="_EGPHADVbEee8p63MaKeM9w" target="_dIx7QDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_KuhCkDVbEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KuhCkTVbEee8p63MaKeM9w" x="2" y="-2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_KuhCkjVbEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KuhCkzVbEee8p63MaKeM9w" x="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_KuhClDVbEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KuhClTVbEee8p63MaKeM9w" x="-16"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_KugbgTVbEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_KugbgjVbEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KugbgzVbEee8p63MaKeM9w" points="[91, 49, -291, -230]$[301, 215, -81, -64]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KuhCljVbEee8p63MaKeM9w" id="(0.0,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KuhClzVbEee8p63MaKeM9w" id="(1.0,0.6530612244897959)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_B4KQcDVcEee8p63MaKeM9w" type="4001" element="_B4GmEDVcEee8p63MaKeM9w" source="_vK-VYDVXEee8p63MaKeM9w" target="_VPCX0DVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_B4KQdDVcEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B4KQdTVcEee8p63MaKeM9w" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_B4K3gDVcEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B4K3gTVcEee8p63MaKeM9w" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_B4K3gjVcEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B4K3gzVcEee8p63MaKeM9w" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_B4KQcTVcEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_B4KQcjVcEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B4KQczVcEee8p63MaKeM9w" points="[0, 0, 0, 82]$[0, -82, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B4K3hDVcEee8p63MaKeM9w" id="(0.5,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B4K3hTVcEee8p63MaKeM9w" id="(0.5,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_S91_ADVcEee8p63MaKeM9w" type="4001" element="_S9yUoDVcEee8p63MaKeM9w" source="_Kw5LsDVcEee8p63MaKeM9w" target="_MAdvcDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_S91_BDVcEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S91_BTVcEee8p63MaKeM9w" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_S92mEDVcEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S92mETVcEee8p63MaKeM9w" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_S92mEjVcEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S92mEzVcEee8p63MaKeM9w" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_S91_ATVcEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_S91_AjVcEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_S91_AzVcEee8p63MaKeM9w" points="[0, 0, -152, 258]$[152, -258, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_S92mFDVcEee8p63MaKeM9w" id="(0.4406779661016949,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_S92mFTVcEee8p63MaKeM9w" id="(0.3050847457627119,1.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_UDOSsDVcEee8p63MaKeM9w" type="4001" element="_UDKBQDVcEee8p63MaKeM9w" source="_Kw5LsDVcEee8p63MaKeM9w" target="_dIx7QDVXEee8p63MaKeM9w">
+          <children xmi:type="notation:Node" xmi:id="_UDPg0DVcEee8p63MaKeM9w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UDPg0TVcEee8p63MaKeM9w" x="-10" y="-5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_UDQH4DVcEee8p63MaKeM9w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UDQH4TVcEee8p63MaKeM9w" x="9" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_UDQu8DVcEee8p63MaKeM9w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UDQu8TVcEee8p63MaKeM9w" x="10" y="4"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_UDOSsTVcEee8p63MaKeM9w"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_UDOSsjVcEee8p63MaKeM9w" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UDOSszVcEee8p63MaKeM9w" points="[0, 0, -122, -56]$[122, 56, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UDRWADVcEee8p63MaKeM9w" id="(1.0,0.6224489795918368)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UDRWATVcEee8p63MaKeM9w" id="(0.0,0.41836734693877553)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_L_7j8DVXEee8p63MaKeM9w" name="Post" tooltipText="NewModel::Post" outgoingEdges="_9-YNYDVZEee8p63MaKeM9w" incomingEdges="_5DbWUDVZEee8p63MaKeM9w _TlrtADVaEee8p63MaKeM9w _JzK0oDVbEee8p63MaKeM9w _S9yUoDVcEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_L_yaADVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_L_yaADVXEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_MAEt4DVXEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_VO0VYDVXEee8p63MaKeM9w" name="PostCategory" tooltipText="NewModel::PostCategory" outgoingEdges="_5DbWUDVZEee8p63MaKeM9w" incomingEdges="_wDDFgDVaEee8p63MaKeM9w _B4GmEDVcEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_VOzuUDVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_VOzuUDVXEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_VO08cDVXEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_bbtVcDVXEee8p63MaKeM9w" name="PostCategorySkill" tooltipText="NewModel::PostCategorySkill" outgoingEdges="_uEMzMDVaEee8p63MaKeM9w _wDDFgDVaEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_bbsHUDVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_bbsHUDVXEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_bbt8gDVXEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_dIluADVXEee8p63MaKeM9w" name="Skill" tooltipText="NewModel::Skill" incomingEdges="_9sIcQDVYEee8p63MaKeM9w _uEMzMDVaEee8p63MaKeM9w _Kud_QDVbEee8p63MaKeM9w _UDKBQDVcEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_dIkf4DVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_dIkf4DVXEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_dIluATVXEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_k9YgADVXEee8p63MaKeM9w" name="Special" tooltipText="NewModel::Special" incomingEdges="_UVCGUDVaEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_k9X48DVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_k9X48DVXEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_k9YgATVXEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_vKw6ADVXEee8p63MaKeM9w" name="SkillScoreDefine" tooltipText="NewModel::SkillScoreDefine" outgoingEdges="_9sIcQDVYEee8p63MaKeM9w _B4GmEDVcEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_vKwS8DVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_vKwS8DVXEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_vKxhEDVXEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9sIcQDVYEee8p63MaKeM9w" name="A_skillScoreDefines_skills" sourceNode="_vKw6ADVXEee8p63MaKeM9w" targetNode="_dIluADVXEee8p63MaKeM9w" beginLabel="skillScoreDefines[*]" endLabel="skills[0..1]">
+      <target xmi:type="uml:Association" href="hr.uml#_9r_5YDVYEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_9r_5YDVYEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_9r_5ZDVYEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_9r_5YTVYEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__u-dxDVYEee8p63MaKeM9w" description="__u-dwDVYEee8p63MaKeM9w">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="__u-dxTVYEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__u-dxjVYEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="__u-dxzVYEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_z8Dz4DVZEee8p63MaKeM9w" name="Rank" tooltipText="NewModel::Rank" incomingEdges="_9-YNYDVZEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_z8DM0DVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_z8DM0DVZEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_z8Ea8DVZEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_5DbWUDVZEee8p63MaKeM9w" name="A_postCategorys_posts" sourceNode="_VO0VYDVXEee8p63MaKeM9w" targetNode="_L_7j8DVXEee8p63MaKeM9w" beginLabel="postCategorys[*]" endLabel="posts[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_5DQ-QDVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_5DQ-QDVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_5DQ-RDVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_5DQ-QTVZEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_5Db9ZDVZEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_5Db9ZTVZEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_5Db9ZjVZEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_5Db9ZzVZEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9-YNYDVZEee8p63MaKeM9w" name="A_posts_ranks" sourceNode="_L_7j8DVXEee8p63MaKeM9w" targetNode="_z8Dz4DVZEee8p63MaKeM9w" beginLabel="posts[*]" endLabel="ranks[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_9-N1UDVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_9-N1UDVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_9-N1VDVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_9-N1UTVZEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_9-Y0cDVZEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_9-Y0cTVZEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_9-Y0cjVZEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_9-Y0czVZEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_KwGMYDVaEee8p63MaKeM9w" name="BasicCondition" tooltipText="NewModel::BasicCondition" outgoingEdges="_TlrtADVaEee8p63MaKeM9w _UVCGUDVaEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_KwFlUDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_KwFlUDVaEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_KwGzcDVaEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_TlrtADVaEee8p63MaKeM9w" name="A_basicConditions_posts" sourceNode="_KwGMYDVaEee8p63MaKeM9w" targetNode="_L_7j8DVXEee8p63MaKeM9w" beginLabel="basicConditions[*]" endLabel="posts[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_TleRoDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_TleRoDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_TleRpDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_TleRoTVaEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_TlsUEDVaEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_TlsUETVaEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_TlsUEjVaEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_TlsUEzVaEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UVCGUDVaEee8p63MaKeM9w" name="A_basicConditions_specials" sourceNode="_KwGMYDVaEee8p63MaKeM9w" targetNode="_k9YgADVXEee8p63MaKeM9w" beginLabel="basicConditions[*]" endLabel="specials[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_UU1SADVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_UU1SADVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_UU1SBDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_UU1SATVaEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UVCtYDVaEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_UVCtYTVaEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_UVCtYjVaEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_UVCtYzVaEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_uEMzMDVaEee8p63MaKeM9w" name="A_postCategorySkills_skills" sourceNode="_bbtVcDVXEee8p63MaKeM9w" targetNode="_dIluADVXEee8p63MaKeM9w" beginLabel="postCategorySkills[*]" endLabel="skills[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_uD9ioDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_uD9ioDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_uD9ipDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_uD9ioTVaEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_uEOBUDVaEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_uEOBUTVaEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_uEOBUjVaEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_uEOBUzVaEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_wDDFgDVaEee8p63MaKeM9w" name="A_postCategorySkills_postCategorys" sourceNode="_bbtVcDVXEee8p63MaKeM9w" targetNode="_VO0VYDVXEee8p63MaKeM9w" beginLabel="postCategorySkills[*]" endLabel="postCategorys[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_wC1qIDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_wC1qIDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_wC1qJDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_wC1qITVaEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_wDDFgTVaEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_wDDFgjVaEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_wDDFgzVaEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_wDDFhDVaEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_EFoDADVbEee8p63MaKeM9w" name="PostSkillDesc" tooltipText="NewModel::PostSkillDesc" outgoingEdges="_JzK0oDVbEee8p63MaKeM9w _Kud_QDVbEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_EFnb8DVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_EFnb8DVbEee8p63MaKeM9w"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_EFoqEDVbEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UF2lYDVbEee8p63MaKeM9w" name="description :  [1]">
+        <target xmi:type="uml:Property" href="hr.uml#_RucCEDVbEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Property" href="hr.uml#_RucCEDVbEee8p63MaKeM9w"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_UF3McDVbEee8p63MaKeM9w" labelAlignment="LEFT">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_JzK0oDVbEee8p63MaKeM9w" name="A_postSkillDescs_posts" sourceNode="_EFoDADVbEee8p63MaKeM9w" targetNode="_L_7j8DVXEee8p63MaKeM9w" beginLabel="postSkillDescs[*]" endLabel="posts[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_Jy6V8DVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_Jy6V8DVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_Jy6V9DVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_Jy6V8TVbEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_JzLbsDVbEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_JzLbsTVbEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_JzLbsjVbEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_JzLbszVbEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Kud_QDVbEee8p63MaKeM9w" name="A_postSkillDescs_skills" sourceNode="_EFoDADVbEee8p63MaKeM9w" targetNode="_dIluADVXEee8p63MaKeM9w" beginLabel="postSkillDescs[*]" endLabel="skills[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_KuM5gDVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_KuM5gDVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_KuM5hDVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_KuM5gTVbEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_KuemUDVbEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_KuemUTVbEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_KuemUjVbEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_KuemUzVbEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_B4GmEDVcEee8p63MaKeM9w" name="A_skillScoreDefines_postCategorys" sourceNode="_vKw6ADVXEee8p63MaKeM9w" targetNode="_VO0VYDVXEee8p63MaKeM9w" beginLabel="skillScoreDefines[*]" endLabel="postCategorys[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_B32HYDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_B32HYDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_B32HZDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_B32HYTVcEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_B4HNIDVcEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_B4HNITVcEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_B4HNIjVcEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_B4HNIzVcEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Kwm30DVcEee8p63MaKeM9w" name="PostScore" tooltipText="NewModel::PostScore" outgoingEdges="_S9yUoDVcEee8p63MaKeM9w _UDKBQDVcEee8p63MaKeM9w" width="12" height="10">
+      <target xmi:type="uml:Class" href="hr.uml#_KwmQwDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_KwmQwDVcEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Kwne4DVcEee8p63MaKeM9w" labelSize="9" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Ws8G8DVcEee8p63MaKeM9w" name="score :  [1]">
+        <target xmi:type="uml:Property" href="hr.uml#_V-noYDVcEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Property" href="hr.uml#_V-noYDVcEee8p63MaKeM9w"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_Ws8G8TVcEee8p63MaKeM9w" labelAlignment="LEFT">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_ReusedMappingForFeatures']/@subNodeMappings[name='CD_Property']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_S9yUoDVcEee8p63MaKeM9w" name="A_postScores_posts" sourceNode="_Kwm30DVcEee8p63MaKeM9w" targetNode="_L_7j8DVXEee8p63MaKeM9w" beginLabel="postScores[*]" endLabel="posts[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_S9gn0DVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_S9gn0DVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_S9gn1DVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_S9gn0TVcEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_S9y7sDVcEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_S9y7sTVcEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_S9y7sjVcEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_S9y7szVcEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UDKBQDVcEee8p63MaKeM9w" name="A_postScores_skills" sourceNode="_Kwm30DVcEee8p63MaKeM9w" targetNode="_dIluADVXEee8p63MaKeM9w" beginLabel="postScores[*]" endLabel="skills[*]">
+      <target xmi:type="uml:Association" href="hr.uml#_UC2fQDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_UC2fQDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_UC2fRDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Property" href="hr.uml#_UC2fQTVcEee8p63MaKeM9w"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UDKBQTVcEee8p63MaKeM9w" description="_5Db9YDVZEee8p63MaKeM9w" sourceArrow="InputArrow">
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_UDKBQjVcEee8p63MaKeM9w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_UDKBQzVcEee8p63MaKeM9w" showIcon="false"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_UDKBRDVcEee8p63MaKeM9w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@edgeMappings[name='CD_Association']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_IlhSkzVXEee8p63MaKeM9w"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer"/>
+    <target xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+  </diagram:DSemanticDiagram>
+  <table:DTable xmi:id="_r7UwQTVcEee8p63MaKeM9w" name="NewModel Documentation Table" headerColumnWidth="365">
+    <target xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+    <lines xmi:type="table:DLine" xmi:id="_r7V-YDVcEee8p63MaKeM9w" label="&lt;Model> NewModel">
+      <target xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-YTVcEee8p63MaKeM9w" label="&lt;Class> Post">
+        <target xmi:type="uml:Class" href="hr.uml#_L_yaADVXEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_L_yaADVXEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-YjVcEee8p63MaKeM9w" label="职位" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_L_yaADVXEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_L_yaADVXEee8p63MaKeM9w"/>
+        </cells>
+        <currentStyle xmi:type="table:DTableElementStyle" xmi:id="_r7V-YzVcEee8p63MaKeM9w" backgroundColor="232,239,247"/>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-ZDVcEee8p63MaKeM9w" label="&lt;Class> PostCategory">
+        <target xmi:type="uml:Class" href="hr.uml#_VOzuUDVXEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_VOzuUDVXEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-ZTVcEee8p63MaKeM9w" label="职位序列" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_VOzuUDVXEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_VOzuUDVXEee8p63MaKeM9w"/>
+        </cells>
+        <currentStyle xmi:type="table:DTableElementStyle" xmi:id="_r7V-ZjVcEee8p63MaKeM9w" backgroundColor="232,239,247"/>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-ZzVcEee8p63MaKeM9w" label="&lt;Class> PostCategorySkill">
+        <target xmi:type="uml:Class" href="hr.uml#_bbsHUDVXEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_bbsHUDVXEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-aDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_bbsHUDVXEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_bbsHUDVXEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-aTVcEee8p63MaKeM9w" label="&lt;Class> Skill">
+        <target xmi:type="uml:Class" href="hr.uml#_dIkf4DVXEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_dIkf4DVXEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-ajVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_dIkf4DVXEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_dIkf4DVXEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-azVcEee8p63MaKeM9w" label="&lt;Class> Special">
+        <target xmi:type="uml:Class" href="hr.uml#_k9X48DVXEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_k9X48DVXEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-bDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_k9X48DVXEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_k9X48DVXEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-bTVcEee8p63MaKeM9w" label="&lt;Class> SkillScoreDefine">
+        <target xmi:type="uml:Class" href="hr.uml#_vKwS8DVXEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_vKwS8DVXEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-bjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_vKwS8DVXEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_vKwS8DVXEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-bzVcEee8p63MaKeM9w" label="&lt;Association> A_skillScoreDefines_skills" collapsed="true">
+        <target xmi:type="uml:Association" href="hr.uml#_9r_5YDVYEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-cDVcEee8p63MaKeM9w" label="&lt;Property> skillScoreDefines : SkillScoreDefine [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_9r_5YTVYEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-cTVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_9r_5YjVYEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_9r_5YjVYEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-cjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_9r_5YjVYEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_9r_5YjVYEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-czVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9r_5YzVYEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9r_5YzVYEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-dDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9r_5YzVYEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9r_5YzVYEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-dTVcEee8p63MaKeM9w" label="&lt;Literal String>">
+            <target xmi:type="uml:LiteralString" href="hr.uml#_aty0oDVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralString" href="hr.uml#_aty0oDVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-djVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralString" href="hr.uml#_aty0oDVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralString" href="hr.uml#_aty0oDVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_9r_5YTVYEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-dzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_9r_5YTVYEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_9r_5YTVYEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-eDVcEee8p63MaKeM9w" label="&lt;Property> skills : Skill [0..1]">
+          <target xmi:type="uml:Property" href="hr.uml#_9r_5ZDVYEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-eTVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_9r_5ZTVYEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_9r_5ZTVYEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-ejVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_9r_5ZTVYEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_9r_5ZTVYEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-ezVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> 1">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9r_5ZjVYEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9r_5ZjVYEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-fDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9r_5ZjVYEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9r_5ZjVYEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_9r_5ZDVYEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-fTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_9r_5ZDVYEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_9r_5ZDVYEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_9r_5YDVYEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-fjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_9r_5YDVYEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_9r_5YDVYEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-fzVcEee8p63MaKeM9w" label="&lt;Class> Rank">
+        <target xmi:type="uml:Class" href="hr.uml#_z8DM0DVZEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_z8DM0DVZEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-gDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_z8DM0DVZEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_z8DM0DVZEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-gTVcEee8p63MaKeM9w" label="&lt;Association> A_postCategorys_posts">
+        <target xmi:type="uml:Association" href="hr.uml#_5DQ-QDVZEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-gjVcEee8p63MaKeM9w" label="&lt;Property> postCategorys : PostCategory [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_5DQ-QTVZEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-gzVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_5DQ-QjVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_5DQ-QjVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-hDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_5DQ-QjVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_5DQ-QjVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-hTVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_5DQ-QzVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_5DQ-QzVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-hjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_5DQ-QzVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_5DQ-QzVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_5DQ-QTVZEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-hzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_5DQ-QTVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_5DQ-QTVZEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-iDVcEee8p63MaKeM9w" label="&lt;Property> posts : Post [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_5DQ-RDVZEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-iTVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_5DQ-RTVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_5DQ-RTVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-ijVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_5DQ-RTVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_5DQ-RTVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-izVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_5DQ-RjVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_5DQ-RjVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-jDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_5DQ-RjVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_5DQ-RjVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_5DQ-RDVZEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-jTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_5DQ-RDVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_5DQ-RDVZEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_5DQ-QDVZEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-jjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_5DQ-QDVZEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_5DQ-QDVZEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-jzVcEee8p63MaKeM9w" label="&lt;Association> A_posts_ranks">
+        <target xmi:type="uml:Association" href="hr.uml#_9-N1UDVZEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-kDVcEee8p63MaKeM9w" label="&lt;Property> posts : Post [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_9-N1UTVZEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-kTVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_9-N1UjVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_9-N1UjVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-kjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_9-N1UjVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_9-N1UjVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-kzVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9-N1UzVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9-N1UzVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-lDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9-N1UzVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9-N1UzVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_9-N1UTVZEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-lTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_9-N1UTVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_9-N1UTVZEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-ljVcEee8p63MaKeM9w" label="&lt;Property> ranks : Rank [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_9-N1VDVZEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-lzVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_9-N1VTVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_9-N1VTVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-mDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_9-N1VTVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_9-N1VTVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-mTVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9-N1VjVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9-N1VjVZEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-mjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9-N1VjVZEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_9-N1VjVZEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_9-N1VDVZEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-mzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_9-N1VDVZEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_9-N1VDVZEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_9-N1UDVZEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-nDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_9-N1UDVZEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_9-N1UDVZEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-nTVcEee8p63MaKeM9w" label="&lt;Class> BasicCondition">
+        <target xmi:type="uml:Class" href="hr.uml#_KwFlUDVaEee8p63MaKeM9w"/>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_KwFlUDVaEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-njVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_KwFlUDVaEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_KwFlUDVaEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-nzVcEee8p63MaKeM9w" label="&lt;Association> A_basicConditions_posts">
+        <target xmi:type="uml:Association" href="hr.uml#_TleRoDVaEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-oDVcEee8p63MaKeM9w" label="&lt;Property> basicConditions : BasicCondition [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_TleRoTVaEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-oTVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_TleRojVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_TleRojVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-ojVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_TleRojVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_TleRojVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-ozVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_TleRozVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_TleRozVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-pDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_TleRozVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_TleRozVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_TleRoTVaEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-pTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_TleRoTVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_TleRoTVaEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-pjVcEee8p63MaKeM9w" label="&lt;Property> posts : Post [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_TleRpDVaEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-pzVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_TleRpTVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_TleRpTVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-qDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_TleRpTVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_TleRpTVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-qTVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_TleRpjVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_TleRpjVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-qjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_TleRpjVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_TleRpjVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_TleRpDVaEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-qzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_TleRpDVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_TleRpDVaEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_TleRoDVaEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-rDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_TleRoDVaEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_TleRoDVaEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-rTVcEee8p63MaKeM9w" label="&lt;Association> A_basicConditions_specials">
+        <target xmi:type="uml:Association" href="hr.uml#_UU1SADVaEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-rjVcEee8p63MaKeM9w" label="&lt;Property> basicConditions : BasicCondition [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_UU1SATVaEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-rzVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_UU1SAjVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_UU1SAjVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-sDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_UU1SAjVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_UU1SAjVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-sTVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UU1SAzVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UU1SAzVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-sjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UU1SAzVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UU1SAzVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_UU1SATVaEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-szVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_UU1SATVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_UU1SATVaEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-tDVcEee8p63MaKeM9w" label="&lt;Property> specials : Special [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_UU1SBDVaEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-tTVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_UU1SBTVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_UU1SBTVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-tjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_UU1SBTVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_UU1SBTVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-tzVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UU1SBjVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UU1SBjVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-uDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UU1SBjVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UU1SBjVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_UU1SBDVaEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-uTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_UU1SBDVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_UU1SBDVaEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_UU1SADVaEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-ujVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_UU1SADVaEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_UU1SADVaEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-uzVcEee8p63MaKeM9w" label="&lt;Association> A_postCategorySkills_skills">
+        <target xmi:type="uml:Association" href="hr.uml#_uD9ioDVaEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-vDVcEee8p63MaKeM9w" label="&lt;Property> postCategorySkills : PostCategorySkill [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_uD9ioTVaEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-vTVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_uD9iojVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_uD9iojVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-vjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_uD9iojVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_uD9iojVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-vzVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_uD9iozVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_uD9iozVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-wDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_uD9iozVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_uD9iozVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_uD9ioTVaEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-wTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_uD9ioTVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_uD9ioTVaEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-wjVcEee8p63MaKeM9w" label="&lt;Property> skills : Skill [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_uD9ipDVaEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-wzVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_uD9ipTVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_uD9ipTVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-xDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_uD9ipTVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_uD9ipTVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-xTVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_uD9ipjVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_uD9ipjVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-xjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_uD9ipjVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_uD9ipjVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_uD9ipDVaEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-xzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_uD9ipDVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_uD9ipDVaEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_uD9ioDVaEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-yDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_uD9ioDVaEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_uD9ioDVaEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-yTVcEee8p63MaKeM9w" label="&lt;Association> A_postCategorySkills_postCategorys">
+        <target xmi:type="uml:Association" href="hr.uml#_wC1qIDVaEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-yjVcEee8p63MaKeM9w" label="&lt;Property> postCategorySkills : PostCategorySkill [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_wC1qITVaEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-yzVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_wC1qIjVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_wC1qIjVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-zDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_wC1qIjVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_wC1qIjVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-zTVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_wC1qIzVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_wC1qIzVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-zjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_wC1qIzVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_wC1qIzVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_wC1qITVaEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-zzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_wC1qITVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_wC1qITVaEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-0DVcEee8p63MaKeM9w" label="&lt;Property> postCategorys : PostCategory [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_wC1qJDVaEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-0TVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_wC1qJTVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_wC1qJTVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-0jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_wC1qJTVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_wC1qJTVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-0zVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_wC1qJjVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_wC1qJjVaEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-1DVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_wC1qJjVaEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_wC1qJjVaEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_wC1qJDVaEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-1TVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_wC1qJDVaEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_wC1qJDVaEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_wC1qIDVaEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-1jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_wC1qIDVaEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_wC1qIDVaEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-1zVcEee8p63MaKeM9w" label="&lt;Class> PostSkillDesc">
+        <target xmi:type="uml:Class" href="hr.uml#_EFnb8DVbEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-2DVcEee8p63MaKeM9w" label="&lt;Property> description">
+          <target xmi:type="uml:Property" href="hr.uml#_RucCEDVbEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_RucCEDVbEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-2TVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_RucCEDVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_RucCEDVbEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_EFnb8DVbEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-2jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_EFnb8DVbEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_EFnb8DVbEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-2zVcEee8p63MaKeM9w" label="&lt;Association> A_postSkillDescs_posts">
+        <target xmi:type="uml:Association" href="hr.uml#_Jy6V8DVbEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-3DVcEee8p63MaKeM9w" label="&lt;Property> postSkillDescs : PostSkillDesc [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_Jy6V8TVbEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-3TVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_Jy6V8jVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_Jy6V8jVbEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-3jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_Jy6V8jVbEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_Jy6V8jVbEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-3zVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_Jy6V8zVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_Jy6V8zVbEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-4DVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_Jy6V8zVbEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_Jy6V8zVbEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_Jy6V8TVbEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-4TVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_Jy6V8TVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_Jy6V8TVbEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-4jVcEee8p63MaKeM9w" label="&lt;Property> posts : Post [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_Jy6V9DVbEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-4zVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_Jy6V9TVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_Jy6V9TVbEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-5DVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_Jy6V9TVbEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_Jy6V9TVbEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-5TVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_Jy6V9jVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_Jy6V9jVbEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-5jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_Jy6V9jVbEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_Jy6V9jVbEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_Jy6V9DVbEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-5zVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_Jy6V9DVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_Jy6V9DVbEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_Jy6V8DVbEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-6DVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_Jy6V8DVbEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_Jy6V8DVbEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-6TVcEee8p63MaKeM9w" label="&lt;Association> A_postSkillDescs_skills">
+        <target xmi:type="uml:Association" href="hr.uml#_KuM5gDVbEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-6jVcEee8p63MaKeM9w" label="&lt;Property> postSkillDescs : PostSkillDesc [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_KuM5gTVbEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-6zVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_KuM5gjVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_KuM5gjVbEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-7DVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_KuM5gjVbEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_KuM5gjVbEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-7TVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_KuM5gzVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_KuM5gzVbEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-7jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_KuM5gzVbEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_KuM5gzVbEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_KuM5gTVbEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-7zVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_KuM5gTVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_KuM5gTVbEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-8DVcEee8p63MaKeM9w" label="&lt;Property> skills : Skill [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_KuM5hDVbEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-8TVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_KuM5hTVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_KuM5hTVbEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-8jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_KuM5hTVbEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_KuM5hTVbEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V-8zVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_KuM5hjVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_KuM5hjVbEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-9DVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_KuM5hjVbEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_KuM5hjVbEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_KuM5hDVbEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-9TVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_KuM5hDVbEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_KuM5hDVbEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_KuM5gDVbEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7V-9jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_KuM5gDVbEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_KuM5gDVbEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7V-9zVcEee8p63MaKeM9w" label="&lt;Association> A_skillScoreDefines_postCategorys">
+        <target xmi:type="uml:Association" href="hr.uml#_B32HYDVcEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7V--DVcEee8p63MaKeM9w" label="&lt;Property> skillScoreDefines : SkillScoreDefine [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_B32HYTVcEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7V--TVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_B32HYjVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_B32HYjVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V--jVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_B32HYjVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_B32HYjVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7V--zVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_B32HYzVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_B32HYzVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7V-_DVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_B32HYzVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_B32HYzVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_B32HYTVcEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7V-_TVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_B32HYTVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_B32HYTVcEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7V-_jVcEee8p63MaKeM9w" label="&lt;Property> postCategorys : PostCategory [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_B32HZDVcEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlcDVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_B32HZTVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_B32HZTVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlcTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_B32HZTVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_B32HZTVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlcjVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_B32HZjVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_B32HZjVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlczVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_B32HZjVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_B32HZjVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_B32HZDVcEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7WldDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_B32HZDVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_B32HZDVcEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_B32HYDVcEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7WldTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_B32HYDVcEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_B32HYDVcEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7WldjVcEee8p63MaKeM9w" label="&lt;Class> PostScore">
+        <target xmi:type="uml:Class" href="hr.uml#_KwmQwDVcEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7WldzVcEee8p63MaKeM9w" label="&lt;Property> score">
+          <target xmi:type="uml:Property" href="hr.uml#_V-noYDVcEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_V-noYDVcEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7WleDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_V-noYDVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_V-noYDVcEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Class" href="hr.uml#_KwmQwDVcEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7WleTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Class" href="hr.uml#_KwmQwDVcEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Class" href="hr.uml#_KwmQwDVcEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7WlejVcEee8p63MaKeM9w" label="&lt;Association> A_postScores_posts">
+        <target xmi:type="uml:Association" href="hr.uml#_S9gn0DVcEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7WlezVcEee8p63MaKeM9w" label="&lt;Property> postScores : PostScore [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_S9gn0TVcEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlfDVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_S9gn0jVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_S9gn0jVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlfTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_S9gn0jVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_S9gn0jVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlfjVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_S9gn0zVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_S9gn0zVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlfzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_S9gn0zVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_S9gn0zVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_S9gn0TVcEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7WlgDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_S9gn0TVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_S9gn0TVcEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7WlgTVcEee8p63MaKeM9w" label="&lt;Property> posts : Post [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_S9gn1DVcEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlgjVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_S9gn1TVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_S9gn1TVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlgzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_S9gn1TVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_S9gn1TVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlhDVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_S9gn1jVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_S9gn1jVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlhTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_S9gn1jVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_S9gn1jVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_S9gn1DVcEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7WlhjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_S9gn1DVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_S9gn1DVcEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_S9gn0DVcEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7WlhzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_S9gn0DVcEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_S9gn0DVcEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_r7WliDVcEee8p63MaKeM9w" label="&lt;Association> A_postScores_skills">
+        <target xmi:type="uml:Association" href="hr.uml#_UC2fQDVcEee8p63MaKeM9w"/>
+        <lines xmi:type="table:DLine" xmi:id="_r7WliTVcEee8p63MaKeM9w" label="&lt;Property> postScores : PostScore [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_UC2fQTVcEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlijVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_UC2fQjVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_UC2fQjVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlizVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_UC2fQjVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_UC2fQjVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7WljDVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UC2fQzVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UC2fQzVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WljTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UC2fQzVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UC2fQzVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_UC2fQTVcEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7WljjVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_UC2fQTVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_UC2fQTVcEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_r7WljzVcEee8p63MaKeM9w" label="&lt;Property> skills : Skill [0..*]">
+          <target xmi:type="uml:Property" href="hr.uml#_UC2fRDVcEee8p63MaKeM9w"/>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlkDVcEee8p63MaKeM9w" label="&lt;Literal Integer> 0">
+            <target xmi:type="uml:LiteralInteger" href="hr.uml#_UC2fRTVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_UC2fRTVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlkTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralInteger" href="hr.uml#_UC2fRTVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralInteger" href="hr.uml#_UC2fRTVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_r7WlkjVcEee8p63MaKeM9w" label="&lt;Literal Unlimited Natural> *">
+            <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UC2fRjVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UC2fRjVcEee8p63MaKeM9w"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_r7WlkzVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+              <target xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UC2fRjVcEee8p63MaKeM9w"/>
+              <semanticElements xmi:type="uml:LiteralUnlimitedNatural" href="hr.uml#_UC2fRjVcEee8p63MaKeM9w"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="uml:Property" href="hr.uml#_UC2fRDVcEee8p63MaKeM9w"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_r7WllDVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+            <target xmi:type="uml:Property" href="hr.uml#_UC2fRDVcEee8p63MaKeM9w"/>
+            <semanticElements xmi:type="uml:Property" href="hr.uml#_UC2fRDVcEee8p63MaKeM9w"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="uml:Association" href="hr.uml#_UC2fQDVcEee8p63MaKeM9w"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']/@ownedSubLines[name='DT_ElementLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_r7WllTVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+          <target xmi:type="uml:Association" href="hr.uml#_UC2fQDVcEee8p63MaKeM9w"/>
+          <semanticElements xmi:type="uml:Association" href="hr.uml#_UC2fQDVcEee8p63MaKeM9w"/>
+        </cells>
+      </lines>
+      <semanticElements xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedLineMappings[name='DT_PackageLine']"/>
+      <cells xmi:type="table:DCell" xmi:id="_r7WlljVcEee8p63MaKeM9w" label="" column="_r7WllzVcEee8p63MaKeM9w">
+        <target xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+        <semanticElements xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+      </cells>
+    </lines>
+    <columns xmi:type="table:DFeatureColumn" xmi:id="_r7WllzVcEee8p63MaKeM9w" label="Comments" cells="_r7WlljVcEee8p63MaKeM9w _r7V-YjVcEee8p63MaKeM9w _r7V-ZTVcEee8p63MaKeM9w _r7V-aDVcEee8p63MaKeM9w _r7V-ajVcEee8p63MaKeM9w _r7V-bDVcEee8p63MaKeM9w _r7V-bjVcEee8p63MaKeM9w _r7V-fjVcEee8p63MaKeM9w _r7V-dzVcEee8p63MaKeM9w _r7V-cjVcEee8p63MaKeM9w _r7V-dDVcEee8p63MaKeM9w _r7V-djVcEee8p63MaKeM9w _r7V-fTVcEee8p63MaKeM9w _r7V-ejVcEee8p63MaKeM9w _r7V-fDVcEee8p63MaKeM9w _r7V-gDVcEee8p63MaKeM9w _r7V-jjVcEee8p63MaKeM9w _r7V-hzVcEee8p63MaKeM9w _r7V-hDVcEee8p63MaKeM9w _r7V-hjVcEee8p63MaKeM9w _r7V-jTVcEee8p63MaKeM9w _r7V-ijVcEee8p63MaKeM9w _r7V-jDVcEee8p63MaKeM9w _r7V-nDVcEee8p63MaKeM9w _r7V-lTVcEee8p63MaKeM9w _r7V-kjVcEee8p63MaKeM9w _r7V-lDVcEee8p63MaKeM9w _r7V-mzVcEee8p63MaKeM9w _r7V-mDVcEee8p63MaKeM9w _r7V-mjVcEee8p63MaKeM9w _r7V-njVcEee8p63MaKeM9w _r7V-rDVcEee8p63MaKeM9w _r7V-pTVcEee8p63MaKeM9w _r7V-ojVcEee8p63MaKeM9w _r7V-pDVcEee8p63MaKeM9w _r7V-qzVcEee8p63MaKeM9w _r7V-qDVcEee8p63MaKeM9w _r7V-qjVcEee8p63MaKeM9w _r7V-ujVcEee8p63MaKeM9w _r7V-szVcEee8p63MaKeM9w _r7V-sDVcEee8p63MaKeM9w _r7V-sjVcEee8p63MaKeM9w _r7V-uTVcEee8p63MaKeM9w _r7V-tjVcEee8p63MaKeM9w _r7V-uDVcEee8p63MaKeM9w _r7V-yDVcEee8p63MaKeM9w _r7V-wTVcEee8p63MaKeM9w _r7V-vjVcEee8p63MaKeM9w _r7V-wDVcEee8p63MaKeM9w _r7V-xzVcEee8p63MaKeM9w _r7V-xDVcEee8p63MaKeM9w _r7V-xjVcEee8p63MaKeM9w _r7V-1jVcEee8p63MaKeM9w _r7V-zzVcEee8p63MaKeM9w _r7V-zDVcEee8p63MaKeM9w _r7V-zjVcEee8p63MaKeM9w _r7V-1TVcEee8p63MaKeM9w _r7V-0jVcEee8p63MaKeM9w _r7V-1DVcEee8p63MaKeM9w _r7V-2jVcEee8p63MaKeM9w _r7V-2TVcEee8p63MaKeM9w _r7V-6DVcEee8p63MaKeM9w _r7V-4TVcEee8p63MaKeM9w _r7V-3jVcEee8p63MaKeM9w _r7V-4DVcEee8p63MaKeM9w _r7V-5zVcEee8p63MaKeM9w _r7V-5DVcEee8p63MaKeM9w _r7V-5jVcEee8p63MaKeM9w _r7V-9jVcEee8p63MaKeM9w _r7V-7zVcEee8p63MaKeM9w _r7V-7DVcEee8p63MaKeM9w _r7V-7jVcEee8p63MaKeM9w _r7V-9TVcEee8p63MaKeM9w _r7V-8jVcEee8p63MaKeM9w _r7V-9DVcEee8p63MaKeM9w _r7WldTVcEee8p63MaKeM9w _r7V-_TVcEee8p63MaKeM9w _r7V--jVcEee8p63MaKeM9w _r7V-_DVcEee8p63MaKeM9w _r7WldDVcEee8p63MaKeM9w _r7WlcTVcEee8p63MaKeM9w _r7WlczVcEee8p63MaKeM9w _r7WleTVcEee8p63MaKeM9w _r7WleDVcEee8p63MaKeM9w _r7WlhzVcEee8p63MaKeM9w _r7WlgDVcEee8p63MaKeM9w _r7WlfTVcEee8p63MaKeM9w _r7WlfzVcEee8p63MaKeM9w _r7WlhjVcEee8p63MaKeM9w _r7WlgzVcEee8p63MaKeM9w _r7WlhTVcEee8p63MaKeM9w _r7WllTVcEee8p63MaKeM9w _r7WljjVcEee8p63MaKeM9w _r7WlizVcEee8p63MaKeM9w _r7WljTVcEee8p63MaKeM9w _r7WllDVcEee8p63MaKeM9w _r7WlkTVcEee8p63MaKeM9w _r7WlkzVcEee8p63MaKeM9w" width="61" featureName="ownedComment">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']/@ownedColumnMappings[name='DT_CommentColumn']"/>
+    </columns>
+    <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Documentation%20Table']"/>
+  </table:DTable>
+  <table:DTable xmi:id="_0koIYTVcEee8p63MaKeM9w" name="NewModel Use Case Cross Table" headerColumnWidth="311">
+    <target xmi:type="uml:Model" href="hr.uml#_fMtXUDVWEee0i4nuIlga6A"/>
+    <lines xmi:type="table:DLine" xmi:id="_0koIYjVcEee8p63MaKeM9w" label="&lt;Class> Post">
+      <target xmi:type="uml:Class" href="hr.uml#_L_yaADVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_L_yaADVXEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIYzVcEee8p63MaKeM9w" label="&lt;Class> PostCategory">
+      <target xmi:type="uml:Class" href="hr.uml#_VOzuUDVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_VOzuUDVXEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIZDVcEee8p63MaKeM9w" label="&lt;Class> PostCategorySkill">
+      <target xmi:type="uml:Class" href="hr.uml#_bbsHUDVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_bbsHUDVXEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIZTVcEee8p63MaKeM9w" label="&lt;Class> Skill">
+      <target xmi:type="uml:Class" href="hr.uml#_dIkf4DVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_dIkf4DVXEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIZjVcEee8p63MaKeM9w" label="&lt;Class> Special">
+      <target xmi:type="uml:Class" href="hr.uml#_k9X48DVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_k9X48DVXEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIZzVcEee8p63MaKeM9w" label="&lt;Class> SkillScoreDefine">
+      <target xmi:type="uml:Class" href="hr.uml#_vKwS8DVXEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_vKwS8DVXEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIaDVcEee8p63MaKeM9w" label="&lt;Association> A_skillScoreDefines_skills">
+      <target xmi:type="uml:Association" href="hr.uml#_9r_5YDVYEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_9r_5YDVYEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIaTVcEee8p63MaKeM9w" label="&lt;Class> Rank">
+      <target xmi:type="uml:Class" href="hr.uml#_z8DM0DVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_z8DM0DVZEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIajVcEee8p63MaKeM9w" label="&lt;Association> A_postCategorys_posts">
+      <target xmi:type="uml:Association" href="hr.uml#_5DQ-QDVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_5DQ-QDVZEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIazVcEee8p63MaKeM9w" label="&lt;Association> A_posts_ranks">
+      <target xmi:type="uml:Association" href="hr.uml#_9-N1UDVZEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_9-N1UDVZEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIbDVcEee8p63MaKeM9w" label="&lt;Class> BasicCondition">
+      <target xmi:type="uml:Class" href="hr.uml#_KwFlUDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_KwFlUDVaEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIbTVcEee8p63MaKeM9w" label="&lt;Association> A_basicConditions_posts">
+      <target xmi:type="uml:Association" href="hr.uml#_TleRoDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_TleRoDVaEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIbjVcEee8p63MaKeM9w" label="&lt;Association> A_basicConditions_specials">
+      <target xmi:type="uml:Association" href="hr.uml#_UU1SADVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_UU1SADVaEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIbzVcEee8p63MaKeM9w" label="&lt;Association> A_postCategorySkills_skills">
+      <target xmi:type="uml:Association" href="hr.uml#_uD9ioDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_uD9ioDVaEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIcDVcEee8p63MaKeM9w" label="&lt;Association> A_postCategorySkills_postCategorys">
+      <target xmi:type="uml:Association" href="hr.uml#_wC1qIDVaEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_wC1qIDVaEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIcTVcEee8p63MaKeM9w" label="&lt;Class> PostSkillDesc">
+      <target xmi:type="uml:Class" href="hr.uml#_EFnb8DVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_EFnb8DVbEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIcjVcEee8p63MaKeM9w" label="&lt;Association> A_postSkillDescs_posts">
+      <target xmi:type="uml:Association" href="hr.uml#_Jy6V8DVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_Jy6V8DVbEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIczVcEee8p63MaKeM9w" label="&lt;Association> A_postSkillDescs_skills">
+      <target xmi:type="uml:Association" href="hr.uml#_KuM5gDVbEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_KuM5gDVbEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIdDVcEee8p63MaKeM9w" label="&lt;Association> A_skillScoreDefines_postCategorys">
+      <target xmi:type="uml:Association" href="hr.uml#_B32HYDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_B32HYDVcEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIdTVcEee8p63MaKeM9w" label="&lt;Class> PostScore">
+      <target xmi:type="uml:Class" href="hr.uml#_KwmQwDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Class" href="hr.uml#_KwmQwDVcEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIdjVcEee8p63MaKeM9w" label="&lt;Association> A_postScores_posts">
+      <target xmi:type="uml:Association" href="hr.uml#_S9gn0DVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_S9gn0DVcEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <lines xmi:type="table:DLine" xmi:id="_0koIdzVcEee8p63MaKeM9w" label="&lt;Association> A_postScores_skills">
+      <target xmi:type="uml:Association" href="hr.uml#_UC2fQDVcEee8p63MaKeM9w"/>
+      <semanticElements xmi:type="uml:Association" href="hr.uml#_UC2fQDVcEee8p63MaKeM9w"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']/@ownedLineMappings[name='UCT_ClassifierLine']"/>
+    </lines>
+    <description xmi:type="description_2:CrossTableDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Review']/@ownedRepresentations[name='Use%20Case%20Cross%20Table']"/>
+  </table:DTable>
+</xmi:XMI>

@@ -20,6 +20,8 @@ public class Entity extends BaseEntity{
 	private EntityKey key;
 	@ApiModelProperty(value = "类别", required = true)
 	private String category;
+	@ApiModelProperty(value = "实体名，API名称，内部引用时使用，保存后不能再修改", required = true)
+	private String name;
 	@ApiModelProperty(value = "Schema名", required = true)
 	private String schema;
 	@ApiModelProperty(value = "表在数据库中的名称", required = true)
@@ -30,6 +32,21 @@ public class Entity extends BaseEntity{
 	private String description;
 	@ApiModelProperty(value = "字段列表")
 	private Map<String, Field> fields = new HashMap<>();
+	@ApiModelProperty(value="索引")
+	private Map<String, Index> indexes = new HashMap<>();
+	/**
+	 * 显示字段，用于标记记录简要显示时显示的字段
+	 */
+	private String labelField;
+	private CommonSubTableType[]  commonSubTables;
+	/**
+	 * 是否创建索引
+	 */
+	private boolean createIndex;
+	/**
+	 * 索引名称
+	 */
+	private String indexName;
 
 	public Entity(EntityKey key) {
 		setKey(key);
@@ -93,5 +110,53 @@ public class Entity extends BaseEntity{
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public Map<String, Index> getIndexes() {
+		return indexes;
+	}
+
+	public void setIndexes(Map<String, Index> indexes) {
+		this.indexes = indexes;
+	}
+
+	public String getLabelField() {
+		return labelField;
+	}
+
+	public void setLabelField(String labelField) {
+		this.labelField = labelField;
+	}
+
+	public CommonSubTableType[] getCommonSubTables() {
+		return commonSubTables;
+	}
+
+	public void setCommonSubTables(CommonSubTableType[] commonSubTables) {
+		this.commonSubTables = commonSubTables;
+	}
+
+	public boolean isCreateIndex() {
+		return createIndex;
+	}
+
+	public void setCreateIndex(boolean createIndex) {
+		this.createIndex = createIndex;
+	}
+
+	public String getIndexName() {
+		return indexName;
+	}
+
+	public void setIndexName(String indexName) {
+		this.indexName = indexName;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

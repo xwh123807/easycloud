@@ -6,6 +6,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+import org.easycloud.metadata.service.model.FieldDataType;
+
 /**
  * 字段视图，用于显示使用
  * @author xiangwanhong
