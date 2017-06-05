@@ -1,0 +1,4 @@
+metadata-server-db:
+  image: dockerhub.ygsoft.com:5000/mongo:3.4
+  ports:
+   - 27017:27017
