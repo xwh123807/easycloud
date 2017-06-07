@@ -1,0 +1,373 @@
+{
+  "objectMeta": {
+   "name": "heapster-2377441168-jsvh7",
+   "namespace": "kube-system",
+   "labels": {
+    "k8s-app": "heapster",
+    "pod-template-hash": "2377441168",
+    "task": "monitoring",
+    "version": "v6"
+   },
+   "annotations": {
+    "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"kube-system\",\"name\":\"heapster-2377441168\",\"uid\":\"6db52877-3942-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"2649\"}}\n"
+   },
+   "creationTimestamp": "2017-05-15T07:45:12Z"
+  },
+  "typeMeta": {
+   "kind": "pod"
+  },
+  "podPhase": "Running",
+  "podIP": "10.1.43.4",
+  "nodeName": "10.51.101.183",
+  "restartCount": 0,
+  "controller": {
+   "kind": "ReplicaSet",
+   "replicasetlist": {
+    "listMeta": {
+     "totalItems": 1
+    },
+    "replicaSets": [
+     {
+      "objectMeta": {
+       "name": "heapster-2377441168",
+       "namespace": "kube-system",
+       "labels": {
+        "k8s-app": "heapster",
+        "pod-template-hash": "2377441168",
+        "task": "monitoring",
+        "version": "v6"
+       },
+       "annotations": {
+        "deployment.kubernetes.io/desired-replicas": "1",
+        "deployment.kubernetes.io/max-replicas": "2",
+        "deployment.kubernetes.io/revision": "1"
+       },
+       "creationTimestamp": "2017-05-15T07:45:12Z"
+      },
+      "typeMeta": {
+       "kind": "replicaset"
+      },
+      "pods": {
+       "current": 1,
+       "desired": 1,
+       "running": 1,
+       "pending": 0,
+       "failed": 0,
+       "succeeded": 0,
+       "warnings": []
+      },
+      "containerImages": [
+       "dockerhub.ygsoft.com:5000/kubernetes/heapster:canary"
+      ]
+     }
+    ],
+    "cumulativeMetrics": [
+     {
+      "dataPoints": [
+       {
+        "x": 1496734080,
+        "y": 2
+       },
+       {
+        "x": 1496734140,
+        "y": 2
+       },
+       {
+        "x": 1496734200,
+        "y": 2
+       },
+       {
+        "x": 1496734260,
+        "y": 2
+       },
+       {
+        "x": 1496734320,
+        "y": 2
+       },
+       {
+        "x": 1496734380,
+        "y": 2
+       },
+       {
+        "x": 1496734440,
+        "y": 2
+       },
+       {
+        "x": 1496734500,
+        "y": 2
+       },
+       {
+        "x": 1496734560,
+        "y": 2
+       },
+       {
+        "x": 1496734620,
+        "y": 2
+       },
+       {
+        "x": 1496734680,
+        "y": 2
+       },
+       {
+        "x": 1496734740,
+        "y": 2
+       },
+       {
+        "x": 1496734800,
+        "y": 2
+       },
+       {
+        "x": 1496734860,
+        "y": 2
+       },
+       {
+        "x": 1496734920,
+        "y": 2
+       }
+      ],
+      "metricName": "cpu/usage_rate",
+      "aggregation": "sum"
+     },
+     {
+      "dataPoints": [
+       {
+        "x": 1496734080,
+        "y": 46149632
+       },
+       {
+        "x": 1496734140,
+        "y": 46108672
+       },
+       {
+        "x": 1496734200,
+        "y": 46149632
+       },
+       {
+        "x": 1496734260,
+        "y": 46149632
+       },
+       {
+        "x": 1496734320,
+        "y": 46108672
+       },
+       {
+        "x": 1496734380,
+        "y": 46149632
+       },
+       {
+        "x": 1496734440,
+        "y": 46149632
+       },
+       {
+        "x": 1496734500,
+        "y": 46149632
+       },
+       {
+        "x": 1496734560,
+        "y": 46149632
+       },
+       {
+        "x": 1496734620,
+        "y": 46108672
+       },
+       {
+        "x": 1496734680,
+        "y": 46108672
+       },
+       {
+        "x": 1496734740,
+        "y": 46149632
+       },
+       {
+        "x": 1496734800,
+        "y": 46149632
+       },
+       {
+        "x": 1496734860,
+        "y": 46108672
+       },
+       {
+        "x": 1496734920,
+        "y": 46108672
+       }
+      ],
+      "metricName": "memory/usage",
+      "aggregation": "sum"
+     }
+    ]
+   }
+  },
+  "containers": [
+   {
+    "name": "heapster",
+    "image": "dockerhub.ygsoft.com:5000/kubernetes/heapster:canary",
+    "env": [],
+    "commands": [
+     "/heapster",
+     "--source=kubernetes:https://kubernetes.default",
+     "--sink=influxdb:http://monitoring-influxdb:8086"
+    ],
+    "args": null
+   }
+  ],
+  "metrics": [
+   {
+    "dataPoints": [
+     {
+      "x": 1496734080,
+      "y": 2
+     },
+     {
+      "x": 1496734140,
+      "y": 2
+     },
+     {
+      "x": 1496734200,
+      "y": 2
+     },
+     {
+      "x": 1496734260,
+      "y": 2
+     },
+     {
+      "x": 1496734320,
+      "y": 2
+     },
+     {
+      "x": 1496734380,
+      "y": 2
+     },
+     {
+      "x": 1496734440,
+      "y": 2
+     },
+     {
+      "x": 1496734500,
+      "y": 2
+     },
+     {
+      "x": 1496734560,
+      "y": 2
+     },
+     {
+      "x": 1496734620,
+      "y": 2
+     },
+     {
+      "x": 1496734680,
+      "y": 2
+     },
+     {
+      "x": 1496734740,
+      "y": 2
+     },
+     {
+      "x": 1496734800,
+      "y": 2
+     },
+     {
+      "x": 1496734860,
+      "y": 2
+     },
+     {
+      "x": 1496734920,
+      "y": 2
+     }
+    ],
+    "metricName": "cpu/usage_rate",
+    "aggregation": "sum"
+   },
+   {
+    "dataPoints": [
+     {
+      "x": 1496734080,
+      "y": 46149632
+     },
+     {
+      "x": 1496734140,
+      "y": 46108672
+     },
+     {
+      "x": 1496734200,
+      "y": 46149632
+     },
+     {
+      "x": 1496734260,
+      "y": 46149632
+     },
+     {
+      "x": 1496734320,
+      "y": 46108672
+     },
+     {
+      "x": 1496734380,
+      "y": 46149632
+     },
+     {
+      "x": 1496734440,
+      "y": 46149632
+     },
+     {
+      "x": 1496734500,
+      "y": 46149632
+     },
+     {
+      "x": 1496734560,
+      "y": 46149632
+     },
+     {
+      "x": 1496734620,
+      "y": 46108672
+     },
+     {
+      "x": 1496734680,
+      "y": 46108672
+     },
+     {
+      "x": 1496734740,
+      "y": 46149632
+     },
+     {
+      "x": 1496734800,
+      "y": 46149632
+     },
+     {
+      "x": 1496734860,
+      "y": 46108672
+     },
+     {
+      "x": 1496734920,
+      "y": 46108672
+     }
+    ],
+    "metricName": "memory/usage",
+    "aggregation": "sum"
+   }
+  ],
+  "conditions": [
+   {
+    "type": "Initialized",
+    "status": "True",
+    "lastProbeTime": null,
+    "lastTransitionTime": "2017-05-15T07:45:12Z",
+    "reason": "",
+    "message": ""
+   },
+   {
+    "type": "Ready",
+    "status": "True",
+    "lastProbeTime": null,
+    "lastTransitionTime": "2017-05-15T07:49:55Z",
+    "reason": "",
+    "message": ""
+   },
+   {
+    "type": "PodScheduled",
+    "status": "True",
+    "lastProbeTime": null,
+    "lastTransitionTime": "2017-05-15T07:45:12Z",
+    "reason": "",
+    "message": ""
+   }
+  ]
+ }

@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "http://www.baidu.com",
+        "target": "http://kubermaster.ygsoft.com:30701",
         "secure":false
     }
 }

@@ -1,0 +1,195 @@
+{
+  "listMeta": {
+   "totalItems": 3
+  },
+  "nodes": [
+   {
+    "objectMeta": {
+     "name": "10.51.101.181",
+     "labels": {
+      "beta.kubernetes.io/arch": "amd64",
+      "beta.kubernetes.io/os": "linux",
+      "kubernetes.io/hostname": "10.51.101.181"
+     },
+     "annotations": {
+      "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+     },
+     "creationTimestamp": "2017-05-15T07:32:25Z"
+    },
+    "typeMeta": {
+     "kind": "node"
+    },
+    "ready": "True"
+   },
+   {
+    "objectMeta": {
+     "name": "10.51.101.182",
+     "labels": {
+      "beta.kubernetes.io/arch": "amd64",
+      "beta.kubernetes.io/os": "linux",
+      "kubernetes.io/hostname": "10.51.101.182"
+     },
+     "annotations": {
+      "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+     },
+     "creationTimestamp": "2017-05-15T07:32:25Z"
+    },
+    "typeMeta": {
+     "kind": "node"
+    },
+    "ready": "True"
+   },
+   {
+    "objectMeta": {
+     "name": "10.51.101.183",
+     "labels": {
+      "beta.kubernetes.io/arch": "amd64",
+      "beta.kubernetes.io/os": "linux",
+      "kubernetes.io/hostname": "10.51.101.183"
+     },
+     "annotations": {
+      "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+     },
+     "creationTimestamp": "2017-05-15T07:32:24Z"
+    },
+    "typeMeta": {
+     "kind": "node"
+    },
+    "ready": "True"
+   }
+  ],
+  "cumulativeMetrics": [
+   {
+    "dataPoints": [
+     {
+      "x": 1496794500,
+      "y": 204
+     },
+     {
+      "x": 1496794560,
+      "y": 209
+     },
+     {
+      "x": 1496794620,
+      "y": 208
+     },
+     {
+      "x": 1496794680,
+      "y": 211
+     },
+     {
+      "x": 1496794740,
+      "y": 206
+     },
+     {
+      "x": 1496794800,
+      "y": 211
+     },
+     {
+      "x": 1496794860,
+      "y": 204
+     },
+     {
+      "x": 1496794920,
+      "y": 211
+     },
+     {
+      "x": 1496794980,
+      "y": 208
+     },
+     {
+      "x": 1496795040,
+      "y": 204
+     },
+     {
+      "x": 1496795100,
+      "y": 208
+     },
+     {
+      "x": 1496795160,
+      "y": 209
+     },
+     {
+      "x": 1496795220,
+      "y": 208
+     },
+     {
+      "x": 1496795280,
+      "y": 210
+     },
+     {
+      "x": 1496795340,
+      "y": 209
+     }
+    ],
+    "metricName": "cpu/usage_rate",
+    "aggregation": "sum"
+   },
+   {
+    "dataPoints": [
+     {
+      "x": 1496794500,
+      "y": 15490535424
+     },
+     {
+      "x": 1496794560,
+      "y": 15502299136
+     },
+     {
+      "x": 1496794620,
+      "y": 15502946304
+     },
+     {
+      "x": 1496794680,
+      "y": 15468662784
+     },
+     {
+      "x": 1496794740,
+      "y": 15482413056
+     },
+     {
+      "x": 1496794800,
+      "y": 15506817024
+     },
+     {
+      "x": 1496794860,
+      "y": 15527432192
+     },
+     {
+      "x": 1496794920,
+      "y": 15544037376
+     },
+     {
+      "x": 1496794980,
+      "y": 15536111616
+     },
+     {
+      "x": 1496795040,
+      "y": 15549272064
+     },
+     {
+      "x": 1496795100,
+      "y": 15547219968
+     },
+     {
+      "x": 1496795160,
+      "y": 15542374400
+     },
+     {
+      "x": 1496795220,
+      "y": 15482892288
+     },
+     {
+      "x": 1496795280,
+      "y": 15479758848
+     },
+     {
+      "x": 1496795340,
+      "y": 15477882880
+     }
+    ],
+    "metricName": "memory/usage",
+    "aggregation": "sum"
+   }
+  ]
+ }

@@ -1,0 +1,22 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <ul class="list-group">
+        <a routerLink="./dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'dashboard' | translate }}
+        </a>
+        <a [routerLink]="['./namespaces']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'Namespaces' | translate }}
+        </a>
+        <a [routerLink]="['/k8s/nodes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-desktop"></i>&nbsp;{{ 'Nodes' | translate }}
+        </a>
+        <a [routerLink]="['/k8s/pods']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;{{ 'Pods' | translate }}
+        </a>
+        <a [routerLink]="['/k8s/services']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'Services' | translate }}
+        </a>
+        <a class="list-group-item" href="http://kubermaster.ygsoft.com:30701" target="blank" >
+            {{ 'KuberMaster' | translate }}
+        </a>
+    </ul>
+</nav>

@@ -1,0 +1,143 @@
+<!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row" *ngIf="node">
+	<div class="col col-xl-6 col-lg-6"
+		*ngFor="let item of node.metrics">
+		<app-cpu-chart [metrics]="item"></app-cpu-chart>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Details</div>
+			<div class="card-block table-responsive" *ngIf=node>
+				<div col-md-4>
+					<div class="form-group">
+						<label>Name:</label>{{node.objectMeta.name}}
+					</div>
+					<div class="form-group">
+						<label>Labels:</label>{{node.objectMeta.labels | kv}}
+					</div>
+					<div class="form-group">
+						<label>Creation time:</label>{{node.objectMeta.creationTimestamp}}
+					</div>
+					<div class="form-group">
+						<label>externalID:</label>{{node.externalID}}
+					</div>
+					<div class="form-group">
+						<label>unschedulable:</label>{{node.unschedulable}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">nodeInfo</div>
+			<div class="card-block table-responsive" *ngIf="node">
+				<div col-md-4>
+					<div class="form-group">
+						<label>kernelVersion:</label>{{node.nodeInfo.kernelVersion}}
+					</div>
+					<div class="form-group">
+						<label>osImage:</label>{{node.nodeInfo.osImage}}
+					</div>
+					<div class="form-group">
+						<label>containerRuntimeVersion:</label>{{node.nodeInfo.containerRuntimeVersion}}
+					</div>
+					<div class="form-group">
+						<label>kubeletVersion:</label>{{node.nodeInfo.kubeletVersion}}
+					</div>
+					<div class="form-group">
+						<label>kubeProxyVersion:</label>{{node.nodeInfo.kubeProxyVersion}}
+					</div>
+					<div class="form-group">
+						<label>operatingSystem:</label>{{node.nodeInfo.operatingSystem}}
+					</div>
+					<div class="form-group">
+						<label>architecture:</label>{{node.nodeInfo.architecture}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Allocated resources</div>
+			<div class="card-block table-responsive" *ngIf="node">
+				<table class="table wrap" *ngIf="node.allocatedResources">
+					<thead>
+						<tr>
+							<th>CPU requests (cores)</th>
+							<th>%</th>
+							<th>CPU limits (cores)</th>
+							<th>%</th>
+							<th>Memory requests (bytes)</th>
+							<th>%</th>
+							<th>Memory limits (bytes)</th>
+							<th>%</th>
+							<th>Pods</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{node.allocatedResources.cpuRequests/1000}}/{{node.allocatedResources.cpuCapacity/1000}}</td>
+							<td>{{node.allocatedResources.cpuRequestsFraction | number}}</td>
+							<td>{{node.allocatedResources.cpuLimits/1000}}/{{node.allocatedResources.cpuCapacity/1000}}</td>
+							<td>{{node.allocatedResources.cpuLimitsFraction | number}}</td>
+							<td>{{node.allocatedResources.memoryRequests/1024/2024 | number}}/{{node.allocatedResources.memoryCapacity/1024/1024 | number}}</td>
+							<td>{{node.allocatedResources.memoryRequestsFraction | number}}</td>
+							<td>{{node.allocatedResources.memoryLimits/1024/1024}}/{{node.allocatedResources.memoryCapacity/1024/1024 | number}}</td>
+							<td>{{node.allocatedResources.memoryLimitsFraction | number}}</td>
+							<td>{{node.allocatedResources.allocatedPods}}/{{node.allocatedResources.podCapacity}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Conditions</div>
+			<div class="card-block table-responsive" *ngIf="node">
+				<table class="table" *ngIf="node.conditions">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Type</th>
+							<th>status</th>
+							<th>lastProbeTime</th>
+							<th>lastTransitionTime</th>
+							<th>reason</th>
+							<th>message</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let item of node.conditions">
+							<th scope="row">1</th>
+							<td>{{item.type}}</td>
+							<td>{{item.status}}</td>
+							<td>{{item.lastProbeTime}}</td>
+							<td>{{item.lastTransitionTime}}</td>
+							<td>{{item.reason}}</td>
+							<td>{{item.message}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="node">
+	<app-pod-list [pods]="node.podList.pods"></app-pod-list>
+</div>

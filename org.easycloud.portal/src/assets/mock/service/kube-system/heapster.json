@@ -1,0 +1,198 @@
+{
+  "objectMeta": {
+   "name": "heapster",
+   "namespace": "kube-system",
+   "labels": {
+    "kubernetes.io/cluster-service": "true",
+    "kubernetes.io/name": "Heapster",
+    "task": "monitoring"
+   },
+   "creationTimestamp": "2017-05-15T07:45:12Z"
+  },
+  "typeMeta": {
+   "kind": "service"
+  },
+  "internalEndpoint": {
+   "host": "heapster.kube-system",
+   "ports": [
+    {
+     "port": 80,
+     "protocol": "TCP",
+     "nodePort": 0
+    }
+   ]
+  },
+  "externalEndpoints": null,
+  "selector": {
+   "k8s-app": "heapster"
+  },
+  "type": "ClusterIP",
+  "clusterIP": "10.0.0.128",
+  "podList": {
+   "listMeta": {
+    "totalItems": 1
+   },
+   "pods": [
+    {
+     "objectMeta": {
+      "name": "heapster-2377441168-jsvh7",
+      "namespace": "kube-system",
+      "labels": {
+       "k8s-app": "heapster",
+       "pod-template-hash": "2377441168",
+       "task": "monitoring",
+       "version": "v6"
+      },
+      "annotations": {
+       "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"kube-system\",\"name\":\"heapster-2377441168\",\"uid\":\"6db52877-3942-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"2649\"}}\n"
+      },
+      "creationTimestamp": "2017-05-15T07:45:12Z"
+     },
+     "typeMeta": {
+      "kind": "pod"
+     },
+     "podStatus": {
+      "podPhase": "Running",
+      "containerStates": [
+       {
+        "running": {
+         "startedAt": "2017-05-15T07:49:55Z"
+        }
+       }
+      ]
+     },
+     "restartCount": 0,
+     "metrics": {
+      "cpuUsage": 2,
+      "memoryUsage": 46108672,
+      "cpuUsageHistory": [
+       {
+        "timestamp": "2017-06-06T07:29:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:30:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:31:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:32:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:33:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:34:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:35:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:36:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:37:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:38:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:39:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:40:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:41:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:42:00Z",
+        "value": 2
+       },
+       {
+        "timestamp": "2017-06-06T07:43:00Z",
+        "value": 2
+       }
+      ],
+      "memoryUsageHistory": [
+       {
+        "timestamp": "2017-06-06T07:29:00Z",
+        "value": 46108672
+       },
+       {
+        "timestamp": "2017-06-06T07:30:00Z",
+        "value": 46149632
+       },
+       {
+        "timestamp": "2017-06-06T07:31:00Z",
+        "value": 46149632
+       },
+       {
+        "timestamp": "2017-06-06T07:32:00Z",
+        "value": 46108672
+       },
+       {
+        "timestamp": "2017-06-06T07:33:00Z",
+        "value": 46149632
+       },
+       {
+        "timestamp": "2017-06-06T07:34:00Z",
+        "value": 46149632
+       },
+       {
+        "timestamp": "2017-06-06T07:35:00Z",
+        "value": 46149632
+       },
+       {
+        "timestamp": "2017-06-06T07:36:00Z",
+        "value": 46149632
+       },
+       {
+        "timestamp": "2017-06-06T07:37:00Z",
+        "value": 46108672
+       },
+       {
+        "timestamp": "2017-06-06T07:38:00Z",
+        "value": 46108672
+       },
+       {
+        "timestamp": "2017-06-06T07:39:00Z",
+        "value": 46149632
+       },
+       {
+        "timestamp": "2017-06-06T07:40:00Z",
+        "value": 46149632
+       },
+       {
+        "timestamp": "2017-06-06T07:41:00Z",
+        "value": 46108672
+       },
+       {
+        "timestamp": "2017-06-06T07:42:00Z",
+        "value": 46108672
+       },
+       {
+        "timestamp": "2017-06-06T07:43:00Z",
+        "value": 46108672
+       }
+      ]
+     },
+     "warnings": []
+    }
+   ],
+   "cumulativeMetrics": []
+  }
+ }

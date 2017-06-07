@@ -1,0 +1,36 @@
+<!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row" *ngIf="nodes">
+	<div class="col col-xl-6 col-lg-6"
+		*ngFor="let item of nodes.cumulativeMetrics">
+		<app-cpu-chart [metrics]="item"></app-cpu-chart>
+	</div>
+</div>
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Nodes</div>
+			<div class="card-block table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Labels</th>
+							<th>Ready</th>
+							<th>Age</th>
+						</tr>
+					</thead>
+					<tbody *ngIf="nodes">
+						<tr *ngFor="let node of nodes.nodes">
+							<th scope="row">1</th>
+							<td><a [routerLink]="['/k8s/nodes', node.objectMeta.name]">{{node.objectMeta.name}}</a></td>
+							<td>{{node.objectMeta.labels | kv}}</td>
+							<td>{{node.ready}}</td>
+							<td>{{node.objectMeta.creationTimestamp}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

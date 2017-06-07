@@ -1,0 +1,1756 @@
+{
+  "listMeta": {
+   "totalItems": 11
+  },
+  "pods": [
+   {
+    "objectMeta": {
+     "name": "heapster-2377441168-jsvh7",
+     "namespace": "kube-system",
+     "labels": {
+      "k8s-app": "heapster",
+      "pod-template-hash": "2377441168",
+      "task": "monitoring",
+      "version": "v6"
+     },
+     "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"kube-system\",\"name\":\"heapster-2377441168\",\"uid\":\"6db52877-3942-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"2649\"}}\n"
+     },
+     "creationTimestamp": "2017-05-15T07:45:12Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:49:55Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 0,
+    "metrics": {
+     "cpuUsage": 2,
+     "memoryUsage": 46108672,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 2
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 3
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 2
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 46149632
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 46108672
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 46149632
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 46108672
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 46149632
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 46108672
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 46149632
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 46149632
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 46149632
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 46108672
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 46108672
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 46149632
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 46108672
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 46149632
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 46108672
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "k8s-master-10.51.101.181",
+     "namespace": "kube-system",
+     "annotations": {
+      "kubernetes.io/config.hash": "18a89155c1f0684e8488e65a3a8e4ed4",
+      "kubernetes.io/config.mirror": "18a89155c1f0684e8488e65a3a8e4ed4",
+      "kubernetes.io/config.seen": "2017-05-15T07:32:12.717337374Z",
+      "kubernetes.io/config.source": "file"
+     },
+     "creationTimestamp": "2017-05-15T07:32:22Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:32:20Z"
+       }
+      },
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:32:18Z"
+       }
+      },
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:32:18Z"
+       }
+      },
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:32:18Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 115,
+    "metrics": {
+     "cpuUsage": 12,
+     "memoryUsage": 253689856,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 12
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 13
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 13
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 13
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 12
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 14
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 12
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 14
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 12
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 14
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 12
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 14
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 14
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 14
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 12
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 253693952
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 253693952
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 252719104
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 252768256
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 252788736
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 253255680
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 253255680
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 253476864
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 253542400
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 253579264
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 253579264
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 253734912
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 253083648
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 253452288
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 253689856
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "k8s-proxy-v1-1z60j",
+     "namespace": "kube-system",
+     "labels": {
+      "k8s-app": "k8s-proxy",
+      "kubernetes.io/cluster-service": "true",
+      "version": "v1"
+     },
+     "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"DaemonSet\",\"namespace\":\"kube-system\",\"name\":\"k8s-proxy-v1\",\"uid\":\"a3296093-3940-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"58\"}}\n"
+     },
+     "creationTimestamp": "2017-05-15T07:32:24Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:49:56Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 0,
+    "metrics": {
+     "cpuUsage": 24,
+     "memoryUsage": 27652096,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 24
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 36397056
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 29966336
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 30048256
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 27652096
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 31989760
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 34193408
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 27754496
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 27885568
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 27652096
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 27611136
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 30040064
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 34316288
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 32153600
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 32223232
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 27652096
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "k8s-proxy-v1-304fs",
+     "namespace": "kube-system",
+     "labels": {
+      "k8s-app": "k8s-proxy",
+      "kubernetes.io/cluster-service": "true",
+      "version": "v1"
+     },
+     "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"DaemonSet\",\"namespace\":\"kube-system\",\"name\":\"k8s-proxy-v1\",\"uid\":\"a3296093-3940-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"90\"}}\n"
+     },
+     "creationTimestamp": "2017-05-15T07:32:25Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:32:26Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 0,
+    "metrics": {
+     "cpuUsage": 23,
+     "memoryUsage": 26423296,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 22
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 22
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 22
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 23
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 22
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 22
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 23
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 24453120
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 24236032
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 26324992
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 24092672
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 24199168
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 24199168
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 24449024
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 24236032
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 24436736
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 24260608
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 28749824
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 26435584
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 24367104
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 24473600
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 26423296
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "k8s-proxy-v1-h1thl",
+     "namespace": "kube-system",
+     "labels": {
+      "k8s-app": "k8s-proxy",
+      "kubernetes.io/cluster-service": "true",
+      "version": "v1"
+     },
+     "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"DaemonSet\",\"namespace\":\"kube-system\",\"name\":\"k8s-proxy-v1\",\"uid\":\"a3296093-3940-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"84\"}}\n"
+     },
+     "creationTimestamp": "2017-05-15T07:32:25Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:49:06Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 0,
+    "metrics": {
+     "cpuUsage": 25,
+     "memoryUsage": 38928384,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 26
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 26
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 24
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 25
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 26
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 26
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 25
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 32718848
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 47546368
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 26558464
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 30740480
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 26230784
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 34848768
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 43372544
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 30842880
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 30539776
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 38899712
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 36831232
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 34914304
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 39038976
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 30621696
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 38928384
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "kube-addon-manager-10.51.101.181",
+     "namespace": "kube-system",
+     "annotations": {
+      "kubernetes.io/config.hash": "1c4f240bd115b537b207bd3e9acdca2d",
+      "kubernetes.io/config.mirror": "1c4f240bd115b537b207bd3e9acdca2d",
+      "kubernetes.io/config.seen": "2017-05-15T07:32:12.717329012Z",
+      "kubernetes.io/config.source": "file"
+     },
+     "creationTimestamp": "2017-05-15T07:33:39Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:32:18Z"
+       }
+      },
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:32:18Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 42,
+    "metrics": {
+     "cpuUsage": 3,
+     "memoryUsage": 33304576,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 4
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 7
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 3
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 8
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 4
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 5
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 3
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 5
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 6
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 4
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 3
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 4
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 6
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 6
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 3
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 32526336
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 32530432
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 32526336
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 33304576
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 32530432
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 32522240
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 32526336
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 32526336
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 33308672
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 32530432
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 32526336
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 32530432
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 32526336
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 32530432
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 33304576
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "kube-dns-4101612645-z9j5m",
+     "namespace": "kube-system",
+     "labels": {
+      "k8s-app": "kube-dns",
+      "pod-template-hash": "4101612645"
+     },
+     "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"kube-system\",\"name\":\"kube-dns-4101612645\",\"uid\":\"a32f2a03-3940-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"3396\"}}\n",
+      "scheduler.alpha.kubernetes.io/critical-pod": "",
+      "scheduler.alpha.kubernetes.io/tolerations": "[{\"key\":\"CriticalAddonsOnly\", \"operator\":\"Exists\"}]"
+     },
+     "creationTimestamp": "2017-05-15T07:57:47Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:57:48Z"
+       }
+      },
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:57:48Z"
+       }
+      },
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:57:48Z"
+       }
+      },
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:57:48Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 0,
+    "metrics": {
+     "cpuUsage": 1,
+     "memoryUsage": 61947904,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 1
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 62124032
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 62099456
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 61902848
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 62197760
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 62230528
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 62115840
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 62144512
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 62267392
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 62042112
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 62058496
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 61845504
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 61845504
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 61898752
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 61923328
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 61947904
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "kubernetes-dashboard-3282803277-51mrd",
+     "namespace": "kube-system",
+     "labels": {
+      "app": "kubernetes-dashboard",
+      "k8s-app": "kubernetes-dashboard",
+      "pod-template-hash": "3282803277"
+     },
+     "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"kube-system\",\"name\":\"kubernetes-dashboard-3282803277\",\"uid\":\"505a0c7b-3942-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"2544\"}}\n",
+      "scheduler.alpha.kubernetes.io/critical-pod": "",
+      "scheduler.alpha.kubernetes.io/tolerations": "[{\"key\":\"CriticalAddonsOnly\", \"operator\":\"Exists\"}]"
+     },
+     "creationTimestamp": "2017-05-15T07:44:23Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:44:24Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 0,
+    "metrics": {
+     "cpuUsage": 0,
+     "memoryUsage": 42430464,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 1
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 0
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 41320448
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 41283584
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 41336832
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 41336832
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 41299968
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 41336832
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 41336832
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 41336832
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 41299968
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 41299968
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 41299968
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 41299968
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 41299968
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 42430464
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 42430464
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "kubernetes-dashboard-3310264462-5lb4z",
+     "namespace": "kube-system",
+     "labels": {
+      "app": "kubernetes-dashboard",
+      "pod-template-hash": "3310264462"
+     },
+     "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"kube-system\",\"name\":\"kubernetes-dashboard-3310264462\",\"uid\":\"36abfc73-3942-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"2462\"}}\n",
+      "scheduler.alpha.kubernetes.io/tolerations": "[\n  {\n    \"key\": \"dedicated\",\n    \"operator\": \"Equal\",\n    \"value\": \"master\",\n    \"effect\": \"NoSchedule\"\n  }\n]\n"
+     },
+     "creationTimestamp": "2017-05-15T07:43:40Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:49:55Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 0,
+    "metrics": {
+     "cpuUsage": 0,
+     "memoryUsage": 14643200,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 0
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 14581760
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 14626816
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 14573568
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 14618624
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 14618624
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 14589952
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 14589952
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 14598144
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 14643200
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 14643200
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 14643200
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 14598144
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 14643200
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 14643200
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 14643200
+      }
+     ]
+    },
+    "warnings": []
+   },
+   {
+    "objectMeta": {
+     "name": "monitoring-grafana-3786034291-fq35z",
+     "namespace": "kube-system",
+     "labels": {
+      "k8s-app": "grafana",
+      "pod-template-hash": "3786034291",
+      "task": "monitoring"
+     },
+     "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"kube-system\",\"name\":\"monitoring-grafana-3786034291\",\"uid\":\"6daa2fc5-3942-11e7-8847-005056854d20\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"2632\"}}\n"
+     },
+     "creationTimestamp": "2017-05-15T07:45:12Z"
+    },
+    "typeMeta": {
+     "kind": "pod"
+    },
+    "podStatus": {
+     "podPhase": "Running",
+     "containerStates": [
+      {
+       "running": {
+        "startedAt": "2017-05-15T07:49:55Z"
+       }
+      }
+     ]
+    },
+    "restartCount": 0,
+    "metrics": {
+     "cpuUsage": 0,
+     "memoryUsage": 12816384,
+     "cpuUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 0
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 0
+      }
+     ],
+     "memoryUsageHistory": [
+      {
+       "timestamp": "2017-06-06T08:49:00Z",
+       "value": 12787712
+      },
+      {
+       "timestamp": "2017-06-06T08:50:00Z",
+       "value": 12787712
+      },
+      {
+       "timestamp": "2017-06-06T08:51:00Z",
+       "value": 12869632
+      },
+      {
+       "timestamp": "2017-06-06T08:52:00Z",
+       "value": 12873728
+      },
+      {
+       "timestamp": "2017-06-06T08:53:00Z",
+       "value": 12832768
+      },
+      {
+       "timestamp": "2017-06-06T08:54:00Z",
+       "value": 12873728
+      },
+      {
+       "timestamp": "2017-06-06T08:55:00Z",
+       "value": 12832768
+      },
+      {
+       "timestamp": "2017-06-06T08:56:00Z",
+       "value": 12832768
+      },
+      {
+       "timestamp": "2017-06-06T08:57:00Z",
+       "value": 12832768
+      },
+      {
+       "timestamp": "2017-06-06T08:58:00Z",
+       "value": 12873728
+      },
+      {
+       "timestamp": "2017-06-06T08:59:00Z",
+       "value": 12853248
+      },
+      {
+       "timestamp": "2017-06-06T09:00:00Z",
+       "value": 12853248
+      },
+      {
+       "timestamp": "2017-06-06T09:01:00Z",
+       "value": 12857344
+      },
+      {
+       "timestamp": "2017-06-06T09:02:00Z",
+       "value": 12857344
+      },
+      {
+       "timestamp": "2017-06-06T09:03:00Z",
+       "value": 12816384
+      }
+     ]
+    },
+    "warnings": []
+   }
+  ],
+  "cumulativeMetrics": [
+   {
+    "dataPoints": [
+     {
+      "x": 1496738940,
+      "y": 97
+     },
+     {
+      "x": 1496739000,
+      "y": 102
+     },
+     {
+      "x": 1496739060,
+      "y": 97
+     },
+     {
+      "x": 1496739120,
+      "y": 101
+     },
+     {
+      "x": 1496739180,
+      "y": 96
+     },
+     {
+      "x": 1496739240,
+      "y": 101
+     },
+     {
+      "x": 1496739300,
+      "y": 96
+     },
+     {
+      "x": 1496739360,
+      "y": 100
+     },
+     {
+      "x": 1496739420,
+      "y": 99
+     },
+     {
+      "x": 1496739480,
+      "y": 98
+     },
+     {
+      "x": 1496739540,
+      "y": 97
+     },
+     {
+      "x": 1496739600,
+      "y": 98
+     },
+     {
+      "x": 1496739660,
+      "y": 103
+     },
+     {
+      "x": 1496739720,
+      "y": 103
+     },
+     {
+      "x": 1496739780,
+      "y": 96
+     }
+    ],
+    "metricName": "cpu/usage_rate",
+    "aggregation": "sum"
+   },
+   {
+    "dataPoints": [
+     {
+      "x": 1496738940,
+      "y": 5599985664
+     },
+     {
+      "x": 1496739000,
+      "y": 5621821440
+     },
+     {
+      "x": 1496739060,
+      "y": 5602013184
+     },
+     {
+      "x": 1496739120,
+      "y": 5602676736
+     },
+     {
+      "x": 1496739180,
+      "y": 5601890304
+     },
+     {
+      "x": 1496739240,
+      "y": 5616648192
+     },
+     {
+      "x": 1496739300,
+      "y": 5618192384
+     },
+     {
+      "x": 1496739360,
+      "y": 5605986304
+     },
+     {
+      "x": 1496739420,
+      "y": 5606395904
+     },
+     {
+      "x": 1496739480,
+      "y": 5613981696
+     },
+     {
+      "x": 1496739540,
+      "y": 5618536448
+     },
+     {
+      "x": 1496739600,
+      "y": 5613834240
+     },
+     {
+      "x": 1496739660,
+      "y": 5613285376
+     },
+     {
+      "x": 1496739720,
+      "y": 5606539264
+     },
+     {
+      "x": 1496739780,
+      "y": 5612720128
+     }
+    ],
+    "metricName": "memory/usage",
+    "aggregation": "sum"
+   }
+  ]
+ }

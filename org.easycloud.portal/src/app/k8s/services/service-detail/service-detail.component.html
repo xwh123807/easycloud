@@ -1,0 +1,42 @@
+<!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Details</div>
+			<div class="card-block table-responsive" *ngIf="service">
+				<div col-md-4>
+					<div class="form-group">
+						<label>Name:</label>{{service.objectMeta.name}}
+					</div>
+					<div class="form-group">
+						<label>Namespace:</label>{{service.objectMeta.namespace}}
+					</div>
+					<div class="form-group">
+						<label>Labels:</label>{{service.objectMeta.labels | kv}}
+					</div>
+					<div class="form-group">
+						<label>Creation time:</label>{{service.objectMeta.creationTimestamp}}
+					</div>
+					<div class="form-group">
+						<label>Selector:</label>{{service.selector | kv}}
+					</div>
+					<div class="form-group">
+						<label>Type:</label>{{service.type}}
+					</div>
+				</div>
+				
+				<div col-md-4>
+					<div class="form-group">
+						<label>Cluster IP:</label>{{service.clusterIP}}
+					</div>
+					<div class="form-group">
+						<label>Internal endpoints:</label>{{service.internalEndpoint | json}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div *ngIf="service">
+	<app-pod-list [pods]="service.podList.pods"></app-pod-list>
+</div>

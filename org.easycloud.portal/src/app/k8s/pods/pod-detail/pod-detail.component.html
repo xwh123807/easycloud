@@ -1,0 +1,60 @@
+<!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Details</div>
+			<div class="card-block table-responsive" *ngIf="pod">
+				<div col-md-4>
+					<div class="form-group">
+						<label>Name:</label>{{pod.objectMeta.name}}
+					</div>
+					<div class="form-group">
+						<label>Namespace:</label>{{pod.objectMeta.namespace}}
+					</div>
+					<div class="form-group">
+						<label>Labels:</label>{{pod.objectMeta.labels | kv}}
+					</div>
+					<div class="form-group">
+						<label>Creation time:</label>{{pod.objectMeta.creationTimestamp}}
+					</div>
+					<div class="form-group">
+						<label>Status:</label>{{pod.podPhase}}
+					</div>
+					<div class="form-group">
+						<label>Node:</label>{{pod.nodeName}}
+					</div>
+					<div class="form-group">
+						<label>IP:</label>{{pod.podIP}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Containers</div>
+			<div class="card-block table-responsive" *ngIf="pod">
+				<div class="col-md-12" *ngFor="let item of pod.containers">
+					<div class="form-group">
+						<span>{{item.name}}</span>
+					</div>
+					<div class="form-group">
+						<label>Image:</label>{{item.image}}
+					</div>
+					<div class="form-group">
+						<label>Environment variables:</label>{{item.env | json}}
+					</div>
+					<div class="form-group">
+						<label>Commands:</label>{{item.commands | json}}
+					</div>
+					<div class="form-group">
+						<label>Args:</label>{{item.args | json}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

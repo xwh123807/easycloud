@@ -1,0 +1,32 @@
+<!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Nodes</div>
+			<div class="card-block table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Namespace</th>
+							<th>Labels</th>
+							<th>Cluster IP</th>
+							<th>Internal endpoints</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let service of services">
+							<th scope="row">1</th>
+							<td><a [routerLink]="['/k8s/service', service.objectMeta.namespace, service.objectMeta.name]">{{service.objectMeta.name}}</a></td>
+							<td>{{service.objectMeta.namespace}}</td>
+							<td>{{service.objectMeta.labels | kv}}</td>
+							<td>{{service.clusterIP}}</td>
+							<td>{{service.internalEndpoint | json}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

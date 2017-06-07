@@ -1,0 +1,13 @@
+<!-- <div [ng2-echarts]="chartData" style="height: 300px; width: 100%"></div> -->
+
+<div *ngIf="metrics">
+	<div class="card mb-3">
+		<div class="card-header">{{metrics.metricName}}</div>
+		<div class="card-block">
+			<canvas baseChart height="130" [datasets]="getChartDatas()"
+				[labels]="getChartLabels()" [chartType]="'line'" [legend]="'false'"
+				[options]="'{responsive: true}'">
+				</canvas>
+		</div>
+	</div>
+</div>

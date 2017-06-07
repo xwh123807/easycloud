@@ -1,0 +1,201 @@
+{
+  "listMeta": {
+   "totalItems": 6
+  },
+  "services": [
+   {
+    "objectMeta": {
+     "name": "kubernetes",
+     "namespace": "default",
+     "labels": {
+      "component": "apiserver",
+      "provider": "kubernetes"
+     },
+     "creationTimestamp": "2017-05-15T07:32:21Z"
+    },
+    "typeMeta": {
+     "kind": "service"
+    },
+    "internalEndpoint": {
+     "host": "kubernetes",
+     "ports": [
+      {
+       "port": 443,
+       "protocol": "TCP",
+       "nodePort": 0
+      }
+     ]
+    },
+    "externalEndpoints": null,
+    "selector": null,
+    "type": "ClusterIP",
+    "clusterIP": "10.0.0.1"
+   },
+   {
+    "objectMeta": {
+     "name": "heapster",
+     "namespace": "kube-system",
+     "labels": {
+      "kubernetes.io/cluster-service": "true",
+      "kubernetes.io/name": "Heapster",
+      "task": "monitoring"
+     },
+     "creationTimestamp": "2017-05-15T07:45:12Z"
+    },
+    "typeMeta": {
+     "kind": "service"
+    },
+    "internalEndpoint": {
+     "host": "heapster.kube-system",
+     "ports": [
+      {
+       "port": 80,
+       "protocol": "TCP",
+       "nodePort": 0
+      }
+     ]
+    },
+    "externalEndpoints": null,
+    "selector": {
+     "k8s-app": "heapster"
+    },
+    "type": "ClusterIP",
+    "clusterIP": "10.0.0.128"
+   },
+   {
+    "objectMeta": {
+     "name": "kube-dns",
+     "namespace": "kube-system",
+     "labels": {
+      "k8s-app": "kube-dns",
+      "kubernetes.io/cluster-service": "true",
+      "kubernetes.io/name": "KubeDNS"
+     },
+     "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"kind\":\"Service\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":\"kube-dns\",\"namespace\":\"kube-system\",\"creationTimestamp\":null,\"labels\":{\"k8s-app\":\"kube-dns\",\"kubernetes.io/cluster-service\":\"true\",\"kubernetes.io/name\":\"KubeDNS\"}},\"spec\":{\"ports\":[{\"name\":\"dns\",\"protocol\":\"UDP\",\"port\":53,\"targetPort\":0},{\"name\":\"dns-tcp\",\"protocol\":\"TCP\",\"port\":53,\"targetPort\":0}],\"selector\":{\"k8s-app\":\"kube-dns\"},\"clusterIP\":\"10.0.0.10\"},\"status\":{\"loadBalancer\":{}}}"
+     },
+     "creationTimestamp": "2017-05-15T07:32:23Z"
+    },
+    "typeMeta": {
+     "kind": "service"
+    },
+    "internalEndpoint": {
+     "host": "kube-dns.kube-system",
+     "ports": [
+      {
+       "port": 53,
+       "protocol": "UDP",
+       "nodePort": 0
+      },
+      {
+       "port": 53,
+       "protocol": "TCP",
+       "nodePort": 0
+      }
+     ]
+    },
+    "externalEndpoints": null,
+    "selector": {
+     "k8s-app": "kube-dns"
+    },
+    "type": "ClusterIP",
+    "clusterIP": "10.0.0.10"
+   },
+   {
+    "objectMeta": {
+     "name": "kubernetes-dashboard",
+     "namespace": "kube-system",
+     "labels": {
+      "app": "kubernetes-dashboard",
+      "k8s-app": "kubernetes-dashboard",
+      "kubernetes.io/cluster-service": "true"
+     },
+     "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"kind\":\"Service\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":\"kubernetes-dashboard\",\"namespace\":\"kube-system\",\"creationTimestamp\":null,\"labels\":{\"k8s-app\":\"kubernetes-dashboard\",\"kubernetes.io/cluster-service\":\"true\"}},\"spec\":{\"ports\":[{\"port\":80,\"targetPort\":9090}],\"selector\":{\"k8s-app\":\"kubernetes-dashboard\"}},\"status\":{\"loadBalancer\":{}}}"
+     },
+     "creationTimestamp": "2017-05-15T07:43:40Z"
+    },
+    "typeMeta": {
+     "kind": "service"
+    },
+    "internalEndpoint": {
+     "host": "kubernetes-dashboard.kube-system",
+     "ports": [
+      {
+       "port": 80,
+       "protocol": "TCP",
+       "nodePort": 30701
+      }
+     ]
+    },
+    "externalEndpoints": null,
+    "selector": {
+     "app": "kubernetes-dashboard",
+     "k8s-app": "kubernetes-dashboard"
+    },
+    "type": "NodePort",
+    "clusterIP": "10.0.0.190"
+   },
+   {
+    "objectMeta": {
+     "name": "monitoring-grafana",
+     "namespace": "kube-system",
+     "labels": {
+      "kubernetes.io/cluster-service": "true",
+      "kubernetes.io/name": "monitoring-grafana"
+     },
+     "creationTimestamp": "2017-05-15T07:45:12Z"
+    },
+    "typeMeta": {
+     "kind": "service"
+    },
+    "internalEndpoint": {
+     "host": "monitoring-grafana.kube-system",
+     "ports": [
+      {
+       "port": 80,
+       "protocol": "TCP",
+       "nodePort": 30702
+      }
+     ]
+    },
+    "externalEndpoints": null,
+    "selector": {
+     "k8s-app": "grafana"
+    },
+    "type": "NodePort",
+    "clusterIP": "10.0.0.204"
+   },
+   {
+    "objectMeta": {
+     "name": "monitoring-influxdb",
+     "namespace": "kube-system",
+     "labels": {
+      "kubernetes.io/cluster-service": "true",
+      "kubernetes.io/name": "monitoring-influxdb",
+      "task": "monitoring"
+     },
+     "creationTimestamp": "2017-05-15T07:45:13Z"
+    },
+    "typeMeta": {
+     "kind": "service"
+    },
+    "internalEndpoint": {
+     "host": "monitoring-influxdb.kube-system",
+     "ports": [
+      {
+       "port": 8086,
+       "protocol": "TCP",
+       "nodePort": 0
+      }
+     ]
+    },
+    "externalEndpoints": null,
+    "selector": {
+     "k8s-app": "influxdb"
+    },
+    "type": "ClusterIP",
+    "clusterIP": "10.0.0.198"
+   }
+  ]
+ }

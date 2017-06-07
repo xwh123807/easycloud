@@ -1,0 +1,36 @@
+<!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Pods</div>
+			<div class="card-block table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Namespace</th>
+							<th>Status</th>
+							<th>Restarts</th>
+							<th>Age</th>
+							<th>CPU (cores)</th>
+							<th>Memory (Mi)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let pod of pods">
+							<th scope="row">1</th>
+							<td><a [routerLink]="['/k8s/pod', pod.objectMeta.namespace, pod.objectMeta.name]">{{pod.objectMeta.name}}</a></td>
+							<td>{{pod.objectMeta.namespace}}</td>
+							<td>{{pod.podStatus.podPhase}}</td>
+							<td>{{pod.restartCount}}</td>
+							<td>{{pod.objectMeta.creationTimestamp}}</td>
+							<td>{{pod.metrics.cpuUsage}}</td>
+							<td>{{pod.metrics.memoryUsage/1024/1024}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
