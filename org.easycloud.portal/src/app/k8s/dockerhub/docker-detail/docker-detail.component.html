@@ -1,0 +1,32 @@
+<!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Docker Image Detail</div>
+			<div class="card-block table-responsive" *ngIf="tags">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Tag</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let tag of tags.tags">
+							<th scope="row">1</th>
+							<td>{{tags.name}}</td>
+							<td>{{tag}}</td>
+							<td>docker pull {{dockerHubServer}}/{{tags.name}}:{{tag}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div>
+执行docker pull之前，确认/etc/default/docker下，添加：DOCKER_OPTS="--insecure-registry {{dockerHubServer}}:5000"
+</div>

@@ -1,0 +1,75 @@
+<div class="row">
+	<div class="col col-xl-6 col-lg-6">
+		<div class="card mb-3">
+			<div class="card-header">Deploy a Containerized App</div>
+			<div class="card-block" *ngIf="info">
+				<div class="form-group">
+					<label>App name*</label>
+					<input class="form-control" [(ngModel)]="info.name" />
+				</div>
+				<div class="form-group">
+					<label>Container image:</label>
+					<input class="form-control" [(ngModel)]="info.containerImage" />
+				</div>
+				<div class="form-group">
+					<label>Number of pods:</label>
+					<input class="form-control" [(ngModel)]="info.replicas" />
+				</div>
+				<div class="form-group">
+					<label>Service:</label>
+					<select class="form-control" [(ngModel)]="info.service" #service>
+						<option value="none">None</option>
+						<option value="internal">Internal</option>
+						<option value="external">External</option>
+					</select>
+				</div>
+				<div class="row" *ngIf="service.value !== 'none'">
+					<div class="col-md-4 form-group">
+						<label>Port*</label>
+						<input type="text" class="form-control"/>
+					</div>
+					<div class="col-md-4 form-group">
+						<label>Target port*</label>
+						<input type="text" class="form-control"/>
+					</div>
+					<div class="col-md-4 form-group">
+						<label>Protocol*</label>
+						<select class="form-control">
+							<option>TCP</option>
+							<option>UDP</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div class="form-group">
+						<label>Description:</label>
+						<input class="form-control" [(ngModel)]="info.description" />
+					</div>
+					<div class="form-group">
+						<label>Namespace:</label>
+						<input class="form-control" [(ngModel)]="info.namespace" />
+					</div>
+				</div>
+				{{info | json}}
+			</div>
+		</div>
+	</div>
+	
+	<div class="col col-xl-6 col-lg-6">
+		<div class="card mb-3">
+			<div class="card-header">Deploy a Containerized App</div>
+			<div class="card-block">
+				<div class="form-group">
+					<label>Content</label>
+					<textarea rows="20" class="form-control" [(ngModel)]="deployData">
+					</textarea>
+				</div>
+				<div class="form-group">
+					<button (click)="deploy()">Deploy</button>
+					<button (click)="cancel()">Cancel</button>
+				</div>
+				{{deployData}}
+			</div>
+		</div>
+	</div>
+</div>

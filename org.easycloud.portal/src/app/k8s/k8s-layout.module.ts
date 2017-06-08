@@ -20,6 +20,11 @@ import { PodDetailComponent } from './pods/pod-detail/pod-detail.component';
 import { ServiceDetailComponent } from './services/service-detail/service-detail.component';
 import { CpuChartComponent } from './charts/cpu-chart/cpu-chart.component';
 import { ChartsModule } from 'ng2-charts';
+import { DockerListComponent } from './dockerhub/docker-list/docker-list.component';
+import { DockerDetailComponent } from './dockerhub/docker-detail/docker-detail.component';
+import { DockerHubService } from './dockerhub/docker-hub.service';
+import { DeployComponent } from './deploy/deploy/deploy.component';
+import { DeployFileComponent } from './deploy/deploy-file/deploy-file.component';
 
 @NgModule({
   imports: [
@@ -43,10 +48,15 @@ import { ChartsModule } from 'ng2-charts';
     NodeDetailComponent,
     PodDetailComponent,
     ServiceDetailComponent,
-    CpuChartComponent
+    CpuChartComponent,
+    DockerListComponent,
+    DockerDetailComponent,
+    DeployComponent,
+    DeployFileComponent
   ],
   providers: [
-    K8sService
+    K8sService,
+    DockerHubService
   ]
 })
 

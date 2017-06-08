@@ -1,4 +1,11 @@
 <!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row" *ngIf="pods">
+	<div class="col col-xl-6 col-lg-6"
+		*ngFor="let item of pods.cumulativeMetrics">
+		<app-cpu-chart [metrics]="item"></app-cpu-chart>
+	</div>
+</div>
+
 <div class="row">
 	<div class="col col-xl-12 col-lg-12">
 		<div class="card mb-3">
@@ -17,9 +24,9 @@
 							<th>Memory (Mi)</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr *ngFor="let pod of pods">
-							<th scope="row">1</th>
+					<tbody  *ngIf="pods">
+						<tr *ngFor="let pod of pods.pods">
+							<th><span [ngClass]="pod.podStatus.podPhase==='Running' ? 'fa fa-bolt success' : 'fa fa-warning danger'"></span></th>
 							<td><a [routerLink]="['/k8s/pod', pod.objectMeta.namespace, pod.objectMeta.name]">{{pod.objectMeta.name}}</a></td>
 							<td>{{pod.objectMeta.namespace}}</td>
 							<td>{{pod.podStatus.podPhase}}</td>

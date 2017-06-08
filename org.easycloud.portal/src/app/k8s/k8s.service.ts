@@ -87,8 +87,8 @@ export class K8sService {
   "runAsPrivileged": false
  }
    */
-  appDeployment(): void {
-    //this.http.post('/api/v1/appdeployment');
+  appDeployment(deployData: string): Observable<any> {
+    return this.http.post('/api/v1/appdeployment', JSON.parse(deployData));
   }
     
   appDeploymentFromFile(): void{

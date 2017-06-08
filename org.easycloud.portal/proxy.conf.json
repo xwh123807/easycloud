@@ -1,6 +1,10 @@
 {
-    "/api": {
-        "target": "http://kubermaster.ygsoft.com:30701",
-        "secure":false
-    }
+	"/api": {
+		"target": "http://kubermaster.ygsoft.com:30701",
+		"secure": false
+	},
+	"/v2": {
+		"target": "http://dockerhub.ygsoft.com:5000",
+		"secure": false
+	}
 }

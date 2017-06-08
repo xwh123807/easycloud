@@ -1,4 +1,11 @@
 <!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row" *ngIf="pod">
+	<div class="col col-xl-6 col-lg-6"
+		*ngFor="let item of pod.metrics">
+		<app-cpu-chart [metrics]="item"></app-cpu-chart>
+	</div>
+</div>
+
 <div class="row">
 	<div class="col col-xl-12 col-lg-12">
 		<div class="card mb-3">

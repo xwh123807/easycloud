@@ -15,7 +15,7 @@ export class PodListComponent implements OnInit {
 
   ngOnInit() {
     if (!this.pods) {
-      this.service.getPods().subscribe(r => this.pods = r.pods);
+      this.service.getPods().subscribe(r => this.pods = r);
     }
   }
 

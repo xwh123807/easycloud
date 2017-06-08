@@ -1,3 +1,7 @@
+import { DeployFileComponent } from './deploy/deploy-file/deploy-file.component';
+import { DeployComponent } from './deploy/deploy/deploy.component';
+import { DockerDetailComponent } from './dockerhub/docker-detail/docker-detail.component';
+import { DockerListComponent } from './dockerhub/docker-list/docker-list.component';
 import { K8sLayoutComponent } from './k8s-layout.component';
 import { NodeDetailComponent } from './nodes/node-detail/node-detail.component';
 import { NodeListComponent } from './nodes/node-list/node-list.component';
@@ -17,7 +21,11 @@ const k8sLayoutRoutes: Routes = [
       { path: 'pods', component: PodListComponent },
       { path: 'pod/:namespace/:name', component: PodDetailComponent},
       { path: 'services', component: ServiceListComponent },
-      { path: 'service/:namespace/:name', component: ServiceDetailComponent}
+      { path: 'service/:namespace/:name', component: ServiceDetailComponent},
+      { path: 'dockerhub', component: DockerListComponent},
+      { path: 'dockerhub/:name', component: DockerDetailComponent},
+      { path: 'deploy', component: DeployComponent},
+      { path: 'deployfile', component: DeployFileComponent}
     ]
   }
 ];

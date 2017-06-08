@@ -15,8 +15,29 @@
         <a [routerLink]="['/k8s/services']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'Services' | translate }}
         </a>
+        <a [routerLink]="['/k8s/dockerhub']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-file-o"></i>&nbsp;{{ 'Images' | translate }}
+        </a>
+        <a [routerLink]="['/k8s/deploy']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-file-o"></i>&nbsp;{{ 'Deploy' | translate }}
+        </a>
+        <a [routerLink]="['/k8s/deployfile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-file-o"></i>&nbsp;{{ 'Deploy File' | translate }}
+        </a>
         <a class="list-group-item" href="http://kubermaster.ygsoft.com:30701" target="blank" >
             {{ 'KuberMaster' | translate }}
+        </a>
+        <a class="list-group-item" href="http://dockerhub.ygsoft.com:5000/v2/_catalog" target="blank" >
+            {{ 'DockerHub' | translate }}
+        </a>
+        <a class="list-group-item" href="http://dockerhub.ygsoft.com:8888" target="blank" tooltip="user:xwh pass:1qaz2wsx" >
+            {{ 'Git' | translate }}
+        </a>
+        <a class="list-group-item" href="http://dockerhub.ygsoft.com:8080" target="blank" tooltip="user:xwh pass:1qaz2wsx" >
+            {{ 'Jenkins' | translate }}
+        </a>
+        <a class="list-group-item" href="http://dockerhub.ygsoft.com:8081/nexus" target="blank" tooltip="user: deployment pass: deployment" >
+            {{ 'Nexus' | translate }}
         </a>
     </ul>
 </nav>
