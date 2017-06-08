@@ -21,6 +21,9 @@
         <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-th-list"></i>&nbsp;{{ 'component' | translate }}
         </a>
+        <a [routerLink]="['/ani']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;{{ 'ANI HTML' | translate }}
+        </a>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
                 <span><i class="fa fa-plus"></i>&nbsp;{{ 'menu' | translate }}</span>

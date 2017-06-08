@@ -1,0 +1,104 @@
+<div class="conter-wrapper">                
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title">Progress Bars         
+
+					</h3>
+				</div>
+				<div class="panel-body">
+					<h4>Regular</h4>
+					<div class="progress" value="47">
+						<div class="progress-bar" role="progressbar" aria-valuenow="47" aria-valuemin="0" aria-valuemax="100" aria-valuetext="47%" style="width: 47%;"></div>
+					</div>
+					<h4>With label</h4>
+					<div class="progress" value="63">
+						<div class="progress-bar" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" aria-valuetext="63%" style="width: 63%;"><span class="ng-scope">63%</span></div>
+					</div>     
+					<h4>Stacked</h4>
+					<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="" aria-valuetext="22%" value="22" type="success" style="width: 22%;"></div><div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="" aria-valuetext="12%" value="12" type="danger" style="width: 12%;"></div><div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="" aria-valuetext="27%" value="27" type="warning" style="width: 27%;"></div></div>
+				</div>
+			</div>
+		</div>        <div class="col-md-6">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Contextual Progressbars</h3>
+			</div>
+			<div class="panel-body">
+				<div class="progress ng-isolate-scope" value="97" type="success">
+					<div class="progress-bar progress-bar-success" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="97%" ng-transclude="" style="width: 97%;"></div>
+				</div>        
+				<div class="progress ng-isolate-scope" value="63" type="primary">
+					<div class="progress-bar progress-bar-primary" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="63%" ng-transclude="" style="width: 63%;"></div>
+				</div>        
+				<div class="progress ng-isolate-scope" value="52" type="info">
+					<div class="progress-bar progress-bar-info" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="52%" ng-transclude="" style="width: 52%;"></div>
+				</div>        
+				<div class="progress ng-isolate-scope" value="31" type="warning">
+					<div class="progress-bar progress-bar-warning" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="31%" ng-transclude="" style="width: 31%;"></div>
+				</div>        
+				<div class="progress ng-isolate-scope" value="16" type="danger">
+					<div class="progress-bar progress-bar-danger" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="16%" ng-transclude="" style="width: 16%;"></div>
+				</div>          
+			</div>
+		</div>
+	</div>   </div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Striped Progresbars       
+						<div class="panel-control pull-right">
+							<a class="panelButton"><i class="fa fa-refresh"></i></a>
+							<a class="panelButton"><i class="fa fa-minus"></i></a>
+							<a class="panelButton"><i class="fa fa-remove"></i></a>
+						</div>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="progress-striped progress ng-isolate-scope" value="97" type="success">
+						<div class="progress-bar progress-bar-success" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="97%" ng-transclude="" style="width: 97%;"></div>
+					</div>            
+					<div class="progress-striped progress ng-isolate-scope" value="52" type="info">
+						<div class="progress-bar progress-bar-info" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="52%" ng-transclude="" style="width: 52%;"></div>
+					</div>            
+					<div class="progress-striped progress ng-isolate-scope" value="63" type="primary">
+						<div class="progress-bar progress-bar-primary" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="63%" ng-transclude="" style="width: 63%;"></div>
+					</div>            
+					<div class="progress-striped progress ng-isolate-scope" value="31" type="warning">
+						<div class="progress-bar progress-bar-warning" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="31%" ng-transclude="" style="width: 31%;"></div>
+					</div>            
+					<div class="progress-striped progress ng-isolate-scope" value="16" type="danger">
+						<div class="progress-bar progress-bar-danger" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="16%" ng-transclude="" style="width: 16%;"></div>
+					</div>  
+				</div>
+			</div>
+		</div>     
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h3 class="panel-title">Animated Progresbars</h3>
+				</div>
+				<div class="panel-body">
+					<div class="progress-striped active progress" value="65" type="primary">
+						<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-valuetext="65" style="width:65%;"></div>
+					</div>
+					<div class="progress-striped active progress" value="92" type="success">
+						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-valuetext="92" style="width:92%;"></div>
+					</div>
+					<div class="progress-striped active progress" value="77" type="info">
+						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" aria-valuetext="77" style="width:77%;"></div>
+					</div>
+					<div class="progress-striped active progress" value="34" type="warning">
+						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" aria-valuetext="34" style="width:34%;"></div>
+					</div>
+					<div class="progress-striped active progress" value="22" type="danger">
+						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" aria-valuetext="22" style="width:22%;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
