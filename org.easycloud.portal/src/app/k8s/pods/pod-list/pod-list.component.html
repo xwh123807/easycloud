@@ -26,7 +26,7 @@
 					</thead>
 					<tbody  *ngIf="pods">
 						<tr *ngFor="let pod of pods.pods">
-							<th><span [ngClass]="pod.podStatus.podPhase==='Running' ? 'fa fa-check text-navy' : 'fa fa-times'"></span></th>
+							<th><app-statu [status]="pod.podStatus"></app-statu></th>
 							<td><a [routerLink]="['/k8s/pod', pod.objectMeta.namespace, pod.objectMeta.name]">{{pod.objectMeta.name}}</a></td>
 							<td>{{pod.objectMeta.namespace}}</td>
 							<td>{{pod.podStatus.podPhase}}</td>

@@ -11,16 +11,18 @@
 							<th>Name</th>
 							<th>Namespace</th>
 							<th>Labels</th>
+							<th>Type</th>
 							<th>Cluster IP</th>
 							<th>Internal endpoints</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr *ngFor="let service of services">
-							<th scope="row">1</th>
+							<th><i class="fa fa-check-circle text-navy"></i></th>
 							<td><a [routerLink]="['/k8s/service', service.objectMeta.namespace, service.objectMeta.name]">{{service.objectMeta.name}}</a></td>
 							<td>{{service.objectMeta.namespace}}</td>
 							<td><app-labels [labels]="service.objectMeta.labels"></app-labels></td>
+							<td>{{service.type}}</td>
 							<td>{{service.clusterIP}}</td>
 							<td><app-endpoint [endpoint]="service.internalEndpoint"></app-endpoint></td>
 						</tr>

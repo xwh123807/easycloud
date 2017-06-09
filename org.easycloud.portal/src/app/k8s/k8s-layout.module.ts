@@ -29,6 +29,7 @@ import { AgePipe } from './age.pipe';
 import { MemoryPipe } from './memory.pipe';
 import { LabelsComponent } from './common/labels/labels.component';
 import { EndpointComponent } from './common/endpoint/endpoint.component';
+import { StatuComponent } from './common/statu/statu.component';
 
 @NgModule({
   imports: [
@@ -60,7 +61,8 @@ import { EndpointComponent } from './common/endpoint/endpoint.component';
     AgePipe,
     MemoryPipe,
     LabelsComponent,
-    EndpointComponent
+    EndpointComponent,
+    StatuComponent
   ],
   providers: [
     K8sService,
