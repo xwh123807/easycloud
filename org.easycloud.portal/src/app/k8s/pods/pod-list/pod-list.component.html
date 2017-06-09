@@ -26,14 +26,14 @@
 					</thead>
 					<tbody  *ngIf="pods">
 						<tr *ngFor="let pod of pods.pods">
-							<th><span [ngClass]="pod.podStatus.podPhase==='Running' ? 'fa fa-bolt success' : 'fa fa-warning danger'"></span></th>
+							<th><span [ngClass]="pod.podStatus.podPhase==='Running' ? 'fa fa-check text-navy' : 'fa fa-times'"></span></th>
 							<td><a [routerLink]="['/k8s/pod', pod.objectMeta.namespace, pod.objectMeta.name]">{{pod.objectMeta.name}}</a></td>
 							<td>{{pod.objectMeta.namespace}}</td>
 							<td>{{pod.podStatus.podPhase}}</td>
 							<td>{{pod.restartCount}}</td>
-							<td>{{pod.objectMeta.creationTimestamp}}</td>
-							<td>{{pod.metrics.cpuUsage}}</td>
-							<td>{{pod.metrics.memoryUsage/1024/1024}}</td>
+							<td>{{pod.objectMeta.creationTimestamp | age}}</td>
+							<td>{{pod.metrics ? pod.metrics.cpuUsage : ''}}</td>
+							<td *ngIf="pod.metrics">{{pod.metrics.memoryUsage | memory}}</td>
 						</tr>
 					</tbody>
 				</table>

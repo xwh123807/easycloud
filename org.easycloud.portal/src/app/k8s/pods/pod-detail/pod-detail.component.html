@@ -12,25 +12,25 @@
 			<div class="card-header">Details</div>
 			<div class="card-block table-responsive" *ngIf="pod">
 				<div col-md-4>
-					<div class="form-group">
+					<div class="">
 						<label>Name:</label>{{pod.objectMeta.name}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Namespace:</label>{{pod.objectMeta.namespace}}
 					</div>
-					<div class="form-group">
-						<label>Labels:</label>{{pod.objectMeta.labels | kv}}
+					<div class="">
+						<label>Labels:</label><app-labels [labels]="pod.objectMeta.labels"></app-labels>
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Creation time:</label>{{pod.objectMeta.creationTimestamp}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Status:</label>{{pod.podPhase}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Node:</label>{{pod.nodeName}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>IP:</label>{{pod.podIP}}
 					</div>
 				</div>
@@ -45,19 +45,19 @@
 			<div class="card-header">Containers</div>
 			<div class="card-block table-responsive" *ngIf="pod">
 				<div class="col-md-12" *ngFor="let item of pod.containers">
-					<div class="form-group">
+					<div class="">
 						<span>{{item.name}}</span>
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Image:</label>{{item.image}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Environment variables:</label>{{item.env | json}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Commands:</label>{{item.commands | json}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Args:</label>{{item.args | json}}
 					</div>
 				</div>

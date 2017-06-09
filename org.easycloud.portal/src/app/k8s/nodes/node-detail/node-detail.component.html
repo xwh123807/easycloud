@@ -12,19 +12,19 @@
 			<div class="card-header">Details</div>
 			<div class="card-block table-responsive" *ngIf=node>
 				<div col-md-4>
-					<div class="form-group">
+					<div class="">
 						<label>Name:</label>{{node.objectMeta.name}}
 					</div>
-					<div class="form-group">
-						<label>Labels:</label>{{node.objectMeta.labels | kv}}
+					<div class="">
+						<label>Labels:</label><app-labels [labels]="node.objectMeta.labels"></app-labels>
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Creation time:</label>{{node.objectMeta.creationTimestamp}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>externalID:</label>{{node.externalID}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>unschedulable:</label>{{node.unschedulable}}
 					</div>
 				</div>
@@ -39,25 +39,25 @@
 			<div class="card-header">nodeInfo</div>
 			<div class="card-block table-responsive" *ngIf="node">
 				<div col-md-4>
-					<div class="form-group">
+					<div class="">
 						<label>kernelVersion:</label>{{node.nodeInfo.kernelVersion}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>osImage:</label>{{node.nodeInfo.osImage}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>containerRuntimeVersion:</label>{{node.nodeInfo.containerRuntimeVersion}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>kubeletVersion:</label>{{node.nodeInfo.kubeletVersion}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>kubeProxyVersion:</label>{{node.nodeInfo.kubeProxyVersion}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>operatingSystem:</label>{{node.nodeInfo.operatingSystem}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>architecture:</label>{{node.nodeInfo.architecture}}
 					</div>
 				</div>
@@ -91,9 +91,9 @@
 							<td>{{node.allocatedResources.cpuRequestsFraction | number}}</td>
 							<td>{{node.allocatedResources.cpuLimits/1000}}/{{node.allocatedResources.cpuCapacity/1000}}</td>
 							<td>{{node.allocatedResources.cpuLimitsFraction | number}}</td>
-							<td>{{node.allocatedResources.memoryRequests/1024/2024 | number}}/{{node.allocatedResources.memoryCapacity/1024/1024 | number}}</td>
+							<td>{{node.allocatedResources.memoryRequests | memory}}/{{node.allocatedResources.memoryCapacity | memory}}</td>
 							<td>{{node.allocatedResources.memoryRequestsFraction | number}}</td>
-							<td>{{node.allocatedResources.memoryLimits/1024/1024}}/{{node.allocatedResources.memoryCapacity/1024/1024 | number}}</td>
+							<td>{{node.allocatedResources.memoryLimits | memory}}/{{node.allocatedResources.memoryCapacity | memory}}</td>
 							<td>{{node.allocatedResources.memoryLimitsFraction | number}}</td>
 							<td>{{node.allocatedResources.allocatedPods}}/{{node.allocatedResources.podCapacity}}</td>
 						</tr>

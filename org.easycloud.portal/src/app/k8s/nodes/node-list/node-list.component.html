@@ -22,11 +22,11 @@
 					</thead>
 					<tbody *ngIf="nodes">
 						<tr *ngFor="let node of nodes.nodes">
-							<th scope="row">1</th>
+							<th><i [ngClass]="node.ready === 'True' ? 'fa fa-check-circle text-navy' : 'fa fa-warning text-danger'"></i></th>
 							<td><a [routerLink]="['/k8s/nodes', node.objectMeta.name]">{{node.objectMeta.name}}</a></td>
-							<td>{{node.objectMeta.labels | kv}}</td>
+							<td><app-labels [labels]="node.objectMeta.labels"></app-labels></td>
 							<td>{{node.ready}}</td>
-							<td>{{node.objectMeta.creationTimestamp}}</td>
+							<td>{{node.objectMeta.creationTimestamp | age}}</td>
 						</tr>
 					</tbody>
 				</table>

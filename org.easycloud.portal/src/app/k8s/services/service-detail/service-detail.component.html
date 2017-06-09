@@ -5,32 +5,32 @@
 			<div class="card-header">Details</div>
 			<div class="card-block table-responsive" *ngIf="service">
 				<div col-md-4>
-					<div class="form-group">
+					<div class="">
 						<label>Name:</label>{{service.objectMeta.name}}
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Namespace:</label>{{service.objectMeta.namespace}}
 					</div>
-					<div class="form-group">
-						<label>Labels:</label>{{service.objectMeta.labels | kv}}
+					<div class="">
+						<label>Labels:</label><app-labels [labels]="service.objectMeta.labels"></app-labels>
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Creation time:</label>{{service.objectMeta.creationTimestamp}}
 					</div>
-					<div class="form-group">
-						<label>Selector:</label>{{service.selector | kv}}
+					<div class="">
+						<label>Selector:</label><app-labels [labels]="service.selector"></app-labels>
 					</div>
-					<div class="form-group">
+					<div class="">
 						<label>Type:</label>{{service.type}}
 					</div>
 				</div>
 				
 				<div col-md-4>
-					<div class="form-group">
+					<div class="">
 						<label>Cluster IP:</label>{{service.clusterIP}}
 					</div>
-					<div class="form-group">
-						<label>Internal endpoints:</label>{{service.internalEndpoint | json}}
+					<div class="">
+						<label>Internal endpoints:</label><app-endpoint [endpoint]="service.internalEndpoint"></app-endpoint>
 					</div>
 				</div>
 			</div>

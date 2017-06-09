@@ -1,6 +1,10 @@
 {
-	"/api": {
+	"/api2": {
 		"target": "http://kubermaster.ygsoft.com:30701",
+		"secure": false
+	},
+	"/api": {
+		"target": "http://192.168.99.100:30000",
 		"secure": false
 	},
 	"/v2": {

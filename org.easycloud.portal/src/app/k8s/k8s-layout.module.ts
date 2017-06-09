@@ -25,6 +25,10 @@ import { DockerDetailComponent } from './dockerhub/docker-detail/docker-detail.c
 import { DockerHubService } from './dockerhub/docker-hub.service';
 import { DeployComponent } from './deploy/deploy/deploy.component';
 import { DeployFileComponent } from './deploy/deploy-file/deploy-file.component';
+import { AgePipe } from './age.pipe';
+import { MemoryPipe } from './memory.pipe';
+import { LabelsComponent } from './common/labels/labels.component';
+import { EndpointComponent } from './common/endpoint/endpoint.component';
 
 @NgModule({
   imports: [
@@ -52,7 +56,11 @@ import { DeployFileComponent } from './deploy/deploy-file/deploy-file.component'
     DockerListComponent,
     DockerDetailComponent,
     DeployComponent,
-    DeployFileComponent
+    DeployFileComponent,
+    AgePipe,
+    MemoryPipe,
+    LabelsComponent,
+    EndpointComponent
   ],
   providers: [
     K8sService,
