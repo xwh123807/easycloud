@@ -1,4 +1,5 @@
 import { K8sService } from '../../k8s.service';
+import { NotificationService } from '../../notification.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -10,12 +11,15 @@ export class PodListComponent implements OnInit {
   @Input() pods: any;
 
   constructor(
-    private service: K8sService
+    private service: K8sService,
+    private notification: NotificationService
   ) { }
 
   ngOnInit() {
     if (!this.pods) {
-      this.service.getPods().subscribe(r => this.pods = r);
+      this.service.getPods().subscribe(r => this.pods = r, error => {
+        this.notification.sendError(error);
+      });
     }
   }
 

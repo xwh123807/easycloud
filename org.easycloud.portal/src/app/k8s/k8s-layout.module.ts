@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { K8sSdiebarComponent } from './k8s-sdiebar/k8s-sdiebar.component';
 import { K8sService } from './k8s.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NodesComponent } from './nodes/nodes.component';
 import { NodeListComponent } from './nodes/node-list/node-list.component';
@@ -30,11 +30,14 @@ import { MemoryPipe } from './memory.pipe';
 import { LabelsComponent } from './common/labels/labels.component';
 import { EndpointComponent } from './common/endpoint/endpoint.component';
 import { StatuComponent } from './common/statu/statu.component';
+import { NotificationComponent } from './common/notification/notification.component';
+import { NotificationService } from './notification.service';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     TranslateModule,
     ChartsModule,
     K8sLayoutRoutingModule,
@@ -62,11 +65,13 @@ import { StatuComponent } from './common/statu/statu.component';
     MemoryPipe,
     LabelsComponent,
     EndpointComponent,
-    StatuComponent
+    StatuComponent,
+    NotificationComponent
   ],
   providers: [
     K8sService,
-    DockerHubService
+    DockerHubService,
+    NotificationService
   ]
 })
 

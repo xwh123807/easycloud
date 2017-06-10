@@ -23,24 +23,34 @@
 						<option value="external">External</option>
 					</select>
 				</div>
-				<div class="row" *ngIf="service.value !== 'none'">
-					<div class="col-md-4 form-group">
-						<label>Port*</label>
-						<input type="text" class="form-control"/>
+				<div class="form-group" *ngIf="service.value !== 'none'">
+					<div class="row" *ngFor="let endPoint of info.portMappings">
+						<div class="col-md-4 form-group">
+							<label>Port*</label>
+							<input type="text" class="form-control" [(ngModel)]="endPoint.port"/>
+						</div>
+						<div class="col-md-4 form-group">
+							<label>Target port*</label>
+							<input type="text" class="form-control" [(ngModel)]="endPoint.targetPort"/>
+						</div>
+						<div class="col-md-4 form-group">
+							<label>Protocol*</label>
+							<select class="form-control" [(ngModel)]="endPoint.protocol">
+								<option value="TCP">TCP</option>
+								<option value="UDP">UDP</option>
+							</select>
+						</div>
 					</div>
-					<div class="col-md-4 form-group">
-						<label>Target port*</label>
-						<input type="text" class="form-control"/>
-					</div>
-					<div class="col-md-4 form-group">
-						<label>Protocol*</label>
-						<select class="form-control">
-							<option>TCP</option>
-							<option>UDP</option>
-						</select>
+					<div class="form-group">
+						<button (click)="addEndPoint()">Add endpoint</button>
 					</div>
 				</div>
-				<div>
+				
+				
+				<div class="formGroup">
+					<input type="checkbox" #showMore [(ngModel)]="info.showMore">Show more
+				</div>
+				<div *ngIf="info.showMore">
 					<div class="form-group">
 						<label>Description:</label>
 						<input class="form-control" [(ngModel)]="info.description" />
@@ -49,8 +59,31 @@
 						<label>Namespace:</label>
 						<input class="form-control" [(ngModel)]="info.namespace" />
 					</div>
+					<div class="form-group">
+						<div class="form-group">
+							<label>Labels: </label>
+						</div>
+						<div class="row" *ngFor="let label of info.labels">
+							<div class="col-md-6 form-group">
+								<label>Key*</label>
+								<input type="text" class="form-control" [(ngModel)]="label.key"/>
+							</div>
+							<div class="col-md-6 form-group">
+								<label>Value*</label>
+								<input type="text" class="form-control" [(ngModel)]="label.value"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<button (click)="addLabel()">Add label</button>
+						</div>
+					</div>
 				</div>
-				{{info | json}}
+				
+				<div class="formGroup">
+					<button class="btn btn-primary" (click)="deploy()">Deploy</button>
+					<button class="btn" (click)="cancel()">Cancel</button>
+				</div>
+				{{info | json}} 
 			</div>
 		</div>
 	</div>
@@ -65,7 +98,7 @@
 					</textarea>
 				</div>
 				<div class="form-group">
-					<button (click)="deploy()">Deploy</button>
+					<button (click)="deployFile()">Deploy</button>
 					<button (click)="cancel()">Cancel</button>
 				</div>
 				{{deployData}}

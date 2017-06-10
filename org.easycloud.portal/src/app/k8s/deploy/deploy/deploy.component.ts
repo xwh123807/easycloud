@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { K8sService } from '../../k8s.service';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,10 +11,17 @@ import { Router } from '@angular/router';
 export class DeployComponent implements OnInit {
   info: any = {
     replicas: 1,
-    service: 'none'
+    service: 'none',
+    portMappings: [
+      { port: '', targetPort: '', protocol: 'TCP' }
+    ],
+    labels: [
+      { key: 'app', value: '' },
+      { key: 'version', value: '' }
+    ]
   };
 
-  deployData: string;
+  deployData: any;
 
   template: any = {
     "name": "redis",
@@ -45,13 +53,26 @@ export class DeployComponent implements OnInit {
   constructor(
     private service: K8sService,
     private router: Router
-  ) { }
+  ) {
+  }
+
+  addEndPoint(): void {
+    this.info.portMappings.push({ protocol: 'TCP' });
+  }
+
+  addLabel(): void {
+    this.info.labels.push({});
+  }
 
   ngOnInit() {
     this.deployData = JSON.stringify(this.template);
   }
 
   deploy(): void {
+
+  }
+
+  deployFile(): void {
     this.service.appDeployment(this.deployData).subscribe(r => {
       console.log(r);
       this.cancel();
