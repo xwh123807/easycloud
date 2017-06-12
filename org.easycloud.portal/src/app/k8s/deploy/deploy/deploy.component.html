@@ -5,11 +5,11 @@
 			<div class="card-block" *ngIf="info">
 				<div class="form-group">
 					<label>App name*</label>
-					<input class="form-control" [(ngModel)]="info.name" />
+					<input class="form-control" [(ngModel)]="info.name" (change)="nameChange()" />
 				</div>
 				<div class="form-group">
 					<label>Container image:</label>
-					<input class="form-control" [(ngModel)]="info.containerImage" />
+					<input class="form-control" [(ngModel)]="info.containerImage" (change)="imageChange()" />
 				</div>
 				<div class="form-group">
 					<label>Number of pods:</label>

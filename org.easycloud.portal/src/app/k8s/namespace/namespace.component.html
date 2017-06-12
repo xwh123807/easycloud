@@ -1,0 +1,30 @@
+<!-- <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Namespaces</div>
+			<div class="card-block table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Labels</th>
+							<th>Status</th>
+							<th>Age</th>
+						</tr>
+					</thead>
+					<tbody *ngIf="namespaces">
+						<tr *ngFor="let item of namespaces.namespaces">
+							<th><i class="fa fa-check-circle text-navy"></i></th>
+							<td>{{item.objectMeta.name}}</td>
+							<td><app-labels [labels]="item.objectMeta.labels"></app-labels></td>
+							<td>{{item.phase}}</td>
+							<td>{{item.objectMeta.creationTimestamp | age}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

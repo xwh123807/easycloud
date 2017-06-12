@@ -1,0 +1,40 @@
+{
+  "listMeta": {
+   "totalItems": 3
+  },
+  "namespaces": [
+   {
+    "objectMeta": {
+     "name": "default",
+     "creationTimestamp": "2017-05-26T02:38:05Z"
+    },
+    "typeMeta": {
+     "kind": "namespace"
+    },
+    "phase": "Active"
+   },
+   {
+    "objectMeta": {
+     "name": "kube-public",
+     "creationTimestamp": "2017-05-26T02:38:06Z"
+    },
+    "typeMeta": {
+     "kind": "namespace"
+    },
+    "phase": "Active"
+   },
+   {
+    "objectMeta": {
+     "name": "kube-system",
+     "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{},\"name\":\"kube-system\",\"namespace\":\"\"}}\n"
+     },
+     "creationTimestamp": "2017-05-26T02:38:05Z"
+    },
+    "typeMeta": {
+     "kind": "namespace"
+    },
+    "phase": "Active"
+   }
+  ]
+ }

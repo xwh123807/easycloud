@@ -18,7 +18,8 @@ export class DeployComponent implements OnInit {
     labels: [
       { key: 'app', value: '' },
       { key: 'version', value: '' }
-    ]
+    ],
+    namespace: 'default'
   };
 
   deployData: any;
@@ -68,8 +69,30 @@ export class DeployComponent implements OnInit {
     this.deployData = JSON.stringify(this.template);
   }
 
-  deploy(): void {
+  nameChange(): void {
+    this.info.portMappings[0].value = this.info.name;
+  }
 
+  imageChange(): void {
+    let str: string = this.info.containerImage;
+    let label: string = str.substring(str.lastIndexOf(str));
+    this.info.portMappings[1].value = label;
+  }
+
+  deploy(): void {
+    let data = {
+      name: this.info.name,
+      containerImage: this.info.containerImage,
+      replicas: this.info.replicas,
+      imagePullSecret: null,
+      containerCommand: null,
+      containerCommandArgs: null,
+      namespace: 'default',
+      isExternal: false,
+      portMappings: [],
+      labels: this.info.labels
+    };
+    this.service.appDeployment(data).subscribe(r => console.info(r), error => console.error(error));
   }
 
   deployFile(): void {

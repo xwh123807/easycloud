@@ -33,6 +33,13 @@ export class K8sService {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
+  
+  getNamespaces(): Observable<any> {
+    return this.http.get(this.getUrl('/namespace')).map(r => {
+      const data = r.json();
+      return data;
+    }).catch(this.handleError);
+  }
 
   getNodes(): Observable<any> {
     return this.http.get(this.getUrl('/node')).map(r => {
@@ -104,8 +111,8 @@ export class K8sService {
   "runAsPrivileged": false
  }
    */
-  appDeployment(deployData: string): Observable<any> {
-    return this.http.post('/api/v1/appdeployment', JSON.parse(deployData));
+  appDeployment(deployData: any): Observable<any> {
+    return this.http.post('/api/v1/appdeployment', deployData);
   }
 
   appDeploymentFromFile(): void {

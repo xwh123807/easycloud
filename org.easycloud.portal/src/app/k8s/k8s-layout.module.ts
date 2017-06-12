@@ -32,6 +32,9 @@ import { EndpointComponent } from './common/endpoint/endpoint.component';
 import { StatuComponent } from './common/statu/statu.component';
 import { NotificationComponent } from './common/notification/notification.component';
 import { NotificationService } from './notification.service';
+import { PlusDeployComponent } from './deploy/plus-deploy/plus-deploy.component';
+import { NamespaceComponent } from './namespace/namespace.component';
+import { SelectNamespaceComponent } from './common/select-namespace/select-namespace.component';
 
 @NgModule({
   imports: [
@@ -66,7 +69,10 @@ import { NotificationService } from './notification.service';
     LabelsComponent,
     EndpointComponent,
     StatuComponent,
-    NotificationComponent
+    NotificationComponent,
+    PlusDeployComponent,
+    NamespaceComponent,
+    SelectNamespaceComponent
   ],
   providers: [
     K8sService,

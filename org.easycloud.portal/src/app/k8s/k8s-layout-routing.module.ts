@@ -3,6 +3,7 @@ import { DeployComponent } from './deploy/deploy/deploy.component';
 import { DockerDetailComponent } from './dockerhub/docker-detail/docker-detail.component';
 import { DockerListComponent } from './dockerhub/docker-list/docker-list.component';
 import { K8sLayoutComponent } from './k8s-layout.component';
+import { NamespaceComponent } from './namespace/namespace.component';
 import { NodeDetailComponent } from './nodes/node-detail/node-detail.component';
 import { NodeListComponent } from './nodes/node-list/node-list.component';
 import { PodDetailComponent } from './pods/pod-detail/pod-detail.component';
@@ -16,6 +17,7 @@ const k8sLayoutRoutes: Routes = [
     path: '',
     component: K8sLayoutComponent,
     children: [
+      { path: 'namespaces', component: NamespaceComponent},
       { path: 'nodes', component: NodeListComponent },
       { path: 'nodes/:name', component: NodeDetailComponent },
       { path: 'pods', component: PodListComponent },
