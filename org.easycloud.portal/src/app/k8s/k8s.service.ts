@@ -1,8 +1,9 @@
 import { NotificationService } from './notification.service';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
@@ -24,16 +25,14 @@ export class K8sService {
   private handleError(error: Response | any): Observable<any> {
     let errMsg: string;
     if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body || JSON.stringify(body);
-      errMsg = error.status + ' - ' + (error.statusText || '') + err;
+      errMsg = error.toString() + '\nDetail: ' + error.text();
     } else {
       errMsg = error.message ? error.message : error.toString();
     }
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
-  
+
   getNamespaces(): Observable<any> {
     return this.http.get(this.getUrl('/namespace')).map(r => {
       const data = r.json();
@@ -85,6 +84,18 @@ export class K8sService {
 
   /**
    * {
+  "token": "5iyCYeEpXwhSPbaVaxWnScifvE8:1497236093333"
+ }
+   */
+  getCSRFTokenForAppDeployment(): Observable<any> {
+    return this.http.get(this.getUrl('/csrftoken/appdeployment')).map(r => {
+      const data = r.json();
+      return data;
+    }).catch(this.handleError);
+  }
+
+  /**
+   * {
   "name": "redis",
   "containerImage": "dockerhub.ygsoft.com:5000/redis:3.2.6",
   "imagePullSecret": null,
@@ -112,10 +123,29 @@ export class K8sService {
  }
    */
   appDeployment(deployData: any): Observable<any> {
-    return this.http.post('/api/v1/appdeployment', deployData);
+    return this.getCSRFTokenForAppDeployment().switchMap(r => {
+      const headers = new Headers({ 'X-CSRF-TOKEN': r.token });
+      const options = new RequestOptions({ headers: headers });
+      return this.http.post('/api/v1/appdeployment', deployData, options).map(r1 => r1.json());
+    }).catch(this.handleError);
   }
 
-  appDeploymentFromFile(): void {
+  appDeploymentFromFile(file: any): Observable<any> {
     //this.http.post('/api/v1/appdeploymentfromfile')
+    var fr = new FileReader();
+    fr.onerror = (e) => this.handleError;
+    fr.readAsText(file);
+    fr.onload = (event) => {
+      var data = {
+        name: file.name,
+        content: fr.result
+      }
+      const headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
+      const options = new RequestOptions({ headers: headers });
+      return this.http.post('/api/v1/appdeploymentfromfile', data, options).map(r => {
+        console.info(r);
+        return r.json();
+      });
+    };
   }
 }

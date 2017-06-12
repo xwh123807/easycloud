@@ -2,17 +2,16 @@
 	<div class="col col-xl-6 col-lg-6">
 		<div class="card mb-3">
 			<div class="card-header">Deploy a Containerized App</div>
-			<div class="card-block table-responsive" *ngIf="info">
+			<div class="card-block table-responsive">
 				<div col-md-4>
 					<div class="form-group">
 						<label>Upload a YAML or JSON file*</label>
-						<input type="file" class="form-control" [(ngModel)]="info.name" />
+						<input type="file"  #file class="form-control" />
 					</div>
 					<div class="form-group">
-						<button>Upload</button>
-						<button>Cancel</button>
+						<button class="btn btn-primary" (click)="upload(file)">Upload</button>
+						<button class="btn">Cancel</button>
 					</div>
-					{{info | json}}
 				</div>
 			</div>
 		</div>

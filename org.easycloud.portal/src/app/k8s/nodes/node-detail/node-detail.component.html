@@ -138,6 +138,6 @@
 	</div>
 </div>
 
-<div *ngIf="node">
-	<app-pod-list [pods]="node.podList"></app-pod-list>
-</div>
+<app-pod-list *ngIf="node" [pods]="node.podList"></app-pod-list>
+
+<app-event-list *ngIf="node" [eventList]="node.eventList"></app-event-list>

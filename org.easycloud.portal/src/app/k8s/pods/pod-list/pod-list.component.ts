@@ -23,4 +23,41 @@ export class PodListComponent implements OnInit {
     }
   }
 
+  /**
+   *     "podStatus": {
+     "status": "failed",
+     "podPhase": "Pending",
+     "containerStates": [
+      {
+       "waiting": {
+        "reason": "ImagePullBackOff",
+        "message": "Back-off pulling image \"redis:dfs\""
+       }
+      }
+     ]
+    }
+   */
+  getPodStatus(pod: any): string {
+    let status = pod.podStatus.podPhase;
+    if (status === 'Pending') {
+      const states = pod.podStatus.containerStates;
+      if (states && states.length > 0 && states[0].waiting) {
+        status = 'Waiting: ' + states[0].waiting.reason;
+      }
+    }
+    return status;
+  }
+
+  /**
+   *
+   */
+  getPodState(pod: any): string {
+    let stateClass;
+    if (pod.podStatus.podPhase === 'Running') {
+      stateClass = 'fa fa-check-circle text-navy';
+    } else if (pod.podStatus.podPhase === 'Pending') {
+      stateClass = pod.warnings.length === 0 ? 'fa fa-adjust' : 'fa fa-times-circle text-danger';
+    }
+    return stateClass;
+  }
 }

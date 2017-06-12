@@ -35,6 +35,7 @@ import { NotificationService } from './notification.service';
 import { PlusDeployComponent } from './deploy/plus-deploy/plus-deploy.component';
 import { NamespaceComponent } from './namespace/namespace.component';
 import { SelectNamespaceComponent } from './common/select-namespace/select-namespace.component';
+import { EventListComponent } from './common/event-list/event-list.component';
 
 @NgModule({
   imports: [
@@ -72,7 +73,8 @@ import { SelectNamespaceComponent } from './common/select-namespace/select-names
     NotificationComponent,
     PlusDeployComponent,
     NamespaceComponent,
-    SelectNamespaceComponent
+    SelectNamespaceComponent,
+    EventListComponent
   ],
   providers: [
     K8sService,

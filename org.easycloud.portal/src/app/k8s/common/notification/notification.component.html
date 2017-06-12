@@ -1,4 +1,4 @@
-<div class="alert alert-warning alert-dismissable" *ngIf="message">
-	<button class="close" type="button">×</button>
+<div class="alert alert-warning alert-dismissable" *ngIf="message" [ngStyle]="{'display': isHide ? 'none' : ''}">
+	<button class="close" type="button" (click)="close()">×</button>
 	{{message.message}}
 </div>

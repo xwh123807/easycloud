@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col col-xl-12 col-lg-12">
+		<div class="card mb-3">
+			<div class="card-header">Events</div>
+			<div class="card-block table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Message</th>
+							<th>Source</th>
+							<th>Sub-object</th>
+							<th>Count</th>
+							<th>First seen</th>
+							<th>Last seen</th>
+						</tr>
+					</thead>
+					<tbody  *ngIf="eventList">
+						<tr *ngFor="let item of eventList.events">
+							<td>{{item.message}}</td>
+							<td>{{item.sourceComponent}}</td>
+							<td>{{item.object}}</td>
+							<td>{{item.count}}</td>
+							<td>{{item.firstSeen}}</td>
+							<td>{{item.lastSeen}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

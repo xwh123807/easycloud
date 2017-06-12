@@ -31,7 +31,7 @@ export class StatuComponent implements OnInit {
     if (this.status) {
       if (this.status.podPhase === 'Running') {
         this.statusClass = 'fa fa-check-circle text-navy';
-      } else {
+      } else if (this.status.podPhase === 'Pending') {
         this.statusClass = 'fa fa-warning text-danger';
       }
     }

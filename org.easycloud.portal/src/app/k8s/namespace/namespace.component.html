@@ -16,7 +16,7 @@
 					</thead>
 					<tbody *ngIf="namespaces">
 						<tr *ngFor="let item of namespaces.namespaces">
-							<th><i class="fa fa-check-circle text-navy"></i></th>
+							<th><i [ngClass]="item.phase === 'Active' ? 'fa fa-check-circle text-navy' : 'fa fa-warning-circle text-danger'"></i></th>
 							<td>{{item.objectMeta.name}}</td>
 							<td><app-labels [labels]="item.objectMeta.labels"></app-labels></td>
 							<td>{{item.phase}}</td>

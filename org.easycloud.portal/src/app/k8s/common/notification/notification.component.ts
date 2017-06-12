@@ -9,12 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class NotificationComponent implements OnInit {
   message: any;
 
+  isHide = true;
+
   constructor(
     private notification: NotificationService
   ) { }
 
   ngOnInit() {
-    this.notification.getMessageStream().subscribe(msg => this.message = msg);
+    this.notification.getMessageStream().subscribe(msg => {
+      this.message = msg;
+      this.isHide = false;
+    });
   }
 
+  close() {
+    this.isHide = true;
+  }
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { K8sService } from '../../k8s.service';
+import { NotificationService } from '../../notification.service';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-deploy',
@@ -53,7 +55,8 @@ export class DeployComponent implements OnInit {
 
   constructor(
     private service: K8sService,
-    private router: Router
+    private router: Router,
+    private notification: NotificationService
   ) {
   }
 
@@ -70,13 +73,13 @@ export class DeployComponent implements OnInit {
   }
 
   nameChange(): void {
-    this.info.portMappings[0].value = this.info.name;
+    this.info.labels[0].value = this.info.name;
   }
 
   imageChange(): void {
     let str: string = this.info.containerImage;
-    let label: string = str.substring(str.lastIndexOf(str));
-    this.info.portMappings[1].value = label;
+    let label: string = str.substring(str.lastIndexOf(":") + 1);
+    this.info.labels[1].value = label;
   }
 
   deploy(): void {
@@ -92,7 +95,10 @@ export class DeployComponent implements OnInit {
       portMappings: [],
       labels: this.info.labels
     };
-    this.service.appDeployment(data).subscribe(r => console.info(r), error => console.error(error));
+    console.info(data);
+    this.service.appDeployment(data).subscribe(r => {
+      this.router.navigate(['/k8s', 'pods']);
+    }, e => this.notification.sendError(e));
   }
 
   deployFile(): void {

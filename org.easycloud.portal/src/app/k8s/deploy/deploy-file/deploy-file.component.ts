@@ -1,3 +1,4 @@
+import { K8sService } from '../../k8s.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./deploy-file.component.scss']
 })
 export class DeployFileComponent implements OnInit {
-  info: any = {};
-  
-  constructor() { }
+  constructor(
+    private service: K8sService
+  ) { }
 
   ngOnInit() {
   }
 
+  upload(file: any): void {
+    this.service.appDeploymentFromFile(file).subscribe(r => console.info(r));
+  }
 }
