@@ -1,5 +1,5 @@
 import { K8sService } from '../../k8s.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-select-namespace',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectNamespaceComponent implements OnInit {
   namespaces: any;
+
+  @Input() value: any;
 
   constructor(
     private service: K8sService
