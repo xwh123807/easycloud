@@ -1,17 +1,21 @@
 <div class="row">
-	<div class="col col-xl-6 col-lg-6">
+	<div class="col col-xl-9 col-lg-9">
 		<div class="card mb-3">
-			<div class="card-header">Deploy a Containerized App</div>
+			<div class="card-header">Deploy App</div>
 			<div class="card-block table-responsive">
-				<div col-md-4>
-					<div class="form-group">
-						<label>Upload a YAML or JSON file*</label>
-						<input type="file"  #file class="form-control" />
-					</div>
-					<div class="form-group">
-						<button class="btn btn-primary" (click)="upload(file.files[0])">Upload</button>
-						<button class="btn" (click)="close()">Cancel</button>
-					</div>
+				<div class="form-group">
+					<label>Upload a YAML or JSON file*</label>
+					<input type="file"  #file class="form-control" (change)="loadContent(file.files[0])" />
+				</div>
+				<div class="form-group">
+					<label>File Content</label>
+					<textarea rows="20" class="form-control" [(ngModel)]="content"></textarea>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary" (click)="upload(file.files[0])">Upload</button>
+					<button class="btn" (click)="deploy()">Deploy</button>
+					<button class="btn" (click)="delete()">Delete</button>
+					<button class="btn" (click)="close()">Cancel</button>
 				</div>
 			</div>
 		</div>

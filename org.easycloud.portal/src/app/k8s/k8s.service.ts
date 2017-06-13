@@ -166,4 +166,44 @@ export class K8sService {
       });
     }).catch(this.handleError);
   }
+
+  appDeploymentFromFileContent(content: string): Observable<any> {
+    const data = {
+      name: 'appDeploymentFromFileContent.yaml',
+      content: content
+    };
+    return this.getCSRFTokenForAppDeploymentFromFile().switchMap(r => {
+      const headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8', 'X-CSRF-TOKEN': r.token });
+      const options = new RequestOptions({ headers: headers });
+      return this.http.post('/api/v1/appdeploymentfromfile', data, options).map(r1 => r1.json());
+    }).catch(this.handleError);
+  }
+
+  appUnDeploymentFromFileContent(content: string): Observable<any> {
+    const data = {
+      name: 'appDeploymentFromFileContent.yaml',
+      content: content
+    };
+    return this.getCSRFTokenForAppDeploymentFromFile().switchMap(r => {
+      const headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8', 'X-CSRF-TOKEN': r.token });
+      const options = new RequestOptions({ headers: headers });
+      return this.http.delete('/api/v1/appdeploymentfromfile', options).map(r1 => r1.json());
+    }).catch(this.handleError);
+  }
+
+  /**
+   * _raw/deployment/namespace/default/name/redis3
+   * Method:DELETE
+   */
+  deleteDeployment() {
+
+  }
+
+  /**
+   * _raw/pod/namespace/default/name/redis4-2452501106-0nhgw
+   * 
+   */
+  deletePod() {
+
+  }
 }

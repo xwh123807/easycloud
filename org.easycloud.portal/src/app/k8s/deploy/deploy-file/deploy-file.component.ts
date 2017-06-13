@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./deploy-file.component.scss']
 })
 export class DeployFileComponent implements OnInit {
+  content: string;
+
   constructor(
     private service: K8sService,
     private notification: NotificationService,
@@ -25,5 +27,19 @@ export class DeployFileComponent implements OnInit {
 
   close(): void {
     this.router.navigate(['/k8s', 'pods']);
+  }
+
+  loadContent(file: any): void {
+    this.service.readFile(file).subscribe(r => this.content = r, e => this.notification.sendError(e));
+  }
+
+  deploy(): void {
+    this.service.appDeploymentFromFileContent(this.content)
+      .subscribe(r => { window.alert('发布成功.') }, e => this.notification.sendError(e));
+  }
+
+  delete(): void {
+    this.service.appUnDeploymentFromFileContent(this.content)
+      .subscribe(r => { window.alert('删除成功.') }, e => this.notification.sendError(e));
   }
 }
