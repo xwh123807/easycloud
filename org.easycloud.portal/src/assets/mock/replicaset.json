@@ -1,0 +1,294 @@
+{
+  "listMeta": {
+   "totalItems": 6
+  },
+  "replicaSets": [
+   {
+    "objectMeta": {
+     "name": "redis-1027093108",
+     "namespace": "default",
+     "labels": {
+      "app": "redis",
+      "pod-template-hash": "1027093108",
+      "version": "3.2.9"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/desired-replicas": "1",
+      "deployment.kubernetes.io/max-replicas": "2",
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-05-26T05:48:02Z"
+    },
+    "typeMeta": {
+     "kind": "replicaset"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 1,
+     "pending": 0,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": []
+    },
+    "containerImages": [
+     "redis:3.2.9"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "redis1-4043387649",
+     "namespace": "default",
+     "labels": {
+      "app": "redis1",
+      "pod-template-hash": "4043387649",
+      "version": "3.2.6"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/desired-replicas": "1",
+      "deployment.kubernetes.io/max-replicas": "2",
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-06-12T03:29:00Z"
+    },
+    "typeMeta": {
+     "kind": "replicaset"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 1,
+     "pending": 0,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": []
+    },
+    "containerImages": [
+     "redis:3.2.6"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "redis2-2725262224",
+     "namespace": "default",
+     "labels": {
+      "app": "redis2",
+      "pod-template-hash": "2725262224",
+      "version": "dfs"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/desired-replicas": "1",
+      "deployment.kubernetes.io/max-replicas": "2",
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-06-12T03:55:36Z"
+    },
+    "typeMeta": {
+     "kind": "replicaset"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 0,
+     "pending": 1,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": [
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Failed to pull image \"redis:dfs\": rpc error: code = 2 desc = Tag dfs not found in repository docker.io/library/redis",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "Failed",
+       "type": "Warning"
+      },
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Error syncing pod, skipping: failed to \"StartContainer\" for \"redis2\" with ErrImagePull: \"rpc error: code = 2 desc = Tag dfs not found in repository docker.io/library/redis\"\n",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "FailedSync",
+       "type": "Warning"
+      }
+     ]
+    },
+    "containerImages": [
+     "redis:dfs"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "redis3-1173959271",
+     "namespace": "default",
+     "labels": {
+      "app": "redis3",
+      "pod-template-hash": "1173959271",
+      "version": "v1"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/desired-replicas": "1",
+      "deployment.kubernetes.io/max-replicas": "2",
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-06-12T08:50:53Z"
+    },
+    "typeMeta": {
+     "kind": "replicaset"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 0,
+     "pending": 1,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": [
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Failed to pull image \"redis:v1\": rpc error: code = 2 desc = Tag v1 not found in repository docker.io/library/redis",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "Failed",
+       "type": "Warning"
+      },
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Error syncing pod, skipping: failed to \"StartContainer\" for \"redis3\" with ErrImagePull: \"rpc error: code = 2 desc = Tag v1 not found in repository docker.io/library/redis\"\n",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "FailedSync",
+       "type": "Warning"
+      }
+     ]
+    },
+    "containerImages": [
+     "redis:v1"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "redis4-2452501106",
+     "namespace": "default",
+     "labels": {
+      "app": "redis4",
+      "pod-template-hash": "2452501106",
+      "version": "v5"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/desired-replicas": "1",
+      "deployment.kubernetes.io/max-replicas": "2",
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-06-12T08:53:53Z"
+    },
+    "typeMeta": {
+     "kind": "replicaset"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 0,
+     "pending": 1,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": [
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Failed to pull image \"redis:v5\": rpc error: code = 2 desc = Tag v5 not found in repository docker.io/library/redis",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "Failed",
+       "type": "Warning"
+      },
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Error syncing pod, skipping: failed to \"StartContainer\" for \"redis4\" with ErrImagePull: \"rpc error: code = 2 desc = Tag v5 not found in repository docker.io/library/redis\"\n",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "FailedSync",
+       "type": "Warning"
+      }
+     ]
+    },
+    "containerImages": [
+     "redis:v5"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "kube-dns-268032401",
+     "namespace": "kube-system",
+     "labels": {
+      "k8s-app": "kube-dns",
+      "pod-template-hash": "268032401"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/desired-replicas": "1",
+      "deployment.kubernetes.io/max-replicas": "2",
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-05-26T02:38:52Z"
+    },
+    "typeMeta": {
+     "kind": "replicaset"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 1,
+     "pending": 0,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": []
+    },
+    "containerImages": [
+     "gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.1",
+     "gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.1",
+     "gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.1"
+    ]
+   }
+  ],
+  "cumulativeMetrics": []
+ }

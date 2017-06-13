@@ -94,6 +94,13 @@ export class K8sService {
     }).catch(this.handleError);
   }
 
+  getCSRFTokenForAppDeploymentFromFile(): Observable<any> {
+    return this.http.get(this.getUrl('/csrftoken/appdeploymentfromfile')).map(r => {
+      const data = r.json();
+      return data;
+    }).catch(this.handleError);
+  }
+
   /**
    * {
   "name": "redis",
@@ -130,22 +137,33 @@ export class K8sService {
     }).catch(this.handleError);
   }
 
+  readFile(file: any): Observable<any> {
+    return Observable.create((observer) => {
+      const fr = new FileReader();
+      fr.onload = (event) => {
+        observer.next(fr.result);
+        observer.complete();
+      };
+      fr.onerror = (error) => {
+        observer.error(error);
+      };
+      fr.readAsText(file);
+    });
+  }
+
   appDeploymentFromFile(file: any): Observable<any> {
-    //this.http.post('/api/v1/appdeploymentfromfile')
-    var fr = new FileReader();
-    fr.onerror = (e) => this.handleError;
-    fr.readAsText(file);
-    fr.onload = (event) => {
-      var data = {
-        name: file.name,
-        content: fr.result
-      }
-      const headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
+    let data;
+    return this.readFile(file).map(r => {
+      return { name: file.name, content: r };
+    }).switchMap(r => {
+      data = r;
+      return this.getCSRFTokenForAppDeploymentFromFile().map(r1 => r1.token);
+    }).switchMap(token => {
+      const headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8', 'X-CSRF-TOKEN': token });
       const options = new RequestOptions({ headers: headers });
       return this.http.post('/api/v1/appdeploymentfromfile', data, options).map(r => {
-        console.info(r);
         return r.json();
       });
-    };
+    }).catch(this.handleError);
   }
 }

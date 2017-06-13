@@ -1,0 +1,49 @@
+{
+  "listMeta": {
+   "totalItems": 1
+  },
+  "replicationControllers": [
+   {
+    "objectMeta": {
+     "name": "kubernetes-dashboard",
+     "namespace": "kube-system",
+     "labels": {
+      "addonmanager.kubernetes.io/mode": "Reconcile",
+      "kubernetes.io/minikube-addons": "dashboard",
+      "version": "v1.6.0"
+     },
+     "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"ReplicationController\",\"metadata\":{\"annotations\":{},\"labels\":{\"addonmanager.kubernetes.io/mode\":\"Reconcile\",\"kubernetes.io/minikube-addons\":\"dashboard\",\"version\":\"v1.6.0\"},\"name\":\"kubernetes-dashboard\",\"namespace\":\"kube-system\"},\"spec\":{\"replicas\":1,\"selector\":{\"addonmanager.kubernetes.io/mode\":\"Reconcile\",\"app\":\"kubernetes-dashboard\",\"version\":\"v1.6.0\"},\"template\":{\"metadata\":{\"labels\":{\"addonmanager.kubernetes.io/mode\":\"Reconcile\",\"app\":\"kubernetes-dashboard\",\"version\":\"v1.6.0\"}},\"spec\":{\"containers\":[{\"image\":\"gcr.io/google_containers/kubernetes-dashboard-amd64:v1.6.0\",\"imagePullPolicy\":\"IfNotPresent\",\"livenessProbe\":{\"httpGet\":{\"path\":\"/\",\"port\":9090},\"initialDelaySeconds\":30,\"timeoutSeconds\":30},\"name\":\"kubernetes-dashboard\",\"ports\":[{\"containerPort\":9090,\"protocol\":\"TCP\"}]}]}}}}\n"
+     },
+     "creationTimestamp": "2017-05-26T02:38:52Z"
+    },
+    "typeMeta": {
+     "kind": "replicationcontroller"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 1,
+     "pending": 0,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": []
+    },
+    "containerImages": [
+     "gcr.io/google_containers/kubernetes-dashboard-amd64:v1.6.0"
+    ]
+   }
+  ],
+  "cumulativeMetrics": [
+   {
+    "dataPoints": [],
+    "metricName": "cpu/usage_rate",
+    "aggregation": "sum"
+   },
+   {
+    "dataPoints": [],
+    "metricName": "memory/usage",
+    "aggregation": "sum"
+   }
+  ]
+ }

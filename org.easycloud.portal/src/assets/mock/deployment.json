@@ -1,0 +1,279 @@
+{
+  "listMeta": {
+   "totalItems": 6
+  },
+  "deployments": [
+   {
+    "objectMeta": {
+     "name": "redis",
+     "namespace": "default",
+     "labels": {
+      "app": "redis",
+      "version": "3.2.9"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-05-26T05:48:02Z"
+    },
+    "typeMeta": {
+     "kind": "deployment"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 1,
+     "pending": 0,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": []
+    },
+    "containerImages": [
+     "redis:3.2.9"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "redis1",
+     "namespace": "default",
+     "labels": {
+      "app": "redis1",
+      "version": "3.2.6"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-06-12T03:29:00Z"
+    },
+    "typeMeta": {
+     "kind": "deployment"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 1,
+     "pending": 0,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": []
+    },
+    "containerImages": [
+     "redis:3.2.6"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "redis2",
+     "namespace": "default",
+     "labels": {
+      "app": "redis2",
+      "version": "dfs"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-06-12T03:55:36Z"
+    },
+    "typeMeta": {
+     "kind": "deployment"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 0,
+     "pending": 1,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": [
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Failed to pull image \"redis:dfs\": rpc error: code = 2 desc = Tag dfs not found in repository docker.io/library/redis",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "Failed",
+       "type": "Warning"
+      },
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Error syncing pod, skipping: failed to \"StartContainer\" for \"redis2\" with ErrImagePull: \"rpc error: code = 2 desc = Tag dfs not found in repository docker.io/library/redis\"\n",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "FailedSync",
+       "type": "Warning"
+      }
+     ]
+    },
+    "containerImages": [
+     "redis:dfs"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "redis3",
+     "namespace": "default",
+     "labels": {
+      "app": "redis3",
+      "version": "v1"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-06-12T08:50:53Z"
+    },
+    "typeMeta": {
+     "kind": "deployment"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 0,
+     "pending": 1,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": [
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Failed to pull image \"redis:v1\": rpc error: code = 2 desc = Tag v1 not found in repository docker.io/library/redis",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "Failed",
+       "type": "Warning"
+      },
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Error syncing pod, skipping: failed to \"StartContainer\" for \"redis3\" with ErrImagePull: \"rpc error: code = 2 desc = Tag v1 not found in repository docker.io/library/redis\"\n",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "FailedSync",
+       "type": "Warning"
+      }
+     ]
+    },
+    "containerImages": [
+     "redis:v1"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "redis4",
+     "namespace": "default",
+     "labels": {
+      "app": "redis4",
+      "version": "v5"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/revision": "1"
+     },
+     "creationTimestamp": "2017-06-12T08:53:53Z"
+    },
+    "typeMeta": {
+     "kind": "deployment"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 0,
+     "pending": 1,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": [
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Failed to pull image \"redis:v5\": rpc error: code = 2 desc = Tag v5 not found in repository docker.io/library/redis",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "Failed",
+       "type": "Warning"
+      },
+      {
+       "objectMeta": {
+        "creationTimestamp": null
+       },
+       "typeMeta": {},
+       "message": "Error syncing pod, skipping: failed to \"StartContainer\" for \"redis4\" with ErrImagePull: \"rpc error: code = 2 desc = Tag v5 not found in repository docker.io/library/redis\"\n",
+       "sourceComponent": "",
+       "sourceHost": "",
+       "object": "",
+       "count": 0,
+       "firstSeen": null,
+       "lastSeen": null,
+       "reason": "FailedSync",
+       "type": "Warning"
+      }
+     ]
+    },
+    "containerImages": [
+     "redis:v5"
+    ]
+   },
+   {
+    "objectMeta": {
+     "name": "kube-dns",
+     "namespace": "kube-system",
+     "labels": {
+      "addonmanager.kubernetes.io/mode": "Reconcile",
+      "k8s-app": "kube-dns",
+      "version": "v20"
+     },
+     "annotations": {
+      "deployment.kubernetes.io/revision": "1",
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"extensions/v1beta1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"labels\":{\"addonmanager.kubernetes.io/mode\":\"Reconcile\",\"k8s-app\":\"kube-dns\",\"version\":\"v20\"},\"name\":\"kube-dns\",\"namespace\":\"kube-system\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"k8s-app\":\"kube-dns\"}},\"template\":{\"metadata\":{\"annotations\":{\"scheduler.alpha.kubernetes.io/critical-pod\":\"\"},\"labels\":{\"k8s-app\":\"kube-dns\"}},\"spec\":{\"containers\":[{\"args\":[\"--domain=cluster.local.\",\"--dns-port=10053\",\"--config-dir=/kube-dns-config\",\"--v=2\"],\"env\":[{\"name\":\"PROMETHEUS_PORT\",\"value\":\"10055\"}],\"image\":\"gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.1\",\"livenessProbe\":{\"failureThreshold\":5,\"httpGet\":{\"path\":\"/healthcheck/kubedns\",\"port\":10054,\"scheme\":\"HTTP\"},\"initialDelaySeconds\":60,\"successThreshold\":1,\"timeoutSeconds\":5},\"name\":\"kubedns\",\"ports\":[{\"containerPort\":10053,\"name\":\"dns-local\",\"protocol\":\"UDP\"},{\"containerPort\":10053,\"name\":\"dns-tcp-local\",\"protocol\":\"TCP\"},{\"containerPort\":10055,\"name\":\"metrics\",\"protocol\":\"TCP\"}],\"readinessProbe\":{\"httpGet\":{\"path\":\"/readiness\",\"port\":8081,\"scheme\":\"HTTP\"},\"initialDelaySeconds\":3,\"timeoutSeconds\":5},\"resources\":{\"limits\":{\"memory\":\"170Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"70Mi\"}},\"volumeMounts\":[{\"mountPath\":\"/kube-dns-config\",\"name\":\"kube-dns-config\"}]},{\"args\":[\"-v=2\",\"-logtostderr\",\"-configDir=/etc/k8s/dns/dnsmasq-nanny\",\"-restartDnsmasq=true\",\"--\",\"-k\",\"--cache-size=1000\",\"--log-facility=-\",\"--server=127.0.0.1#10053\"],\"image\":\"gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.1\",\"livenessProbe\":{\"failureThreshold\":5,\"httpGet\":{\"path\":\"/healthcheck/dnsmasq\",\"port\":10054,\"scheme\":\"HTTP\"},\"initialDelaySeconds\":60,\"successThreshold\":1,\"timeoutSeconds\":5},\"name\":\"dnsmasq\",\"ports\":[{\"containerPort\":53,\"name\":\"dns\",\"protocol\":\"UDP\"},{\"containerPort\":53,\"name\":\"dns-tcp\",\"protocol\":\"TCP\"}],\"resources\":{\"requests\":{\"cpu\":\"150m\",\"memory\":\"20Mi\"}},\"volumeMounts\":[{\"mountPath\":\"/etc/k8s/dns/dnsmasq-nanny\",\"name\":\"kube-dns-config\"}]},{\"args\":[\"--v=2\",\"--logtostderr\",\"--probe=kubedns,127.0.0.1:10053,kubernetes.default.svc.cluster.local.,5,A\",\"--probe=dnsmasq,127.0.0.1:53,kubernetes.default.svc.cluster.local.,5,A\"],\"image\":\"gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.1\",\"livenessProbe\":{\"failureThreshold\":5,\"httpGet\":{\"path\":\"/metrics\",\"port\":10054,\"scheme\":\"HTTP\"},\"initialDelaySeconds\":60,\"successThreshold\":1,\"timeoutSeconds\":5},\"name\":\"sidecar\",\"ports\":[{\"containerPort\":10054,\"name\":\"metrics\",\"protocol\":\"TCP\"}],\"resources\":{\"requests\":{\"cpu\":\"10m\",\"memory\":\"20Mi\"}}}],\"dnsPolicy\":\"Default\",\"tolerations\":[{\"key\":\"CriticalAddonsOnly\",\"operator\":\"Exists\"}],\"volumes\":[{\"configMap\":{\"name\":\"kube-dns\",\"optional\":true},\"name\":\"kube-dns-config\"}]}}}}\n"
+     },
+     "creationTimestamp": "2017-05-26T02:38:52Z"
+    },
+    "typeMeta": {
+     "kind": "deployment"
+    },
+    "pods": {
+     "current": 1,
+     "desired": 1,
+     "running": 1,
+     "pending": 0,
+     "failed": 0,
+     "succeeded": 0,
+     "warnings": []
+    },
+    "containerImages": [
+     "gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.1",
+     "gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.1",
+     "gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.1"
+    ]
+   }
+  ],
+  "cumulativeMetrics": []
+ }
