@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col col-xl-12 col-lg-12">
+        <div class="card mb-3">
+            <div class="card-header">Templates</div>
+            <div class="card-block table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Path</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody *ngIf="templates">
+                    <tr *ngFor="let template of templates; let i = index">
+                        <th>{{i}}</th>
+                        <td>{{template.name}}</td>
+                        <td>{{template.description}}</td>
+                        <td>{{template.path}}</td>
+                        <td><button (click)="view(template.name)">Deploy</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

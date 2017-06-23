@@ -1,0 +1,118 @@
+{
+    "kind": "List",
+    "apiVersion": "v1",
+    "params": [
+        {
+            "name": "user",
+            "description": "用户",
+            "value": "gxff"
+        }
+    ],
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "name": "elasticsearch-{user}",
+                "labels": {
+                    "component": "elasticsearch",
+                    "user": "{user}"
+                }
+            },
+            "spec": {
+                "type": "NodePort",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 9200,
+                        "targetPort": 9200
+                    },
+                    {
+                        "name": "transport",
+                        "port": 9300,
+                        "targetPort": 9300
+                    }
+                ],
+                "selector": {
+                    "component": "elasticsearch",
+                    "user": "{user}"
+                }
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "Deployment",
+            "metadata": {
+                "name": "elasticsearch-{user}",
+                "labels": {
+                    "component": "elasticsearch",
+                    "user": "{user}"
+                }
+            },
+            "spec": {
+                "replicas": 1,
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "component": "elasticsearch",
+                            "user": "{user}"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "elasticsearch",
+                                "image": "fabric8/elasticsearch-k8s:5.1.1",
+                                "ports": [
+                                    {
+                                        "containerPort": "9200"
+                                    },
+                                    {
+                                        "containerPort": "9300"
+                                    }
+                                ],
+                                "resources": {
+                                    "requests": {
+                                        "memory": "128Mi"
+                                    },
+                                    "limits": {
+                                        "memory": "1Gi"
+                                    }
+                                },
+                                "env": [
+                                    {
+                                        "name": "NODE_MASTER",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "name": "NODE_DATA",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "name": "KUBERNETES_NAMESPACE",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "fieldPath": "metadata.namespace"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "SERVICE",
+                                        "value": "elasticsearch-cluster"
+                                    }
+                                ],
+                                "args": [
+                                    "-Ehttp.cors.enabled=true",
+                                    "-Ehttp.cors.allow-origin=*"
+                                ],
+                                "securityContext": {
+                                    "privileged": true
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

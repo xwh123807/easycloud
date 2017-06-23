@@ -1,0 +1,49 @@
+<div class="row" *ngIf="template">
+    <div class="col col-xl-6 col-lg-6">
+        <div class="card mb-3">
+            <div class="card-header">{{template.name}}</div>
+            <div class="card-block table-responsive">
+                <div class="form-group">
+                    <label>description:</label>
+                    {{template.description}}
+                </div>
+                <div class="form-group">
+                    <label>Content:</label>
+                    <textarea rows="20" class="form-control" [(ngModel)]="content"></textarea>
+                </div>
+                <div class="form-group" *ngFor="let param of params">
+                    <label>{{param.description}}</label>
+                    <input type="text" [(ngModel)]="param.value" name="{{param.name}}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" (click)="deploy()">Deploy</button>
+                    <button class="btn" (click)="delete()">Delete</button>
+                    <button class="btn" (click)="close()">Cancel</button>
+                </div>
+            </div>
+
+            <div class="card-block table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Kind</th>
+                        <th>Name</th>
+                        <th>Message</th>
+                    </tr>
+                    </thead>
+                    <tbody *ngIf="status">
+                    <tr *ngFor="let item of status;">
+                        <th><i
+                            [ngClass]="item.success ? 'fa fa-check-circle text-navy' : 'fa fa-times-circle text-danger'"></i>
+                        </th>
+                        <td>{{item.kind}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.message || ''}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

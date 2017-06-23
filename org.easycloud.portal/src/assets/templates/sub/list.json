@@ -1,0 +1,13 @@
+{
+    "kind": "List",
+    "apiVersion": "v1",
+    "params": [
+        {
+            "name": "user",
+            "description": "用户",
+            "value": "gxff"
+        }
+    ],
+    "items": [
+    ]
+}

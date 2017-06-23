@@ -1,0 +1,42 @@
+[
+    {
+        "name": "redis",
+        "description": "Redis单节点",
+        "path": "redis-all.yaml"
+    },
+    {
+        "name": "redis-json",
+        "description": "Redis单节点、服务",
+        "path": "redis-all.json"
+    },
+    {
+        "name": "redis-pod-json",
+        "description": "Redis单节点",
+        "path": "redis-pod.json"
+    },
+    {
+        "name": "redis-cluster",
+        "description": "Redis集群",
+        "path": "redis-cluster-all.yaml"
+    },
+    {
+        "name": "mysql",
+        "description": "mysql",
+        "path": "components/mysql.json"
+    },
+    {
+        "name": "wordpress",
+        "description": "wordpress",
+        "path": "components/wordpress.json"
+    },
+    {
+        "name": "elasticsearch",
+        "description": "elasticsearch",
+        "path": "components/elasticsearch.json"
+    },
+    {
+        "name": "wordpress & mysql",
+        "description": "wordpress & mysql",
+        "path": "wordpress-mysql.json"
+    }
+]
