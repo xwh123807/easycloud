@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Template, TemplateService} from '../../services/template.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
     selector: 'app-template-list',
@@ -10,7 +10,9 @@ import {Router} from '@angular/router';
 export class TemplateListComponent implements OnInit {
     templates: Template[];
 
-    constructor(private service: TemplateService, private router: Router) {
+    constructor(private service: TemplateService,
+                private route: ActivatedRoute,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -18,6 +20,6 @@ export class TemplateListComponent implements OnInit {
     }
 
     view(name: string): void {
-        this.router.navigate(['/k8d/templates', name]);
+        this.router.navigate(['../', name], {relativeTo: this.route});
     }
 }

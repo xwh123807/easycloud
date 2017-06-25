@@ -4,6 +4,9 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/groupBy';
+import "rxjs/add/operator/mergeMap";
+import "rxjs/add/operator/concat";
 
 /**
  * 部署状态类
@@ -26,6 +29,10 @@ export class Status {
         this.success = false;
         this.message = message;
     }
+}
+
+export enum Kind {
+    Pod
 }
 
 @Injectable()
@@ -154,8 +161,8 @@ export class KubeService {
             .filter((item: any) => {
                 const ownerReferences: any[] = item.metadata.ownerReferences;
                 return ownerReferences.filter((ref: any) => {
-                    return (ref.name === parent.metadata.name) && (ref.kind === 'ReplicaSet');
-                }).length > 0;
+                        return (ref.name === parent.metadata.name) && (ref.kind === 'ReplicaSet');
+                    }).length > 0;
             }).map((item2: any) => {
                 return {
                     kind: 'Pod',
@@ -181,6 +188,24 @@ export class KubeService {
                     });
                 }
             });
+        });
+    }
+
+    /**
+     * 获取系统，并按系统名称分组
+     * 1、首先查找有system标签的pods，api/v1/namespaces/{namespace}/pods?labelSelector=system
+     * 2、查找有system标签的services，api/v1/namespaces/{namespace}/services?labelSelector=system
+     * 3、将1、2查找结果拼接，并按metadata.labels.system即系统名分组
+     */
+    getSystems(namespace: string): Observable<any> {
+        const pods = this.http.get(this.getDeployUrl('Pod', 'v1', namespace) + '?labelSelector=system')
+            .map(r => r.json().items)
+            .flatMap(items => Observable.from(items));
+        const services = this.http.get(this.getDeployUrl('Service', 'v1', namespace) + '?labelSelector=system')
+            .map(r => r.json().items)
+            .flatMap(items => Observable.from(items));
+        return pods.concat(services).groupBy((item: any) => {
+            return item.metadata.labels.system;
         });
     }
 }
