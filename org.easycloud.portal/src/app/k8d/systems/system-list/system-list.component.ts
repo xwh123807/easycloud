@@ -55,7 +55,7 @@ export class SystemListComponent implements OnInit {
      * @returns {string}
      */
     getOpenK8sUrl(pod: any): string {
-        return 'http://mykube:30000/#!/' + (this.isService(pod) ? 'service' : 'pod') +
+        return 'http://kube.ygsoft.com:30000/#!/' + (this.isService(pod) ? 'service' : 'pod') +
             '/' + pod.metadata.namespace + '/' + pod.metadata.name;
     }
 
@@ -63,7 +63,7 @@ export class SystemListComponent implements OnInit {
      * 删除系统
      * @param system
      */
-    deleteSystem(system: any): void {
-
+    deleteSystem(system: string): void {
+        this.service.deleteSystem('default', system).subscribe(r => console.info(r));
     }
 }

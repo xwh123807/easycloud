@@ -7,6 +7,10 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/groupBy';
 import "rxjs/add/operator/mergeMap";
 import "rxjs/add/operator/concat";
+import "rxjs/add/operator/switchMap";
+import {Subject} from "rxjs/Subject";
+import "rxjs/add/operator/mergeAll";
+import "rxjs/add/operator/merge";
 
 /**
  * 部署状态类
@@ -44,10 +48,40 @@ export enum Kind {
     DaemonSet
 }
 
+/**
+ * Kubernetes部署单元
+ */
+export class K8Unit {
+    constructor(public kind: Kind,
+                public namespace: string,
+                public name: string,
+                public ownerReferences: any) {
+    }
+}
+
 @Injectable()
 export class KubeService {
 
     constructor(private http: Http) {
+    }
+
+    getKind(kind: string): Kind {
+        switch (kind) {
+            case 'Pod':
+                return Kind.Pod;
+            case 'Service':
+                return Kind.Service;
+            case 'Deployment':
+                return Kind.Deployment;
+            case 'ReplicaSet':
+                return Kind.ReplicaSet;
+            case 'ReplicationController':
+                return Kind.ReplicationController;
+            case 'StatefulSet':
+                return Kind.StatefulSet;
+            case 'DaemonSet':
+                return Kind.DaemonSet;
+        }
     }
 
     /**
@@ -82,7 +116,7 @@ export class KubeService {
         const items = [];
         if (selector) {
             const props = Object.keys(selector);
-            props.forEach(name => items.push(name + (props[name] ? ('=' + props[name]) : '')));
+            props.forEach(name => items.push(name + (selector[name] ? ('=' + selector[name]) : '')));
         }
         const buffer = (items.length === 0) ? '' : '?labelSelector=' + items.join(',');
         return this.getDeployUrl(kind, apiVersion, namespace) + buffer;
@@ -118,7 +152,7 @@ export class KubeService {
         return Observable.create(observer => {
                 items.forEach((item: any) => {
                     const status: Status = new Status(item.kind, item.metadata.name, item.metadata.namespace);
-                    this.http.post(this.getDeployUrl(item.kind, item.apiVersion, item.metadata.namespace), item,
+                    this.http.post(this.getDeployUrl(this.getKind(item.kind), item.apiVersion, item.metadata.namespace), item,
                         this.getRequestOptions('application/json'))
                         .subscribe(r1 => {
                             status.ok();
@@ -134,28 +168,14 @@ export class KubeService {
 
     appUnDeploymentFromFile(content: string): Observable<any> {
         return this.unDeployFromFile(this.getDepends(this.getDefinitions(content)));
-        // const items = this.getDefinitions(content);
-        // return Observable.create(observer => {
-        //     items.forEach((item: any) => {
-        //         const namespace = item.metadata.namespace || 'default';
-        //         const status: Status = new Status(item.kind, item.metadata.name, namespace);
-        //         this.http.delete(this.getDeployUrl(item.kind, item.apiVersion, namespace) + '/' + item.metadata.name)
-        //             .subscribe(r1 => {
-        //                 status.ok();
-        //                 observer.next(status);
-        //             }, e1 => {
-        //                 status.error(JSON.parse(e1.text()).message);
-        //                 observer.next(status);
-        //             });
-        //     });
-        // });
     }
 
     unDeployFromFile(items: Observable<any>): Observable<any> {
         return Observable.create(observer => {
             items.subscribe((item: any) => {
                 const status: Status = new Status(item.kind, item.metadata.name, item.metadata.namespace);
-                this.http.delete(this.getDeployUrl(item.kind, item.apiVersion, item.metadata.namespace) + '/' + item.metadata.name)
+                this.http.delete(this.getDeployUrl(this.getKind(item.kind), item.apiVersion, item.metadata.namespace)
+                    + '/' + item.metadata.name)
                     .subscribe(r1 => {
                         status.ok();
                         observer.next(status);
@@ -242,13 +262,110 @@ export class KubeService {
     }
 
     /**
+     * 删除部署组件
+     * @param kind
+     * @param namespace
+     * @param name
+     */
+    deleteUnit(unit: K8Unit): Observable<Status> {
+        const status: Status = new Status(unit.kind.toString(), unit.name, unit.namespace);
+        return this.http.delete(this.getDeployUrl(unit.kind, null, unit.namespace) + '/' + unit.name)
+            .map(r1 => {
+                status.ok();
+                return status;
+            });
+    }
+
+    /**
      * 删除系统包含的pod和service以及关联单元
      * @param namespace
      * @param system
      */
     deleteSystem(namespace: string, system: string): Observable<any> {
-        const pods = this.http.get(this.getDeployUrlWithLabelSelector(Kind.Pod, null, namespace, {system: system}))
-            .map(r => r.json().items);
-        return pods;
+        const pods: Subject<K8Unit> = new Subject();
+        const sets: Subject<K8Unit> = new Subject();
+        const deployments: Subject<K8Unit> = new Subject();
+        const services: Subject<K8Unit> = new Subject();
+        const status: Subject<Status> = new Subject();
+
+        this.http.get(this.getDeployUrlWithLabelSelector(Kind.Pod, null, namespace, {system: system}))
+            .switchMap(r => r.json().items)
+            .map((item: any) => new K8Unit(Kind.Pod, item.metadata.namespace, item.metadata.name, item.metadata.ownerReferences))
+            .subscribe((unit: K8Unit) => {
+                pods.next(unit);
+                unit.ownerReferences.forEach((ref: any) => {
+                    const parentUnit = new K8Unit(this.getKind(ref.kind), namespace, ref.name, null);
+                    sets.next(parentUnit);
+                    this.getParent(parentUnit)
+                        .subscribe((parent: K8Unit) => {
+                            deployments.next(parent);
+                        });
+                });
+            });
+        this.http.get(this.getDeployUrlWithLabelSelector(Kind.Service, null, namespace, {system: system}))
+            .switchMap(r => r.json().items)
+            .map((item: any) => new K8Unit(Kind.Service, item.metadata.namespace, item.metadata.name, item.metadata.ownerReferences))
+            .subscribe(unit => {
+                services.next(unit);
+            });
+        deployments.switchMap(unit => {
+            return this.deleteUnit(unit);
+        }).subscribe(res => status.next(res));
+        sets.switchMap(unit => {
+            return this.deleteUnit(unit);
+        }).subscribe(res => status.next(res));
+        pods.switchMap(unit => {
+            return this.deleteUnit(unit);
+        }).subscribe(res => status.next(res));
+        services.switchMap(unit => {
+            return this.deleteUnit(unit);
+        }).subscribe(res => status.next(res));
+
+        return status;
+
+        // const items = Observable.create(observer => {
+        //     this.http.get(this.getDeployUrlWithLabelSelector(Kind.Pod, null, namespace, {system: system}))
+        //         .switchMap(r => r.json().items)
+        //         .map((item: any) => new K8Unit(Kind.Pod, item.metadata.namespace, item.metadata.name, item.metadata.ownerReferences))
+        //         .subscribe((unit: any) => {
+        //             observer.next(unit);
+        //             unit.ownerReferences.forEach((ref: any) => {
+        //                 const parentUnit = new K8Unit(this.getKind(ref.kind), namespace, ref.name, null);
+        //                 observer.next(parentUnit);
+        //                 this.getParent(parentUnit)
+        //                     .subscribe((parent: K8Unit) => {
+        //                         observer.next(parent);
+        //                     });
+        //             });
+        //         });
+        //     this.http.get(this.getDeployUrlWithLabelSelector(Kind.Service, null, namespace, {system: system}))
+        //         .switchMap(r => r.json().items)
+        //         .map((item: any) => new K8Unit(Kind.Service, item.metadata.namespace, item.metadata.name, item.metadata.ownerReferences))
+        //         .subscribe(unit => {
+        //             observer.next(unit);
+        //         });
+        // });
+        // return items.switchMap((unit: K8Unit) => {
+        //     return this.deleteUnit(unit);
+        // });
+    }
+
+    /**
+     * 获取组件的父组件
+     * @param unit
+     * @returns {Observable<R>}
+     */
+    getParent(unit: K8Unit): Observable<any> {
+        return this.http.get(this.getDeployUrl(unit.kind, null, unit.namespace) + '/' + unit.name)
+            .map(res => res.json())
+            .filter((item: any) => {
+                return item.metadata.ownerReferences && item.metadata.ownerReferences.length > 0;
+            })
+            .switchMap((item: any) => {
+                return item.metadata.ownerReferences;
+            })
+            .map((ref: any) => {
+                return new K8Unit(this.getKind(ref.kind), unit.namespace, ref.name, null);
+            });
     }
 }
