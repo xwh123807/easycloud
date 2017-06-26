@@ -1,3 +1,14 @@
-<section class="main-container">
+<nav>
+    <a routerLink="./templates" [routerLinkActive]="['router-link-active']">
+        <i class="fa fa-fw fa-archive"></i>&nbsp;{{ 'Templates'  }}
+    </a>
+    <a routerLink="./systems" [routerLinkActive]="['router-link-active']">
+        <i class="fa fa-fw fa-server"></i>&nbsp;{{ 'Systems'  }}
+    </a>
+    <a href="http://dockerhub.ygsoft.com:8081/nexus" target="blank" tooltip="user: deployment pass: deployment" >
+        {{ 'Nexus'  }}
+    </a>
+</nav>
+<section class="main-container1">
     <router-outlet></router-outlet>
 </section>

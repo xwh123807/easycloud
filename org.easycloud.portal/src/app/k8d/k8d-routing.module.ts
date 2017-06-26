@@ -1,16 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {K8dComponent} from './k8d.component';
-import {TemplateListComponent} from './templates/template-list/template-list.component';
-import {TemplateDetailComponent} from './templates/template-detail/template-detail.component';
 
 const routes: Routes = [
+    {path: '', redirectTo: '/k8d/systems', pathMatch: 'full'},
     {
         path: '', component: K8dComponent,
         children: [{
-            path: 'templates', component: TemplateListComponent
+            path: 'templates', loadChildren: './templates/templates.module#TemplatesModule'
         }, {
-            path: 'templates/:name', component: TemplateDetailComponent
+            path: 'systems', loadChildren: './systems/systems.module#SystemsModule'
         }]
     }
 ];

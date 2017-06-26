@@ -6,6 +6,11 @@
             "name": "user",
             "description": "用户",
             "value": "gxff"
+        },
+        {
+            "name":"system",
+            "description": "系统",
+            "value": "default"
         }
     ],
     "items": [
@@ -16,7 +21,8 @@
                 "name": "mysql-{user}",
                 "labels": {
                     "component": "mysql",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "{system}"
                 }
             },
             "spec": {
@@ -28,7 +34,8 @@
                 ],
                 "selector": {
                     "component": "mysql",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "{system}"
                 }
             }
         },
@@ -40,7 +47,8 @@
                 "namespace": "default",
                 "labels": {
                     "component": "mysql",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "{system}"
                 }
             },
             "spec": {
@@ -49,7 +57,8 @@
                     "metadata": {
                         "labels": {
                             "component": "mysql",
-                            "user": "{user}"
+                            "user": "{user}",
+                            "system": "{system}"
                         }
                     },
                     "spec": {
@@ -95,7 +104,8 @@
                 "name": "wordpress-{user}",
                 "labels": {
                     "component": "wordpress",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "{system}"
                 }
             },
             "spec": {
@@ -108,7 +118,8 @@
                 ],
                 "selector": {
                     "component": "wordpress",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "{system}"
                 }
             }
         },
@@ -119,7 +130,8 @@
                 "name": "wordpress-{user}",
                 "labels": {
                     "component": "wordpress",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "{system}"
                 }
             },
             "spec": {
@@ -128,7 +140,8 @@
                     "metadata": {
                         "labels": {
                             "component": "wordpress",
-                            "user": "{user}"
+                            "user": "{user}",
+                            "system": "{system}"
                         }
                     },
                     "spec": {

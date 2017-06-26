@@ -4,6 +4,9 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/groupBy';
+import "rxjs/add/operator/mergeMap";
+import "rxjs/add/operator/concat";
 
 /**
  * 部署状态类
@@ -28,25 +31,61 @@ export class Status {
     }
 }
 
+/**
+ * Kubernetes 组件类型
+ */
+export enum Kind {
+    Pod,
+    Service,
+    Deployment,
+    ReplicaSet,
+    ReplicationController,
+    StatefulSet,
+    DaemonSet
+}
+
 @Injectable()
 export class KubeService {
 
     constructor(private http: Http) {
     }
 
-    getDeployUrl(kind: string, apiVersion: string, namespace: string): string {
+    /**
+     * 获取Kubernetes服务url，用于获取列表，查找、以及增删改
+     * @param kind
+     * @param apiVersion
+     * @param namespace
+     * @returns {any}
+     */
+    getDeployUrl(kind: Kind, apiVersion: string, namespace: string): string {
         switch (kind) {
-            case 'Service':
-                return '/api/' + apiVersion + '/namespaces/' + namespace + '/services';
-            case 'Deployment':
-                return '/apis/' + apiVersion + '/namespaces/' + namespace + '/deployments';
-            case 'ReplicaSet':
-                return '/apis/' + apiVersion + '/namespaces/' + namespace + '/replicasets';
-            case 'Pod':
-                return '/api/' + apiVersion + '/namespaces/' + namespace + '/pods';
+            case Kind.Service:
+                return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/services';
+            case Kind.Deployment:
+                return '/apis/' + (apiVersion || 'apps/v1beta1') + '/namespaces/' + namespace + '/deployments';
+            case Kind.ReplicaSet:
+                return '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/replicasets';
+            case Kind.Pod:
+                return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/pods';
+            case Kind.ReplicationController:
+                return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/replicationcontrollers';
+            case Kind.StatefulSet:
+                return '/apis/' + (apiVersion || 'apps/v1beta1') + '/namespaces/' + namespace + '/statefulsets';
+            case Kind.DaemonSet:
+                return '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/daemonsets';
             default:
-                return '';
+                throw new Error('参数不合法.');
         }
+    }
+
+    getDeployUrlWithLabelSelector(kind: Kind, apiVersion: string, namespace: string, selector: any): string {
+        const items = [];
+        if (selector) {
+            const props = Object.keys(selector);
+            props.forEach(name => items.push(name + (props[name] ? ('=' + props[name]) : '')));
+        }
+        const buffer = (items.length === 0) ? '' : '?labelSelector=' + items.join(',');
+        return this.getDeployUrl(kind, apiVersion, namespace) + buffer;
     }
 
     getRequestOptions(contentType: string): RequestOptions {
@@ -129,7 +168,7 @@ export class KubeService {
     }
 
     getReplicaSet(deploymentMetadata: any): Observable<any> {
-        return this.http.get('/apis/extensions/v1beta1/namespaces/' + deploymentMetadata.namespace + '/replicasets')
+        return this.http.get(this.getDeployUrl(Kind.ReplicaSet, null, deploymentMetadata.namespace))
             .switchMap(r => r.json().items)
             .filter((item: any) => {
                 const ownerReferences: any[] = item.metadata.ownerReferences;
@@ -149,13 +188,13 @@ export class KubeService {
     }
 
     getPodsByReplicaSet(parent: any): Observable<any> {
-        return this.http.get('/api/v1/namespaces/' + parent.metadata.namespace + '/pods')
+        return this.http.get(this.getDeployUrl(Kind.Pod, null, parent.metadata.namespace))
             .switchMap(r => r.json().items)
             .filter((item: any) => {
                 const ownerReferences: any[] = item.metadata.ownerReferences;
                 return ownerReferences.filter((ref: any) => {
-                    return (ref.name === parent.metadata.name) && (ref.kind === 'ReplicaSet');
-                }).length > 0;
+                        return (ref.name === parent.metadata.name) && (ref.kind === 'ReplicaSet');
+                    }).length > 0;
             }).map((item2: any) => {
                 return {
                     kind: 'Pod',
@@ -182,5 +221,34 @@ export class KubeService {
                 }
             });
         });
+    }
+
+    /**
+     * 获取系统(标签包含system的部署单元)，并按系统名称分组
+     * 1、首先查找有system标签的pods，api/v1/namespaces/{namespace}/pods?labelSelector=system
+     * 2、查找有system标签的services，api/v1/namespaces/{namespace}/services?labelSelector=system
+     * 3、将1、2查找结果拼接，并按metadata.labels.system即系统名分组
+     */
+    getSystems(namespace: string): Observable<any> {
+        const pods = this.http.get(this.getDeployUrlWithLabelSelector(Kind.Pod, null, namespace, {system: null}))
+            .map(r => r.json().items)
+            .flatMap(items => Observable.from(items));
+        const services = this.http.get(this.getDeployUrlWithLabelSelector(Kind.Service, null, namespace, {system: null}))
+            .map(r => r.json().items)
+            .flatMap(items => Observable.from(items));
+        return pods.concat(services).groupBy((item: any) => {
+            return item.metadata.labels.system;
+        });
+    }
+
+    /**
+     * 删除系统包含的pod和service以及关联单元
+     * @param namespace
+     * @param system
+     */
+    deleteSystem(namespace: string, system: string): Observable<any> {
+        const pods = this.http.get(this.getDeployUrlWithLabelSelector(Kind.Pod, null, namespace, {system: system}))
+            .map(r => r.json().items);
+        return pods;
     }
 }
