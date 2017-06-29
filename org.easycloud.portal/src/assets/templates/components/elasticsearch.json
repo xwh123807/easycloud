@@ -11,12 +11,20 @@
     "items": [
         {
             "apiVersion": "v1",
+            "kind": "ServiceAccount",
+            "metadata": {
+                "name": "elasticsearch"
+            }
+        },
+        {
+            "apiVersion": "v1",
             "kind": "Service",
             "metadata": {
                 "name": "elasticsearch-{user}",
                 "labels": {
                     "component": "elasticsearch",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "elasticsearch-{user}"
                 }
             },
             "spec": {
@@ -35,7 +43,8 @@
                 ],
                 "selector": {
                     "component": "elasticsearch",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "elasticsearch-{user}"
                 }
             }
         },
@@ -46,7 +55,8 @@
                 "name": "elasticsearch-{user}",
                 "labels": {
                     "component": "elasticsearch",
-                    "user": "{user}"
+                    "user": "{user}",
+                    "system": "elasticsearch-{user}"
                 }
             },
             "spec": {
@@ -55,10 +65,13 @@
                     "metadata": {
                         "labels": {
                             "component": "elasticsearch",
-                            "user": "{user}"
+                            "user": "{user}",
+                            "system": "elasticsearch-{user}"
                         }
                     },
                     "spec": {
+                        "serviceAccount": "elasticsearch",
+                        "serviceAccountName": "elasticsearch",
                         "containers": [
                             {
                                 "name": "elasticsearch",
@@ -98,7 +111,7 @@
                                     },
                                     {
                                         "name": "SERVICE",
-                                        "value": "elasticsearch-cluster"
+                                        "value": "elasticsearch-{user}"
                                     }
                                 ],
                                 "args": [

@@ -27,7 +27,8 @@
                 "../node_modules/jquery/dist/jquery.min.js",
                 "../node_modules/chart.js/dist/Chart.js",
                 "../node_modules/echarts/dist/echarts.js",
-                "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+                "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+                "../node_modules/js-yaml/dist/js-yaml.js"
             ],
             "environmentSource": "environments/environment.ts",
             "environments": {

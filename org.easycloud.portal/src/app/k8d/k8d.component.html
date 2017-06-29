@@ -5,6 +5,9 @@
     <a routerLink="./systems" [routerLinkActive]="['router-link-active']">
         <i class="fa fa-fw fa-server"></i>&nbsp;{{ 'Systems'  }}
     </a>
+    <a [href]="kubernetesDashboardUrl" target="blank" tooltip="Kubernetes Dashboard" >
+        {{ 'Kubernetes'  }}
+    </a>
     <a href="http://dockerhub.ygsoft.com:8081/nexus" target="blank" tooltip="user: deployment pass: deployment" >
         {{ 'Nexus'  }}
     </a>

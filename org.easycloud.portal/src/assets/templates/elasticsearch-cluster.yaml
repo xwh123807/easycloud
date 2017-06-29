@@ -1,0 +1,169 @@
+kind: "List"
+apiVersion: "v1"
+params:
+-   name: user
+    value: ecp
+-   name: namespace
+    value: default
+items:
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    name: elasticsearch-{user}
+    labels:
+        user: {user}
+        system: elasticsearch-{user}
+
+-   kind: ClusterRoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1beta1
+    metadata:
+      name: elasticsearch-{user}
+      labels:
+        system: elasticsearch-{user}
+    subjects:
+      - kind: ServiceAccount
+        name: elasticsearch-{user}
+        namespace: {namespace}
+    roleRef:
+      kind: ClusterRole
+      name: view
+      apiGroup: rbac.authorization.k8s.io
+
+-   apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: elasticsearch-{user}
+      labels:
+        user: {user}
+        system: elasticsearch-{user}
+    data:
+      elasticsearch.yml: |
+        cluster:
+          name: ${CLUSTER_NAME}
+
+        node.data: ${NODE_DATA}
+        node.master: ${NODE_MASTER}
+        node.ingest: ${NODE_CLIENT}
+
+        network.host: 0.0.0.0
+
+        cloud:
+          kubernetes:
+            service: ${SERVICE}
+            namespace: ${KUBERNETES_NAMESPACE}
+
+        discovery.zen.hosts_provider: kubernetes
+
+        plugin.mandatory: discovery-kubernetes
+
+        http.cors:
+          enabled: true
+          allow-origin: "*"
+
+        thread_pool:
+          bulk:
+            queue_size: 2000
+
+        #index:
+        #  number_of_shards: 5
+        #  number_of_replicas: 0
+
+        xpack.security.authc:
+          anonymous:
+            username: anonymous_user
+            roles: role1, superuser
+            authz_exception: true
+
+      log4j2.properties: |
+
+        status = error
+
+        appender.console.type = Console
+        appender.console.name = console
+        appender.console.layout.type = PatternLayout
+        appender.console.layout.pattern = [%d{ISO8601}][%-5p][%-25c{1.}] %marker%m%n
+
+        rootLogger.level = info
+        rootLogger.appenderRef.console.ref = console
+
+- apiVersion: "v1"
+  kind: "Service"
+  metadata:
+    name: "elasticsearch-{user}"
+    labels:
+        user: {user}
+        system: elasticsearch-{user}
+  spec:
+    ports:
+      - port: 9200
+        targetPort: "http"
+    selector:
+      component: "elasticsearch"
+      provider: "fabric8"
+    type: "NodePort"
+
+- apiVersion: "v1"
+  kind: "ReplicationController"
+  metadata:
+    name: "elasticsearch-{user}"
+    lables:
+          user: {user}
+          system: elasticsearch-{user}
+  spec:
+    replicas: 1
+    selector:
+      component: "elasticsearch"
+      provider: "fabric8"
+      user: {user}
+      system: elasticsearch-{user}
+    template:
+      metadata:
+        labels:
+          component: "elasticsearch"
+          provider: "fabric8"
+          user: {user}
+          system: elasticsearch-{user}
+      spec:
+        serviceAccountName: elasticsearch-{user}
+        containers:
+          - env:
+              - name: "CLUSTER_NAME"
+                value: "elasticsearch-{user}"
+              - name: "SERVICE"
+                value: "elasticsearch-{user}"
+              - name: "KUBERNETES_NAMESPACE"
+                valueFrom:
+                  fieldRef:
+                    fieldPath: "metadata.namespace"
+              - name: "NODE_MASTER"
+                value: "true"
+              - name: "NODE_CLIENT"
+                value: "true"
+              - name: "NODE_DATA"
+                value: "true"
+            image: "dockerhub.ygsoft.com:5000/ygsoft/elasticsearch:5.1.1-1"
+            name: "elasticsearch"
+            args: ["-Epath.conf=/configdir", "-Ehttp.cors.enabled=true", "-Ehttp.cors.allow-origin=*"]
+            ports:
+              - containerPort: 9300
+                name: "transport"
+              - containerPort: 9200
+                name: "http"
+            volumeMounts:
+              - mountPath: "/usr/share/elasticsearch/data"
+                name: "elasticsearch-data"
+                readOnly: false
+              - mountPath: "/configdir"
+                name: "configdir"
+                readOnly: false
+        volumes:
+          - name: "elasticsearch-data"
+            emptyDir: {}
+          - name: "configdir"
+            configMap:
+              name: elasticsearch-{user}
+              items:
+              - key: elasticsearch.yml
+                path: elasticsearch.yml
+              - key: log4j2.properties
+                path: log4j2.properties

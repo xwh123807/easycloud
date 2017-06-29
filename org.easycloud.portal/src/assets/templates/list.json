@@ -1,23 +1,8 @@
 [
     {
-        "name": "redis",
-        "description": "Redis单节点",
-        "path": "redis-all.yaml"
-    },
-    {
-        "name": "redis-json",
-        "description": "Redis单节点、服务",
-        "path": "redis-all.json"
-    },
-    {
-        "name": "redis-pod-json",
-        "description": "Redis单节点",
-        "path": "redis-pod.json"
-    },
-    {
         "name": "redis-cluster",
-        "description": "Redis集群",
-        "path": "redis-cluster-all.yaml"
+        "description": "redis主备",
+        "path": "components/redis-cluster.yaml"
     },
     {
         "name": "mysql",
@@ -38,5 +23,15 @@
         "name": "wordpress & mysql",
         "description": "wordpress & mysql",
         "path": "wordpress-mysql.json"
+    },
+    {
+        "name":"elasticsearch-logging cluster",
+        "description":"官方elasticsearch集群，但Service名必须为elasticsearch-logging",
+        "path":"es-cluster.yaml"
+    },
+    {
+        "name":"elasticsearch cluster",
+        "description":"自定义elasticsearch镜像",
+        "path":"elasticsearch-cluster.yaml"
     }
 ]

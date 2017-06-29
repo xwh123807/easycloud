@@ -1,0 +1,22 @@
+<div class="card-block table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Kind</th>
+            <th>Name</th>
+            <th>Message</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="status">
+        <tr *ngFor="let item of status;">
+            <th><i
+                [ngClass]="item.success ? 'fa fa-check-circle text-navy' : 'fa fa-times-circle text-danger'"></i>
+            </th>
+            <td>{{item.kindName}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.message || ''}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

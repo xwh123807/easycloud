@@ -3,7 +3,9 @@ import {Template, TemplateService} from '../../services/template.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/filter';
 import {KubeService} from "../../services/kube.service";
+import * as jsyaml from "js-yaml";
 
 @Component({
     selector: 'app-template-detail',
@@ -30,7 +32,7 @@ export class TemplateDetailComponent implements OnInit {
      * 运行日志
      * @type {Array}
      */
-    status: any[] = [];
+    status: any[];
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -45,9 +47,17 @@ export class TemplateDetailComponent implements OnInit {
                 this.service.getTemplateByPath(this.template.path)
                     .subscribe(res => {
                         this.content = res;
-                        this.params = JSON.parse(this.content).params || [];
+                        this.params = this.parseTemplate(this.content).params || [];
                     });
             });
+    }
+
+    parseTemplate(content: string): any {
+        if (this.template.path.endsWith('.json')) {
+            return JSON.parse(content);
+        } else {
+            return jsyaml.load(content);
+        }
     }
 
     getContentWithParams(): string {
@@ -56,7 +66,8 @@ export class TemplateDetailComponent implements OnInit {
             const reg = new RegExp('{' + param.name + '}', 'g');
             buffer = buffer.replace(reg, param.value);
         });
-        return buffer;
+        const obj = this.parseTemplate(buffer);
+        return JSON.stringify(obj);
     }
 
     deploy() {

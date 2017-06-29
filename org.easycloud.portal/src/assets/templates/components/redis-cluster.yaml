@@ -1,0 +1,164 @@
+kind: "List"
+apiVersion: "v1"
+params:
+-   name: user
+    value: ecp
+items:
+-   apiVersion: v1
+    kind: ConfigMap
+    metadata:
+        name: redis-{user}-config
+        labels:
+          app: redis
+          user: {user}
+          system: redis-{user}
+    data:
+        redis.conf: |
+            pidfile /var/run/redis.pid
+            port 6379
+            tcp-backlog 511
+            timeout 0
+            tcp-keepalive 0
+            loglevel verbose
+            syslog-enabled yes
+            databases 1
+            save 1 1
+            save 900 1
+            save 300 10
+            save 60 10000
+            stop-writes-on-bgsave-error yes
+            rdbcompression no
+            rdbchecksum yes
+            dbfilename dump.rdb
+            dir /data
+            slave-serve-stale-data no
+            slave-read-only yes
+            repl-disable-tcp-nodelay no
+            slave-priority 100
+            maxmemory <bytes>
+            appendonly yes
+            appendfilename "appendonly.aof"
+            appendfsync everysec
+            no-appendfsync-on-rewrite no
+            auto-aof-rewrite-percentage 100
+            auto-aof-rewrite-min-size 1
+            aof-load-truncated yes
+            lua-time-limit 5000
+            slowlog-log-slower-than 10000
+            slowlog-max-len 128
+            latency-monitor-threshold 0
+            notify-keyspace-events "KEg$lshzxeA"
+            list-max-ziplist-entries 512
+            list-max-ziplist-value 64
+            set-max-intset-entries 512
+            zset-max-ziplist-entries 128
+            zset-max-ziplist-value 64
+            hll-sparse-max-bytes 3000
+            activerehashing yes
+            client-output-buffer-limit normal 0 0 0
+            client-output-buffer-limit slave 256mb 64mb 60
+            client-output-buffer-limit pubsub 32mb 8mb 60
+            hz 10
+            aof-rewrite-incremental-fsync yes
+
+-   apiVersion: "v1"
+    kind: "Service"
+    metadata:
+        name: "redis-{user}"
+        labels:
+            app: redis
+            user: {user}
+            system: redis-{user}
+    spec:
+        type: NodePort
+        ports:
+          - port: 6379
+            targetPort: 6379
+        selector:
+            app: redis
+            user: {user}
+            system: redis-{user}
+
+-   apiVersion: extensions/v1beta1
+    kind: Deployment
+    metadata:
+      name: redis-master-{user}
+      labels:
+          app: redis
+          role: master
+          user: {user}
+          system: redis-{user}
+    spec:
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            app: redis
+            role: master
+            user: {user}
+            system: redis-{user}
+        spec:
+          containers:
+          - name: master
+            image: dockerhub.ygsoft.com:5000/redis:3.2.6
+            args: ["/configdir/redis.conf", "--dir /datadir", "--appendonly yes"]
+            ports:
+            - containerPort: 6379
+            volumeMounts:
+            - mountPath: "/configdir"
+              name: "configdir"
+            - mountPath: "/datadir"
+              name: "datadir"
+            securityContext:
+              privileged: true
+          volumes:
+          - name: "configdir"
+            configMap:
+                name: redis-{user}-config
+                items:
+                -   key: redis.conf
+                    path: redis.conf
+          - name: "datadir"
+            emptyDir: {}
+
+-   apiVersion: extensions/v1beta1
+    kind: Deployment
+    metadata:
+      name: redis-slave-{user}
+      labels:
+          app: redis
+          role: slave
+          user: {user}
+          system: redis-{user}
+    spec:
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            app: redis
+            role: slave
+            user: {user}
+            system: redis-{user}
+        spec:
+          containers:
+          - name: slave
+            image: dockerhub.ygsoft.com:5000/redis:3.2.6
+            args: ["/configdir/redis.conf", "--dir /datadir", "--appendonly no", "--slaveof", "redis-{user}", "6379"]
+            ports:
+            - containerPort: 6379
+            volumeMounts:
+            - mountPath: "/configdir"
+              name: "configdir"
+            - mountPath: "/datadir"
+              name: "datadir"
+            securityContext:
+              privileged: true
+          volumes:
+          - name: "configdir"
+            configMap:
+                name: redis-{user}-config
+                items:
+                -   key: redis.conf
+                    path: redis.conf
+          - name: "datadir"
+            emptyDir: {}

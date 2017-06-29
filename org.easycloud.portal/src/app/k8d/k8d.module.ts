@@ -5,7 +5,6 @@ import {K8dComponent} from './k8d.component';
 import {TemplateService} from './services/template.service';
 import {FormsModule} from "@angular/forms";
 import {KubeService} from "./services/kube.service";
-import {SideBarComponent} from './side-bar/side-bar.component';
 
 @NgModule({
     imports: [
@@ -14,8 +13,7 @@ import {SideBarComponent} from './side-bar/side-bar.component';
         K8dRoutingModule
     ],
     declarations: [
-        K8dComponent,
-        SideBarComponent
+        K8dComponent
     ],
     providers: [
         TemplateService,

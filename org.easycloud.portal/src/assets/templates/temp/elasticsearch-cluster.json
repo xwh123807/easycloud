@@ -1,0 +1,223 @@
+{
+    "kind": "List",
+    "apiVersion": "v1",
+    "params": [
+        {
+            "name": "user",
+            "description": "用户",
+            "value": "gxff"
+        }
+    ],
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "ServiceAccount",
+            "metadata": {
+                "name": "elasticsearch"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "name": "elasticsearch-cluster-{user}",
+                "labels": {
+                    "component": "elasticsearch",
+                    "user": "{user}",
+                    "role": "master",
+                    "system":"elasticsearch-cluster-{user}"
+                }
+            },
+            "spec": {
+                "type": "NodePort",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 9200,
+                        "targetPort": 9200
+                    },
+                    {
+                        "name": "transport",
+                        "port": 9300,
+                        "targetPort": 9300
+                    }
+                ],
+                "selector": {
+                    "component": "elasticsearch",
+                    "user": "{user}",
+                    "system":"elasticsearch-cluster-{user}"
+                }
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "Deployment",
+            "metadata": {
+                "name": "elasticsearch-master-{user}",
+                "labels": {
+                    "component": "elasticsearch",
+                    "user": "{user}",
+                    "role": "master",
+                    "system":"elasticsearch-cluster-{user}"
+                }
+            },
+            "spec": {
+                "replicas": 1,
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "component": "elasticsearch",
+                            "user": "{user}",
+                            "role": "master",
+                            "system":"elasticsearch-cluster-{user}"
+                        }
+                    },
+                    "spec": {
+                        "serviceAccount": "elasticsearch",
+                        "serviceAccountName": "elasticsearch",
+                        "containers": [
+                            {
+                                "name": "elasticsearch",
+                                "image": "dockerhub.ygsoft.com:5000/ygsoft/elasticsearch:5.1.1-1",
+                                "ports": [
+                                    {
+                                        "containerPort": "9200"
+                                    },
+                                    {
+                                        "containerPort": "9300"
+                                    }
+                                ],
+                                "resources": {
+                                    "requests": {
+                                        "memory": "128Mi"
+                                    },
+                                    "limits": {
+                                        "memory": "1Gi"
+                                    }
+                                },
+                                "env": [
+                                    {
+                                        "name": "NODE_MASTER",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "name": "NODE_DATA",
+                                        "value": "false"
+                                    },
+                                    {
+                                        "name":"NODE_CLIENT",
+                                        "value":"true"
+                                    },
+                                    {
+                                        "name": "KUBERNETES_NAMESPACE",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "fieldPath": "metadata.namespace"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "SERVICE",
+                                        "value": "elasticsearch-cluster-{user}"
+                                    }
+                                ],
+                                "args": [
+                                    "-Ehttp.cors.enabled=true",
+                                    "-Ehttp.cors.allow-origin=*"
+                                ],
+                                "securityContext": {
+                                    "privileged": true
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "apiVersion": "extensions/v1beta1",
+            "kind": "Deployment",
+            "metadata": {
+                "name": "elasticsearch-data-{user}",
+                "labels": {
+                    "component": "elasticsearch",
+                    "user": "{user}",
+                    "role": "data",
+                    "system":"elasticsearch-cluster-{user}"
+                }
+            },
+            "spec": {
+                "replicas": 1,
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "component": "elasticsearch",
+                            "user": "{user}",
+                            "role": "data",
+                            "system":"elasticsearch-cluster-{user}"
+                        }
+                    },
+                    "spec": {
+                        "serviceAccount": "elasticsearch",
+                        "serviceAccountName": "elasticsearch",
+                        "containers": [
+                            {
+                                "name": "elasticsearch",
+                                "image": "dockerhub.ygsoft.com:5000/ygsoft/elasticsearch:5.1.1-1",
+                                "ports": [
+                                    {
+                                        "containerPort": "9200"
+                                    },
+                                    {
+                                        "containerPort": "9300"
+                                    }
+                                ],
+                                "resources": {
+                                    "requests": {
+                                        "memory": "128Mi"
+                                    },
+                                    "limits": {
+                                        "memory": "1Gi"
+                                    }
+                                },
+                                "env": [
+                                    {
+                                        "name": "NODE_MASTER",
+                                        "value": "false"
+                                    },
+                                    {
+                                        "name": "NODE_DATA",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "name":"NODE_CLIENT",
+                                        "value":"false"
+                                    },
+                                    {
+                                        "name": "KUBERNETES_NAMESPACE",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "fieldPath": "metadata.namespace"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "SERVICE",
+                                        "value": "elasticsearch-cluster-{user}"
+                                    }
+                                ],
+                                "args": [
+                                    "-Ehttp.cors.enabled=true",
+                                    "-Ehttp.cors.allow-origin=*"
+                                ],
+                                "securityContext": {
+                                    "privileged": true
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

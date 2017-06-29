@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {KubeService} from "../../services/kube.service";
+import {Kind, KubeService} from "../../services/kube.service";
+import {K8dConfig} from "../../k8d-config";
 
 @Component({
     selector: 'app-system-list',
@@ -13,15 +14,24 @@ export class SystemListComponent implements OnInit {
      */
     systems: any[] = [];
 
+    status: any[];
+
     constructor(private service: KubeService) {
     }
 
     ngOnInit() {
+        this.refresh();
+    }
+
+    refresh() {
+        this.systems = [];
+        this.status = null;
         this.service.getSystems('default').subscribe(r => {
             this.systems.push({system: r.key, items: []});
             const index = this.systems.length - 1;
             r.subscribe(item => {
                 this.systems[index].items.push(item);
+                // console.info(item);
             });
         });
     }
@@ -30,8 +40,8 @@ export class SystemListComponent implements OnInit {
      * 判断部署部件是pod还是service
      * @param pod
      */
-    isService(pod: any): boolean {
-        return !pod.status.phase;
+    isPod(pod: any): boolean {
+        return pod.status && pod.status.phase;
     }
 
     /**
@@ -39,14 +49,41 @@ export class SystemListComponent implements OnInit {
      */
     getState(pod: any): string {
         let stateClass;
-        if (pod.status.phase === 'Running' || this.isService(pod)) {
-            stateClass = 'fa fa-check-circle text-navy';
-        } else if (pod.status.phase === 'Pending') {
-            stateClass = 'fa fa-adjust';
+        if (pod.kind === Kind.Pod) {
+            if (pod.status.phase === 'Running' || this.isPod(pod)) {
+                stateClass = 'fa fa-check-circle text-navy';
+            } else if (pod.status.phase === 'Pending') {
+                stateClass = 'fa fa-adjust';
+            } else {
+                stateClass = 'fa fa-times-circle text-danger';
+            }
         } else {
-            stateClass = 'fa fa-times-circle text-danger';
+            stateClass = 'fa fa-check-circle text-navy';
         }
+
         return stateClass;
+    }
+
+    /**
+     * 获取可执行的操作
+     * @param pod
+     * @returns {Array}
+     */
+    getActions(pod: any): string[] {
+        const items = [];
+        switch (pod.kind) {
+            case Kind.Service:
+                const ports: any[] = pod.spec.ports || [];
+                ports.forEach(port => {
+                    if (port.nodePort) {
+                        items.push({label: port.nodePort, action: K8dConfig.kubernetesMasterUrl + ':' + port.nodePort});
+                    }
+                });
+                break;
+            case Kind.ConfigMap:
+                break;
+        }
+        return items;
     }
 
     /**
@@ -55,7 +92,7 @@ export class SystemListComponent implements OnInit {
      * @returns {string}
      */
     getOpenK8sUrl(pod: any): string {
-        return 'http://kube.ygsoft.com:30000/#!/' + (this.isService(pod) ? 'service' : 'pod') +
+        return K8dConfig.kubernetesDashboardUrl + '/#!/' + pod.kindName.toLowerCase() +
             '/' + pod.metadata.namespace + '/' + pod.metadata.name;
     }
 
@@ -64,6 +101,7 @@ export class SystemListComponent implements OnInit {
      * @param system
      */
     deleteSystem(system: string): void {
-        this.service.deleteSystem('default', system).subscribe(r => console.info(r));
+        this.status = [];
+        this.service.deleteSystem('default', system).subscribe(r => this.status.push(r));
     }
 }

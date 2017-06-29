@@ -1,14 +1,21 @@
 <div class="row">
     <div class="col col-xl-12 col-lg-12">
         <div class="card mb-3">
-            <div class="card-header">Systems</div>
+            <div class="card-header">
+                <h4 class="pull-left">Systems</h4>
+                <div class="pull-right">
+                    <a (click)="refresh()"><i class="fa fa-refresh text-navy"></i></a>
+                </div>
+            </div>
+            <app-status *ngIf="status" [(status)]="status"></app-status>
             <div class="card-block table-responsive" *ngIf="systems">
                 <div *ngFor="let system of systems; let j = index">
                     <div class="ibox col-xl-3">
                         <div class="ibox-title">
                             <h5>#{{j+1}} {{system.system}}</h5>
                             <div class="pull-right">
-                                <a (click)="deleteSystem(system.system)"><i class="fa fa-delicious text-navy"></i></a>
+                                <a (click)="deleteSystem(system.system)"><i
+                                    class="fa fa-window-close text-navy"></i></a>
                             </div>
                         </div>
                         <div class="ibox-content">
@@ -26,10 +33,15 @@
                                 <tbody>
                                 <tr *ngFor="let item of system.items; let i = index">
                                     <th><i [ngClass]="getState(item)"></i></th>
-                                    <th>{{item.spec.type ? 'Service' : 'Pod'}}</th>
+                                    <th>{{item.kindName}}</th>
                                     <td><a [href]="getOpenK8sUrl(item)" target="_blank">{{item.metadata.name}}</a></td>
-                                    <td>{{item.status.phase ? item.status.phase : 'OK'}}</td>
+                                    <td>{{item.status && item.status.phase ? item.status.phase : 'OK'}}</td>
                                     <td>{{item.metadata.creationTimestamp | age}}</td>
+                                    <td >
+                                        <div *ngFor="let action of getActions(item)">
+                                            <div><a href="{{action.action}}" target="_blank">{{action.label}}</a></div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
