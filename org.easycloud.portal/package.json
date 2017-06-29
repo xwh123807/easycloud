@@ -24,7 +24,7 @@
         "@ngx-translate/core": "^6.0.1",
         "@ngx-translate/http-loader": "0.0.3",
         "@types/jquery": "^3.2.5",
-        "@types/js-yaml": "",
+        "@types/js-yaml": "^3.5.31",
         "bootstrap": "^3.3.7",
         "core-js": "^2.4.1",
         "echarts": "^3.6.1",

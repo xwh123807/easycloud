@@ -50,7 +50,7 @@ export class SystemListComponent implements OnInit {
     getState(pod: any): string {
         let stateClass;
         if (pod.kind === Kind.Pod) {
-            if (pod.status.phase === 'Running' || this.isPod(pod)) {
+            if (pod.status.phase === 'Running') {
                 stateClass = 'fa fa-check-circle text-navy';
             } else if (pod.status.phase === 'Pending') {
                 stateClass = 'fa fa-adjust';

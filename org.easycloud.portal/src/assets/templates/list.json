@@ -20,6 +20,16 @@
         "path": "components/elasticsearch.json"
     },
     {
+        "name": "kibana",
+        "description": "Kibana",
+        "path": "components/kibana.yaml"
+    },
+    {
+        "name": "swagger-ui",
+        "description": "swagger-ui",
+        "path": "components/swagger-ui.yaml"
+    },
+    {
         "name": "wordpress & mysql",
         "description": "wordpress & mysql",
         "path": "wordpress-mysql.json"
