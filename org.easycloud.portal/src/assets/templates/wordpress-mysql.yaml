@@ -95,7 +95,7 @@ items:
       spec:
         containers:
         - name: wordpress
-          image: wordpress:4.7.0-apache
+          image: wordpress:4.8.0-apache
           ports:
           - containerPort: 80
           resources:
