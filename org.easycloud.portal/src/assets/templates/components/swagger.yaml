@@ -9,7 +9,7 @@ items:
   metadata:
     name: swagger-ui-{user}
     labels:
-      component: swagger-ui-{user}
+      component: swagger-ui
       version: v3.0.17
       system: swagger-{user}
   spec:
@@ -19,7 +19,7 @@ items:
       protocol: TCP
       targetPort: 8080
     selector:
-      component: swagger-ui-{user}
+      component: swagger-ui
       version: v3.0.17
       system: swagger-{user}
 
@@ -28,7 +28,7 @@ items:
   metadata:
     name: swagger-editor-{user}
     labels:
-      component: swagger-editor-{user}
+      component: swagger-editor
       version: v3.0.13
       system: swagger-{user}
   spec:
@@ -38,7 +38,7 @@ items:
       protocol: TCP
       targetPort: ui
     selector:
-      component: swagger-editor-{user}
+      component: swagger-editor
       version: v3.0.13
       system: swagger-{user}
 
@@ -47,19 +47,19 @@ items:
   metadata:
     name: swagger-ui-{user}
     labels:
-      component: swagger-ui-{user}
+      component: swagger-ui
       version: v3.0.17
       system: swagger-{user}
   spec:
     replicas: 1
     selector:
-      component: swagger-ui-{user}
+      component: swagger-ui
       version: v3.0.17
       system: swagger-{user}
     template:
       metadata:
         labels:
-          component: swagger-ui-{user}
+          component: swagger-ui
           version: v3.0.17
           system: swagger-{user}
       spec:
@@ -76,19 +76,19 @@ items:
   metadata:
     name: swagger-editor-{user}
     labels:
-      component: swagger-editor-{user}
+      component: swagger-editor
       version: v3.0.13
       system: swagger-{user}
   spec:
     replicas: 1
     selector:
-      component: swagger-editor-{user}
+      component: swagger-editor
       version: v3.0.13
       system: swagger-{user}
     template:
       metadata:
         labels:
-          component: swagger-editor-{user}
+          component: swagger-editor
           version: v3.0.13
           system: swagger-{user}
       spec:
