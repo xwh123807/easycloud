@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: List
+params:
+- name: user
+  value: xwh
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: mysql-{user}
+    labels:
+      component: mysql
+      version: 8.0.1
+      system: mysql-{user}
+  spec:
+    type: NodePort
+    ports:
+    - port: 3306
+      protocol: TCP
+    selector:
+      component: mysql
+      version: 8.0.1
+      system: mysql-{user}
+      
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: mysql-{user}
+    labels:
+      component: mysql
+      version: 8.0.1
+      system: mysql-{user}
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          component: mysql
+          version: 8.0.1
+          system: mysql-{user}
+      spec:
+        containers:
+        - name: mysql
+          image: mysql:8.0.1
+          args: ["--datadir=/datadir/mysqlnfs", "--user=mysql"]
+          ports:
+          - containerPort: 3306
+          env:
+          - name: "MYSQL_ROOT_PASSWORD"
+            value: "password"
+          volumeMounts:
+          - mountPath: "/datadir"
+            name: "datadir"
+          securityContext:
+            privileged: true
+        volumes:
+        - name: "datadir"
+          emptyDir: {}
+          

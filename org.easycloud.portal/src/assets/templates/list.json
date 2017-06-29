@@ -12,12 +12,12 @@
     {
         "name": "mysql",
         "description": "mysql",
-        "path": "components/mysql.json"
+        "path": "components/mysql.yaml"
     },
     {
         "name": "wordpress",
         "description": "wordpress",
-        "path": "components/wordpress.json"
+        "path": "components/wordpress.yaml"
     },
     {
         "name": "elasticsearch",
@@ -37,7 +37,7 @@
     {
         "name": "wordpress & mysql",
         "description": "wordpress & mysql",
-        "path": "wordpress-mysql.json"
+        "path": "wordpress-mysql.yaml"
     },
     {
         "name":"elasticsearch-logging cluster",

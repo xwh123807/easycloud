@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: List
+params:
+- name: user
+  value: xwh
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: wordpress-{user}
+    labels:
+      component: wordpress
+      version: 4.8.0-apache
+      system: wordpress-{user}
+  spec:
+    type: NodePort
+    ports:
+    - port: 80
+      protocol: TCP
+      nodePort: 30900
+    selector:
+      component: wordpress
+      version: 4.8.0-apache
+      system: wordpress-{user}
+  
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: wordpress-{user}
+    labels:
+      component: wordpress
+      version: 4.8.0-apache
+      system: wordpress-{user}
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          component: wordpress
+          version: 4.8.0-apache
+          system: wordpress-{user}
+      spec:
+        containers:
+        - name: wordpress
+          image: wordpress:4.8.0-apache
+          ports:
+          - containerPort: 80
+          resources:
+            requests:
+              memory: 512Mi
+            limits:
+              memory: 1Gi
+          env:
+          - name: "WORDPRESS_DB_HOST"
+            value: "wordpress-mysql:3306"
+          - name: "WORDPRESS_DB_PASSWORD"
+            value: "password"
+          
