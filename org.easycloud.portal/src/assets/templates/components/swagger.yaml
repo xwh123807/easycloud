@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: List
+params:
+- name: user
+  value: xwh
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: swagger-ui-{user}
+    labels:
+      component: swagger-ui-{user}
+      version: v3.0.17
+      system: swagger-{user}
+  spec:
+    type: NodePort
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      component: swagger-ui-{user}
+      version: v3.0.17
+      system: swagger-{user}
+
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: swagger-editor-{user}
+    labels:
+      component: swagger-editor-{user}
+      version: v3.0.13
+      system: swagger-{user}
+  spec:
+    type: NodePort
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: ui
+    selector:
+      component: swagger-editor-{user}
+      version: v3.0.13
+      system: swagger-{user}
+
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: swagger-ui-{user}
+    labels:
+      component: swagger-ui-{user}
+      version: v3.0.17
+      system: swagger-{user}
+  spec:
+    replicas: 1
+    selector:
+      component: swagger-ui-{user}
+      version: v3.0.17
+      system: swagger-{user}
+    template:
+      metadata:
+        labels:
+          component: swagger-ui-{user}
+          version: v3.0.17
+          system: swagger-{user}
+      spec:
+        containers:
+        - image: swaggerapi/swagger-ui:v3.0.17
+          name: swagger-ui
+          ports:
+          - containerPort: 8080
+            name: http
+            protocol: TCP
+
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: swagger-editor-{user}
+    labels:
+      component: swagger-editor-{user}
+      version: v3.0.13
+      system: swagger-{user}
+  spec:
+    replicas: 1
+    selector:
+      component: swagger-editor-{user}
+      version: v3.0.13
+      system: swagger-{user}
+    template:
+      metadata:
+        labels:
+          component: swagger-editor-{user}
+          version: v3.0.13
+          system: swagger-{user}
+      spec:
+        containers:
+        - name: swagger-editor
+          image: swaggerapi/swagger-editor:v3.0.13
+          ports:
+          - containerPort: 8080
+            name: ui
+            protocol: TCP

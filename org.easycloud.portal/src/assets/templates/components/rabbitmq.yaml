@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: List
+params:
+- name: user
+  value: xwh
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: rabbitmq-{user}
+    labels:
+      component: rabbitmq
+      version: 3.6.10-management
+      system: rabbitmq-{user}
+  spec:
+    type: NodePort
+    ports:
+    - name: http
+      port: 15672
+      protocol: TCP
+    - name: tcp
+      port: 5672
+      protocol: TCP
+    selector:
+      component: rabbitmq
+      version: 3.6.10-management
+      system: rabbitmq-{user}
+
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: rabbitmq-{user}
+    labels:
+      component: rabbitmq
+      version: 3.6.10-management
+      system: rabbitmq-{user}
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          component: rabbitmq
+          version: 3.6.10-management
+          system: rabbitmq-{user}
+      spec:
+        containers:
+        - name: rabbitmq
+          image: rabbitmq:3.6.10-management
+          ports:
+          - name: http
+            containerPort: 15672
+          - name: tcp
+            containerPort: 5672
+          env:
+          - name: "RABBITMQ_DEFAULT_USER"
+            value: "admin"
+          - name: "RABBITMQ_DEFAULT_PASS"
+            value: "admin"
+          - name: "RABBITMQ_ERLANG_COOKIE"
+            value: "3gN+n+3ibxgg1aWoKaRYwg=="

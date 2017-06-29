@@ -5,6 +5,11 @@
         "path": "components/redis-cluster.yaml"
     },
     {
+        "name": "rabbitmq",
+        "description": "rabbitmq",
+        "path": "components/rabbitmq.yaml"
+    },
+    {
         "name": "mysql",
         "description": "mysql",
         "path": "components/mysql.json"
@@ -25,9 +30,9 @@
         "path": "components/kibana.yaml"
     },
     {
-        "name": "swagger-ui",
-        "description": "swagger-ui",
-        "path": "components/swagger-ui.yaml"
+        "name": "swagger",
+        "description": "swagger ui and swagger editor",
+        "path": "components/swagger.yaml"
     },
     {
         "name": "wordpress & mysql",
