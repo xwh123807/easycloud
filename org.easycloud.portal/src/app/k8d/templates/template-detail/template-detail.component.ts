@@ -72,7 +72,7 @@ export class TemplateDetailComponent implements OnInit {
 
     deploy() {
         this.status = [];
-        this.kubeService.appDeploymentFromFile(this.getContentWithParams())
+        this.kubeService.appDeploymentFromFile(this.getContentWithParams(), 'default')
             .subscribe(item => {
                 this.status.push(item);
             }, error => {
@@ -82,7 +82,7 @@ export class TemplateDetailComponent implements OnInit {
 
     delete() {
         this.status = [];
-        this.kubeService.appUnDeploymentFromFile(this.getContentWithParams())
+        this.kubeService.appUnDeploymentFromFile(this.getContentWithParams(), 'default')
             .subscribe(r1 => this.status.push(r1), e1 => this.status.push(e1));
     }
 

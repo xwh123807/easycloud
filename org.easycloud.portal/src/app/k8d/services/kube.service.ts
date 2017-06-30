@@ -26,7 +26,8 @@ export enum Kind {
     DaemonSet,
     ServiceAccount,
     ConfigMap,
-    ClusterRoleBinding
+    ClusterRoleBinding,
+    Ingress
 }
 
 /**
@@ -92,6 +93,8 @@ export class KubeService {
                 return Kind.ConfigMap;
             case 'ClusterRoleBinding':
                 return Kind.ClusterRoleBinding;
+            case 'Ingress':
+                return Kind.Ingress;
         }
     }
 
@@ -124,6 +127,8 @@ export class KubeService {
                 return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/configmaps';
             case Kind.ClusterRoleBinding:
                 return '/apis/' + (apiVersion || 'rbac.authorization.k8s.io/v1beta1') + '/clusterrolebindings';
+            case Kind.Ingress:
+                return '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/ingresses';
             default:
                 throw new Error('参数不合法.');
         }
@@ -144,7 +149,7 @@ export class KubeService {
         return new RequestOptions({headers: headers});
     }
 
-    getDefinitions(content: string): any[] {
+    getDefinitions(content: string, namespace: string): any[] {
         const definitions = JSON.parse(content);
         let items = [];
         if (definitions.kind === 'List') {
@@ -154,7 +159,7 @@ export class KubeService {
         }
         items.forEach((item: any) => {
             if (!item.metadata.namespace) {
-                item.metadata.namespace = 'default';
+                item.metadata.namespace = namespace;
             }
         });
         return items;
@@ -164,8 +169,8 @@ export class KubeService {
      * Kubernetes部署文件发布，格式符合kubectl create -f格式要求
      * @param content
      */
-    appDeploymentFromFile(content: string): Observable<any> {
-        const items = this.getDefinitions(content);
+    appDeploymentFromFile(content: string, namespace: string): Observable<any> {
+        const items = this.getDefinitions(content, namespace);
         return Observable.create(observer => {
                 items.forEach((item: any) => {
                     const status: Status = new Status(this.getKind(item.kind), item.kind, item.metadata.name, item.metadata.namespace);
@@ -183,8 +188,8 @@ export class KubeService {
         );
     }
 
-    appUnDeploymentFromFile(content: string): Observable<any> {
-        return this.unDeployFromFile(this.getDepends(this.getDefinitions(content)));
+    appUnDeploymentFromFile(content: string, namespace: string): Observable<any> {
+        return this.unDeployFromFile(this.getDepends(this.getDefinitions(content, namespace)));
     }
 
     unDeployFromFile(items: Observable<any>): Observable<any> {
@@ -210,12 +215,11 @@ export class KubeService {
             .filter((item: any) => {
                 const ownerReferences: any[] = item.metadata.ownerReferences;
                 return ownerReferences.filter((ref: any) => {
-                        return (ref.name === deploymentMetadata.name) && (ref.kind === 'Deployment');
+                        return (ref.name === deploymentMetadata.name) && (ref.kind === Kind[Kind.Deployment]);
                     }).length > 0;
             }).map((item2: any) => {
                 return {
-                    kind: 'ReplicaSet',
-                    apiVersion: 'extensions/v1beta1',
+                    kind: Kind[Kind.ReplicaSet],
                     metadata: {
                         name: item2.metadata.name,
                         namespace: item2.metadata.namespace
@@ -230,12 +234,11 @@ export class KubeService {
             .filter((item: any) => {
                 const ownerReferences: any[] = item.metadata.ownerReferences;
                 return ownerReferences.filter((ref: any) => {
-                        return (ref.name === parent.metadata.name) && (ref.kind === 'ReplicaSet');
+                        return (ref.name === parent.metadata.name) && (ref.kind === Kind[Kind.ReplicaSet]);
                     }).length > 0;
             }).map((item2: any) => {
                 return {
-                    kind: 'Pod',
-                    apiVersion: 'v1',
+                    kind: Kind[Kind.Pod],
                     metadata: {
                         name: item2.metadata.name,
                         namespace: item2.metadata.namespace
@@ -248,7 +251,7 @@ export class KubeService {
         return Observable.create(observer => {
             items.forEach((item: any) => {
                 observer.next(item);
-                if (item.kind === 'Deployment') {
+                if (item.kind === Kind[Kind.Deployment]) {
                     this.getReplicaSet(item.metadata).subscribe(rs => {
                         observer.next(rs);
                         this.getPodsByReplicaSet(rs).subscribe(rs2 => {
@@ -281,7 +284,7 @@ export class KubeService {
      * 3、将1、2查找结果拼接，并按metadata.labels.system即系统名分组
      */
     getSystems(namespace: string): Observable<any> {
-        const items = Observable.from([Kind.Pod, Kind.Service, Kind.ConfigMap, Kind.ServiceAccount, Kind.ClusterRoleBinding])
+        const items = Observable.from([Kind.Pod, Kind.Service, Kind.ConfigMap, Kind.ServiceAccount, Kind.ClusterRoleBinding, Kind.Ingress])
             .flatMap(kind => this.http.get(this.getDeployUrlWithLabelSelector(kind, null, namespace, {system: null})))
             .switchMap(res => {
                 const obj: any = res.json();
@@ -339,7 +342,7 @@ export class KubeService {
                         });
                 });
             });
-        Observable.from([Kind.Service, Kind.ConfigMap, Kind.ServiceAccount, Kind.ClusterRoleBinding])
+        Observable.from([Kind.Service, Kind.ConfigMap, Kind.ServiceAccount, Kind.ClusterRoleBinding, Kind.Ingress])
             .flatMap(kind => this.http.get(this.getDeployUrlWithLabelSelector(kind, null, namespace, {system: system})))
             .switchMap(res => {
                 const obj = res.json();

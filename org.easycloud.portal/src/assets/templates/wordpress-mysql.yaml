@@ -3,6 +3,8 @@ kind: List
 params:
 - name: user
   value: xwh
+- name: namespace
+  value: default
 items:
 - apiVersion: v1
   kind: Service
@@ -108,3 +110,20 @@ items:
             value: "wordpress-mysql-{user}:3306"
           - name: "WORDPRESS_DB_PASSWORD"
             value: "password"
+
+-   apiVersion: extensions/v1beta1
+    kind: Ingress
+    metadata:
+      name: ingress-wordpress-{user}
+      namespace: {namespace}
+      labels:
+        system: wordpress-{user}
+    spec:
+      rules:
+      - host: wordpress-{user}.ygcloud.com
+        http:
+          paths:
+          - backend:
+              serviceName: wordpress-{user}
+              servicePort: 80
+

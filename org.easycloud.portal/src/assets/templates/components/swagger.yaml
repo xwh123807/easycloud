@@ -99,3 +99,24 @@ items:
           - containerPort: 8080
             name: ui
             protocol: TCP
+
+-   apiVersion: extensions/v1beta1
+    kind: Ingress
+    metadata:
+      name: ingress-swagger-{user}
+      labels:
+        system: swagger-{user}
+    spec:
+      rules:
+      - host: swaggerui-{user}.ygcloud.com
+        http:
+          paths:
+          - backend:
+              serviceName: swagger-ui-{user}
+              servicePort: 8080
+      - host: swaggereditor-{user}.ygcloud.com
+        http:
+          paths:
+          - backend:
+              serviceName: swagger-editor-{user}
+              servicePort: 8080
