@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-compoment-{user}
+  namespace: {namespace}
+  labels:
+    system: compoment-{user}
+spec:
+  rules:
+  - host: compoment-{user}.ygcloud.com
+    http:
+      paths:
+      - backend:
+          serviceName: compoment-{user}
+          servicePort: 80
