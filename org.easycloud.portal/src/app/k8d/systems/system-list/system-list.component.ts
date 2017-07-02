@@ -80,6 +80,12 @@ export class SystemListComponent implements OnInit {
                     }
                 });
                 break;
+            case Kind.Ingress:
+                const rules = pod.spec.rules || [];
+                rules.forEach(rule => {
+                    items.push({label: rule.host, action: 'http://' + rule.host});
+                });
+                break;
             case Kind.ConfigMap:
                 break;
         }

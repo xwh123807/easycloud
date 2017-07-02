@@ -10,7 +10,7 @@
             <app-status *ngIf="status" [(status)]="status"></app-status>
             <div class="card-block table-responsive" *ngIf="systems">
                 <div *ngFor="let system of systems; let j = index">
-                    <div class="ibox col-xl-3">
+                    <div class="ibox">
                         <div class="ibox-title">
                             <h5>#{{j+1}} {{system.system}}</h5>
                             <div class="pull-right">
