@@ -27,7 +27,9 @@ export enum Kind {
     ServiceAccount,
     ConfigMap,
     ClusterRoleBinding,
-    Ingress
+    Ingress,
+    PersistentVolume,
+    PersistentVolumeClaim
 }
 
 /**
@@ -95,6 +97,10 @@ export class KubeService {
                 return Kind.ClusterRoleBinding;
             case 'Ingress':
                 return Kind.Ingress;
+            case 'PersistentVolume':
+                return Kind.PersistentVolume;
+            case 'PersistentVolumeClaim':
+                return Kind.PersistentVolumeClaim;
         }
     }
 
@@ -125,10 +131,14 @@ export class KubeService {
                 return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/serviceaccounts';
             case Kind.ConfigMap:
                 return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/configmaps';
-            case Kind.ClusterRoleBinding:
-                return '/apis/' + (apiVersion || 'rbac.authorization.k8s.io/v1beta1') + '/clusterrolebindings';
             case Kind.Ingress:
                 return '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/ingresses';
+            case Kind.PersistentVolumeClaim:
+                return '/apis/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/persistentvolumeclaims';
+            case Kind.ClusterRoleBinding:
+                return '/apis/' + (apiVersion || 'rbac.authorization.k8s.io/v1beta1') + '/clusterrolebindings';
+            case Kind.PersistentVolume:
+                return '/api/' + (apiVersion || 'v1') + '/persistentvolumes';
             default:
                 throw new Error('参数不合法.');
         }
