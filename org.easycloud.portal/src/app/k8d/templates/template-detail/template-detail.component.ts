@@ -53,7 +53,7 @@ export class TemplateDetailComponent implements OnInit {
     }
 
     parseTemplate(content: string): any {
-        if (this.template.path.endsWith('.json')) {
+        if (this.template.path.substr(this.template.path.length - 4) === '.json') {
             return JSON.parse(content);
         } else {
             return jsyaml.load(content);

@@ -4,14 +4,14 @@
 # Run the swagger-editor service on port 8080
 ###
 
-FROM    mhart/alpine-node:7.9.0
-
-RUN     npm install -g http-server
+FROM    dockerhub.ygsoft.com:5000/ygsoft/angular4:1.0.0
 
 WORKDIR /easycloud
-ADD     ./dist/    /easycloud
+ADD     .    /easycloud
 
 # The default port of the application
-EXPOSE  8080
+EXPOSE  4200
 
-CMD ["http-server", "--cors", "-p8080", "/easycloud"]
+# CMD ["http-server", "--cors", "-p8080", "/easycloud"]
+
+CMD ["npm", "run", "start"]

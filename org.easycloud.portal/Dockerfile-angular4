@@ -1,0 +1,4 @@
+FROM    mhart/alpine-node:7.9.0
+
+RUN     npm install -g http-server
+RUN     npm install -g @angular/cli
