@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --ec=true --proxy-config proxy.conf.json",
+    "start": "ng serve --ec=true --aot --proxy-config proxy.conf.json",
     "build": "ng build -prod -aot",
     "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js",
     "serve": "http-server --cross -p 4200 --proxy http://localhost:8001 dist",
