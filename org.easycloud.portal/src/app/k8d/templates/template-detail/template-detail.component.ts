@@ -87,6 +87,6 @@ export class TemplateDetailComponent implements OnInit {
     }
 
     close() {
-        this.router.navigate(['/k8d/templates']);
+        this.router.navigate(['../templates']);
     }
 }

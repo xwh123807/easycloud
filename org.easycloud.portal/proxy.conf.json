@@ -4,15 +4,7 @@
         "secure": false
     },
     "/apis": {
-        "target": "http://127.0.0.1:8001",
-        "secure": false
-    },
-    "/api2": {
-        "target": "http://kubermaster.ygsoft.com:30701",
-        "secure": false
-    },
-    "/api3": {
-        "target": "http://192.168.99.100:30000",
+        "target": "http://kube.ygcloud.com:8001",
         "secure": false
     },
     "/v2": {

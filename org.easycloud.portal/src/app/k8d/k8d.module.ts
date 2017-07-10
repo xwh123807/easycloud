@@ -5,11 +5,13 @@ import {K8dComponent} from './k8d.component';
 import {TemplateService} from './services/template.service';
 import {FormsModule} from "@angular/forms";
 import {KubeService} from "./services/kube.service";
+import {K8dCommonsModule} from "./commons/k8d-commons.module";
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        K8dCommonsModule,
         K8dRoutingModule
     ],
     declarations: [

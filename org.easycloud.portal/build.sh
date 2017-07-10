@@ -1,4 +1,3 @@
-docker build -t dockerhub.ygsoft.com:5000/ygsoft/easycloud:1.0.0 .
+docker build -t dockerhub.ygsoft.com:5000/ygsoft/easycloud:1.0.0 -f Dockerfile .
 
-
-docker run -p 4200:4200 dockerhub.ygsoft.com:5000/ygsoft/easycloud:1.0.0
+docker push dockerhub.ygsoft.com:5000/ygsoft/easycloud:1.0.0

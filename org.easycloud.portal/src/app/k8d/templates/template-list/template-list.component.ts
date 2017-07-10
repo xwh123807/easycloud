@@ -20,6 +20,6 @@ export class TemplateListComponent implements OnInit {
     }
 
     view(name: string): void {
-        this.router.navigate(['../', name], {relativeTo: this.route});
+        this.router.navigate(['./', name], {relativeTo: this.route});
     }
 }

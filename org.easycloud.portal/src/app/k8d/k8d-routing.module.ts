@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {K8dComponent} from './k8d.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/k8d/systems', pathMatch: 'full'},
+    {path: '', redirectTo: 'systems', pathMatch: 'full'},
     {
         path: '', component: K8dComponent,
         children: [{

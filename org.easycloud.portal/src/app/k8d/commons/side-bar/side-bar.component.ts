@@ -1,16 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {K8dConfig} from "app/k8d/k8d-config";
 
 @Component({
-  selector: 'app-side-bar',
-  templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.scss']
+    selector: 'app-side-bar',
+    templateUrl: './side-bar.component.html',
+    styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
-  isActive: boolean;
+    isActive = false;
+    showMenu = '';
+    kubernetesDashboardUrl = K8dConfig.kubernetesDashboardUrl;
 
-  constructor() { }
+    eventCalled() {
+        this.isActive = !this.isActive;
+    }
 
-  ngOnInit() {
-  }
+    addExpandClass(element: any) {
+        if (element === this.showMenu) {
+            this.showMenu = '0';
+        } else {
+            this.showMenu = element;
+        }
+    }
 
+    ngOnInit(): void {
+    }
 }

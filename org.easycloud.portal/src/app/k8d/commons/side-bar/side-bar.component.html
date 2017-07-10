@@ -1,10 +1,20 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <ul class="list-group">
-        <a routerLink="./templates" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Templates'  }}
+        <a routerLink="/templates" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-archive"></i>&nbsp;{{ '部署模板' }}
         </a>
-        <a class="list-group-item" href="http://dockerhub.ygsoft.com:8081/nexus" target="blank" tooltip="user: deployment pass: deployment" >
-            {{ 'Nexus'  }}
+        <a routerLink="/systems" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-cubes"></i>&nbsp;{{ '系统' }}
+        </a>
+        <a [href]="kubernetesDashboardUrl" target="blank" tooltip="Kubernetes Dashboard" class="list-group-item">
+            <i class="fa fa-fw fa-tachometer"></i> {{ 'Kubernetes' }}
+        </a>
+        <a class="list-group-item" href="http://dockerhub.ygsoft.com:5000/v2/_catalog" target="blank" >
+            {{ '镜像仓库' }}
+        </a>
+        <a href="http://dockerhub.ygsoft.com:8081/nexus" target="blank" tooltip="user: deployment pass: deployment"
+           class="list-group-item">
+            {{ 'Maven仓库' }}
         </a>
     </ul>
 </nav>

@@ -4,20 +4,25 @@ import {SideBarComponent} from "./side-bar/side-bar.component";
 import {StatusComponent} from "./status/status.component";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import {HeaderComponent} from "./header/header.component";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        TranslateModule
     ],
     declarations: [
         SideBarComponent,
-        StatusComponent
+        StatusComponent,
+        HeaderComponent
     ],
     exports: [
         SideBarComponent,
-        StatusComponent
+        StatusComponent,
+        HeaderComponent
     ]
 })
 export class K8dCommonsModule {
