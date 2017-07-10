@@ -112,33 +112,34 @@ export class KubeService {
      * @returns {any}
      */
     getDeployUrl(kind: Kind, apiVersion: string, namespace: string): string {
+        const prefix = '/kuber';
         switch (kind) {
             case Kind.Service:
-                return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/services';
+                return prefix + '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/services';
             case Kind.Deployment:
-                return '/apis/' + (apiVersion || 'apps/v1beta1') + '/namespaces/' + namespace + '/deployments';
+                return prefix + '/apis/' + (apiVersion || 'apps/v1beta1') + '/namespaces/' + namespace + '/deployments';
             case Kind.ReplicaSet:
-                return '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/replicasets';
+                return prefix + '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/replicasets';
             case Kind.Pod:
-                return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/pods';
+                return prefix + '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/pods';
             case Kind.ReplicationController:
-                return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/replicationcontrollers';
+                return prefix + '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/replicationcontrollers';
             case Kind.StatefulSet:
-                return '/apis/' + (apiVersion || 'apps/v1beta1') + '/namespaces/' + namespace + '/statefulsets';
+                return prefix + '/apis/' + (apiVersion || 'apps/v1beta1') + '/namespaces/' + namespace + '/statefulsets';
             case Kind.DaemonSet:
-                return '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/daemonsets';
+                return prefix + '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/daemonsets';
             case Kind.ServiceAccount:
-                return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/serviceaccounts';
+                return prefix + '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/serviceaccounts';
             case Kind.ConfigMap:
-                return '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/configmaps';
+                return prefix + '/api/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/configmaps';
             case Kind.Ingress:
-                return '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/ingresses';
+                return prefix + '/apis/' + (apiVersion || 'extensions/v1beta1') + '/namespaces/' + namespace + '/ingresses';
             case Kind.PersistentVolumeClaim:
-                return '/apis/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/persistentvolumeclaims';
+                return prefix + '/apis/' + (apiVersion || 'v1') + '/namespaces/' + namespace + '/persistentvolumeclaims';
             case Kind.ClusterRoleBinding:
-                return '/apis/' + (apiVersion || 'rbac.authorization.k8s.io/v1beta1') + '/clusterrolebindings';
+                return prefix + '/apis/' + (apiVersion || 'rbac.authorization.k8s.io/v1beta1') + '/clusterrolebindings';
             case Kind.PersistentVolume:
-                return '/api/' + (apiVersion || 'v1') + '/persistentvolumes';
+                return prefix + '/api/' + (apiVersion || 'v1') + '/persistentvolumes';
             default:
                 throw new Error('参数不合法.');
         }

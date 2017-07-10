@@ -1,9 +1,5 @@
 {
-    "/api": {
-        "target": "http://kube.ygcloud.com:8001",
-        "secure": false
-    },
-    "/apis": {
+    "/kuber": {
         "target": "http://kube.ygcloud.com:8001",
         "secure": false
     },
