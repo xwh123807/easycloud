@@ -1,0 +1,169 @@
+apiVersion: v1
+kind: List
+params:
+- name: user
+  value: yg
+items:
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: eparty-mongo-{user}
+    labels:
+      component: eparty-mongo
+      system: eparty-{user}
+  spec:
+    template:
+      metadata:
+        labels:
+          component: eparty-mongo
+          system: eparty-{user}
+      spec:
+        containers:
+        - name: mongo
+          image: dockerhub.ygsoft.com:5000/mup/mongo:3.4
+          ports:
+          - containerPort: 27017
+          
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: eparty-redis-{user}
+    labels:
+      component: eparty-redis
+      system: eparty-{user}
+  spec:
+    template:
+      metadata:
+        labels:
+          component: eparty-redis
+          system: eparty-{user}
+      spec:
+        containers:
+        - name: redis
+          image: dockerhub.ygsoft.com:5000/redis:3.2.6
+          ports:
+          - containerPort: 6379   
+
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: eparty-activemq-{user}
+    labels:
+      component: eparty-activemq
+      system: eparty-{user}
+  spec:
+    template:
+      metadata:
+        labels:
+          component: eparty-activemq
+          system: eparty-{user}
+      spec:
+        containers:
+        - name: activemq
+          image: dockerhub.ygsoft.com:5000/webcenter/activemq:5.14.3
+          ports:
+          - containerPort: 61616                    
+
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: eparty-app-{user}
+    labels:
+      component: eparty-app
+      system: eparty-{user}
+  spec:
+    template:
+      metadata:
+        labels:
+          component: eparty-app
+          system: eparty-{user}
+      spec:
+        containers:
+        - name: app
+          image: dockerhub.ygsoft.com:5000/eparty:0.0.1
+          env:
+          - name: PORT
+            value: "8080"
+          - name: DB_PORT_27017_TCP_ADDR
+            value: "eparty-mongo-{user}"
+          - name: CACHE_PORT_6379_TCP_ADDR
+            value: "eparty-redis-{user}"
+          - name: MQ_PORT_61616_TCP_ADDR
+            value: "eparty-mq-{user}"
+          ports:
+          - containerPort: 8080  
+
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: eparty-mongo-{user}
+    labels:
+      system: eparty-{user}
+  spec:
+    ports:
+    - port: 27017
+      protocol: TCP
+      targetPort: 27017
+    selector:
+      component: eparty-mongo
+      system: eparty-{user}
+
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: eparty-mq-{user}
+    labels:
+      system: eparty-{user}
+  spec:
+    ports:
+    - port: 61616
+      protocol: TCP
+      targetPort: 61616
+    selector:
+      component: eparty-mq
+      system: eparty-{user}
+
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: eparty-redis-{user}
+    labels:
+      system: eparty-{user}
+  spec:
+    ports:
+    - port: 6379
+      protocol: TCP
+      targetPort: 6379
+    selector:
+      component: eparty-redis
+      system: eparty-{user}
+  
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: eparty-app-{user}
+    labels:
+      system: eparty-{user}
+  spec:
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      component: eparty-app
+      system: eparty-{user}
+      
+- apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    name: eparty-app-{user}
+    labels:
+      system: eparty-{user}
+  spec:
+    rules:
+    - host: eparty-{user}.ygcloud.com
+      http:
+        paths:
+        - backend:
+            serviceName: eparty-app-{user}
+            servicePort: 8080           

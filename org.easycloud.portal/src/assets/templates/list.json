@@ -1,52 +1,57 @@
 [
-    {
-        "name": "redis-cluster",
-        "description": "redis主备",
-        "path": "components/redis-cluster.yaml"
-    },
-    {
-        "name": "rabbitmq",
-        "description": "rabbitmq",
-        "path": "components/rabbitmq.yaml"
-    },
-    {
-        "name": "mysql",
-        "description": "mysql",
-        "path": "components/mysql.yaml"
-    },
-    {
-        "name": "wordpress",
-        "description": "wordpress",
-        "path": "components/wordpress.yaml"
-    },
-    {
-        "name": "elasticsearch",
-        "description": "elasticsearch",
-        "path": "components/elasticsearch.json"
-    },
-    {
-        "name": "kibana",
-        "description": "Kibana",
-        "path": "components/kibana.yaml"
-    },
-    {
-        "name": "swagger",
-        "description": "swagger ui and swagger editor",
-        "path": "components/swagger.yaml"
-    },
-    {
-        "name": "wordpress & mysql",
-        "description": "wordpress & mysql",
-        "path": "wordpress-mysql.yaml"
-    },
-    {
-        "name":"elasticsearch-logging cluster",
-        "description":"官方elasticsearch集群，但Service名必须为elasticsearch-logging",
-        "path":"es-cluster.yaml"
-    },
-    {
-        "name":"elasticsearch cluster",
-        "description":"自定义elasticsearch镜像",
-        "path":"elasticsearch-cluster.yaml"
-    }
+	{
+		"name": "redis-cluster",
+		"description": "redis主备",
+		"path": "components/redis-cluster.yaml"
+	},
+	{
+		"name": "rabbitmq",
+		"description": "rabbitmq",
+		"path": "components/rabbitmq.yaml"
+	},
+	{
+		"name": "mysql",
+		"description": "mysql",
+		"path": "components/mysql.yaml"
+	},
+	{
+		"name": "wordpress",
+		"description": "wordpress",
+		"path": "components/wordpress.yaml"
+	},
+	{
+		"name": "elasticsearch",
+		"description": "elasticsearch",
+		"path": "components/elasticsearch.json"
+	},
+	{
+		"name": "kibana",
+		"description": "Kibana",
+		"path": "components/kibana.yaml"
+	},
+	{
+		"name": "swagger",
+		"description": "swagger ui and swagger editor",
+		"path": "components/swagger.yaml"
+	},
+	{
+		"name": "wordpress & mysql",
+		"description": "wordpress & mysql",
+		"path": "wordpress-mysql.yaml"
+	},
+	{
+		"name": "elasticsearch-logging cluster",
+		"description": "官方elasticsearch集群，但Service名必须为elasticsearch-logging",
+		"path": "es-cluster.yaml"
+	},
+	{
+		"name": "elasticsearch cluster",
+		"description": "自定义elasticsearch镜像",
+		"path": "elasticsearch-cluster.yaml"
+	},
+	{
+		"name": "eparty-all",
+		"description": "电子党建完整镜像，含Mongo、Redis、MQ、App",
+		"path": "eparty-all.yaml"
+	}
 ]
