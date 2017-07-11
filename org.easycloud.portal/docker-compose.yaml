@@ -2,3 +2,4 @@ easycloud:
   image: dockerhub.ygsoft.com:5000/ygsoft/easycloud:1.0.0
   ports:
   - 4200:4200
+  command: ["http-server", "-p4200", "-P http://10.51.101.181:8001", "/easycloud"]
