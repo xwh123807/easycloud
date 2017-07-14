@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: devops-jenkin
+    labels:
+      component: devops.jenkin
+      system: devops
+  spec:
+    template:
+      metadata:
+        labels:
+          component: devops.jenkin
+          system: devops
+      spec:
+        containers:
+        - name: devops-jenkin
+          image: dockerhub.ygsoft.com:5000/ygsoft/maven-run:1.1
+          imagePullPolicy: Always
+          env:
+          - name: JAVA_OPTS
+            value: "-Xms64m -Xmx512m"
+          - name: GROUP_ID
+            value: xwh
+          - name: ARTIFACT_ID
+            value: devops.jenkin
+          - name: VERSION
+            value: 1.4.4-SNAPSHOT
+          - name: ARGS
+            value:
+          ports:
+          - containerPort: 8080
+
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: devops-jenkin
+    labels:
+      component: devops.jenkin
+      system: devops
+  spec:
+    ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      component: devops.jenkin
+
+- apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    name: devops-jenkin
+    labels:
+      component: devops.jenkin
+      system: devops
+  spec:
+    rules:
+    - host: admin.ygcloud.com
+      http:
+        paths:
+        - backend:
+            serviceName: devops-jenkin
+            servicePort: 8080

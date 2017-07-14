@@ -53,5 +53,10 @@
 		"name": "eparty-all",
 		"description": "电子党建完整镜像，含Mongo、Redis、MQ、App",
 		"path": "eparty-all.yaml"
+	},
+	{
+		"name": "spring-boot",
+		"description": "spring-boot应用快速部署",
+		"path": "spring-boot.yaml"
 	}
 ]
