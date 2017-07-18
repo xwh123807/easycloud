@@ -1,5 +1,12 @@
 apiVersion: v1
 kind: List
+params:
+- name: GROUP_ID
+  value: xwh
+- name: ARTIFACT_ID
+  value: devops.petstore
+- name: VERSION
+  value: "1.0"
 items:
 - apiVersion: v1
   kind: ReplicationController
@@ -17,17 +24,17 @@ items:
       spec:
         containers:
         - name: devops-jenkin
-          image: docker.ygsoft.com/ygsoft/maven-run:1.2
+          image: docker.ygsoft.com/ygsoft/spring-boot-run:1.1
           imagePullPolicy: Always
           env:
           - name: JAVA_OPTS
             value: "-Xms64m -Xmx512m"
           - name: GROUP_ID
-            value: xwh
+            value: {GROUP_ID}
           - name: ARTIFACT_ID
-            value: devops.petstore
-#          - name: VERSION
-#            value: 1.1
+            value: {ARTIFACT_ID}
+          - name: VERSION
+            value: "{VERSION}"
           - name: ARGS
             value:
           ports:
