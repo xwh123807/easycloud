@@ -54,9 +54,14 @@
 		"description": "电子党建完整镜像，含Mongo、Redis、MQ、App",
 		"path": "eparty-all.yaml"
 	},
+    {
+        "name": "static-petstore",
+        "description": "Petstore",
+        "path": "s-petstore.yaml"
+    },
 	{
 		"name": "spring-boot",
-		"description": "spring-boot应用快速部署",
+		"description": "spring-boot应用快速动态部署",
 		"path": "spring-boot.yaml"
 	}
 ]
