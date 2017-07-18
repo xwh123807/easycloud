@@ -47,12 +47,12 @@
 		<repository>
 			<id>nexus-releases</id>
 			<name>release repository</name>
-			<url>http://dockerhub.ygsoft.com:8081/nexus/content/repositories/releases/</url>
+			<url>http://maven.ygsoft.com/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus-snapshots</id>
 			<name>snapshot repository</name>
-			<url>http://dockerhub.ygsoft.com:8081/nexus/content/repositories/snapshots/</url>
+			<url>http://maven.ygsoft.com/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -62,8 +62,8 @@
 		</plugins> </build> -->
 
 	<scm>
-		<connection>scm:git:http://dockerhub.ygsoft.com:8888/xwh/devops</connection>
-		<developerConnection>scm:git:http://dockerhub.ygsoft.com:8888/xwh/devops</developerConnection>
+		<connection>scm:git:http://gitlab.ygsoft.com/xwh/devops</connection>
+		<developerConnection>scm:git:http://gitlab.ygsoft.com/xwh/devops</developerConnection>
 	</scm>
 
 	<dependencies>
