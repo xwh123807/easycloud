@@ -7,24 +7,26 @@ params:
   value: devops.petstore
 - name: VERSION
   value: "1.0"
+- name: SYSTEM
+  value: ""
 items:
 - apiVersion: v1
   kind: ReplicationController
   metadata:
-    name: devops-jenkin
+    name: {SYSTEM}
     labels:
-      component: devops.jenkin
-      system: devops
+      component: {ARTIFACT_ID}
+      system: {SYSTEM}
   spec:
     template:
       metadata:
         labels:
-          component: devops.jenkin
-          system: devops
+          component: {ARTIFACT_ID}
+          system: {SYSTEM}
       spec:
         containers:
-        - name: devops-jenkin
-          image: docker.ygsoft.com/ygsoft/spring-boot-run:1.1
+        - name: spring-boot-run
+          image: dockerhub.ygsoft.com:5000/ygsoft/spring-boot-run:1.2
           imagePullPolicy: Always
           env:
           - name: JAVA_OPTS
@@ -43,30 +45,30 @@ items:
 - apiVersion: v1
   kind: Service
   metadata:
-    name: devops-jenkin
+    name: {SYSTEM}
     labels:
-      component: devops.jenkin
-      system: devops
+      component: {ARTIFACT_ID}
+      system: {SYSTEM}
   spec:
     ports:
     - port: 9080
       protocol: TCP
       targetPort: 9080
     selector:
-      component: devops.jenkin
+      component: {ARTIFACT_ID}
 
 - apiVersion: extensions/v1beta1
   kind: Ingress
   metadata:
-    name: devops-jenkin
+    name: {SYSTEM}
     labels:
-      component: devops.jenkin
-      system: devops
+      component: {ARTIFACT_ID}
+      system: {SYSTEM}
   spec:
     rules:
-    - host: spring.ygcloud.com
+    - host: "{SYSTEM}.ygcloud.com"
       http:
         paths:
         - backend:
-            serviceName: devops-jenkin
+            serviceName: {SYSTEM}
             servicePort: 9080

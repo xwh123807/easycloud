@@ -22,7 +22,7 @@ items:
       spec:
         containers:
         - name: s-petstore
-          image: docker.ygsoft.com/xwh/devops.petstore:{version}
+          image: dockerhub.ygsoft.com:5000/xwh/devops.petstore:{version}
           imagePullPolicy: Always
           ports:
           - containerPort: 9080

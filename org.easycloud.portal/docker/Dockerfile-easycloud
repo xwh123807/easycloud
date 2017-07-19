@@ -8,16 +8,12 @@ FROM    dockerhub.ygsoft.com:5000/ygsoft/httpserver:1.0.0
 
 WORKDIR /easycloud
 ADD     ./dist    /easycloud
-COPY	    ./docker/runServer.sh  /
-RUN chmod +x /runServer.sh
+ADD     ./docker/run.sh   /
+RUN     chmod +x /run.sh
 
-ENV KUBERNETES_PROXY "http://kube.ygcloud.com:8001"
+ENV KUBERNETES_PROXY http://kube.ygcloud.com:8001
 
 # The default port of the application
 EXPOSE  4200
-VOLUME	"/easycloud"
 
-#CMD ["/runServer.sh"]
-#CMD ["http-server", "--cors", "-P", "${KUBERNETES_PROXY}", "-p4200", "/easycloud"]
-
-# CMD ["npm", "run", "start"]
+#ENTRYPOINT ["/run.sh"]
